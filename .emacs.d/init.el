@@ -15,21 +15,24 @@
   (package-refresh-contents))
   
 
+
+
+
+
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; キーバインド（一般）
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (global-set-key (kbd "C-m") 'newline-and-indent) ; 改行してインデント
 (global-set-key (kbd "C-x ?") 'help-command) ; ヘルプコマンド
-(global-set-key (kbd "C-M-¥") 'indent-region) ; 自動インデント
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ; C-hでバックスペース
-(define-key global-map (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
+(global-set-key (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
 (global-unset-key (kbd "C-t")) ; デフォルトのC-tを無効化
 (global-set-key (kbd "C-t C-b")  'windmove-left) ; 左のペインに移動
 (global-set-key (kbd "C-t C-n")  'windmove-down) ; 下のペインに移動
 (global-set-key (kbd "C-t C-p")    'windmove-up) ; 上のペインに移動
 (global-set-key (kbd "C-t C-f") 'windmove-right) ; 右のペインに移動
-(global-set-key (kbd "C-c r") 'cua-set-rectangle-mark) ;　矩形選択モード
 (global-unset-key (kbd "C-\\")) ;C-\(日本語入力)を無効化
+(global-set-key (kbd "C-\\") 'indent-region) ; 自動インデント
 
 ;; 現在行を改行せずに下に空行を作ってその行に移動
 (defun smart-open-line ()
@@ -118,11 +121,49 @@
 (add-hook 'emacs-lisp-mode-hook 'elisp-mode-hooks) ;Elipsの関数をモードラインに表示
 
 
+;; web-mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2) ; HTMLのンデント幅
+  (setq web-mode-css-indent-offset 2)  ; CSSのンデント幅
+  (setq web-mode-code-indent-offset 2)  ; Ruby、PHP等のンデント幅
+  (setq web-mode-enable-auto-closing 2) ; 閉じタグ自動補完
+  (setq web-mode-enable-auto-pairing 2) ; 閉じタグ自動補完
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
+
+
+;; rjsx-mode
+(add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
+(add-hook 'rjsx-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode nil) ;;インデントはタブではなくスペース
+            (setq js-indent-level 2) ;;スペースは２つ、デフォルトは4
+            (setq js2-strict-missing-semi-warning nil))) ;;行末のセミコロンの警告はオフ
+
+
+
+
+;; 入力補完
+(electric-pair-mode t) ; 閉じ括弧自動挿入
+
+
+
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; 見た目
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;; 文字コード
+(set-language-environment "Japanese") ; 日本語推奨環境
+(prefer-coding-system 'utf-8) ; utf-8が最優先
+
 ;; Moe-theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
 (add-to-list 'load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
@@ -144,21 +185,19 @@
 (set-face-background 'linum "#282828")
 (set-face-foreground 'linum "#aaa")
 
-; 現在行をハイライト
-(global-hl-line-mode t)
-
 ;; 対応する括弧の強調表示
 (setq show-paren-delay 0) ; 表示までの秒数。初期値は0.125
 (show-paren-mode t) ; 有効化
 (setq show-paren-style 'expression) ; 括弧内も強調
 
-;; スタートアップメッセージを非表示
-(setq inhibit-startup-screen t)
-
-;; 一行ずつスクロール
-(setq scroll-conservatively 1)
-
 (menu-bar-mode 0) ; メニューバー非表示
+(setq inhibit-startup-screen t) ; スタートアップメッセージを非表示
+(global-hl-line-mode t) ; 現在行をハイライト
+(setq scroll-conservatively 1) ; 一行ずつスクロール
+
+
+
+
 
 
 
@@ -168,24 +207,36 @@
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (require 'helm-config)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring) ; helmでクリップボード履歴を表示
-(global-unset-key (kbd "C-x C-f"))
-(global-set-key (kbd "C-x C-f") 'helm-for-files) ; helmでUIでカレントバッファとか見る
+(global-unset-key (kbd "C-x C-b"))
+(global-set-key (kbd "C-x C-b") 'helm-for-files) ; helmでUIでカレントバッファとか見る
 
 
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @multiple-cursors
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'multiple-cursors)
+(global-set-key (kbd "M-7") 'mc/edit-lines)
+(global-set-key (kbd "M-9") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-8") 'mc/mark-previous-like-this)
+(global-set-key (kbd "M-0") 'mc/mark-all-like-this)
 
 
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @ace-isearch
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(global-ace-isearch-mode +1)
 
 
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @company
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(add-hook 'after-init-hook 'global-company-mode)
 
 
-
-
-
-
-
-
-
-
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @undo-tree
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(global-undo-tree-mode)
 
 
 
@@ -204,7 +255,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (helm moe-theme))))
+ '(package-selected-packages
+   (quote
+    (rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
