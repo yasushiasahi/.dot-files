@@ -3,6 +3,8 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	open-line-next-indent
+	smart-open-line
 	))
 
 (setq mc/cmds-to-run-once

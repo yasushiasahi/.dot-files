@@ -17,8 +17,6 @@
 
 
 
-
-
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; キーバインド（一般）
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -230,7 +228,35 @@
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @company
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(add-hook 'after-init-hook 'global-company-mode)
+;(add-hook 'after-init-hook 'global-company-mode)
+(require 'company)
+(global-company-mode) ; 全バッファで有効にする
+(setq company-transformers '(company-sort-by-backend-importance)) ;; ソート順
+(setq company-idle-delay 0) ; デフォルトは0.5
+(setq company-minimum-prefix-length 3) ; デフォルトは4
+(setq company-selection-wrap-around t) ; 候補の一番下でさらに下に行こうとすると一番上に戻る
+(setq completion-ignore-case t) ; 大文字、小文字を区別しない Emacs自体の設定
+(setq company-dabbrev-downcase nil) ; lower caseで補完で保管されるのを防ぐ
+(global-set-key (kbd "C-M-i") 'company-complete) 
+(define-key company-active-map (kbd "C-n") 'company-select-next) ;; C-n, C-pで補完候補を次/前の候補を選択
+(define-key company-active-map (kbd "C-p") 'company-select-previous)
+(define-key company-search-map (kbd "C-n") 'company-select-next)
+(define-key company-search-map (kbd "C-p") 'company-select-previous)
+(define-key company-active-map (kbd "C-s") 'company-filter-candidates) ;; C-sで絞り込む
+(define-key company-active-map (kbd "C-i") 'company-complete-selection) ;; TABで候補を設
+(define-key company-active-map [tab] 'company-complete-selection) ;; TABで候補を設定
+(define-key company-active-map (kbd "C-f") 'company-complete-selection) ;; C-fで候補を設定
+(define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete) ;; 各種メジャーモードでも C-M-iで company-modeの補完を使う
+
+;;; company-tern
+(setq company-tern-property-marker "")
+(defun company-tern-depth (candidate)
+  "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
+  (let ((depth (get-text-property 0 'depth candidate)))
+    (if (eq depth nil) 0 depth)))
+(add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
+(add-to-list 'company-backends 'company-tern) ; backendに追加
+
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -257,7 +283,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

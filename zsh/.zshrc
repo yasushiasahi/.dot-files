@@ -18,6 +18,8 @@ setopt hist_ignore_dups #直前と同じコマンドはヒストリに追加し�
 # コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
 # 例： `cd path/to/<Tab>`, `ls -<Tab>`
 autoload -U compinit; compinit
+compinit
+zstyle ':completion:*:default' menu select=1
 
 # 入力したコマンドが存在せず、かつディレクトリ名と一致するなら、ディレクトリに cd する
 # 例： /usr/bin と入力すると /usr/bin ディレクトリに移動
@@ -28,6 +30,26 @@ export TERM=xterm-256color
 
 # emacsを標準エディターにする
 export EDITOR=emacs
+
+# lsの色の設定 https://qiita.com/yuyuchu3333/items/84fa4e051c3325098be3
+case ${OSTYPE} in
+    darwin*) # macosの場合
+        eval $(gdircolors ~/.dircolors-solarized)
+        ;;
+    linux*) # linuxの場合
+        eval $(gdircolors ~/.dircolors-solarized)
+        ;;
+esac
+
+# 補完候補のファイル、ディレクトリにlsと同様の色付け
+if [ -n "$LS_COLORS" ]; then
+    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
+
+# alias
+alias ls='gls -al --color=auto'
+
+
 
 
 # zplug >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
