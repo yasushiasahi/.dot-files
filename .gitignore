@@ -5,4 +5,4 @@
 .emacs.d/backups/*
 .emacs.d/undohist/*
 .emacs.d/init.el~
-.emacs.d/recentf~
+.emacs.d/recentf
