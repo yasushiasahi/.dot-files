@@ -35,9 +35,11 @@ export EDITOR=emacs
 case ${OSTYPE} in
     darwin*) # macosの場合
         eval $(gdircolors ~/.dircolors-solarized)
+	alias ls='gls -al --color=auto'
         ;;
     linux*) # linuxの場合
-        eval $(gdircolors ~/.dircolors-solarized)
+        eval $(dircolors ~/.dircolors-solarized)
+	alias ls='ls -al --color=auto'
         ;;
 esac
 
@@ -46,33 +48,21 @@ if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
-# alias
-alias ls='gls -al --color=auto'
-
-
 
 
 # zplug >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-case ${OSTYPE} in
-    darwin*) # macosの場合
-        export ZPLUG_HOME=/usr/local/opt/zplug
-	source $ZPLUG_HOME/init.zsh
-        ;;
-    linux*) # linuxの場合
-        source ~/.zplug/init.zsh
-        ;;
-esac
+source ~/.zplug/init.zsh
 # theme
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
-# 構文のハイライト
-zplug "zsh-users/zsh-syntax-highlighting"
 # history関係
 zplug "zsh-users/zsh-history-substring-search"
 # タイプ補完
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
+# 構文のハイライト
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -88,3 +78,6 @@ zplug load --verbose
 autoload -U promptinit; promptinit
 prompt pure
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# zsh-autosuggestionsの文字色を変更 default='fg=8'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'

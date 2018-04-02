@@ -118,13 +118,11 @@
     (turn-on-eldoc-mode)))
 (add-hook 'emacs-lisp-mode-hook 'elisp-mode-hooks) ;Elipsの関数をモードラインに表示
 
-
 ;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
-
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2) ; HTMLのンデント幅
@@ -135,8 +133,6 @@
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-
-
 ;; rjsx-mode
 (add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
 (add-hook 'rjsx-mode-hook
@@ -144,9 +140,6 @@
             (setq indent-tabs-mode nil) ;;インデントはタブではなくスペース
             (setq js-indent-level 2) ;;スペースは２つ、デフォルトは4
             (setq js2-strict-missing-semi-warning nil))) ;;行末のセミコロンの警告はオフ
-
-
-
 
 ;; 入力補完
 (electric-pair-mode t) ; 閉じ括弧自動挿入
@@ -161,16 +154,6 @@
 ;; 文字コード
 (set-language-environment "Japanese") ; 日本語推奨環境
 (prefer-coding-system 'utf-8) ; utf-8が最優先
-
-;; Moe-theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
-(add-to-list 'load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
-(require 'moe-theme)
-(setq moe-theme-highlight-buffer-id t)
-(setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
-(setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0)) 
-(moe-theme-set-color 'orange) ; モードラインの色
-(moe-dark) ; ダークテーマ
 
 ;; モードライン
 (column-number-mode t) ; カラム番号を表示
@@ -193,7 +176,20 @@
 (global-hl-line-mode t) ; 現在行をハイライト
 (setq scroll-conservatively 1) ; 一行ずつスクロール
 
+;; theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/custom-themes/emacs-color-theme-solarized")
+(set-frame-parameter nil 'background-mode 'dark)
+(set-terminal-parameter nil 'background-mode 'dark)
+(load-theme 'solarized t)
 
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
+;; (add-to-list 'load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
+;; (require 'moe-theme)
+;; (setq moe-theme-highlight-buffer-id t)
+;; (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
+;; (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0)) 
+;; (moe-theme-set-color 'orange) ; モードラインの色
+;; (moe-dark) ; ダークテーマ;
 
 
 
@@ -258,18 +254,10 @@
 (add-to-list 'company-backends 'company-tern) ; backendに追加
 
 
-
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @undo-tree
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (global-undo-tree-mode)
-
-
-
-
-
-
-
 
 
 
