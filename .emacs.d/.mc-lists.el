@@ -3,11 +3,10 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	open-line-next-indent
+	rjsx-delete-creates-full-tag
 	smart-open-line
 	))
 
 (setq mc/cmds-to-run-once
       '(
-	rjsx-delete-creates-full-tag
 	))

@@ -23,14 +23,16 @@
 (global-set-key (kbd "C-m") 'newline-and-indent) ; 改行してインデント
 (global-set-key (kbd "C-x ?") 'help-command) ; ヘルプコマンド
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ; C-hでバックスペース
-(global-set-key (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
 (global-unset-key (kbd "C-t")) ; デフォルトのC-tを無効化
 (global-set-key (kbd "C-t C-b")  'windmove-left) ; 左のペインに移動
 (global-set-key (kbd "C-t C-n")  'windmove-down) ; 下のペインに移動
 (global-set-key (kbd "C-t C-p")    'windmove-up) ; 上のペインに移動
 (global-set-key (kbd "C-t C-f") 'windmove-right) ; 右のペインに移動
+(global-unset-key (kbd "C-q")) ; デフォルトのC-q(特殊文字入力)を無効化
+(global-set-key (kbd "C-q") 'kill-ring-save) ; コピー
 (global-unset-key (kbd "C-\\")) ;C-\(日本語入力)を無効化
 (global-set-key (kbd "C-\\") 'indent-region) ; 自動インデント
+(global-set-key (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
 
 ;; 現在行を改行せずに下に空行を作ってその行に移動
 (defun smart-open-line ()
@@ -46,7 +48,8 @@
   (newline-and-indent)
   (forward-line -1)
   (indent-according-to-mode))
-(global-set-key (kbd "M-j") 'smart-open-line-above)
+(global-unset-key (kbd "C-u")) ; デフォルトのC-u(universal-argument)を無効化
+(global-set-key (kbd "C-u") 'smart-open-line-above)
 
 ;; カーソルより右側を下の行に送る(カーソル位置は動かない)
 (defun open-line-next-indent ()
@@ -90,6 +93,19 @@
       (setq i (+ 1 i))))
 (global-set-key (kbd "C-x 6") 'split6)
 
+;; 行番号を表示
+(defun set-linum ()
+  (interactive)
+  (linum-mode t)
+  (setq linum-format "%3d "))
+(global-set-key (kbd "C-c s l") 'set-linum)
+
+;; 行番号を非表示
+(defun unset-linum ()
+  (interactive)
+  (linum-mode t)
+  (setq linum-format " "))
+(global-set-key (kbd "C-c u l") 'unset-linum)
 
 
 
@@ -162,9 +178,9 @@
 ;; 左端に行番号を表示
 (require 'linum)
 (global-linum-mode t)
-(setq linum-format "%3d ")
-(set-face-background 'linum "#282828")
-(set-face-foreground 'linum "#aaa")
+(setq linum-format " ")
+(set-face-background 'linum "brightblack")
+(set-face-foreground 'linum "brightgreen")
 
 ;; 対応する括弧の強調表示
 (setq show-paren-delay 0) ; 表示までの秒数。初期値は0.125
