@@ -32,6 +32,10 @@
 (global-set-key (kbd "C-q") 'kill-ring-save) ; コピー
 (global-unset-key (kbd "C-\\")) ;C-\(日本語入力)を無効化
 (global-set-key (kbd "C-\\") 'indent-region) ; 自動インデント
+(global-unset-key (kbd "C-x 2"))
+(global-set-key (kbd "C-x -") 'split-window-below) ; ウィンドウを縦分割
+(global-unset-key (kbd "C-x 3"))
+(global-set-key (kbd "C-x \\") 'split-window-right) ; ウィンドウを横分割
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
 
 ;; 現在行を改行せずに下に空行を作ってその行に移動
@@ -65,7 +69,7 @@
   (dotimes (i (- num_wins 1))
     (split-window-horizontally))
   (balance-windows))
-(global-set-key (kbd "C-x #") (lambda ()
+(global-set-key (kbd "C-x 3") (lambda ()
 			  (interactive)
 			  (split-window-horizontally-n 3)))
 
@@ -106,6 +110,17 @@
   (linum-mode t)
   (setq linum-format " "))
 (global-set-key (kbd "C-c u l") 'unset-linum)
+
+;; C-a連打で行頭→行の最初のインデント位置への移動を繰り返す
+(global-set-key "\C-a" '(lambda (arg)
+			  (interactive "^p")
+			  (cond
+			   ((bolp)
+			    (call-interactively 'back-to-indentation))
+			   (t
+			    (move-beginning-of-line arg)))))
+
+
 
 
 
@@ -198,6 +213,7 @@
 (set-terminal-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
 
+;; moe-theme
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
 ;; (add-to-list 'load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
 ;; (require 'moe-theme)
@@ -211,7 +227,6 @@
 
 
 
-
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @helm
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -219,6 +234,8 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring) ; helmでクリップボード履歴を表示
 (global-unset-key (kbd "C-x C-b"))
 (global-set-key (kbd "C-x C-b") 'helm-for-files) ; helmでUIでカレントバッファとか見る
+(global-unset-key (kbd "M-x"))
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -257,7 +274,7 @@
 (define-key company-active-map (kbd "C-s") 'company-filter-candidates) ;; C-sで絞り込む
 (define-key company-active-map (kbd "C-i") 'company-complete-selection) ;; TABで候補を設
 (define-key company-active-map [tab] 'company-complete-selection) ;; TABで候補を設定
-(define-key company-active-map (kbd "C-f") 'company-complete-selection) ;; C-fで候補を設定
+(define-key company-active-map (kbd "C-f") 'company-complete-selection) ;; C-fでも候補を設定
 (define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete) ;; 各種メジャーモードでも C-M-iで company-modeの補完を使う
 
 ;;; company-tern
@@ -285,9 +302,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
  '(package-selected-packages
    (quote
-    (company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
