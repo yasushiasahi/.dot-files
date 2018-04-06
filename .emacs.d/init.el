@@ -13,8 +13,18 @@
 ;; 最新のpackageリストを読み込む
 (when (not package-archive-contents)
   (package-refresh-contents))
-  
 
+
+
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; 一般設定
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;; yes/noはすべてy/nで答える
+(defalias 'yes-or-no-p 'y-or-n-p)
+;; 一行ずつスクロール
+(setq scroll-conservatively 1)
+;; 保存前にバッファ残体の行末の空行を削除する
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -23,6 +33,7 @@
 (global-set-key (kbd "C-m") 'newline-and-indent) ; 改行してインデント
 (global-set-key (kbd "C-x ?") 'help-command) ; ヘルプコマンド
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ; C-hでバックスペース
+(define-key key-translation-map (kbd "C-o") (kbd "<ESC>")) ; C-iでesc
 (global-unset-key (kbd "C-t")) ; デフォルトのC-tを無効化
 (global-set-key (kbd "C-t C-b")  'windmove-left) ; 左のペインに移動
 (global-set-key (kbd "C-t C-n")  'windmove-down) ; 下のペインに移動
@@ -30,38 +41,13 @@
 (global-set-key (kbd "C-t C-f") 'windmove-right) ; 右のペインに移動
 (global-unset-key (kbd "C-q")) ; デフォルトのC-q(特殊文字入力)を無効化
 (global-set-key (kbd "C-q") 'kill-ring-save) ; コピー
-(global-unset-key (kbd "C-\\")) ;C-\(日本語入力)を無効化
-(global-set-key (kbd "C-\\") 'indent-region) ; 自動インデント
 (global-unset-key (kbd "C-x 2"))
 (global-set-key (kbd "C-x -") 'split-window-below) ; ウィンドウを縦分割
 (global-unset-key (kbd "C-x 3"))
 (global-set-key (kbd "C-x \\") 'split-window-right) ; ウィンドウを横分割
+(global-set-key (kbd "C-M-d") 'kill-word) ; 単語ごとに削除
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
 
-;; 現在行を改行せずに下に空行を作ってその行に移動
-(defun smart-open-line ()
-  (interactive)
-  (move-end-of-line nil)
-  (newline-and-indent))
-(global-set-key (kbd "C-j") 'smart-open-line)
-
-;; 現在行を改行せずに上に空行を作ってその行に移動
-(defun smart-open-line-above ()
-  (interactive)
-  (move-beginning-of-line nil)
-  (newline-and-indent)
-  (forward-line -1)
-  (indent-according-to-mode))
-(global-unset-key (kbd "C-u")) ; デフォルトのC-u(universal-argument)を無効化
-(global-set-key (kbd "C-u") 'smart-open-line-above)
-
-;; カーソルより右側を下の行に送る(カーソル位置は動かない)
-(defun open-line-next-indent ()
-  (interactive)
-  (newline-and-indent)
-  (previous-line nil)
-  (move-end-of-line nil))
-(global-set-key (kbd "C-o") 'open-line-next-indent)
 
 ;; ウィンドウを縦3分割
 (defun split-window-horizontally-n (num_wins)
@@ -111,15 +97,19 @@
   (setq linum-format " "))
 (global-set-key (kbd "C-c u l") 'unset-linum)
 
-;; C-a連打で行頭→行の最初のインデント位置への移動を繰り返す
-(global-set-key "\C-a" '(lambda (arg)
-			  (interactive "^p")
-			  (cond
-			   ((bolp)
-			    (call-interactively 'back-to-indentation))
-			   (t
-			    (move-beginning-of-line arg)))))
 
+;;; @curxを使ったテキスト操作
+(require 'crux)
+(global-unset-key (kbd "C-u")) ; デフォルトのC-u(universal-argument)を無効化
+(global-set-key (kbd "C-u") 'crux-smart-open-line-above) ;; 現在行を改行せずに上に空行を作ってその行に移動
+(global-set-key (kbd "C-j") 'crux-smart-open-line) ;; 現在行を改行せずに下に空行を作ってその行に移動
+(global-set-key (kbd "M-k") 'crux-kill-whole-line) ;; 現在行全体を削除して詰める
+(global-set-key (kbd "M-h") 'crux-kill-line-backwards) ;; インデント位置からカーソル位置までを削除
+(global-set-key (kbd "C-a") 'crux-move-beginning-of-line) ;; C-a連打で行頭→行の最初のインデント位置への移動を繰り返す
+(global-unset-key (kbd "C-\\")) ;C-\(日本語入力)を無効化
+(global-set-key (kbd "C-\\") 'crux-indent-defun) ;; 選択不用で付近をいい感じにインデント
+(global-set-key (kbd "M-d") 'crux-duplicate-current-line-or-region) ;; 現在行or選択行を下に複製
+(global-set-key (kbd "M-\\") 'crux-duplicate-and-comment-current-line-or-region) ;; 現在行or選択行を下に複製してコメントアウト
 
 
 
@@ -165,7 +155,10 @@
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
 ;; rjsx-mode
-(add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode))
+;; js2-mode に切り替え
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-hook 'rjsx-mode-hook
           (lambda ()
             (setq indent-tabs-mode nil) ;;インデントはタブではなくスペース
@@ -205,7 +198,6 @@
 (menu-bar-mode 0) ; メニューバー非表示
 (setq inhibit-startup-screen t) ; スタートアップメッセージを非表示
 (global-hl-line-mode t) ; 現在行をハイライト
-(setq scroll-conservatively 1) ; 一行ずつスクロール
 
 ;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/custom-themes/emacs-color-theme-solarized")
@@ -219,7 +211,7 @@
 ;; (require 'moe-theme)
 ;; (setq moe-theme-highlight-buffer-id t)
 ;; (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
-;; (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0)) 
+;; (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0))
 ;; (moe-theme-set-color 'orange) ; モードラインの色
 ;; (moe-dark) ; ダークテーマ;
 
@@ -266,7 +258,7 @@
 (setq company-selection-wrap-around t) ; 候補の一番下でさらに下に行こうとすると一番上に戻る
 (setq completion-ignore-case t) ; 大文字、小文字を区別しない Emacs自体の設定
 (setq company-dabbrev-downcase nil) ; lower caseで補完で保管されるのを防ぐ
-(global-set-key (kbd "C-M-i") 'company-complete) 
+(global-set-key (kbd "C-M-i") 'company-complete)
 (define-key company-active-map (kbd "C-n") 'company-select-next) ;; C-n, C-pで補完候補を次/前の候補を選択
 (define-key company-active-map (kbd "C-p") 'company-select-previous)
 (define-key company-search-map (kbd "C-n") 'company-select-next)
@@ -287,10 +279,72 @@
 (add-to-list 'company-backends 'company-tern) ; backendに追加
 
 
+
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @js2-refactor
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'js2-refactor)
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
+(add-hook 'rjsx-mode-hook #'js2-refactor-mode)
+(js2r-add-keybindings-with-prefix "C-c <RET>")
+
+
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @undo-tree
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (global-undo-tree-mode)
+
+
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @expand-region
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'expand-region)
+(global-set-key (kbd "C-o") 'er/expand-region)
+
+
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @rainbow-delimiters  何故か動かない↓↓
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; 括弧の色を強調する設定
+(require 'cl-lib)
+(require 'color)
+(defun rainbow-delimiters-using-stronger-colors ()
+  (interactive)
+  (cl-loop
+   for index from 1 to rainbow-delimiters-max-face-count
+   do
+   (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
+    (cl-callf color-saturate-name (face-foreground face) 30))))
+(add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors)
+
+
+
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @key-chord
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(key-chord-mode t)
+(setq key-chord-two-keys-delay           0.15
+      key-chord-safety-interval-backward 0.1
+      key-chord-safety-interval-forward  0.25)
+(key-chord-define-global "kj" 'windmove-left)
+(key-chord-define-global "kl" 'windmove-right)
+(key-chord-define-global "ki" 'windmove-up)
+(key-chord-define-global "km" 'windmove-down)
+(key-chord-define-global "iu" 'recenter-top-bottom)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -307,7 +361,7 @@
     ("6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
  '(package-selected-packages
    (quote
-    (atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (crux key-chord rainbow-delimiters expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
