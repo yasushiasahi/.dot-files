@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-m") 'newline-and-indent) ; 改行してインデント
 (global-set-key (kbd "C-x ?") 'help-command) ; ヘルプコマンド
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ; C-hでバックスペース
-(define-key key-translation-map (kbd "C-o") (kbd "<ESC>")) ; C-iでesc
+(define-key key-translation-map (kbd "C-l") (kbd "<ESC>")) ; C-lでesc
 (global-unset-key (kbd "C-t")) ; デフォルトのC-tを無効化
 (global-set-key (kbd "C-t C-b")  'windmove-left) ; 左のペインに移動
 (global-set-key (kbd "C-t C-n")  'windmove-down) ; 下のペインに移動
@@ -47,6 +47,7 @@
 (global-set-key (kbd "C-x \\") 'split-window-right) ; ウィンドウを横分割
 (global-set-key (kbd "C-M-d") 'kill-word) ; 単語ごとに削除
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
+(global-set-key (kbd "C-c -") 'recenter-top-bottom) ; 折り返しをトグル
 
 
 ;; ウィンドウを縦3分割
@@ -193,11 +194,14 @@
 ;; 対応する括弧の強調表示
 (setq show-paren-delay 0) ; 表示までの秒数。初期値は0.125
 (show-paren-mode t) ; 有効化
-(setq show-paren-style 'expression) ; 括弧内も強調
+(setq show-paren-style 'parenthesis) ; カッコのみをハイライト
+(set-face-foreground 'show-paren-match "brightblack")
+(set-face-background 'show-paren-match "#5f8700")
 
 (menu-bar-mode 0) ; メニューバー非表示
 (setq inhibit-startup-screen t) ; スタートアップメッセージを非表示
 (global-hl-line-mode t) ; 現在行をハイライト
+
 
 ;; theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/custom-themes/emacs-color-theme-solarized")
@@ -300,40 +304,11 @@
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (require 'expand-region)
 (global-set-key (kbd "C-o") 'er/expand-region)
-
-
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; @rainbow-delimiters  何故か動かない↓↓
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-;; 括弧の色を強調する設定
-(require 'cl-lib)
-(require 'color)
-(defun rainbow-delimiters-using-stronger-colors ()
-  (interactive)
-  (cl-loop
-   for index from 1 to rainbow-delimiters-max-face-count
-   do
-   (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
-    (cl-callf color-saturate-name (face-foreground face) 30))))
-(add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors)
+;; expand-region.el/js-mode-expansions.el をjsx用に改変(html-mode-expansions.elの設定をコピペしただけ)。オリジナルはetc/の中。
 
 
 
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; @key-chord
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(key-chord-mode t)
-(setq key-chord-two-keys-delay           0.15
-      key-chord-safety-interval-backward 0.1
-      key-chord-safety-interval-forward  0.25)
-(key-chord-define-global "kj" 'windmove-left)
-(key-chord-define-global "kl" 'windmove-right)
-(key-chord-define-global "ki" 'windmove-up)
-(key-chord-define-global "km" 'windmove-down)
-(key-chord-define-global "iu" 'recenter-top-bottom)
+
 
 
 
@@ -361,7 +336,7 @@
     ("6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
  '(package-selected-packages
    (quote
-    (crux key-chord rainbow-delimiters expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

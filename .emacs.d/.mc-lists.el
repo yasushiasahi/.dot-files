@@ -3,7 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	crux-smart-open-line-above
+	helm-for-files
+	helm-show-kill-ring
 	rjsx-delete-creates-full-tag
+	set-linum
 	smart-open-line
 	))
 
