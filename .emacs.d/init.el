@@ -128,6 +128,7 @@
 
 
 
+
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; メジャーモード
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -156,15 +157,37 @@
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
 ;; rjsx-mode
-;; js2-mode に切り替え
 (autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
 (add-hook 'rjsx-mode-hook
           (lambda ()
-            (setq indent-tabs-mode nil) ;;インデントはタブではなくスペース
-            (setq js-indent-level 2) ;;スペースは２つ、デフォルトは4
-            (setq js2-strict-missing-semi-warning nil))) ;;行末のセミコロンの警告はオフ
+            (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
+            (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
+            (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
+	    (when (string-equal "js" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+
+(require 'flycheck)
+(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
+;;(flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
+(add-hook 'rjsx-mode-hook 'flycheck-mode)
+
+
+;; tide-mode
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
+(setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
+(add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
 
 ;; 入力補完
 (electric-pair-mode t) ; 閉じ括弧自動挿入
@@ -274,13 +297,13 @@
 (define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete) ;; 各種メジャーモードでも C-M-iで company-modeの補完を使う
 
 ;;; company-tern
-(setq company-tern-property-marker "")
-(defun company-tern-depth (candidate)
-  "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
-  (let ((depth (get-text-property 0 'depth candidate)))
-    (if (eq depth nil) 0 depth)))
-(add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
-(add-to-list 'company-backends 'company-tern) ; backendに追加
+;; (setq company-tern-property-marker "")
+;; (defun company-tern-depth (candidate)
+;;   "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
+;;   (let ((depth (get-text-property 0 'depth candidate)))
+;;     (if (eq depth nil) 0 depth)))
+;; (add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
+;; (add-to-list 'company-backends 'company-tern) ; backendに追加
 
 
 
@@ -336,7 +359,7 @@
     ("6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
  '(package-selected-packages
    (quote
-    (crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
