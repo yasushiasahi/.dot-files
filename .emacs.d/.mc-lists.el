@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	crux-kill-whole-line
 	crux-smart-open-line-above
 	helm-for-files
 	helm-show-kill-ring

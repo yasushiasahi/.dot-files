@@ -14,6 +14,13 @@ SAVEHIST=10000
 setopt extended_history #ヒストリに実行時間も保存
 setopt hist_ignore_dups #直前と同じコマンドはヒストリに追加しない
 
+# シェルのプロセスごとに履歴を共有
+setopt share_history
+
+# N P による履歴呼び出しを入力済み文字にマッチしたコマンド検索にする
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
+
 # 自動補完を有効にする
 # コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
 # 例： `cd path/to/<Tab>`, `ls -<Tab>`

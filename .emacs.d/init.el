@@ -1,3 +1,7 @@
+;;; package --- Summary
+;;; Commentary:
+
+;;; Code:
 ;;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; EPLAパッケージの有効化
 ;;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -34,6 +38,7 @@
 (global-set-key (kbd "C-x ?") 'help-command) ; ヘルプコマンド
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ; C-hでバックスペース
 (define-key key-translation-map (kbd "C-l") (kbd "<ESC>")) ; C-lでesc
+(global-set-key (kbd "C-c r")  'recenter-top-bottom) ; 元のC-l
 (global-unset-key (kbd "C-t")) ; デフォルトのC-tを無効化
 (global-set-key (kbd "C-t C-b")  'windmove-left) ; 左のペインに移動
 (global-set-key (kbd "C-t C-n")  'windmove-down) ; 下のペインに移動
@@ -48,6 +53,9 @@
 (global-set-key (kbd "C-M-d") 'kill-word) ; 単語ごとに削除
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
 (global-set-key (kbd "C-c -") 'recenter-top-bottom) ; 折り返しをトグル
+(global-set-key (kbd "C-c c s") 'css-mode) ; css-modo
+(global-set-key (kbd "C-c j s") 'rjsx-mode) ; rjsx-modo
+
 
 
 ;; ウィンドウを縦3分割
@@ -99,6 +107,7 @@
 (global-set-key (kbd "C-c u l") 'unset-linum)
 
 
+
 ;;; @curxを使ったテキスト操作
 (require 'crux)
 (global-unset-key (kbd "C-u")) ; デフォルトのC-u(universal-argument)を無効化
@@ -134,11 +143,11 @@
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; emacs-lisp-mode
 (defun elisp-mode-hooks ()
-  "lisp-mode-hooks"
+  "Lisp-mode-hooks"
   (when (require 'eldoc nil t)
     (setq eldoc-idle-delay 0.2)
     (setq eldoc-echo-area-use-multiline-p t)
-    (turn-on-eldoc-mode)))
+    (eldoc-mode)))
 (add-hook 'emacs-lisp-mode-hook 'elisp-mode-hooks) ;Elipsの関数をモードラインに表示
 
 ;; web-mode
@@ -151,42 +160,35 @@
   (setq web-mode-markup-indent-offset 2) ; HTMLのンデント幅
   (setq web-mode-css-indent-offset 2)  ; CSSのンデント幅
   (setq web-mode-code-indent-offset 2)  ; Ruby、PHP等のンデント幅
+  (setq indent-tabs-mode nil)
+  (setq tab-width 2)
   (setq web-mode-enable-auto-closing 2) ; 閉じタグ自動補完
   (setq web-mode-enable-auto-pairing 2) ; 閉じタグ自動補完
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-;; rjsx-mode
-(autoload 'js2-mode "js2-mode" nil t)
+;; ;; rjsx-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
-;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
-;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-hook 'rjsx-mode-hook
           (lambda ()
             (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
             (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
-            (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
-	    (when (string-equal "js" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
-
-(require 'flycheck)
-(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
-;;(flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
-(add-hook 'rjsx-mode-hook 'flycheck-mode)
+            (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON")) ;指定した文字列の警告をオフ
+            (setq js2-strict-missing-semi-warning nil))) ;行末のセミコロンの警告はオフ
 
 
-;; tide-mode
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  (company-mode +1))
-(setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
-(add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
-(add-hook 'typescript-mode-hook #'setup-tide-mode)
+;; (defun setup-tide-mode ()
+;;   (interactive)
+;;   (tide-setup)
+;;   (flycheck-mode +1)
+;;   (setq flycheck-check-syntax-automatically '(save mode-enabled))
+;;   (eldoc-mode +1)
+;;   (tide-hl-identifier-mode +1)
+;;   (company-mode +1))
+;; (setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
+;; (add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
+
 
 
 ;; 入力補完
@@ -206,6 +208,8 @@
 ;; モードライン
 (column-number-mode t) ; カラム番号を表示
 (size-indication-mode t) ; ファイスサイズを表示
+(set-face-foreground 'mode-line "#e4e4e4")
+(set-face-foreground 'mode-line-inactive "#5f8700")
 
 ;; 左端に行番号を表示
 (require 'linum)
@@ -297,13 +301,13 @@
 (define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete) ;; 各種メジャーモードでも C-M-iで company-modeの補完を使う
 
 ;;; company-tern
-;; (setq company-tern-property-marker "")
-;; (defun company-tern-depth (candidate)
-;;   "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
-;;   (let ((depth (get-text-property 0 'depth candidate)))
-;;     (if (eq depth nil) 0 depth)))
-;; (add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
-;; (add-to-list 'company-backends 'company-tern) ; backendに追加
+(setq company-tern-property-marker "")
+(defun company-tern-depth (candidate)
+  "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
+  (let ((depth (get-text-property 0 'depth candidate)))
+    (if (eq depth nil) 0 depth)))
+(add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
+(add-to-list 'company-backends 'company-tern) ; backendに追加
 
 
 
@@ -330,6 +334,12 @@
 ;; expand-region.el/js-mode-expansions.el をjsx用に改変(html-mode-expansions.elの設定をコピペしただけ)。オリジナルはetc/の中。
 
 
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @expand-region
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;;flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 
@@ -367,3 +377,5 @@
  ;; If there is more than one, they won't work right.
  )
 ;;; DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !!
+
+;;; init.el ends here
