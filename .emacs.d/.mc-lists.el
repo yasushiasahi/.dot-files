@@ -4,7 +4,9 @@
 (setq mc/cmds-to-run-for-all
       '(
 	crux-kill-whole-line
+	crux-move-beginning-of-line
 	crux-smart-open-line-above
+	helm-M-x
 	helm-for-files
 	helm-show-kill-ring
 	rjsx-delete-creates-full-tag

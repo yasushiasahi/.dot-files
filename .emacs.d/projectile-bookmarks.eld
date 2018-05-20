@@ -1,0 +1,1 @@
+("~/Google ドライブ/Projects/fuwafuwa_hair_salon/Codes/" "~/.dot-files/" "~/Google ドライブ/Projects/fuwafuwa_hair_salon/Codes/" "~/Desktop/Codes/")

@@ -208,8 +208,8 @@
 ;; モードライン
 (column-number-mode t) ; カラム番号を表示
 (size-indication-mode t) ; ファイスサイズを表示
-(set-face-foreground 'mode-line "#e4e4e4")
-(set-face-foreground 'mode-line-inactive "#5f8700")
+(set-face-foreground 'mode-line "cyan")
+(set-face-foreground 'mode-line-inactive "green")
 
 ;; 左端に行番号を表示
 (require 'linum)
@@ -223,7 +223,7 @@
 (show-paren-mode t) ; 有効化
 (setq show-paren-style 'parenthesis) ; カッコのみをハイライト
 (set-face-foreground 'show-paren-match "brightblack")
-(set-face-background 'show-paren-match "#5f8700")
+(set-face-background 'show-paren-match "green")
 
 (menu-bar-mode 0) ; メニューバー非表示
 (setq inhibit-startup-screen t) ; スタートアップメッセージを非表示
@@ -235,16 +235,6 @@
 (set-frame-parameter nil 'background-mode 'dark)
 (set-terminal-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
-
-;; moe-theme
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
-;; (add-to-list 'load-path "~/.emacs.d/elpa/moe-theme-20170914.2111/")
-;; (require 'moe-theme)
-;; (setq moe-theme-highlight-buffer-id t)
-;; (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
-;; (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0))
-;; (moe-theme-set-color 'orange) ; モードラインの色
-;; (moe-dark) ; ダークテーマ;
 
 
 
@@ -335,14 +325,26 @@
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; @expand-region
+;;; @flycheck
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;;flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @flycheck
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(package-install 'projectile)
+(when (require 'projectile nil t)
+  (projectile-mode)                           ;;自動的にプロジェクト管理を開始
+  (add-to-list
+    'projectile-globally-ignored-directories
+    "node_modules")                           ;; プロジェクト管理から除外するディレクトリを追加
+  (setq projectile-enable-caching t))         ;; プロジェクト情報をキャッシュする
 
+(when (require 'helm-projectile nil t)        ;; Helmを使って利用する
+  (setq projectile-completion-system 'helm))
 
 
 
@@ -369,7 +371,7 @@
     ("6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
  '(package-selected-packages
    (quote
-    (js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (quickrun helm-projectile projectile js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
