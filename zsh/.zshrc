@@ -50,6 +50,9 @@ case ${OSTYPE} in
         ;;
 esac
 
+# treeの色の設定
+alias tree='tree -C'
+
 # 補完候補のファイル、ディレクトリにlsと同様の色付け
 if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

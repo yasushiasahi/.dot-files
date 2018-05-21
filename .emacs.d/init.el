@@ -231,12 +231,13 @@
 
 
 ;; theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/custom-themes/emacs-color-theme-solarized")
+(when (eq system-type 'gnu/linux)
+  (add-to-list 'custom-theme-load-path "/home/asahi/.dot-files/.emacs.d/custom-themes/emacs-color-theme-solarized"))
+(when (eq system-type 'darwin)
+  (add-to-list 'custom-theme-load-path "~/.dot-files/.emacs.d/custom-themes/emacs-color-theme-solarized"))
 (set-frame-parameter nil 'background-mode 'dark)
 (set-terminal-parameter nil 'background-mode 'dark)
 (load-theme 'solarized t)
-
-
 
 
 
@@ -368,10 +369,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
+    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
  '(package-selected-packages
    (quote
-    (quickrun helm-projectile projectile js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (solarized-theme quickrun helm-projectile projectile js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
