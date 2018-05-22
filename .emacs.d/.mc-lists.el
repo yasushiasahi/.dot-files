@@ -9,12 +9,10 @@
 	helm-M-x
 	helm-for-files
 	helm-show-kill-ring
-	rjsx-delete-creates-full-tag
 	set-linum
 	smart-open-line
 	))
 
 (setq mc/cmds-to-run-once
       '(
-	xterm-paste
 	))
