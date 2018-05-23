@@ -31,6 +31,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
+
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; キーバインド（一般）
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -136,8 +137,6 @@
 
 
 
-
-
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; メジャーモード
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -179,7 +178,7 @@
 	    (setq company-backends '((
 				      company-files
 				      company-keywords
-				      ompany-capf
+				      company-capf
 				      company-tern
 				      company-dabbrev-code
 				      company-yasnippet
@@ -237,6 +236,8 @@
 (setq inhibit-startup-screen t) ; スタートアップメッセージを非表示
 (global-hl-line-mode t) ; 現在行をハイライト
 
+;; リージョンの色
+(set-face-foreground 'region "white")
 
 ;;; @solarized  theme
 (set-frame-parameter nil 'background-mode 'dark)
@@ -322,7 +323,7 @@
 (require 'js2-refactor)
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (add-hook 'rjsx-mode-hook #'js2-refactor-mode)
-(js2r-add-keybindings-with-prefix "C-c <RET>")
+(js2r-add-keybindings-with-prefix "C-c m")
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -345,6 +346,7 @@
 ;;;flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -370,6 +372,30 @@
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @rainbow-delimiters
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; (require 'cl-lib)
+;; (require 'color)
+;; (defun rainbow-delimiters-using-stronger-colors ()
+;;   (interactive)
+;;   (cl-loop
+;;    for index from 1 to rainbow-delimiters-max-face-count
+;;    do
+;;    (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
+;;     (cl-callf color-saturate-name (face-foreground face) 30))))
+;; (add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors)
+
+;; 参考
+;; https://qiita.com/megane42/items/ee71f1ff8652dbf94cf7
+
+
+
+
+
 
 
 
@@ -393,7 +419,7 @@
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
  '(package-selected-packages
    (quote
-    (color-theme-solarized company-statistics yasnippet-snippets yasnippet quickrun helm-projectile projectile js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (rainbow-delimiters color-theme-solarized company-statistics yasnippet-snippets yasnippet quickrun helm-projectile projectile js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

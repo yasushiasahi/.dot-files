@@ -38,6 +38,16 @@ export TERM=xterm-256color
 # emacsを標準エディターにする
 export EDITOR=emacs
 
+# 補完候補のファイル、ディレクトリにlsと同様の色付け
+if [ -n "$LS_COLORS" ]; then
+    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
+
+
+
+# alias >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+scripts_path=~/.dot-files/zsh/scripts
+
 # lsの色の設定 https://qiita.com/yuyuchu3333/items/84fa4e051c3325098be3
 case ${OSTYPE} in
     darwin*) # macosの場合
@@ -50,14 +60,11 @@ case ${OSTYPE} in
         ;;
 esac
 
-# treeの色の設定
-alias tree='tree -C'
+alias tree='tree -C' # treeに色を付ける
+alias cd='source ${scripts_path}/cdls.sh' # cdした後に自動でlsする
+alias mdcd='source ${scripts_path}/mdcd.sh' # mdcd hoge でhogeディレクトリを作って移動する
 
-# 補完候補のファイル、ディレクトリにlsと同様の色付け
-if [ -n "$LS_COLORS" ]; then
-    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-fi
-
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< alias
 
 
 # zplug >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -83,6 +90,7 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< zplug
+
 
 # theme pure の設定
 autoload -U promptinit; promptinit
