@@ -167,7 +167,7 @@
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-;; ;; rjsx-mode
+;;; rjsx-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-hook 'rjsx-mode-hook
@@ -299,21 +299,23 @@
 (define-key company-active-map (kbd "C-f") 'company-complete-selection) ;; C-fでも候補を設定
 (define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete) ;; 各種メジャーモードでも C-M-iで company-modeの補完を使う
 
-;; 参考
-; 「emacsの補完用パッケージcompany-mode」 https://qiita.com/sune2/items/b73037f9e85962f5afb7
-; https://github.com/company-mode/company-mode/issues/407
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @company-statistics
+(require 'company-statistics)
+(company-statistics-mode)
 
-
-
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; company-tern
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @company-tern
 (setq company-tern-property-marker "")
 (defun company-tern-depth (candidate)
   "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
   (let ((depth (get-text-property 0 'depth candidate)))
     (if (eq depth nil) 0 depth)))
 (add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
+
+;; 参考
+; 「emacsの補完用パッケージcompany-mode」 https://qiita.com/sune2/items/b73037f9e85962f5afb7
+; https://github.com/company-mode/company-mode/issues/407
 
 
 
