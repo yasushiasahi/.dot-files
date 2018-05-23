@@ -3,4 +3,4 @@
 # key: const
 # group: es6
 # --
-const ${1:name} = ${2:initial};
+const ${1:name} = ${2:initial}

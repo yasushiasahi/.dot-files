@@ -1,4 +1,4 @@
-;;; package --- Summary
+;;; packgage --- Summary
 ;;; Commentary:
 
 ;;; Code:
@@ -175,7 +175,15 @@
             (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
             (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON")) ;指定した文字列の警告をオフ
-            (setq js2-strict-missing-semi-warning nil))) ;行末のセミコロンの警告はオフ
+            (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
+	    (setq company-backends '((
+				      company-files
+				      company-keywords
+				      ompany-capf
+				      company-tern
+				      company-dabbrev-code
+				      company-yasnippet
+				      ) (company-abbrev company-dabbrev))))) ;加えたいcompanyの設定を書く
 
 
 ;; (defun setup-tide-mode ()
@@ -274,7 +282,7 @@
 ;(add-hook 'after-init-hook 'global-company-mode)
 (require 'company)
 (global-company-mode) ; 全バッファで有効にする
-(setq company-transformers '(company-sort-by-backend-importance)) ;; ソート順
+(setq company-transformers '(company-sort-by-statistics company-sort-by-backend-importance)) ;; 使用履歴＆ソート順
 (setq company-idle-delay 0) ; デフォルトは0.5
 (setq company-minimum-prefix-length 2) ; デフォルトは4
 (setq company-selection-wrap-around t) ; 候補の一番下でさらに下に行こうとすると一番上に戻る
@@ -291,14 +299,21 @@
 (define-key company-active-map (kbd "C-f") 'company-complete-selection) ;; C-fでも候補を設定
 (define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete) ;; 各種メジャーモードでも C-M-iで company-modeの補完を使う
 
+;; 参考
+; 「emacsの補完用パッケージcompany-mode」 https://qiita.com/sune2/items/b73037f9e85962f5afb7
+; https://github.com/company-mode/company-mode/issues/407
+
+
+
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; company-tern
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (setq company-tern-property-marker "")
 (defun company-tern-depth (candidate)
   "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
   (let ((depth (get-text-property 0 'depth candidate)))
     (if (eq depth nil) 0 depth)))
 (add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
-(add-to-list 'company-backends 'company-tern) ; backendに追加
 
 
 
@@ -379,7 +394,7 @@
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yasnippet solarized-theme quickrun helm-projectile projectile js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+    (company-statistics yasnippet-snippets yasnippet quickrun helm-projectile projectile js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
