@@ -3,14 +3,23 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	beginning-of-buffer
 	crux-kill-whole-line
 	crux-move-beginning-of-line
 	crux-smart-open-line-above
+	electric-pair-delete-pair
+	end-of-buffer
 	helm-M-x
 	helm-for-files
-	helm-show-kill-ring
+	js2r-ternary-to-if
+	kill-region
+	kill-sexp
+	rjsx-delete-creates-full-tag
+	rjsx-electric-gt
 	set-linum
 	smart-open-line
+	xterm-paste
+	yas-expand
 	))
 
 (setq mc/cmds-to-run-once

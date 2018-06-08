@@ -7,5 +7,7 @@ export PATH
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
+# gtags
+export GTAGSCONF="$HOME/.globalrc"
+export GTAGSLABEL=pygments
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PATH
-

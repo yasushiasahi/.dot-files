@@ -1,1 +1,1 @@
-("~/.dot-files/" "/home/asahi/.dot-files/" "~/Google ドライブ/Projects/fuwafuwa_hair_salon/Codes/" "~/Google ドライブ/Projects/fuwafuwa_hair_salon/Codes/" "~/Desktop/Codes/")
+("~/ASAHI/Projects/fuwafuwa_hair_salon/Codes/")

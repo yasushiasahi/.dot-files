@@ -52,15 +52,16 @@ scripts_path=~/.dot-files/zsh/scripts
 case ${OSTYPE} in
     darwin*) # macosの場合
         eval $(gdircolors ~/.dircolors-solarized)
-	alias ls='gls -al --color=auto'
+	alias ls='gls -Al --color=auto'
         ;;
     linux*) # linuxの場合
         eval $(dircolors ~/.dircolors-solarized)
-	alias ls='ls -al --color=auto'
+	alias ls='ls -Al --color=auto'
         ;;
 esac
 
 alias tree='tree -C' # treeに色を付ける
+alias diff='colordiff' # 色付きのdiffを使用
 alias cd='source ${scripts_path}/cdls.sh' # cdした後に自動でlsする
 alias mdcd='source ${scripts_path}/mdcd.sh' # mdcd hoge でhogeディレクトリを作って移動する
 

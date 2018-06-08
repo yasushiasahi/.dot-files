@@ -166,35 +166,61 @@
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+
 ;;; rjsx-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
-(add-hook 'rjsx-mode-hook
+;; (add-hook 'rjsx-mode-hook
+;;           (lambda ()
+;;             (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
+;;             (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
+;;             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON")) ;指定した文字列の警告をオフ
+;;             (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
+;; 	    (setq company-backends '((
+;; 				      company-files
+;; 				      company-keywords
+;; 				      company-capf
+;; 				      company-tern
+;; 				      company-dabbrev-code
+;; 				      company-yasnippet
+;; 				      ) (company-abbrev company-dabbrev))))) ;加えたいcompanyの設定を書く
+
+
+;;; js2-mode
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+(add-hook 'js2-mode-hook
           (lambda ()
             (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
             (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON")) ;指定した文字列の警告をオフ
             (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
-	    (setq company-backends '((
-				      company-files
-				      company-keywords
-				      company-capf
-				      company-tern
-				      company-dabbrev-code
-				      company-yasnippet
-				      ) (company-abbrev company-dabbrev))))) ;加えたいcompanyの設定を書く
+	    ))
 
 
-;; (defun setup-tide-mode ()
-;;   (interactive)
-;;   (tide-setup)
-;;   (flycheck-mode +1)
-;;   (setq flycheck-check-syntax-automatically '(save mode-enabled))
-;;   (eldoc-mode +1)
-;;   (tide-hl-identifier-mode +1)
-;;   (company-mode +1))
-;; (setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
-;; (add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
+;; (setq company-backends '((company-tide
+;; 			  company-dabbrev-code
+;; 			  company-yasnippet
+;; 			  company-files
+;; 			  company-keywords
+;; 			  company-capf) (company-abbrev company-dabbrev))) ;加えたいcompanyの設定を書く
+
+
+
+;;; tide-mode
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
+(setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
+(add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
+(add-hook 'js2-mode-hook #'setup-tide-mode)
+;; configure javascript-tide checker to run after your default javascript checker
+;;(flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append) ;エラーが出る原因不明
+
 
 
 
@@ -238,6 +264,7 @@
 
 ;; リージョンの色
 (set-face-foreground 'region "white")
+(set-face-background 'region "brightgreen")
 
 ;;; @solarized  theme
 (set-frame-parameter nil 'background-mode 'dark)
@@ -256,6 +283,42 @@
 (global-set-key (kbd "C-x C-b") 'helm-for-files) ; helmでUIでカレントバッファとか見る
 (global-unset-key (kbd "M-x"))
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+
+
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @helm-tags
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; Enable helm-gtags-mode
+(add-hook 'rjsx-mode-hook 'helm-gtags-mode)
+(add-hook 'js2-mode-hook 'helm-gtags-mode)
+
+;; customize
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-fuzzy-match t)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-path-style (quote relative))
+ '(helm-gtags-prefix-key nil)
+ '(helm-gtags-pulse-at-cursor t)
+ '(package-selected-packages
+   (quote
+    (projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
+
+;; key bindings
+(with-eval-after-load 'helm-gtags
+  (define-key helm-gtags-mode-map (kbd "C-x d") 'helm-gtags-find-files)
+  (define-key helm-gtags-mode-map (kbd "C-c n") 'helm-gtags-dwim)
+  (define-key helm-gtags-mode-map (kbd "C-c m") 'helm-gtags-pop-stack)
+  (define-key helm-gtags-mode-map (kbd "C-c ,") 'helm-gtags-previous-history)
+  (define-key helm-gtags-mode-map (kbd "C-c .") 'helm-gtags-next-history)
+  (define-key helm-gtags-mode-map (kbd "C-c /") 'helm-gtags-show-stack))
+
+
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -304,12 +367,12 @@
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @company-tern
-(setq company-tern-property-marker "")
-(defun company-tern-depth (candidate)
-  "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
-  (let ((depth (get-text-property 0 'depth candidate)))
-    (if (eq depth nil) 0 depth)))
-(add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
+;; (setq company-tern-property-marker "")
+;; (defun company-tern-depth (candidate)
+;;   "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
+;;   (let ((depth (get-text-property 0 'depth candidate)))
+;;     (if (eq depth nil) 0 depth)))
+;; (add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
 
 ;; 参考
 ; 「emacsの補完用パッケージcompany-mode」 https://qiita.com/sune2/items/b73037f9e85962f5afb7
@@ -323,7 +386,7 @@
 (require 'js2-refactor)
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (add-hook 'rjsx-mode-hook #'js2-refactor-mode)
-(js2r-add-keybindings-with-prefix "C-c m")
+(js2r-add-keybindings-with-prefix "C-c <RET>")
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -350,7 +413,7 @@
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; @flycheck
+;;; @projectile
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (package-install 'projectile)
 (when (require 'projectile nil t)
@@ -370,6 +433,9 @@
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+;; react-snippets.el
+(require 'react-snippets)
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -394,6 +460,24 @@
 
 
 
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @Prettier-js
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'prettier-js)
+(setq prettier-js-args '(
+  "--no-semi" "false"
+  "--single-quote" "true"
+  "--jsx-bracket-same-line" "true"
+  "--print-width" "100"
+))
+(add-hook 'rjsx-mode-hook 'prettier-js-mode)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+
+
+
+
+
+
 
 
 
@@ -409,17 +493,7 @@
 
 
 ;;; DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !!
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" default)))
- '(package-selected-packages
-   (quote
-    (rainbow-delimiters color-theme-solarized company-statistics yasnippet-snippets yasnippet quickrun helm-projectile projectile js2-mode tide crux expand-region js2-refactor atom-one-dark-theme company-tern rjsx-mode undo-tree company ace-isearch avy helm-swoop multiple-cursors web-mode helm moe-theme))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
