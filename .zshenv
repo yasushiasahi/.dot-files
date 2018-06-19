@@ -10,4 +10,8 @@ eval "$(anyenv init -)"
 # gtags
 export GTAGSCONF="$HOME/.globalrc"
 export GTAGSLABEL=pygments
+
+export GOPATH="$HOME/.go"
+export GOROOT="$HOME/.anyenv/envs/goenv/versions/1.10.3"
+export PATH="$GOPATH/bin:$PATH"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PATH

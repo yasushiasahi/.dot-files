@@ -223,6 +223,18 @@
 
 
 
+;; go-mode
+(require 'company-go)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+(add-hook 'go-mode-hook (lambda ()
+                          (set (make-local-variable 'company-backends) '(company-go))
+			  (company-mode)
+			  (setq indent-tabs-mode nil)    ; タブを利用
+			  (setq c-basic-offset 4)        ; tabサイズを4にする
+			  (setq tab-width 4)))
+
+
+
 
 ;; 入力補完
 (electric-pair-mode t) ; 閉じ括弧自動挿入
@@ -307,7 +319,7 @@
  '(helm-gtags-pulse-at-cursor t)
  '(package-selected-packages
    (quote
-    (projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
+    (company-go go-mode projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
 
 ;; key bindings
 (with-eval-after-load 'helm-gtags
@@ -415,13 +427,8 @@
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @projectile
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(package-install 'projectile)
 (when (require 'projectile nil t)
-  (projectile-mode)                           ;;自動的にプロジェクト管理を開始
-  (add-to-list
-    'projectile-globally-ignored-directories
-    "node_modules")                           ;; プロジェクト管理から除外するディレクトリを追加
-  (setq projectile-enable-caching t))         ;; プロジェクト情報をキャッシュする
+  (projectile-mode))                           ;;自動的にプロジェクト管理を開始
 
 (when (require 'helm-projectile nil t)        ;; Helmを使って利用する
   (setq projectile-completion-system 'helm))

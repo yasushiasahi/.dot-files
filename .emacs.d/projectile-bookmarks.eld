@@ -1,1 +1,1 @@
-("~/ASAHI/Projects/fuwafuwa_hair_salon/Codes/")
+("~/.dot-files/")

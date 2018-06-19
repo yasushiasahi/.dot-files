@@ -1,0 +1,9 @@
+[user]
+	name = Yasushi Asahi
+	email = asahi1600@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[push]
+	default = simple

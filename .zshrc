@@ -46,7 +46,7 @@ fi
 
 
 # alias >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-scripts_path=~/.dot-files/zsh/scripts
+scripts_path=~/.dot-files/scripts
 
 # lsの色の設定 https://qiita.com/yuyuchu3333/items/84fa4e051c3325098be3
 case ${OSTYPE} in
