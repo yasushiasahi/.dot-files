@@ -1,0 +1,5306 @@
+: 1521699277:0;brew list
+: 1521699294:35;brew install tmux
+: 1521699342:0;ln -s .dot-files/.tmux.conf
+: 1521699357:0;ls -al
+: 1521699383:0;touch .zsh_hist
+: 1521699416:0;exec $SHELL -l
+: 1521699442:5;git clone https://github.com/riywo/anyenv ~/.anyenv
+: 1521699453:0;exec $SHELL -l
+: 1521699930:0;git config --global user.name "Yasushi Asahi"
+: 1521699952:0;git config --global user.email "asahi1600@gmail.com"
+: 1521699984:0;it config --global color.diff auto
+: 1521699992:0;git config --global color.diff auto
+: 1521699999:0;git config --global color.status auto
+: 1521700004:0;git config --global color.branch auto
+: 1521700012:0;git config --global push.default simple
+: 1521700063:73;brew cask install vlc
+: 1521700906:0;exit
+: 1521699468:0;ls -al
+: 1521699489:0;ln -s .dot-files/.emacs.d
+: 1521699499:5;emacs
+: 1521699514:0;rm .bash_history
+: 1521699525:0;rm .bash_sessions
+: 1521699678:1;brew list
+: 1521699685:1221;tmux
+: 1521700909:0;exit
+: 1521703901:0;ls -al Applications
+: 1521703919:0;rm Applications/.localized
+: 1521703927:0;rm Downloads/.localized
+: 1521703933:0;rm Desktop/.localized
+: 1521704129:0;rm Public/.localized
+: 1521704137:0;rm Pictures/.localized
+: 1521704145:0;rm Music/.localized
+: 1521704155:0;rm Movies/.localized
+: 1521704165:0;rm Documents/.localized
+: 1521704174:0;ls -al Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶
+: 1521704206:0;tmux
+: 1521706387:27;brew cask install sdformatter
+: 1521709072:0;exit
+: 1521889017:17;brew cask install cooviewer
+: 1521889076:0;exit
+: 1522286499:0;Desktop
+: 1522286511:0;node -v
+: 1522286527:0;anyenv list
+: 1522286543:0;anyenv --help
+: 1522286566:0;anyenv versions
+: 1522286582:2;anyenv install ndenv
+: 1522286611:0;anyenv install list
+: 1522286657:0;exec $SHELL -l
+: 1522259010:0;Des
+: 1522259014:0;Desktop
+: 1522259027:0;mkdir omikuji
+: 1522259031:0;omikuji
+: 1522269239:165;emacs
+: 1522269413:7;emacs -v
+: 1522269434:0;emacs --version
+: 1522285053:2445;emacs
+: 1522287518:0;..
+: 1522287521:0;ls
+: 1522287527:0;omikuji
+: 1522287530:0;ls -al
+: 1522287561:0;src
+: 1522287562:0;ls
+: 1522287569:0;ls -al
+: 1522288970:77;emacs
+: 1522289052:0;..
+: 1522289055:0;public
+: 1522312579:33;emacs
+: 1522312631:533;emacs 
+: 1522313170:0;exit
+: 1522287634:0;Desktop/omikuji/src
+: 1522287638:0;ls -al
+: 1522288220:0;..
+: 1522288229:0;public
+: 1522288248:0;cp ~/Desktop/styles.css .
+: 1522288590:0;..
+: 1522288612:0;mkdir junk
+: 1522288616:0;jun
+: 1522288620:0;junk
+: 1522288643:0;mv ../omikuji/src/* .
+: 1522288646:0;ls
+: 1522288669:0;..
+: 1522288676:0;omikuji/sr
+: 1522288682:0;omikuji/src
+: 1522288715:0;mv ../../junk/* .
+: 1522313175:0;exit
+: 1522286678:0;ndenv versions
+: 1522286690:2;ndenv install list
+: 1522286729:0;ndenv --help
+: 1522286807:1;ndenv install -l
+: 1522286824:19;ndenv install v9.10.0
+: 1522286854:0;ndenv rehash
+: 1522286868:0;ndenv -v
+: 1522286877:0;node -v
+: 1522286899:0;ndenv global v9.10.0
+: 1522286906:0;ndenv rehash
+: 1522286910:0;node -v
+: 1522286941:0;mv omikuji/*
+: 1522286948:0;ls omikuji
+: 1522286954:0;ls 
+: 1522286977:0;..
+: 1522286979:0;ls
+: 1522287053:0;Desktop
+: 1522287060:0;mv omikuji/styles.css .
+: 1522287062:0;ls
+: 1522287074:0;omikuji
+: 1522287231:0;~
+: 1522287264:3;npm install -g create-react-app
+: 1522287275:0;ndenv rehash
+: 1522287310:0;Desktop
+: 1522287326:0;rm omikuji
+: 1522287333:0;rm -r omikuji
+: 1522287358:50;create-react-app omikuji
+: 1522287443:0;omikuji
+: 1522287972:25205;npm start
+: 1522313181:0;exit
+: 1522313517:0;tmux -v
+: 1522313529:0;tmux --version
+: 1522313534:0;exit
+: 1522314413:0;tmux =V
+: 1522314418:0;tmux -V
+: 1522315112:8;emacs
+: 1522315154:0;exit
+: 1522315216:11;emacs
+: 1522315241:0;Desktop/omikuji/public
+: 1522315244:3871;emacs
+: 1522319124:0;exti
+: 1522319146:0;exit
+: 1522313187:57;tmux
+: 1522313247:158;emacs
+: 1522313410:124;tmux
+: 1522313537:9;tmux -v
+: 1522313557:0;tmux --version
+: 1522313571:0;which tmux
+: 1522313589:0;tmux --help
+: 1522313608:0;tmux -V
+: 1522313696:393;tmux
+: 1522314380:6;emacs
+: 1522314390:9751;tmux
+: 1522324202:0;exit
+: 1522400434:0;.dot-files
+: 1522400436:0;ls
+: 1522400442:0;ls -al
+: 1522400459:0;git status
+: 1522400489:0;git add .
+: 1522400535:0;git commit -m "update init.el"
+: 1522400693:0;git log
+: 1522400819:22;git push -u origin master
+: 1522415986:0;exit
+: 1522438000:3;npm install -g tern
+: 1522438061:0;ndenv rehash
+: 1522438100:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1522438103:0;ndenv rehash
+: 1522438128:12;npm i -g npm
+: 1522438154:0;npm -v
+: 1522438170:0;ndenv rehash
+: 1522438193:1309;emacs
+: 1522439508:0;exit
+: 1522436127:1821;emacs
+: 1522438630:0;ls -al
+: 1522438697:10;rm .viminfo
+: 1522438709:0;ls -al
+: 1522438723:3;sudo rm .viminfo
+: 1522438756:0;rm .bash_sessions
+: 1522438769:0;rm -r .bash_sessions
+: 1522438975:0;ls -al
+: 1522439511:0;exit
+: 1522319424:0;Desktop/Js
+: 1522319433:0;Desktop/JS_training/public
+: 1522319436:31;emacs
+: 1522319469:0;ls
+: 1522342656:2495;emacs
+: 1522345155:0;~
+: 1522345168:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522345183:0;public
+: 1522354242:6;emacs
+: 1522354268:0;emacs --help
+: 1522354337:22;fg
+: 1522354373:0;jobs
+: 1522355005:84521;fg
+: 1522439530:0;exit
+: 1522319178:0;Desktop/omikuji
+: 1522319196:0;mkdir omikuji
+: 1522319212:0;mv src/* omikuji
+: 1522319218:0;ls src
+: 1522319224:0;ls omikuji
+: 1522319245:0;mv omikuji/* src
+: 1522319268:0;mv public/* omikuji
+: 1522319276:0;ls public
+: 1522319280:0;ls omikuji
+: 1522319336:0;mv omikuji/favicon.ico public
+: 1522319348:0;mv omikuji/manifest.json public
+: 1522319355:0;ls public
+: 1522319362:0;ls omikuji
+: 1522319373:0;..
+: 1522319396:0;mv omikuji JS_training
+: 1522319397:0;ls
+: 1522319404:0;JS_training
+: 1522319484:0;pub
+: 1522319487:0;public
+: 1522319503:0;touch index.html
+: 1522319517:0;touch styles.css
+: 1522319526:0;touch main.js
+: 1522331197:0;..
+: 1522331237:0;mkdir stopWatchGame
+: 1522331290:0;mv public/index.html stopWatchGame
+: 1522331313:0;mv public/main.js stopWatchGame
+: 1522331337:0;mv public/styles.css stopWatchGame
+: 1522331341:0;stopWatchGame
+: 1522331344:0;ls
+: 1522331356:0;..
+: 1522331366:0;pub
+: 1522331370:0;public
+: 1522331381:0;touch index.html
+: 1522331390:0;touch index.js
+: 1522331407:0;touch index.css
+: 1522331818:0;ls
+: 1522342667:0;..
+: 1522342717:0;mkdir WarikanDentaku
+: 1522342749:0;mv public/index.* WarikanDentaku
+: 1522342754:0;ls public
+: 1522342796:0;~
+: 1522342797:0;ls
+: 1522342809:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/
+: 1522342810:0;ls
+: 1522342831:0;rm DSC01173.JPG
+: 1522342832:0;ls
+: 1522342944:0;~
+: 1522343911:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming
+: 1522343912:0;ls
+: 1522343987:0;create-react-app JSTraining
+: 1522344037:42;create-react-app js_training
+: 1522344660:0;js_training
+: 1522344666:162;npm start
+: 1522345104:0;ls
+: 1522345116:0;ls -al public
+: 1522353397:0;mkdir password_generator
+: 1522353420:0;cp public/index.* password_generator
+: 1522353430:0;ls -al password_generator
+: 1522357946:0;mkdir text_countdown
+: 1522357976:0;cp public/index.* text_countdown
+: 1522357983:0;ls -al text_countdown
+: 1522394581:0;mkdir stop_watch
+: 1522394603:0;cp public/index.* stop_watch
+: 1522394614:0;ls stop_watch
+: 1522394621:0;ls -al
+: 1522427549:0;mkdir countdown_timer
+: 1522427564:0;cp public/index.* countdown_timer
+: 1522427572:0;ls -al countdown_timer
+: 1522430861:0;public
+: 1522430877:0;mkdir img
+: 1522430883:0;img
+: 1522430885:0;ls
+: 1522430926:0;mv /Users/asahi/Desktop/bell.png /Users/asahi/Desktop/cherry.png /Users/asahi/Desktop/seven.png .
+: 1522430929:0;la
+: 1522430933:0;ls
+: 1522430940:0;..
+: 1522430943:0;tree
+: 1522430965:0;brew list
+: 1522430975:19;brew install tree
+: 1522431006:0;tree
+: 1522431026:0;ls -al ~/Desktop
+: 1522439533:0;exti
+: 1522439535:0;exit
+: 1522315329:0;Desktop/omikuji
+: 1522345016:2;npm start
+: 1522345034:0;~
+: 1522345056:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶
+: 1522345065:0;ls
+: 1522345076:0;programming
+: 1522345080:0;js_training
+: 1522416012:23526;npm start
+: 1522439541:0;exit
+: 1522324191:115350;tmux a
+: 1522439545:0;exit
+: 1522440065:0;exti
+: 1522440068:0;exit
+: 1522440050:152;emacs
+: 1522440225:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522440230:0;ls
+: 1522452202:41;emacs
+: 1522454706:0;exit
+: 1522440195:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522451852:0;mkdir slot_machine
+: 1522451897:0;cp -r public/img slot_machine
+: 1522451922:0;cp public/index.* slot_machine
+: 1522451931:0;ls -al slot_machine
+: 1522454713:0;exit
+: 1522440101:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522440123:14595;npm start
+: 1522454720:0;exit
+: 1522440014:14706;tmux
+: 1522454723:0;exit
+: 1522502178:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522502187:0;exec $SHELL -l
+: 1522504362:0;exit
+: 1522501889:2477;emacs
+: 1522504369:0;exit
+: 1522498897:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522498904:0;mkdir img
+: 1522498911:0;ls 
+: 1522498924:0;ls img
+: 1522498978:0;mv -r img ../slot_machine
+: 1522498991:0;mv  img ../slot_machine
+: 1522499004:0;ls img
+: 1522499011:0;..
+: 1522499035:0;mv public/img slot_machine
+: 1522499052:0;ls slot_machine/img
+: 1522499058:0;public
+: 1522499074:5;rm img/*
+: 1522499082:0;ls img
+: 1522499115:0;cp ~/Desktop/*gif img
+: 1522499158:0;mv ~/Desktop/logo.png img
+: 1522499187:0;rm /Users/asahi/Desktop/bg-fire.gif /Users/asahi/Desktop/bg-thunder.gif /Users/asahi/Desktop/bg-water.gif /Users/asahi/Desktop/fighter.gif /Users/asahi/Desktop/hero.gif /Users/asahi/Desktop/unknown.gif /Users/asahi/Desktop/wizard.gif 
+: 1522499197:0;ls -al ~/Desktop
+: 1522499232:0;mv ~/Desktop/init_el_example ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming
+: 1522499237:0;ls -al ~/Desktop
+: 1522499266:0;ls -al ../
+: 1522499275:0;ls -al ../../
+: 1522499287:0;..
+: 1522499533:0;mv ~/Desktop/JS_training/WarikanDentaku ~/Desktop/JS_training/omikuji ~/Desktop/JS_training/stopWatchGame .
+: 1522499535:0;ls
+: 1522499584:0;rm ~/Desktop/JS_training
+: 1522499591:3;rm -r ~/Desktop/JS_training
+: 1522499605:0;ls -al ~/Desktop
+: 1522499921:0;ls -la --color=auto
+: 1522499991:0;ls -la -color=auto
+: 1522500579:20;brew install coreutils
+: 1522500618:0;gls
+: 1522500632:0;gls --color
+: 1522504374:0;exit
+: 1522491686:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522491688:0;ls
+: 1522491696:12680;emacs
+: 1522504379:0;exit
+: 1522491774:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522491777:12606;npm start
+: 1522504385:0;exit
+: 1522491641:12744;tmux
+: 1522504389:0;exit
+: 1522504736:0;tmux
+: 1522505382:0;cd zsh
+: 1522505394:0;ls
+: 1522505399:0;ls -al
+: 1522505470:3;git clone https://github.com/seebi/dircolors-solarized.git
+: 1522505494:0;ls
+: 1522505519:0;cd dircolors-solarized
+: 1522505520:0;ls
+: 1522505601:0;exit
+: 1522505374:227;zsh
+: 1522505606:0;exit
+: 1522504845:0;prompt -c
+: 1522504866:0;prompt -l
+: 1522504919:0;prompt -p
+: 1522505313:0;.dot-files
+: 1522505322:0;sl
+: 1522505323:0;ls
+: 1522505332:0;gls -al
+: 1522505353:0;gls --color -al
+: 1522505367:239;zsh
+: 1522505615:0;exit
+: 1522505623:0;exit
+: 1522505647:0;Desktop/
+: 1522506145:0;cd .dot-files
+: 1522506153:0;~
+: 1522506173:0;.dot-files/zsh/dircolors-solarized
+: 1522506175:0;ls
+: 1522506223:0;exec $SHELL -l
+: 1522506234:0;ls -al
+: 1522506323:0;exec $SHELL -l
+: 1522506328:0;ls 
+: 1522506559:0;exec $SHELL -l
+: 1522505764:0;.dot-files/zsh
+: 1522505765:0;ls
+: 1522505933:0;~
+: 1522505935:1061;emacs
+: 1522506999:0;exit
+: 1522506567:0;ls al
+: 1522506572:0;ls -al
+: 1522506641:0;gls
+: 1522506651:0;gls --color -al
+: 1522506736:0;ls -al
+: 1522507002:0;exit
+: 1522505638:1364;tmux
+: 1522507005:0;exit
+: 1522505580:0;Desktop/omikuji
+: 1522505594:0;Desktop/
+: 1522507011:0;exit
+: 1522507623:0;ls -al
+: 1522507770:0;~
+: 1522507774:0;ls -al
+: 1522507797:5;emacs
+: 1522507868:0;exec $SHELL -l
+: 1522507873:0;ls -al
+: 1522508008:0;ln -fs ~/.dot-files/zsh/dircolors-solarized/dircolors.ansi-universal .dircolors-solarized
+: 1522508011:0;ls -al
+: 1522508070:0;exec $SHELL -l
+: 1522508075:0;ls -al
+: 1522508115:0;ls Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522508142:0;ls Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/src
+: 1522508160:0;ls Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522508191:0;exec $SHELL -l
+: 1522508194:0;ls
+: 1522508255:0;ln -fs ~/.dot-files/zsh/dircolors-solarized/dircolors.ansi-dark .dircolors-solarized
+: 1522508263:0;ls
+: 1522508312:0;ls Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522508339:0;ln -fs ~/.dot-files/zsh/dircolors-solarized/dircolors.256dark .dircolors-solarized
+: 1522508350:0;ls
+: 1522508366:0;exec $SHELL -l
+: 1522508369:0;ls
+: 1522508382:0;ls Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522508404:0;ln -fs ~/.dot-files/zsh/dircolors-solarized/dircolors.ansi-dark .dircolors-solarized
+: 1522508407:0;exec $SHELL -l
+: 1522508409:0;ls
+: 1522508419:0;ls Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522508774:0;exec $SHELL -l
+: 1522509211:0;ls
+: 1522509218:0;ls Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522509348:0;exit
+: 1522507819:0;~
+: 1522509526:87;emacs
+: 1522509632:0;[[[[
+: 1522509668:0;exit
+: 1522507049:0;ls -al
+: 1522507114:0;rm tmux-client-13732.log tmux-client-13763.log tmux-server-13765.log 
+: 1522507117:0;ls -al
+: 1522507159:0;ls
+: 1522507175:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522507182:0;ls -al
+: 1522507197:0;ls src
+: 1522507302:0;ls -al public/img
+: 1522507481:0;ls -al public
+: 1522507618:2050;tmux
+: 1522509671:0;exit
+: 1522513041:0;ls
+: 1522511901:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522513029:0;ls
+: 1522513274:0;ls =
+: 1522513280:0;ls ~
+: 1522513478:0;exit
+: 1522511800:1701;tmux
+: 1522513505:0;exit
+: 1522513682:0;tmux
+: 1522513241:0;tmux
+: 1522513521:138;emacs
+: 1522513665:0;tmux
+: 1522513793:0;tmux list-sessions
+: 1522513820:0;tmux kill-session
+: 1522513710:0;ls
+: 1522513854:0;tmux list-sessions
+: 1522513933:0;tmux kill-server
+: 1522513947:0;tmux list-sessions
+: 1522513954:0;exit
+: 1522514071:0;tmux
+: 1522514235:0;exec $SHELL -l
+: 1522514665:0;tmux source-file ~/.tmux.conf
+: 1522514693:0;exit
+: 1522514119:576;emacs
+: 1522514700:0;exit
+: 1522514710:89;tmux
+: 1522514803:253;emacs
+: 1522515066:13;tmux
+: 1522515088:117;emacs
+: 1522515209:138;tmux
+: 1522515379:41;emacs .dot-files/.tmux.conf
+: 1522515423:17;tmux
+: 1522515476:0;exit
+: 1522515487:75;emacs .dot-files/.tmux.conf
+: 1522515566:25;tmux
+: 1522515593:51;emacs .dot-files/.tmux.conf
+: 1522515646:31;tmux
+: 1522515717:0;tmux list-sessions
+: 1522516391:0;tmux
+: 1522516459:0;exit
+: 1522517031:0;cd zsh
+: 1522517033:0;ls
+: 1522517069:0;mv dircolors-solarized/dircolors.ansi-dark .
+: 1522517071:0;ls
+: 1522517092:12;rm -r dircolors-solarized
+: 1522517113:0;ls
+: 1522517122:0;rm -rf dircolors-solarized
+: 1522517123:0;ls
+: 1522517166:0;ln -fs ~/.dot-files/zsh/dircolors.ansi-dark .dircolors-solarized
+: 1522517172:0;exec $SHELL -l
+: 1522523954:0;ls
+: 1522523985:0;.dot-files
+: 1522524019:0;mv ~/.tern-config .
+: 1522524021:0;ls
+: 1522524034:0;~
+: 1522524036:0;ls
+: 1522524056:0;ln -s .dot-files/.tern-config
+: 1522524059:0;s
+: 1522524062:0;ls
+: 1522524123:0;mv .dircolors-solarized
+: 1522524147:0;rm .dircolors-solarized
+: 1522524148:0;ls
+: 1522524230:4;emacs .dot-files/zsh/dircolors.ansi-dark
+: 1522524247:0;ls .dot-files/zsh/
+: 1522524290:0;rm .dircolors-solarized
+: 1522524295:0;ls
+: 1522524332:0;rm .dot-files/zsh/.dircolors-solarized
+: 1522524339:0;ls .dot-files/zsh/
+: 1522524380:0;ln -s .dot-files/zsh/dircolors.ansi-dark .dircolors-solarized
+: 1522524382:0;ls
+: 1522524413:0;exec $SHELL -l
+: 1522524415:0;ls
+: 1522525463:93;emacs .tern-config
+: 1522526910:0;exit
+: 1522523886:0;ls
+: 1522526913:0;exit
+: 1522516561:10394;emacs
+: 1522526958:0;exit
+: 1522528647:1918;emacs
+: 1522530569:0;exit
+: 1522530031:0;emacs
+: 1522531859:0;emac
+: 1522531862:0;emacs
+: 1522531664:0;tmux
+: 1522531446:933;emacs
+: 1522532395:0;~
+: 1522532407:0;rm .emacs.d
+: 1522532410:2500;emacs
+: 1522534946:0;ln -s .dot-files/.emacs.d
+: 1522534957:0;ls
+: 1522534966:49;emacs
+: 1522535044:0;rm .emacs.d
+: 1522535048:0;ln -s .dot-files/.emacs.d
+: 1522535051:9;emacs
+: 1522535064:0;ls
+: 1522535087:0;rm .emacs.d
+: 1522535101:0;rm -r .emacs.d
+: 1522535103:0;ls
+: 1522535120:0;ln -s .dot-files/.emacs.d
+: 1522535121:0;ls
+: 1522572118:4;emacs
+: 1522572125:0;exit
+: 1522573466:0;exec $SHELL -l
+: 1522572785:0;tmux
+: 1522572661:0;emacs
+: 1522516503:14049;tmux
+: 1522530608:0;.dot-files/.emacs.d
+: 1522530645:19;git clone https://github.com/sellout/emacs-color-theme-solarized.git
+: 1522530684:0;mkdir custom-theme-load-path
+: 1522530706:0;mv -rf emacs-color-theme-solarized custom-theme-load-path
+: 1522530719:0;mv emacs-color-theme-solarized custom-theme-load-path
+: 1522530721:0;ls
+: 1522530733:0;ls cus
+: 1522530758:0;ls custom-theme-load-path
+: 1522530840:6;emacs .init.el
+: 1522530866:556;emacs init.el
+: 1522531438:40690;tmux
+: 1522572389:0;emacs
+: 1522572487:0;emacs
+: 1522573630:0;lv .dot-files/zsh/.zshrc
+: 1522573645:19;less .dot-files/zsh/.zshrc
+: 1522516998:0;.dot-files
+: 1522517005:0;git status
+: 1522517018:0;zsh
+: 1522529674:0;emacs .dot-files/zsh/.zshrc
+: 1522573411:0;emacs
+: 1522517209:0;ls
+: 1522517262:0;~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522517267:0;ls public
+: 1522517293:0;~/.dot-files
+: 1522517299:0;git status
+: 1522517313:0;git log
+: 1522517344:0;git log --graph 
+: 1522517356:0;git add .
+: 1522517364:0;git commit -
+: 1522517392:0;git commit -m "update all"
+: 1522517400:7;git push -u origin master
+: 1522517489:1;brew list
+: 1522517665:0;..
+: 1522517666:0;ls
+: 1522518373:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522518377:8583;npm start
+: 1522529947:62;brew cask install iterm2
+: 1522535447:0;emacs
+: 1522526976:12;emacs
+: 1522527012:0;.dot-files
+: 1522527021:31;emacs .gitignore
+: 1522527061:0;git statue
+: 1522527066:0;git status
+: 1522527120:0;.dot-files
+: 1522527124:17;emacs .gitignore
+: 1522527149:0;git status
+: 1522527380:12;emacs .gitignore
+: 1522527395:0;git status
+: 1522527422:95;emacs .gitignore
+: 1522527519:0;git status
+: 1522527571:0;git rm -r --cached .emacs.d/recentf
+: 1522527585:0;git status
+: 1522527659:0;git add .
+: 1522527714:0;git commit -m "add .tern-config"
+: 1522527735:7;git push -u origin master
+: 1522527817:0;~
+: 1522527822:0;emacs
+: 1522573330:0;ls Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522535221:0;emacs
+: 1522579738:0;tmux list-sessions
+: 1522579746:0;tmux kill-server
+: 1522579782:0;rm .zshrc
+: 1522579783:0;ls
+: 1522579794:0;exec $SHELL -l
+: 1522580261:31;emacs .zshrc
+: 1522580298:0;exec $SHELL -l
+: 1522580318:16;emacs .zshrc
+: 1522580338:0;exec $SHELL -l
+: 1522583051:0;brew uninstall zplug
+: 1522583067:1;brew list
+: 1522583081:0;ls usr/local/opt/
+: 1522583114:0;ls usr/local/
+: 1522583134:0;ls /usr/local/opt/
+: 1522583185:5;curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+: 1522583239:0;exec $SHELL -l
+: 1522583410:0;zplug install
+: 1522583475:1;brew list
+: 1522583485:0;ls /usr/local/opt/zplug
+: 1522583490:0;ls /usr/local/opt/
+: 1522583513:0;rm -rf /usr/local/opt/zplug
+: 1522583566:0;ls /usr/local/opt/
+: 1522583576:4;curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+: 1522583740:0;echo $ZPLUG_HOME
+: 1522583752:0;export ZPLUG_HOME=~/.zplug
+: 1522583760:0;echo $ZPLUG_HOME
+: 1522583795:0;rm -rf /usr/local/opt/zplug
+: 1522583809:0;ls /usr/local/opt/
+: 1522583817:4;curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+: 1522583835:0;exec $SHELL -l
+: 1522582813:0;which zplug
+: 1522582853:0;emacs .zshrc
+: 1522590845:0;ls
+: 1522580354:2399;emacs .zshrc
+: 1522582757:9205;tmux
+: 1522591989:0;tmux kill-server
+: 1522592139:269;emacs .zshrc
+: 1522592435:0;cp .zshrc Desktop
+: 1522592441:0;ls Desktop
+: 1522592476:0;exit
+: 1522593490:0;.dot-files
+: 1522593494:0;git status
+: 1522593585:97;emacs .emacs.d/init.el
+: 1522593689:0;git log
+: 1522647219:28;git diff 
+: 1522647278:0;git diff zsh/.zshrc
+: 1522647361:0;git checkout -- .
+: 1522647372:0;git status
+: 1522647411:12;rm -r .emacs.d/custom-theme-load-path
+: 1522647429:0;git status
+: 1522647439:0;rm -fr .emacs.d/custom-theme-load-path
+: 1522647442:0;git status
+: 1522647460:215;emacs
+: 1522647692:0;~
+: 1522647766:0;diff .dot-files/zsh/.zshrc .zshrc
+: 1522648263:0;.dot-files/zsh
+: 1522648311:0;rm .zshrc
+: 1522648348:0;mv ~/.zshrc .
+: 1522648353:0;~
+: 1522648354:0;ls
+: 1522648448:0;ln -s .dot-files/zsh/.zshrc
+: 1522648449:0;ls
+: 1522648495:0;exec $SHELL -l
+: 1522666847:0;exit
+: 1522648811:0;.dot-files
+: 1522648812:0;ls
+: 1522648816:0;.emacs.d
+: 1522648818:0;ls
+: 1522648886:0;ls elpa
+: 1522649033:0;mkdir custom-theme
+: 1522649035:0;ls
+: 1522649233:0;custom-theme
+: 1522649265:20;git clone https://github.com/sellout/emacs-color-theme-solarized.git
+: 1522649304:0;ls
+: 1522649623:0;../
+: 1522649639:0;mv custom-theme custom-themes
+: 1522649641:0;ls
+: 1522649646:0;ls custom-themes
+: 1522666853:0;exit
+: 1522666857:16;emacs
+: 1522666885:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522666890:0;pub
+: 1522666894:0;public
+: 1522667184:8;emacs
+: 1522667261:0;jobs
+: 1522667265:1258;fg
+: 1522668551:0;~/.dot-files/.emacs.d
+: 1522668553:0;ls
+: 1522668567:0;lv .mc-lists.el
+: 1522668579:18;brew install lv
+: 1522668609:57;lv .mc-lists.el
+: 1522668678:0;ls ~
+: 1522668695:0;..
+: 1522668717:1234;emacs .tern-config
+: 1522669962:0;exit
+: 1522649920:88;emacs
+: 1522650083:962;emacs .dot-files/.emacs.d/init.el
+: 1522651070:0;.dot-files
+: 1522651076:14;git diff
+: 1522651101:0;git status
+: 1522651152:0;git add .
+: 1522651280:0;git status
+: 1522651302:0;.emacs.d
+: 1522651305:0;custom-themes
+: 1522651307:0;ls
+: 1522651321:0;emacs-color-theme-solarized
+: 1522651323:0;ls
+: 1522651353:0;rm -rf .git
+: 1522651354:0;ls
+: 1522651361:0;rm .gitignore
+: 1522651362:0;ls
+: 1522651394:0;..
+: 1522651398:0;git status
+: 1522651431:0;git add .
+: 1522651522:0;git commit -m "chenge emacs color theme"
+: 1522651533:6;git push -u origin master
+: 1522651572:1;brew cask list
+: 1522651616:1;brew cask uninstall iterm2 
+: 1522666905:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522666928:0;..
+: 1522666938:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522666947:34855;npm start
+: 1522667009:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522667012:0;tree
+: 1522687578:0;../
+: 1522687629:0;mkdir seikaku_sindan
+: 1522687726:0;cp public/index.css public/index.html public/index.js public/img/ seikaku_sindan
+: 1522687736:0;ls seikaku_sindan
+: 1522687761:0;mv -r public/img seikaku_sindan
+: 1522687771:0;mv public/img seikaku_sindan
+: 1522687776:0;ls seikaku_sindan
+: 1522687784:0;ls seikaku_sindan/img
+: 1522687788:0;ls public
+: 1522687795:0;public
+: 1522687805:0;mkdir imgs
+: 1522687807:0;ls
+: 1522687822:0;mv imgs images
+: 1522687823:0;ls
+: 1522688295:0;..
+: 1522688360:0;cp ~/Desktop/*.png public/images
+: 1522688368:0;public
+: 1522688370:0;tree
+: 1522690777:0;open images
+: 1522697304:0;..
+: 1522697325:0;mkdir takarasagashi
+: 1522697372:0;cp -r public/index.css public/index.html public/index.js public/images takarasagashi
+: 1522697383:0;tree takarasagashi
+: 1522697505:0;..
+: 1522697532:0;js_training/public/
+: 1522697540:4;rm images/*
+: 1522697552:0;tree
+: 1522701669:0;//
+: 1522701683:0;~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522701702:0;mkdir tangotyo
+: 1522701729:0;cp public/index.* tangotyo
+: 1522701736:0;ls tangotyo
+: 1522701744:0;public
+: 1522701748:0;ls images
+: 1522669869:72;emacs
+: 1522669975:0;.dot-files
+: 1522669983:0;git status
+: 1522670044:0;~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522670047:140;emacs
+: 1522670233:38;emacs ~/.dot-files/.emacs.d/.mc-lists.el
+: 1522670453:31310;emacs
+: 1522701767:0;jobs
+: 1522701784:3;fg
+: 1522648499:0;ls
+: 1522648542:53264;tmux
+: 1522701816:0;tmux kill-server
+: 1522701820:0;exit
+: 1522721396:1742;tmux
+: 1522729255:0;exit
+: 1522721481:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522721485:0;trew
+: 1522721487:0;tree
+: 1522729270:0;exit
+: 1522729293:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522729297:0;tree
+: 1522743928:0;..
+: 1522743957:0;mkdir table_sort
+: 1522743977:0;cp public/index.* table_sort
+: 1522743981:0;ls table_sort
+: 1522743991:0;ls public
+: 1522744014:10;lv public/.tern-port
+: 1522751441:0;mkdir typing_game
+: 1522751493:0;cp public/index.* typing_game
+: 1522751498:0;ls typing_game
+: 1522779093:0;mkdir numbers
+: 1522779114:0;cp public/index.* numbers
+: 1522779121:0;ls numbers
+: 1522779136:0;exit
+: 1522721504:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522724994:4222;emacs
+: 1522729258:0;exit
+: 1522729277:49864;fg
+: 1522779146:0;exit
+: 1522721421:0;npm start
+: 1522721435:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1522721444:57707;npm start
+: 1522779153:0;exit
+: 1522723179:55974;tmux attach
+: 1522779157:0;exit
+: 1522779255:0;.dot-files
+: 1522779259:80;git diff
+: 1522779349:0;.emacs.d
+: 1522779354:58;emacs init.el
+: 1522779421:0;git status
+: 1522779435:0;..
+: 1522779437:0;git status
+: 1522779462:0;mkdir .emacs.d/etc
+: 1522779479:0;mv .tern-config .emacs.d/etc
+: 1522779481:0;ls
+: 1522779491:0;ls .emacs.d/etc
+: 1522779497:0;git status
+: 1522779519:0;git add .
+: 1522779560:0;git commit -m "add emacs key bindings"
+: 1522779566:6;git push -u origin master
+: 1522779579:0;~
+: 1522779581:0;ls
+: 1522779594:0;rm .tern-config
+: 1522779616:0;ln -s .dot-files/.emacs.d/etc/.tern-config
+: 1522779617:0;ls
+: 1522779748:1;ls .Trash
+: 1522779824:0;ls .npm
+: 1522779847:0;ls .anyenv
+: 1522779878:0;.anyenv
+: 1522779897:0;cd completions
+: 1522779899:0;ls
+: 1522779914:12;lv anyenv.zsh
+: 1522779930:0;..
+: 1522779932:0;ls
+: 1522779937:0;bin
+: 1522779939:0;ls
+: 1522779957:0;..
+: 1522779962:0;cd envs
+: 1522779963:0;ls
+: 1522779970:0;cd ndenv
+: 1522779971:0;ls
+: 1522780004:0;cd versions
+: 1522780006:0;ls
+: 1522780013:0;cd v9.10.0
+: 1522780015:0;ls
+: 1522780025:0;cd bin
+: 1522780027:0;ls
+: 1522780057:0;../lib
+: 1522780060:0;ls
+: 1522780067:0;cd node_modules
+: 1522780068:0;ls
+: 1522780132:0;exit
+: 1522798552:0;ls
+: 1522798632:0;tmux
+: 1522800685:0;exit
+: 1522800688:0;exit
+: 1522799071:0;tmux attach
+: 1522848998:0;exit
+: 1522802022:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1522802024:0;ls
+: 1522802034:0;ls numbers
+: 1522802044:0;public
+: 1522802046:0;ls
+: 1522802048:0;tree
+: 1522845469:0;..
+: 1522845487:0;mkdir sinkeisuijaku
+: 1522845511:0;cp public/index.* sinkeisuijaku
+: 1522845517:0;ls sinkeisuijaku
+: 1522849002:0;exit
+: 1522849064:0;fg
+: 1522849203:0;exit
+: 1522801994:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1522801997:83161;npm start
+: 1522799086:6;emacs
+: 1522799256:0;mv Desktop/One\ Light.terminal Desktop/Solarized\ Dark.terminal .dot-files
+: 1522799262:0;.dot-files
+: 1522799263:0;ls
+: 1522799275:0;ls ~
+: 1522799283:0;ls ~/Desktop
+: 1522799306:0;rm ~/Desktop/.zshrc
+: 1522799336:0;mkdir etc
+: 1522799356:0;mv One\ Light.terminal Solarized\ Dark.terminal etc
+: 1522799358:0;ls
+: 1522799362:0;ls etc
+: 1522799402:120;emacs .tmux.conf
+: 1522800348:316;emacs
+: 1522800705:0;~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522801394:23;emacs
+: 1522801478:445;emacs ~/.dot-files/.emacs.d/init.el
+: 1522801935:47122;emacs
+: 1522849221:15344;fg
+: 1522864927:16068;emacs
+: 1522881025:0;cd -
+: 1522881032:0;cd =
+: 1522881051:0;cd -
+: 1522881061:0;git status
+: 1522881151:0;git add .
+: 1522881213:0;git commit -m "add one dark theme"
+: 1522881229:8;git push -u origin master
+: 1522893036:0;  exit
+: 1522893044:0;exit
+: 1522927256:23;grep -r zplug .
+: 1522927302:0;grep -r zplug .dot-files/zsh
+: 1522927423:7;grep -r firstchild Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522927462:4;grep -r addEventListener Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1522927670:0;exit
+: 1522936922:0;tmux
+: 1522893051:0;cd -
+: 1522893055:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1522893061:0;public
+: 1522893066:47556;emacs
+: 1522940624:0;exit
+: 1522893156:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1522893159:0;ls
+: 1522893207:0;mkdir santaku_quiz
+: 1522893216:0;cp public/index.* santaku_quiz
+: 1522893221:0;ls santaku_quiz
+: 1522893234:0;tree public
+: 1522893866:0;mv ~/Desktop/15puzzle.png public
+: 1522893869:0;tree public
+: 1522934209:0;~
+: 1522934235:0;cp Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public .
+: 1522934243:0;cp -r Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public .
+: 1522934329:0;ls public
+: 1522934339:0;ls Public
+: 1522934371:0;mv Public .
+: 1522935310:0;Desktop/
+: 1522935320:0;Css
+: 1522935330:0;ls
+: 1522935334:0;cd css3
+: 1522935351:0;ls
+: 1522935375:0;diff indexE.css indexD.css
+: 1522935496:0;..
+: 1522935500:0;rm css3
+: 1522935507:0;rm -rf css3
+: 1522935508:0;ls
+: 1522940628:0;exit
+: 1522893076:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1522893083:47549;npm start
+: 1522940635:0;exit
+: 1522941454:1492;emacs
+: 1522942218:0;ls
+: 1522942230:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1522944900:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522944904:16451;emacs
+: 1522961361:0;exit
+: 1522944931:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522944934:16429;emacs
+: 1522961366:0;exit
+: 1522961369:0;exit
+: 1522944877:16497;npm start
+: 1522961377:0;exit
+: 1522940639:39;tmux
+: 1522940708:0;brew uninstall tmux --force
+: 1522940725:0;ls
+: 1522940738:1;brew list
+: 1522940747:1;brew list -l
+: 1522940765:22;brew install tmux
+: 1522940805:0;brew list -l
+: 1522940811:33;tmux
+: 1522940850:549;emacs 
+: 1522941404:1549;tmux
+: 1522942962:0;tmux kill-server
+: 1522944755:16622;tmux
+: 1522961381:0;exit
+: 1522963140:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1523018848:1280;emacs
+: 1523020135:0;~
+: 1523020168:2406;emacs js2-refactorãƒ£ãƒ£¼ãƒ£ƒ¨ã‚·ãƒ£¼ãƒ£ƒ¨.txt
+: 1523022580:0;exit
+: 1523020790:1802;emacs
+: 1523022599:0;exit
+: 1522963416:0;G
+: 1522963424:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1522963428:0;ls
+: 1522963438:0;images
+: 1522963439:0;ls
+: 1522964431:0;curl -O http://samples.dotinstall.com/s/slideshow_js/39501/MyApp/img/food[0-3.jpg .
+: 1522964457:0;curl -O http://samples.dotinstall.com/s/slideshow_js/39501/MyApp/img/food[0-3].jpg .
+: 1522964560:1;curl -O http://samples.dotinstall.com/s/slideshow_js/39501/MyApp/img/food1.jpg
+: 1522964563:0;ls
+: 1522964586:0;curl -O http://samples.dotinstall.com/s/slideshow_js/39501/MyApp/img/food[0-3].jpg
+: 1522964603:0;curl -O http://samples.dotinstall.com/s/slideshow_js/39501/MyApp/img/food0.jpg
+: 1522964621:0;curl -O http://samples.dotinstall.com/s/slideshow_js/39501/MyApp/img/food2.jpg
+: 1522964627:0;curl -O http://samples.dotinstall.com/s/slideshow_js/39501/MyApp/img/food3.jpg
+: 1522964630:0;ls
+: 1522965054:0;..
+: 1522965057:0;tree
+: 1522965337:0;rm images
+: 1522965347:11;rm images/*
+: 1522965367:0;images
+: 1522965368:0;ls
+: 1522965418:0;curl -O http://samples.dotinstall.com/s/slideshow_js/39502/MyApp/img/food0.jpg
+: 1522965463:29;brew install wget
+: 1522965506:1;brew list -l
+: 1522965541:0;wget http://samples.dotinstall.com/s/slideshow_js/39502/MyApp/img/food0.jpg 
+: 1522965703:0;mv /Users/asahi/Desktop/food0.jpg /Users/asahi/Desktop/food1.jpg /Users/asahi/Desktop/food2.jpg /Users/asahi/Desktop/food3.jpg .
+: 1522965704:0;ls
+: 1522965714:0;..
+: 1522965716:0;tree
+: 1522984325:0;..
+: 1522984341:0;mkdir slideshow
+: 1522984366:0;cp public/index.* slideshow
+: 1522984390:0;cp -r public/images slideshow
+: 1522984402:0;tree slideshow
+: 1523022603:0;exit
+: 1523028198:74;emacs
+: 1523028275:0;exit
+: 1522963073:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1522963076:0;tmux
+: 1522963117:59487;npm start
+: 1523026724:45;emacs
+: 1523026780:0;~
+: 1523036193:0;emacs .dot-files/.emacs.d/init.el
+: 1523037229:0;exit
+: 1522963012:73985;tmux
+: 1523037005:0;tmux kill-server
+: 1523037008:221;tmux
+: 1523037231:0;exit
+: 1523043964:0;ls
+: 1523044001:0;..
+: 1523044008:0;react_practice
+: 1523044009:0;ls
+: 1523044034:0;ls node_modules
+: 1523044061:58;ls node_modules | lv
+: 1523044145:0;rm ~/.tern-config
+: 1523044150:0;exit
+: 1523044912:0;..
+: 1523044921:0;react_practice
+: 1523044933:0;ls src
+: 1523044958:0;src
+: 1523044963:23;lv registerServiceWorker.js
+: 1523045039:0;exit
+: 1523041441:588;emacs
+: 1523042338:0;cd ~/.dot-files
+: 1523042343:0;git status
+: 1523042363:0;git add .
+: 1523042409:0;git commit -m "add emacs packages"
+: 1523042420:9;git push -u origin master
+: 1523042640:0;cd -
+: 1523042721:0;create-react-app reactPractice
+: 1523042748:41;create-react-app react_practice
+: 1523042950:0;mv react_practice ..
+: 1523042953:0;..
+: 1523042955:0;ls
+: 1523042960:0;react_practice
+: 1523042964:5;npm list
+: 1523043303:0;ls
+: 1523043391:0;~
+: 1523043399:0;npm ls
+: 1523043424:0;which create-react-app
+: 1523043495:2;npm ls -g
+: 1523043554:2;npm ls -g --depth=0
+: 1523043573:122;npm ls -g | lv
+: 1523043700:0;ls
+: 1523043775:0;rm js2-refactorãƒ£ãƒ£¼ãƒ£ƒ¨ã‚·ãƒ£¼ãƒ£ƒ¨.txt
+: 1523043786:0;cd -
+: 1523044022:142;emacs .tern-project
+: 1523044175:0;src
+: 1523044785:94;emacs
+: 1523045510:0;ls
+: 1523045534:0;rm App*
+: 1523045536:0;ls
+: 1523045563:0;rm registerServiceWorker.js logo.svg
+: 1523045565:0;ls
+: 1523046508:0;exit
+: 1523053103:0;~
+: 1523053111:810;emacs .tern-project
+: 1523053922:0;ls
+: 1523053957:0;touch .tern-project .tern-config
+: 1523053958:0;ls
+: 1523053989:0;rm .tern-config
+: 1523054018:0;mv .tern-project .tern-config
+: 1523054019:0;ls
+: 1523054026:0;cat .tern-config
+: 1523054249:0;mv .tern-config Desktop
+: 1523054251:0;ls
+: 1523054265:0;ln -s .dot-files/.emacs.d/etc/.tern-config
+: 1523054266:0;ls
+: 1523054326:0;emacs
+: 1523052847:0;~
+: 1523052867:3;npm install -g react
+: 1523052960:2;npm list -g  --depth 0
+: 1523053026:3;npm install -g react-dom
+: 1523053036:1;npm list -g  --depth 0
+: 1523053082:0;mv Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/react_practice/.tern-project .
+: 1523053296:0;which react
+: 1523053317:0;which create-react-app
+: 1523053347:0;.anyenv/envs/ndenv
+: 1523053349:0;ls
+: 1523053358:0;ls plugins
+: 1523053369:0;cd versions
+: 1523053370:0;ls
+: 1523053376:0;cd v9.10.0
+: 1523053377:0;ls
+: 1523053397:0;ls in
+: 1523053464:1;tree -d
+: 1523053474:0;ls
+: 1523053489:0;ls bin
+: 1523053535:0;ls lib
+: 1523053569:0;ls
+: 1523053575:0;cd lib
+: 1523053580:0;cd node_modules
+: 1523053581:0;ls
+: 1523053691:0;cd ~
+: 1523053730:0;cat .dot-files/.emacs.d/etc/.tern-config
+: 1523053910:0;ls
+: 1523054456:0;rm .tern-config
+: 1523054470:0;cp .dot-files/.emacs.d/etc/.tern-config .
+: 1523054472:0;ls
+: 1523045046:0;..
+: 1523045049:0;react_practice
+: 1523045066:9042;emacs public/index.html
+: 1523054979:0;emacs
+: 1523040975:0;..
+: 1523041011:0;js_training/public/
+: 1523041018:0;tree 
+: 1523041029:0;rm -rf images
+: 1523041043:0;mr 15puzzle.png
+: 1523041045:0;ls
+: 1523041055:0;mv 15puzzle.png
+: 1523041062:0;rm 15puzzle.png
+: 1523041063:0;ls
+: 1523041079:0;cat .tern-port
+: 1523042787:0;~
+: 1523042793:1;npm list
+: 1523042834:1;npm access
+: 1523042844:1;npm info
+: 1523042855:0;npm --help
+: 1523042870:1;npm -l
+: 1523042890:0;npm list
+: 1523042909:0;node --help
+: 1523040906:2201;npm start
+: 1523043115:0;..
+: 1523043122:0;react_practice
+: 1523044197:0;npm start
+: 1523057796:0;exit
+: 1523055379:101;emacs
+: 1523056484:1149;emacs ~/.dot-files/.emacs.d/init.el
+: 1523057969:0;..
+: 1523057978:0;cd react_practice
+: 1523058212:151;emacs src/index.js
+: 1523058365:0;exit
+: 1523057652:0;cd ~
+: 1523057665:11;emacs .tern-config
+: 1523057700:0;ls
+: 1523057703:678;emacs .tern-config
+: 1523058386:0;exit
+: 1523060779:0;~/.dot-files/.emacs.d
+: 1523060792:0;ls elpa
+: 1523060828:0;ls elpa/expand-region-20171217.2125
+: 1523060943:0;cd elpa/expand-region-20171217.2125
+: 1523060978:808;emacs expand-region.el
+: 1523061806:174;emacs
+: 1523061991:36;emacs expand-region.el
+: 1523062049:0;cp js-mode-expansions.el ~/Desktop
+: 1523062056:0;ls ~/Desktop
+: 1523062074:347;emacs js-mode-expansions.el ~/Desktop
+: 1523063293:290;emacs
+: 1523063590:0;..
+: 1523063638:0;mv ~/Desktop/js-mode-expansions.el etc
+: 1523063658:333;emacs etc/js-mode-expansions.el
+: 1523064006:0;~
+: 1523064014:0;tmux list-sessions
+: 1523064023:0;exit
+: 1523058758:0;tmux list-sessions
+: 1523059008:5026;emacs
+: 1523064042:0;exit
+: 1523064691:338;emacs
+: 1523065036:0;xeit
+: 1523065040:0;exit
+: 1523064462:0;ls  ~/.dot-files/.emacs.d/elpa
+: 1523064495:31;lv  ~/.dot-files/.emacs.d/elpa/rainbow-mode-readme.txt
+: 1523065042:0;exit
+: 1523067200:42;emacs
+: 1523068061:55;emacs src/index.js
+: 1523080224:156;emacs
+: 1523080403:2;npm i -g tern-jsx
+: 1523080452:0;ndenv rehash
+: 1523080471:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1523080475:0;ndenv rehash
+: 1523080542:2;npm list --depth=0 -g
+: 1523080721:20780;emacs src/index.js
+: 1523101516:0;src
+: 1523141346:19982;emacs
+: 1523161331:0;exit
+: 1523066615:0;which
+: 1523066620:0;which create-react-app
+: 1523066638:0;/Users/asahi/.anyenv/envs/ndenv/
+: 1523066641:0;ls
+: 1523066682:0;cd versions/v9.10.0/lib
+: 1523066683:0;ls
+: 1523066698:0;cd node_modules
+: 1523079688:0;ls
+: 1523079707:0;cd react
+: 1523079709:0;ls
+: 1523079733:0;cd node_modules
+: 1523079734:0;ls
+: 1523079780:0;ls .bin
+: 1523079790:0;..
+: 1523079799:0;cd react
+: 1523079801:0;ls
+: 1523079810:0;ls cjs
+: 1523079831:0;ls umd
+: 1523079850:0;cd node_modules
+: 1523079852:0;ls
+: 1523079866:0;ls core-js
+: 1523130453:0;..
+: 1523130506:0;mkdir counter_app
+: 1523130543:0;ls
+: 1523130557:0;rm counter_app
+: 1523130563:0;rm -f counter_app
+: 1523130572:0;rm -r counter_app
+: 1523130574:0;ls
+: 1523130595:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/react_practice
+: 1523130605:0;mkdir counter_app
+: 1523130625:0;cp public/index.html counter_app
+: 1523130651:0;cp src/index.js counter_app
+: 1523161335:0;exit
+: 1523065486:0;ls
+: 1523065631:95705;npm start
+: 1523161338:0;exit
+: 1523040850:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1523040855:14473;tmux
+: 1523055346:0;tmux kill-server
+: 1523064354:688;tmux
+: 1523065047:0;..
+: 1523065056:0;react_practice
+: 1523065063:96275;tmux
+: 1523161470:0;ecit
+: 1523161475:0;exit
+: 1523161497:0;exit
+: 1523162414:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_
+: 1523162435:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_master
+: 1523162440:0;ls
+: 1523162465:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/ls
+: 1523162495:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming
+: 1523162496:0;ls
+: 1523162584:0;js_training/
+: 1523162608:0;cd public
+: 1523162620:3;rm *
+: 1523162624:0;ls
+: 1523162964:1;node factorial.js
+: 1523167471:0;exit
+: 1523167476:0;exit
+: 1523167486:0;exit
+: 1523167490:0;exit
+: 1523161513:619;node
+: 1523162143:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/
+: 1523162178:0;mkdir js_master
+: 1523162185:0;js_master
+: 1523162221:447;emacs factorial.js
+: 1523162694:0;..
+: 1523162698:0;public
+: 1523162704:41822;emacs factorial.js
+: 1523204529:201815;fg
+: 1523406364:0;exit
+: 1523167941:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/public
+: 1523167946:0;ls
+: 1523406368:0;exit
+: 1523167685:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1523167752:238617;npm start
+: 1523406371:0;exit
+: 1523406375:0;exit
+: 1523406973:0;src
+: 1523406979:96257;emacs
+: 1523503242:150059;fg
+: 1523653311:0;exit
+: 1523406867:0;cp ../js_training/slideshow/images src
+: 1523406875:0;cp -r ../js_training/slideshow/images src
+: 1523406885:0;tree src
+: 1523409385:0;cp -r src/images public
+: 1523409388:0;ls public
+: 1523410137:0;ls ~/Desktop
+: 1523410173:0;mv ~/Desktop/fontawesome-free-5.0.9.zip src
+: 1523410177:0;ls src
+: 1523410191:0;src
+: 1523410199:1;unzip fontawesome-free-5.0.9.zip
+: 1523410204:0;ls src
+: 1523410209:0;ls
+: 1523410227:0;ls fontawesome-free-5.0.9
+: 1523410299:0;ls fontawesome-free-5.0.9/svg-with-js
+: 1523410356:0;ls fontawesome-free-5.0.9/svg-with-js/js
+: 1523410381:4;lv fontawesome-free-5.0.9/svg-with-js/js/fontawesome-all.js
+: 1523410403:0;cp fontawesome-free-5.0.9/svg-with-js/js/fontawesome-all.js .
+: 1523410404:0;ls
+: 1523410426:0;rm fontawesome-free-5.0.9.zip
+: 1523410427:0;ls
+: 1523457017:0;..
+: 1523457072:0;mkdir slideshow
+: 1523457086:0;cp src/* slideshow
+: 1523457136:0;mv -r src/fontawesome-free-5.0.9 src/images slideshow
+: 1523457154:0;mv src/fontawesome-free-5.0.9 src/images slideshow
+: 1523457159:0;ls src
+: 1523457170:0;rm src/fontawesome-all.js
+: 1523484676:0;mkdir numbers
+: 1523484687:0;cp src/* numbers
+: 1523653315:0;exit
+: 1523406513:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/react_practice
+: 1523406514:0;ls
+: 1523406523:0;ls public
+: 1523406537:0;cat public/index.html
+: 1523406548:0;ls src
+: 1523406604:0;mkdir my_todos
+: 1523406625:0;cp src/* my_todos
+: 1523406628:0;ls my_todos
+: 1523406634:0;tmux
+: 1523406796:356383;npm start
+: 1523653383:0;mkdir shinkeisuijaku
+: 1523653394:0;cp src/* shinkeisuijaku
+: 1523653398:0;cd src
+: 1523653401:0;ls
+: 1523653408:0;emacs
+: 1524407950:0;tmux
+: 1524492270:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/npm_practice
+: 1524492275:45206;emacs
+: 1524537490:0;exit
+: 1524489289:1;npm ls -g --depth=0
+: 1524489360:4;sudo npm uninstall -g react react-dom
+: 1524489369:2;npm ls -g --depth=0
+: 1524489560:8;npm install -g npm
+: 1524489587:0;ndenv rehash
+: 1524489809:0;node -v
+: 1524489833:2;ndenv install list
+: 1524489844:1;ndenv install -l
+: 1524489854:0;node -v
+: 1524489880:17;ndenv install v9.11.1
+: 1524489908:0;ndenv rehash
+: 1524489937:0;ndenv global v9.11.1
+: 1524489946:0;ndenv rehash
+: 1524489949:1;node -v
+: 1524490071:3;npm install -g tern
+: 1524490106:2;npm i -g tern-jsx
+: 1524490161:2;npm ls -g --depth=0
+: 1524490187:0;ndenv rehash
+: 1524490244:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/
+: 1524490245:0;ls
+: 1524490328:0;mkdir prev_fuwafuwa
+: 1524490403:0;mv fuwafuwa fuwafuwa-web prev_fuwafuwa
+: 1524490405:0;ls
+: 1524490425:0;cd prev_fuwafuwa
+: 1524490443:0;mv fuwafuwa prev_fuwafuwa
+: 1524490444:0;ls
+: 1524490448:0;..
+: 1524490547:0;mkdir FuwafuwaHairSalon
+: 1524490555:0;FuwafuwaHairSalon
+: 1524490570:0;..
+: 1524490607:0;cd npm_practice
+: 1524490614:0;mkdir npm_practice
+: 1524490632:0;cd npm_practice
+: 1524490637:57;npm init
+: 1524490699:0;tree
+: 1524490767:3;npm i -save react
+: 1524490791:0;tree -L 1
+: 1524490817:0;cat package.json
+: 1524491865:0;npm --help
+: 1524491895:13;npm i -D webpack
+: 1524492052:0;tree -L 1
+: 1524492058:0;tree -L 2
+: 1524492077:0;ls
+: 1524492109:0;touch webpack.config.js
+: 1524492112:0;ls
+: 1524492176:0;mkdir public
+: 1524492225:0;cp ../react_practice/public/index.html public
+: 1524492233:0;cat public/index.html
+: 1524492379:0;open public/index.html
+: 1524492443:0;ls
+: 1524492465:0;mkdir src
+: 1524492468:0;ls
+: 1524492483:0;cd src
+: 1524492500:0;touch index.js
+: 1524492513:0;touch module.js
+: 1524493225:45;npm run webpack
+: 1524493331:0;ls
+: 1524493429:1;npm run webpack
+: 1524493445:0;ls public
+: 1524493457:0;..
+: 1524493590:0;ls public
+: 1524493745:826;npm run webpack
+: 1524494652:4;npm i -D babel-loader babel-core babel-preset-env bable-preset-react
+: 1524494689:6;npm i -D babel-loader babel-core babel-preset-env babel-preset-react
+: 1524494736:0;cat package.json
+: 1524495227:22;npm run webpack
+: 1524495265:0;open public/index.html
+: 1524495883:32529;npm run webpack
+: 1524535688:1803;npm run start
+: 1524537496:0;exit
+: 1524495779:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/react_practice
+: 1524495787:0;cat package
+: 1524495793:0;cat package.json
+: 1524495867:1;ndenv rehash
+: 1524495988:0;../npm_practice
+: 1524495993:0;cat package.json
+: 1524496038:5;npm i -D react-dom
+: 1524528059:8;npm i -D webpack-dev-server
+: 1524529682:6;npm i -D react-hot-loader
+: 1524531719:41;lv package.json
+: 1524531794:5;npm i -D babel-polyfill
+: 1524531807:13;lv package.json
+: 1524537508:0;exit
+: 1524440298:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/react_practice
+: 1524440302:48911;npm start
+: 1524537537:0;exit
+: 1524407965:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/react_practice
+: 1524407966:0;ls
+: 1524407973:0;cd src
+: 1524407974:0;ls
+: 1524408012:0;touch theme-context.js themed-button.js app.js
+: 1524408017:0;ls
+: 1524408033:0;rm index.css index.js 
+: 1524408045:0;ls
+: 1524408049:75;emacs
+: 1524537560:0;exit
+: 1524537598:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/
+: 1524537664:6;npm i -G typescript
+: 1524537683:0;ndenv rehash
+: 1524537692:1;npm ls -g --depth=0
+: 1524537746:2;npm i -g typescript
+: 1524537751:1;npm ls -g --depth=0
+: 1524537756:0;ndenv rehash
+: 1524537758:1;npm ls -g --depth=0
+: 1524537854:0;mkdir TypeScriptTutorial
+: 1524537861:0;cd TypeScriptTutorial
+: 1524537874:0;emas
+: 1524537876:8894;emacs
+: 1524546778:0;../ReactWithTypeScriptTutorial
+: 1524546800:810;emacs tsconfig.json
+: 1524547637:0;cd src/components
+: 1524547641:5944;emacs
+: 1524553594:0;~
+: 1524553600:0;cd .dot-files
+: 1524553608:0;git status
+: 1524553643:61;emacs
+: 1524553736:0;git add .
+: 1524553784:0;git commit -m "modify emacs"
+: 1524553792:9;git push -u origin master
+: 1524553870:0;exit
+: 1524551124:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/ReactWithTypeScriptTutorial
+: 1524551139:6;emacs dist/bundle.js
+: 1524551147:0;..
+: 1524551167:0;ls
+: 1524551219:0;tree -L 1 node_modules
+: 1524551267:0;cd react_practice
+: 1524551268:0;ls
+: 1524551277:0;..
+: 1524551312:0;cd npm_practice
+: 1524551313:0;ls
+: 1524551324:38;emacs public/bundle.js
+: 1524562643:0;exit
+: 1524562767:2;npm ls -g --depth=0
+: 1524562799:2;npm uninstall -g webpack typescript
+: 1524562805:1;npm ls -g --depth=0
+: 1524563522:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/
+: 1524563524:0;ls
+: 1524563542:0;rm package-lock.json
+: 1524563565:0;rm -r node_modules
+: 1524563567:0;ls
+: 1524565021:0;cd tic_tac_toe
+: 1524565033:0;mkdir tic_tac_toe
+: 1524565046:0;cd tic_tac_toe
+: 1524565220:11;npm i -D webpack
+: 1524565244:0;ls
+: 1524565255:14;lv package-lock.json
+: 1524565292:1;rm -rf node_modules package-lock.json 
+: 1524565294:0;ls
+: 1524565362:0;npm init -y
+: 1524565530:11;npm i -D webpack 
+: 1524565546:4;cat
+: 1524565554:0;cat package.json
+: 1524565591:5;npm install --save react react-dom @types/react @types/react-dom
+: 1524565608:0;cat package.json
+: 1524565628:0;install --save-dev typescript awesome-typescript-loader source-map-loader
+: 1524565636:4;npm install --save-dev typescript awesome-typescript-loader source-map-loader
+: 1524565646:0;cat package.json
+: 1524566936:0;ls
+: 1524566981:1095;emacs tsconfig.json
+: 1524568118:17;npm i -D webpack-cli
+: 1524568139:0;cat package.json
+: 1524578580:0;exit
+: 1524579760:0;Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training
+: 1524579768:0;../ReactWithTypeScriptTutorial
+: 1524579781:0;open public/index.html
+: 1524579793:0;open dist/index.html
+: 1524579830:0;ls dist
+: 1524580039:0;ls
+: 1524580130:0;mv dist/index.html .
+: 1524580131:0;ls
+: 1524580150:0;cat webpack.config.js
+: 1524580299:661;emacs webpack.config.js
+: 1524580962:0;exit
+: 1524579573:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/ReactWithTypeScriptTutorial
+: 1524579585:0;dist
+: 1524579612:1197;emacs index.html
+: 1524580813:0;ls
+: 1524580827:0;rm index.html
+: 1524580834:0;..
+: 1524580836:0;ls
+: 1524580841:380;emacs index.html
+: 1524581227:0;ls dist
+: 1524581292:104;emacs webpack.config.js
+: 1524581405:3;npx webpack
+: 1524581420:0;ls dist
+: 1524601965:0;exit
+: 1524538233:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/TypeScriptTutorial
+: 1524538246:2;tsc greeter.ts
+: 1524538249:0;ls
+: 1524538356:13;lv greeter.js
+: 1524538389:0;cp ../react_practice/public/index.html .
+: 1524538404:0;open index.html
+: 1524538431:68;emacs index.html
+: 1524538676:1;tsc greeter.ts
+: 1524538720:3;lv greeter.js
+: 1524538727:1;tsc greeter.ts
+: 1524538730:8;lv greeter.js
+: 1524541392:1;tsc greeter.ts
+: 1524541434:3995;lv greeter.js
+: 1524545432:0;..
+: 1524545647:0;mkdir ReactWithTypeScriptTutorial
+: 1524545653:0;cd ReactWithTypeScriptTutorial
+: 1524545695:0;mkdir dist
+: 1524545715:0;mkdir src/components
+: 1524545790:0;mkdir -pv src/components
+: 1524545797:0;tree
+: 1524545893:0;rm dist
+: 1524545901:0;rm -r dist
+: 1524545904:0;ls
+: 1524545911:0;tree
+: 1524545949:69;npm init
+: 1524546055:0;ls
+: 1524546064:31;emacs package.json
+: 1524546140:11;npm i -g webpack
+: 1524546163:0;ndenv rehash
+: 1524546219:5;npm i -S react react-dom @types/react @types/react-dom
+: 1524546228:0;cat package.json
+: 1524546378:5;npm i -D typescript awesome-typescript-loader source-map-loader
+: 1524549734:0;mv src/components/index.tsx src
+: 1524549744:0;tree src
+: 1524550739:9;webpack
+: 1524550801:9;npm i -D webpack
+: 1524550944:3;npm run start
+: 1524550967:1;open index.html
+: 1524553908:1491;emacs
+: 1524555402:0;..
+: 1524555410:0;cd react_practice
+: 1524555412:0;ls
+: 1524555422:0;ls public
+: 1524555464:283;emacs slideshow/index.js
+: 1524555751:0;-
+: 1524555763:0;cd -
+: 1524555767:0;~
+: 1524555777:0;cd .dot-files/
+: 1524555784:0;-
+: 1524555791:0;cd =
+: 1524555794:0;cd -
+: 1524555804:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/TypeScriptTutorial
+: 1524555809:613;emacs
+: 1524556437:0;cd sr
+: 1524556445:0;ls
+: 1524556452:0;..
+: 1524556454:0;ls
+: 1524556459:0;cd ReactWithTypeScriptTutorial
+: 1524556467:0;cd src/components
+: 1524556467:0;ls
+: 1524556644:631;emacs
+: 1524557282:0;../../
+: 1524557300:44;emacs tsfmt.json
+: 1524557992:67;emacs
+: 1524558064:0;ls
+: 1524558088:35;emacs jsconfig.json
+: 1524558126:20461;emacs
+: 1524578592:0;ls
+: 1524578654:2;cat 
+: 1524578659:0;cat package.json
+: 1524578675:9;npm i -D webpack-dev-server
+: 1524578729:15;emacs index.html
+: 1524578756:0;mv index.html dist
+: 1524578757:0;ls
+: 1524578879:204;emacs webpack.config.js
+: 1524579091:43;emacs package.json
+: 1524579142:1;npm run start
+: 1524579196:8;emacs package.json
+: 1524579208:9;emacs webpack.config.js
+: 1524579221:61;npm run start
+: 1524579285:4;emacs package.json
+: 1524579292:35;emacs webpack.config.js
+: 1524580388:21579;npm run start
+: 1524601969:0;exit
+: 1524579365:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/ReactWithTypeScriptTutorial
+: 1524579369:0;src
+: 1524579370:0;ls
+: 1524579377:0;tree
+: 1524579394:22579;emacs
+: 1524601975:0;exit
+: 1524537543:0;tmux list-sessions
+: 1524537553:7;tmux attach
+: 1524537563:0;tmux list-sessions
+: 1524537566:64409;tmux
+: 1524601977:0;exit
+: 1524602127:1035;emacs
+: 1524603171:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/
+: 1524603172:0;ls
+: 1524603200:0;tic_tac_toe
+: 1524603201:0;ls
+: 1524603216:5;rm -rf *
+: 1524603223:0;ls
+: 1524603238:0;..
+: 1524603251:0;rm -rf tic_tac_toe
+: 1524603429:1;npm ls -g --depth=0
+: 1524603442:3;npm install -g create-react-app
+: 1524603463:0;ndenv rehash
+: 1524603494:44;create-react-app tic-tac-toe
+: 1524603543:0;ls
+: 1524603550:0;cd tic-tac-toe
+: 1524603551:0;ls
+: 1524603621:61;grep webpac
+: 1524603721:9;npm install --save styled-components
+: 1524604510:349;emacs jsconfig.json
+: 1524605571:333;emacs
+: 1524605996:9;npm i -d eslint
+: 1524606037:0;cat package.json
+: 1524606549:11096;emacs
+: 1524617674:0;npm -v
+: 1524617728:15;npm i -g npm
+: 1524617764:0;npm -v
+: 1524617780:0;ndenv rehash
+: 1524617786:0;ls
+: 1524617793:0;ls src
+: 1524617813:0;rm -rf src/App.css src/App.js src/App.test.js src/index.css src/index.js src/logo.svg src/registerServiceWorker.js src
+: 1524617818:0;ls sr
+: 1524617822:0;ls
+: 1524617880:0;ls public
+: 1524617908:0;mkdir src
+: 1524617909:0;ls
+: 1524618005:0;exit
+: 1524602112:15897;tmux
+: 1524618012:0;exit
+: 1524618722:8620;npm start
+: 1524627352:0;exit
+: 1524618066:183;emacs
+: 1524618252:0;ls
+: 1524618282:18;emacs jsconfig.json
+: 1524618326:32;emacs
+: 1524618362:0;ls src
+: 1524624874:327;emacs
+: 1524625224:0;cat package.json
+: 1524625293:8;npm uninstall eslint
+: 1524625327:0;cat package.json
+: 1524625343:111;emacs
+: 1524625615:6;npm install -g eslint
+: 1524625629:3;npm install -g eslint-plugin-react
+: 1524625641:0;ndenv rehash
+: 1524625653:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim exists
+: 1524625663:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1524625680:0;ndenv rehash
+: 1524625699:1;eslint
+: 1524625951:584;grep -l .eslintrc
+: 1524626537:122;emacs
+: 1524626676:0;..
+: 1524626700:0;mv tic-tac-toe/src/index.js .
+: 1524626730:3;rm -rf tic-tac-toe
+: 1524626735:0;ls
+: 1524626777:0;rm ~/.eslintrc
+: 1524626801:2;npm uninstall -g eslint eslint-plugin-react
+: 1524626838:1;npm uninstall -g tern-jsx tern
+: 1524626866:1;npm ls -g --depth=0
+: 1524626873:38;create-react-app tic-tac-toe
+: 1524626953:3;npm i -S styled-components
+: 1524627164:0;ls
+: 1524627189:1;rm -rf node_modules package-lock.json 
+: 1524627192:0;ls
+: 1524627199:0;cd tic-tac-toe
+: 1524627204:10;npm i -S styled-components
+: 1524627274:10;emacs jsconfig.json
+: 1524627304:2;rm -rf src/*
+: 1524630429:78426;emacs
+: 1524708858:0;exit
+: 1524634850:12;npm install --save-dev typescript-styled-plugin
+: 1524634872:73989;emacs jsconfig.json
+: 1524708862:0;exit
+: 1524623950:0;cd .dot-files/
+: 1524623957:0;~
+: 1524623959:0;cd .dot-files/
+: 1524623966:0;git status
+: 1524624002:1;git add .
+: 1524624049:0;git commit -m "update some elpa packages"
+: 1524624056:18;git push -u origin master
+: 1524624255:94;emacs
+: 1524624357:1;brew list -l
+: 1524624386:0;brew update emacs
+: 1524624415:27;brew upgrade emacs
+: 1524626345:148;emacs ~/.eslintrc
+: 1524626500:0;ls ~
+: 1524626509:2;npm ls -g --depth=0
+: 1524627360:0;~
+: 1524627366:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/tic-tac-toe
+: 1524627371:1;npm start
+: 1524627391:0;mv ../index.js src
+: 1524627394:81469;npm start
+: 1524708866:0;exit
+: 1524618047:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/tic-tac-toe
+: 1524618059:90807;tmux
+: 1524708870:0;exit
+: 1524749865:0;cd src
+: 1524749872:2;rm -rf *
+: 1524749876:0;ls
+: 1524749932:0;touch index.js index.css
+: 1524749956:1;open .
+: 1524750948:0;exit
+: 1524718673:30621;npm start
+: 1524749302:0;..
+: 1524749305:0;ls
+: 1524749373:41;create-react-app my-app
+: 1524749754:0;cd my-app
+: 1524749790:1161;npm start
+: 1524750953:0;exit
+: 1524718696:0;cd src
+: 1524718702:32332;emacs
+: 1524751038:0;exit
+: 1524718501:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/tic-tac-toe
+: 1524718504:32534;tmux
+: 1524751040:0;exit
+: 1524805231:0;fg
+: 1524805240:0;exit
+: 1524805312:7;npx webpack-dev server
+: 1524805428:4927;npx webpack-dev-server
+: 1524813785:0;~
+: 1524813797:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/
+: 1524813828:0;mv project Projects
+: 1524813831:0;ls
+: 1524813857:0;cd Projects/fuwafuwa_hair_salon/Codes
+: 1524818251:1;npm start
+: 1524818270:0;exit
+: 1524818668:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends
+: 1524818677:0;cd src
+: 1524818679:0;ls
+: 1524818686:10531;emacs
+: 1524829321:0;exit
+: 1524818917:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends
+: 1524818933:442;emacs webpack.config.js
+: 1524819384:0;git status
+: 1524819395:0;git add .
+: 1524819435:0;git commit -m "ãƒ¹ãƒ´ãƒ£¼ãƒ¤\!"
+: 1524829325:0;exit
+: 1524833519:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends
+: 1524833534:0;ls
+: 1524833542:0;cat .eslintrc.js
+: 1524833563:1;eslint src/index.jsx
+: 1524833597:0;rm .eslintrc.js
+: 1524833672:0;eslint --help
+: 1524833683:23;eslint --init
+: 1524833714:1;eslint src/index.jsx
+: 1524833767:8;npm i -D eslint-config-airbnb
+: 1524833778:1;eslint src/index.jsx
+: 1524833784:0;ndenv rehash
+: 1524833786:0;eslint src/index.jsx
+: 1524833853:0;rm .eslintrc.js
+: 1524833859:0;eslint src/index.jsx
+: 1524833878:0;exit
+: 1524834130:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends
+: 1524834132:0;ls
+: 1524834150:18;eslint --init
+: 1524834177:0;eslint src/index.jsx
+: 1524834180:0;ls
+: 1524834205:0;mv .eslintrc.js .eslintrc
+: 1524834212:0;eslint src/index.jsx
+: 1524834282:0;mv .eslintrc .eslintrc.js
+: 1524834286:0;eslint src/index.jsx
+: 1524834374:0;exit
+: 1524843353:888;emacs
+: 1524844244:0;exit
+: 1524845696:0;cd Desktop/my_todos/src
+: 1524845706:44;emacs index.js
+: 1524846309:0;ls
+: 1524846315:40798;emacs App.js
+: 1524887118:0;exit
+: 1524888801:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1524888817:0;exit
+: 1524888893:0;\\
+exit
+: 1524889466:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1524889471:0;ls
+: 1524889489:0;tree src
+: 1524889646:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/react_practice
+: 1524889647:1;ls
+: 1524889653:31;npm start
+: 1524889687:0;ls
+: 1524889692:0;ls src
+: 1524889707:97;emacs src/index.js
+: 1524889806:1293;npm start
+: 1524891104:0;cd -
+: 1524891120:858;emacs package.json
+: 1524892016:0;exit
+: 1524888971:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1524888973:0;ls
+: 1524888984:0;cd src
+: 1524893114:124813;emacs
+: 1525017973:0;cd ~/Desktop
+: 1525017987:0;cp -R ~/Google ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes/
+: 1525017998:0;cp -R ~/Google ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes/ .
+: 1525018037:10;cp -R ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes .
+: 1525018055:0;cd Codes
+: 1525018056:0;s
+: 1525018058:0;ls
+: 1525019071:8;npm i -D react-svg-loader
+: 1525019122:0;ndenv rehash
+: 1525019152:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1525019157:0;ndenv rehash
+: 1525019234:0;cd src/components/
+: 1525019235:0;ls
+: 1525019242:4570;emacs Header.js
+: 1525023831:0;../../
+: 1525023833:9;npm install --save-dev file-loader
+: 1525023875:44;emacs webpack.config.js
+: 1525023959:297;emacs src/components/Header.js
+: 1525024259:244;fg
+: 1525024539:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1525024544:7;npm install --save-dev file-loader
+: 1525024560:96;emacs webpack.config.js
+: 1525024750:0;cd src
+: 1525024850:2250;emacs
+: 1525027115:0;cd ~/Desktop/Codes
+: 1525027130:14;npm install --save-dev css-loader
+: 1525027161:64;emacs webpack.config.js
+: 1525027232:4;emacs src/components/Header.js
+: 1525027258:537;emacs src/index.js
+: 1525027805:0;cd -
+: 1525027818:1409;emacs
+: 1525029234:0;tree
+: 1525029264:79500;emacs
+: 1525108768:0;exit
+: 1524805263:74;emacs
+: 1524805345:0;cat package.json
+: 1524805365:2;npx webpack
+: 1524805385:0;npx ls
+: 1524805441:91;emacs
+: 1524805675:9;npm i -S styled-components
+: 1524805691:164;fg
+: 1524805870:70;ls node_modules | lv
+: 1524805943:7;cat 
+: 1524805953:0;cat p
+: 1524805960:0;cat package.json
+: 1524806109:0;fg
+: 1524806115:323;emacs package.json
+: 1524806460:10;npm i -d eslint
+: 1524806494:7;npm i -d eslint-plugin-react
+: 1524806676:20;emacs .eslintrc
+: 1524806698:0;ls
+: 1524806741:0;cp ../tic-tac-toe/.gitignore .
+: 1524806749:43;emacs .gitignore
+: 1524806802:0;git init -y
+: 1524806813:0;git init
+: 1524806822:0;git status
+: 1524806879:0;ls
+: 1524806899:337;emacs src/index.js
+: 1524807240:47;fg
+: 1524807293:1517;emacs .eslintrc
+: 1524808813:507;emacs
+: 1524809882:10;emacs src/index.js
+: 1524809893:0;ls
+: 1524809910:0;cat .eslintrc
+: 1524809940:0;../
+: 1524809946:0;mkdir test
+: 1524809950:0;cd test
+: 1524809975:0;cp ../fuwafuwa_hair_salon/package.json
+: 1524809981:0;cp ../fuwafuwa_hair_salon/package.json .
+: 1524809982:0;ls
+: 1524809987:30;emacs package.json
+: 1524810019:3;fg
+: 1524810055:5;npm init
+: 1524810072:0;ls
+: 1524810108:23;npm i
+: 1524810148:0;ls
+: 1524810159:0;cat package.json
+: 1524810178:18;ls node_modules | lv
+: 1524810220:0;cp ../fuwafuwa_hair_salon/src
+: 1524810224:0;cp ../fuwafuwa_hair_salon/src .
+: 1524810235:0;cp -f ../fuwafuwa_hair_salon/src .
+: 1524810259:0;cp -R ../fuwafuwa_hair_salon/src .
+: 1524810260:0;ls
+: 1524810269:0;tree src
+: 1524810305:0;cp ../fuwafuwa_hair_salon/webpack.config.js .
+: 1524810307:0;ls
+: 1524810323:0;cp ../fuwafuwa_hair_salon/jsconfig.json
+: 1524810327:0;cp ../fuwafuwa_hair_salon/jsconfig.json .
+: 1524810329:0;sl
+: 1524810331:0;ls
+: 1524810368:17;npm start
+: 1524810391:31;emacs src/index.js
+: 1524810461:11;npm install --save-dev eslint
+: 1524810523:0;npx eslint
+: 1524810551:40;npx eslint --init
+: 1524810599:0;ls
+: 1524810610:9;emacs .eslintrc
+: 1524810625:26;emacs .eslintrc.js
+: 1524810673:24;emacs src/index.js
+: 1524810724:0;rm src/index.js
+: 1524810734:0;git init
+: 1524810739:0;git status
+: 1524810770:30;emacs jsconfig.json
+: 1524810838:0;cp ../fuwafuwa_hair_salon/.gitignore .
+: 1524810844:0;git status
+: 1524810865:0;cd ../fuwafuwa_hair_salon
+: 1524810872:0;git status
+: 1524810894:66;emacs .gitignore
+: 1524810972:0;cd ../test
+: 1524810982:0;rm .gitignore
+: 1524810985:0;cp ../fuwafuwa_hair_salon/.gitignore .
+: 1524810995:0;cat .git
+: 1524811004:0;cat .gitignore
+: 1524811023:0;git status
+: 1524811043:0;ls src
+: 1524811064:0;cp ../fuwafuwa_hair_salon/src/index.js
+: 1524811067:0;cp ../fuwafuwa_hair_salon/src/index.js .
+: 1524811079:12;emacs src/index.js
+: 1524811106:0;mv index.js src
+: 1524811109:75;emacs src/index.js
+: 1524811194:14;npm start
+: 1524811210:28;emacs src/index.js
+: 1524811240:13;npm start
+: 1524811261:0;git status
+: 1524811287:127;emacs webpack.config.js
+: 1524811426:0;git add .
+: 1524811542:0;git commit -m "ãƒ¿ãƒ£¼ã®ãƒ·ãƒ£¼ï¼"
+: 1524811560:0;../
+: 1524811665:0;mv test hello_frends
+: 1524811666:0;ls
+: 1524811682:0;cd hello_frends
+: 1524811684:0;ls
+: 1524811698:0;git remote add origin https://github.com/yasushiasahi/hello_frends.git
+: 1524811708:6;git push -u origin master
+: 1524811877:0;..
+: 1524811922:7;rm -rf ReactWithTypeScriptTutorial TypeScriptTutorial my-app
+: 1524811933:0;ls 
+: 1524811952:0;cd fuwafuwa_hair_salon
+: 1524811953:0;ls
+: 1524811971:13;rm -rf *
+: 1524811986:0;ls
+: 1524811991:4;rm -rf *
+: 1524811998:0;ls
+: 1524812021:0;rm -rf .eslintrc .git .gitignore
+: 1524812023:0;ls
+: 1524812050:2;git clone https://github.com/yasushiasahi/hello_frends.git
+: 1524812055:0;ls
+: 1524812066:0;..
+: 1524812074:0;rm -rf fuwafuwa_hair_salon
+: 1524812085:0;git clone https://github.com/yasushiasahi/hello_frends.git
+: 1524812140:0;../../
+: 1524812141:0;ls
+: 1524812154:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/tic-tac-toe
+: 1524812160:0;..
+: 1524812161:0;ls
+: 1524812194:0;mkdir project
+: 1524812205:0;cd project
+: 1524812214:1;git clone https://github.com/yasushiasahi/hello_frends.git
+: 1524812303:0;mkdir fuwafuwa_hair_salon
+: 1524812388:0;mkdir code
+: 1524812407:0;mv code codes
+: 1524812410:0;ls
+: 1524812439:0;mv hello_frends codes fuwafuwa_hair_salon
+: 1524812440:0;ls
+: 1524812446:0;cd fuwafuwa_hair_salon
+: 1524812447:0;ls
+: 1524812450:0;ls hello_frends
+: 1524812458:0;../
+: 1524812465:0;mkdir dtp
+: 1524812499:0;mv dtp DTP
+: 1524812533:0;sl
+: 1524812535:0;ls
+: 1524812550:0;mv DTP fuwafuwa_hair_salon
+: 1524812553:0;cd fuwafuwa_hair_salon
+: 1524812554:0;ls
+: 1524812595:0;mv codes Codes
+: 1524812596:0;ls
+: 1524812610:0;mv hello_frends Codes
+: 1524812611:0;ls
+: 1524812618:0;cd Codes
+: 1524812619:0;ls
+: 1524812638:0;../
+: 1524812654:0;mv Codes/hello_frends .
+: 1524812655:0;ls
+: 1524812659:0;rm Codes
+: 1524812664:0;rm -r Codes
+: 1524812666:0;sl
+: 1524812668:0;ls
+: 1524812686:0;mv hello_frends Codes
+: 1524812687:0;ls
+: 1524812693:0;cd Codes
+: 1524812694:0;ls
+: 1524812722:0;rm -rf .git
+: 1524812723:0;ls
+: 1524812742:29;emacs webpack.config.js
+: 1524812779:0;npm start
+: 1524812811:18;npm install
+: 1524813404:1;npx eslint src/index.js
+: 1524813675:0;cat .eslintrc.js
+: 1524813738:28;npm start
+: 1524813768:0;ls
+: 1524813892:0;cd src
+: 1524814803:726;emacs index.js
+: 1524815531:1359;emacs
+: 1524817050:0;../
+: 1524817087:0;cat package.json
+: 1524817147:7;npm uninstall html-webpack-plugin
+: 1524817190:16;emacs package.json
+: 1524817210:37;emacs webpack.config.js
+: 1524817251:0;ls
+: 1524817269:0;mkdir dist
+: 1524817345:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends/
+: 1524817352:2;npx webpack
+: 1524817357:0;ls 
+: 1524817361:0;ls dist
+: 1524817384:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1524817415:0;cp ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends/dist/index.html dist
+: 1524817425:70;emacs dist/index.html
+: 1524817510:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends/
+: 1524817650:0;src
+: 1524817651:0;ls
+: 1524817714:0;mkdir html
+: 1524817743:0;cp ../dist/index.html html
+: 1524817851:165;emacs html/index.html
+: 1524818022:0;cd html
+: 1524818024:0;ls
+: 1524818044:0;mv index.html template.html
+: 1524818062:0;../
+: 1524818063:0;..
+: 1524818071:82;emacs webpack.config.js
+: 1524818158:27;npm start
+: 1524818189:13;emacs webpack.config.js
+: 1524818203:41;npm start
+: 1524818290:36;emacs src/index.js
+: 1524818331:103;npm start
+: 1524818444:181;emacs webpack.config.js
+: 1524818629:7;emacs src/index.js
+: 1524820653:8674;npm start
+: 1524829339:0;~
+: 1524829455:0;cp Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/high_and_low_game .
+: 1524829467:0;cp -R  Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/js_training/high_and_low_game .
+: 1524829499:0;mv -R high_and_low_game Desktop
+: 1524829505:0;mv high_and_low_game Desktop
+: 1524829579:0;cd Desktop/high_and_low_game
+: 1524831021:14;emacs index.js
+: 1524831137:0;..
+: 1524831278:0;cd my_todos
+: 1524831725:55;emacs index.jsx
+: 1524831825:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends/
+: 1524831833:0;cd src
+: 1524831847:0;mv index.js index.jsx
+: 1524831853:21;emacs index.jsx
+: 1524831902:0;ls ..
+: 1524831911:0;cat ../.eslintrc.js
+: 1524831944:0;..
+: 1524831951:0;mv .eslintrc.js
+: 1524831957:0;rm .eslintrc.js
+: 1524831982:21;npx eslint --init
+: 1524832020:11;emacs src/index.jsx
+: 1524832033:0;~
+: 1524832048:0;cd Desktop/my_todos
+: 1524832070:2;npm ls -g --depth=0
+: 1524832084:6;npm install -g eslint
+: 1524832108:0;ndenv rehash
+: 1524832110:0;eslint
+: 1524832130:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1524832136:0;ndenv rehash
+: 1524832140:0;eslint
+: 1524832181:4;emacs index.jsx
+: 1524832298:3;npm install -g eslint-plugin-react
+: 1524832340:2;npm ls -g --depth=0
+: 1524832355:0;ndenv rehash
+: 1524832393:39;emacs ~/.eslintrc
+: 1524832823:468;emacs index.jsx
+: 1524833307:0;eslint index.jsx
+: 1524833407:74;emacs ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends/src/index.jsx
+: 1524833886:0;~
+: 1524833891:0;rm .eslintrc.js
+: 1524833900:0;ls
+: 1524833956:0;mv .eslintrc .eslintrc.js
+: 1524833964:0;cd -
+: 1524833976:10;emacs index.jsx
+: 1524833991:0;ls
+: 1524834000:0;-
+: 1524834005:0;cd -
+: 1524834008:0;ls
+: 1524834023:0;mv .eslintrc.js .eslintrc
+: 1524834024:0;ls
+: 1524834105:0;cd -
+: 1524834379:15;emacs index.jsx
+: 1524834417:0;cd ~
+: 1524834418:0;ls
+: 1524835191:0;rm .eslintrc
+: 1524835196:0;cd -
+: 1524835199:5;emacs index.jsx
+: 1524835209:0;eslint index.jsx
+: 1524835291:0;cd ~
+: 1524835343:32;emacs .eslintrc
+: 1524835381:0;cd -
+: 1524835389:8;emacs index.jsx
+: 1524835420:436;emacs ~/.eslintrc
+: 1524835864:1;eslint index.jsx
+: 1524835903:7;npm i -g babel-eslint
+: 1524835990:33;emacs ~/.eslintrc
+: 1524836028:1;eslint index.jsx
+: 1524836064:88;emacs index.jsx
+: 1524836154:1;eslint index.jsx
+: 1524836668:124;emacs ~/.eslintrc
+: 1524836796:0;eslint index.jsx
+: 1524836807:6;emacs ~/.eslintrc
+: 1524836816:0;eslint index.jsx
+: 1524836836:206;emacs ~/.eslintrc
+: 1524837045:1;eslint index.jsx
+: 1524837936:185;emacs index.jsx
+: 1524838133:1;eslint index.jsx
+: 1524838138:76;emacs ~/.eslintrc
+: 1524838217:0;eslint index.jsx
+: 1524838224:20;emacs ~/.eslintrc
+: 1524838246:1;eslint index.jsx
+: 1524838325:5;emacs ~/.eslintrc
+: 1524838338:1;eslint index.jsx
+: 1524838347:242;emacs index.jsx
+: 1524838603:0;cp index.jsx index.js
+: 1524842957:329;emacs index.js
+: 1524843292:36;emacs index.jsx
+: 1524843722:3;npm i -g tern
+: 1524843863:0;~/.tern-config
+: 1524843873:27;emacs ~/.tern-config
+: 1524843916:134;emacs index.jsx
+: 1524844055:2;npm i -g tern-jsx
+: 1524844254:21;npm i
+: 1524844479:0;ls
+: 1524844524:0;src/index.jsx
+: 1524844534:37;emacs src/index.jsx
+: 1524844576:37;npm start
+: 1524844624:0;src
+: 1524844650:0;mv index.jsx index.js
+: 1524844653:0;..
+: 1524844657:13;npm start
+: 1524845134:7;npm install -S react-hot-loader
+: 1524845264:2;emacs src/index.jsx
+: 1524845269:97;emacs src/index.js
+: 1524845400:0;cd src
+: 1524845428:207;emacs App.js
+: 1524845642:113;npm start
+: 1524845768:9;emacs index.js
+: 1524845784:84;emacs App.js
+: 1524845889:177;npx webpack-dev-server --hot
+: 1524846070:0;..
+: 1524846075:195;emacs webpack.config.js
+: 1524846274:40903;npx webpack-dev-server --hot
+: 1524887572:0;~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1524887574:0;ls
+: 1524887593:8;rm -rf *
+: 1524887604:0;ls
+: 1524887619:0;rm -rf .eslintrc.js .gitignore 
+: 1524887622:0;ls
+: 1524887657:0;cp ~/Desktop/my_todos/package.json .
+: 1524887660:0;ls
+: 1524887670:25;npm install
+: 1524887732:0;cp -R ~/Desktop/my_todos/src .
+: 1524887733:0;ls
+: 1524887740:0;tree src
+: 1524887788:0;src
+: 1524887789:0;sl
+: 1524887790:0;ls
+: 1524887817:0;..
+: 1524887818:0;ls
+: 1524887871:0;cp ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/hello_frends/.gitignore .
+: 1524887872:0;ls
+: 1524887939:0;tree src
+: 1524888076:0;ls
+: 1524888133:26;emacs .gitignore
+: 1524888164:0;ls
+: 1524888199:0;cd src
+: 1524888199:0;ls
+: 1524888485:0;mkdir components
+: 1524888487:0;sl
+: 1524888489:0;ls
+: 1524888535:0;mv App.js components
+: 1524888536:0;ls
+: 1524888543:356;emacs
+: 1524888919:0;..
+: 1524888933:226;npm start
+: 1524889210:0;ls
+: 1524889238:0;cp ~/Desktop/my_todos/webpack.config.js .
+: 1524889244:9;emacs webpack.config.js
+: 1524889262:58;emacs package.json
+: 1524889323:1446;npm start
+: 1524890779:372;npx webpack-dev-server --host 0.0.0.0
+: 1524893009:124925;npm start
+: 1525019176:0;~/Codes
+: 1525019183:0;~
+: 1525019188:0;cd Codes
+: 1525019191:0;ls
+: 1525019196:0;Desktop/
+: 1525019198:0;Codes
+: 1525019199:0;ls
+: 1525024274:152;npm start
+: 1525024695:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1525024707:2650;npm start
+: 1525027363:0;cd -
+: 1525027367:552;npm start
+: 1525027924:0;cd -
+: 1525027927:49646;npm start
+: 1525077588:12;npm install --save-dev babel-plugin-styled-components
+: 1525077745:1545;npm start
+: 1525080517:3;npm install --save-dev css-loader
+: 1525081124:27646;npm start
+: 1525108774:0;exit
+: 1524892104:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1525108776:0;exit
+: 1524797644:9;tmux
+: 1524797661:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/
+: 1524797662:0;ls
+: 1524797688:0;rm FuwafuwaHairSalon
+: 1524797701:0;rm -rf FuwafuwaHairSalon
+: 1524797757:0;mkdir fuwafuwa_hair_salon
+: 1524797782:0;cd tic-tac-toe
+: 1524797783:0;ls
+: 1524797791:47;emacs .gitignore
+: 1524797859:0;..
+: 1524797863:0;cd fuwafuwa_hair_salon
+: 1524797864:0;ls
+: 1524797872:16;npm init
+: 1524798065:0;ls
+: 1524798071:0;rm package-lock.json
+: 1524798085:0;ls
+: 1524798100:0;rm package.json
+: 1524798102:0;ls
+: 1524798108:0;npm init -y
+: 1524798207:31;npm i -D webpack-dev-server webpack-cli webpack
+: 1524798304:0;ls
+: 1524798312:0;cat package.json
+: 1524798426:61;ls node_modules | lv
+: 1524798847:43;emacs webpack.config.js
+: 1524798908:0;cp ../tic-tac-toe/jsconfig.json .
+: 1524798912:0;ls
+: 1524798928:607;emacs webpack.config.js
+: 1524799581:0;mkdir -p src/index.js
+: 1524799583:0;ls
+: 1524799657:19;emacs src/index.js
+: 1524799690:0;cd src
+: 1524799692:0;ls
+: 1524799699:0;rm index.js
+: 1524799723:0;rm -r index.js
+: 1524799724:0;ls
+: 1524799731:179;emacs index.js
+: 1524799914:0;..
+: 1524799924:5;emacs package.json
+: 1524799935:29;emacs webpack.config.js
+: 1524799974:0;npm webpack
+: 1524800009:1;npx webpack
+: 1524800016:0;ls
+: 1524800028:34;emacs dist/main.js
+: 1524800076:29;emacs webpack.config.js
+: 1524800109:0;npx webpack
+: 1524800130:88;emacs dist/main.js
+: 1524800226:0;node dist/main.js
+: 1524800239:0;node src/index.js
+: 1524800550:152;emacs webpack.config.js
+: 1524800719:193;emacs src/index.js
+: 1524800917:0;node src/index.js
+: 1524800956:27;npx webpack-dev-server
+: 1524800997:1;npx webpack
+: 1524801005:1;node dist/main.js
+: 1524801014:547;emacs dist/main.js
+: 1524801611:9;npm i --save-dev html-webpack-plugin
+: 1524801642:139;emacs webpack.config.js
+: 1524801789:38;npx webpack-dev-server
+: 1524801832:0;ls dist
+: 1524801850:1;npx webpack
+: 1524801864:0;ls dist
+: 1524801879:5;emacs dist/index.html
+: 1524802207:191;emacs webpack.config.js
+: 1524802428:439;emacs src/index.js
+: 1524802874:9;npx webpack-dev-server
+: 1524802887:354;emacs src/index.js
+: 1524803244:11;npx webpack-dev-server
+: 1524803258:16;emacs src/index.js
+: 1524803277:218;npx webpack-dev-server
+: 1524803590:9;npm i -s react react-dom
+: 1524803663:561;fg
+: 1524804229:27;npx webpack-dev-server
+: 1524804271:16;fg
+: 1524804298:0;cat package.json
+: 1524804357:8;npm i -D babel-loader babel-core babel-preset-env babel-preset-react
+: 1524804464:688;fg
+: 1524805157:44;npx webpack-dev-server
+: 1524805216:26;tmux
+: 1524805245:4;fg
+: 1524805251:303525;tmux
+: 1525108779:0;exit
+: 1525115009:0;cd src
+: 1525115330:53740;emacs
+: 1525169204:0;..
+: 1525169209:10;npm i -D stylelint-custom-processor-loader
+: 1525169305:16;npm i -D stylelint
+: 1525169584:10;npm i -D stylelint-processor-styled-components stylelint-config-styled-components stylelint-config-recommended
+: 1525169625:22;emacs .stylelintrc
+: 1525169667:127;emacs webpack.config.js
+: 1525169818:71;npm start
+: 1525169892:0;exit
+: 1525115043:54756;npm start
+: 1525169948:0;exit
+: 1525169980:0;cd src
+: 1525173753:144;emacs
+: 1525173906:0;exit
+: 1525171074:0;npx stylelint
+: 1525171107:20;npx stylelint | lv
+: 1525171139:1;npx stylelint src/index.js
+: 1525171238:1;npx stylelint ./src/**/*.js
+: 1525171466:1;npx stylelint src/components/Test.js
+: 1525171597:0;npx eslint src/components/App.js
+: 1525171610:1;eslint src/components/App.js
+: 1525171642:0;eslint src/index.js
+: 1525171661:0;eslint ./src/**/*.js
+: 1525171815:1;eslint ./src/components/Test.js
+: 1525173458:259;emacs ~/.eslintrc
+: 1525173912:0;exit
+: 1525170678:0;mv .stylelintrc ~/Desktop
+: 1525170679:0;ls
+: 1525170815:0;mv ~/Desktop/.stylelintrc .
+: 1525171031:0;npx stylelint
+: 1525173914:0;exit
+: 1525170969:2947;npm start
+: 1525173918:0;exit
+: 1525175699:0;~
+: 1525175715:126;emacs .zshrc
+: 1525175845:0;exit
+: 1525175848:0;;5C;5D;5C;5D;5C;5D;5C;5D;5C;5D;5C;5D;5D;5D;5D;5D;5D;5D;D5exit
+: 1525175851:0;exit
+: 1525114950:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1525174329:1522;tmux
+: 1525175854:0;exit
+: 1525176010:0;emacs .zshrc
+: 1525176408:0;exec $SHELL -l
+: 1525176487:0;emacs .zshrc
+: 1525176512:0;exec $SHELL -l
+: 1525176571:0;tmux
+: 1525176604:0;cd Music
+: 1525176639:0;cd Pictures/Lightroom/Lightroom\ Catalog-
+: 1525176657:0;cd Pictures/Lightroom/Lightroom\
+: 1525176677:0;ls Pictures/Lightroom/
+: 1525176748:0;cd Pictures/Lightroom
+: 1525176753:0;ls
+: 1525176773:0;cd Music
+: 1525176816:0;tmux list-sessions
+: 1525176827:0;exit
+: 1525198525:0;tmux
+: 1525198570:0;exit
+: 1525198576:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1525198579:0;tmux
+: 1525198628:0;exit
+: 1525198637:0;npm start
+: 1525198671:0;exit
+: 1525198718:0;emacs
+: 1525203057:0;eslint ./src/components/App.js
+: 1525205250:0;emacs
+: 1525205432:0;eslint ./src/components/App.js
+: 1525216938:0;emacs
+: 1525224932:0;brew cask install the-unarchiver
+: 1525225896:0;npm install -g svgo
+: 1525226035:0;ndenv rehash
+: 1525226054:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1525226060:0;ndenv rehash
+: 1525226123:0;svgo ../DTP/svg/*.svg -o src/assets
+: 1525226386:0;svgo ../DTP/svg/head_background.svg -o src/assets
+: 1525228273:0;svgo src/assets/head_background\ 11.19.26.svg
+: 1526229415:0;tumx
+: 1526229417:0;tmux
+: 1526229467:0;exitD
+: 1526229469:0;exit
+: 1526229474:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526229478:0;tmux
+: 1526229515:0;npm start
+: 1526229549:0;src
+: 1526229551:0;tree
+: 1526229556:0;emacs
+: 1526231072:0;ip
+: 1526231090:0;ipconfig
+: 1526231098:0;ping
+: 1526231189:0;ping localhost
+: 1526231207:0;ping broadcasthost
+: 1526293062:0;..
+: 1526293064:0;ls
+: 1526293079:0;git init
+: 1526293086:0;git status
+: 1526293119:0;git add .
+: 1526293153:0;git commit -m "init project"
+: 1526293199:0;npm start
+: 1526301289:0;git status
+: 1526301308:0;git add .
+: 1526301342:0;git commit -m "Markup Homepage"
+: 1526305909:0;git status
+: 1526305933:0;git add .
+: 1526305940:0;git status
+: 1526305955:0;git commit -m "Markup Header"
+: 1526306718:0;tree src
+: 1526306841:0;move src/components/Sideber.js src/components/Sidebar.js
+: 1526306868:0;mv src/components/Sideber.js src/components/Sidebar.js
+: 1526306891:0;tree src
+: 1526307071:0;emacs
+: 1526307573:0;npm start
+: 1526315057:0;git log
+: 1526315065:0;git status
+: 1526315088:0;git add .
+: 1526315114:0;git commit -m "Markup Sidebar"
+: 1526315127:0;tree src
+: 1526315157:0;emacs
+: 1526316082:0;tree src
+: 1526316145:0;mv src/components/Greeting.jp src/components/Greeting.js
+: 1526316151:0;tree src
+: 1526322593:0;rm src/components/Test.js
+: 1526322598:0;git status
+: 1526322631:0;git add .
+: 1526322789:0;git commit -m "implement toggle sidebar open or close"
+: 1526322801:0;git log
+: 1526323965:0;npm start
+: 1526324666:0;exit
+: 1526324787:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526324791:0;tmux
+: 1526324831:0;emacs
+: 1526324865:0;npm start
+: 1526326880:0;tree src
+: 1526326941:0;rm src/assets/yasukorori.jpg
+: 1526326946:0;tree src
+: 1526343677:0;git status
+: 1526343805:0;git add .
+: 1526343810:0;git status
+: 1526343823:0;git commit -m "Markup Greeting and Add favicon"
+: 1526343882:0;git log
+: 1526343905:0;exit
+: 1526343911:0;exit
+: 1526343920:0;fg
+: 1526343952:0;exit
+: 1526345038:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526345042:0;tmux
+: 1526345095:0;npm start
+: 1526346821:0;emacs
+: 1526376072:0;cd src/components/
+: 1526376073:0;ls
+: 1526376097:0;mv ShopInfo.js SalonInfo.js
+: 1526376113:0;..
+: 1526376117:0;tree
+: 1526376137:0;emacs
+: 1526404636:0;..
+: 1526404644:0;git status
+: 1526404711:0;git add .
+: 1526404754:0;git commit -m "Markup SalonInfo and Menu"
+: 1526404761:0;git log
+: 1526405673:0;exit
+: 1526408584:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526408596:0;tmux
+: 1526408672:0;npm start
+: 1526408713:0;ping localhost
+: 1526408727:0;ping broadcasthost
+: 1526408846:0;tmux
+: 1526408851:0;emacs
+: 1526413478:0;tree src
+: 1526416059:0;emacs
+: 1526433641:0;git status
+: 1526433728:0;git add .
+: 1526433760:0;git commit -m "Markup Gallery"
+: 1526433845:0;tree src
+: 1526441687:0;cd src/components/
+: 1526441706:0;grep asset
+: 1526442067:0;grep "assets" .
+: 1526442077:0;grep -r "assets" .
+: 1526442132:0;..
+: 1526442158:0;cp -r assets images
+: 1526442164:0;tree
+: 1526442190:0;grep -r "assets" .
+: 1526442856:0;git status
+: 1526442895:0;grep -r "./../assets" .
+: 1526442912:0;grep -r "./../assets" src/components
+: 1526442936:0;cd src/assets
+: 1526442938:0;ls
+: 1526442962:0;rm *
+: 1526442973:0;ls
+: 1526442986:0;rm .DS_Store
+: 1526442988:0;ls
+: 1526442990:0;..
+: 1526443012:0;rm -r assets
+: 1526443013:0;ls
+: 1526443020:0;tree
+: 1526443046:0;git status
+: 1526443067:0;git add .
+: 1526443195:0;git commit -m "Markup FullSizePicture and move assets/ to images/assets/"
+: 1526443214:0;git log
+: 1526443598:0;tree
+: 1526443929:0;npm start
+: 1526443996:0;emacs
+: 1526445386:0;mkdir databases
+: 1526445387:0;ls
+: 1526445476:0;touch databases/pictureData.js
+: 1526445483:0;tree
+: 1526458199:0;git status
+: 1526458227:0;emacs
+: 1526458315:0;rm images/assets/close_menu.png
+: 1526458318:0;git status
+: 1526458360:0;git add .
+: 1526458362:0;git status
+: 1526458495:0;git commit -m "Implement to open and close FullSizePicture"
+: 1526458677:0;exit
+: 1526470519:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526470528:0;tmux
+: 1526470548:0;exit
+: 1526470827:0;npm start
+: 1526470964:0;tree src
+: 1526471483:0;emacs
+: 1526479484:0;git status
+: 1526479567:0;git add 
+: 1526479572:0;git add .
+: 1526479746:0;git commit -m "Markup Footer and adjust header styles"
+: 1526479847:0;emacs
+: 1526481301:0;exit
+: 1526486945:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526486949:0;tmux
+: 1526486995:0;npm start
+: 1526487146:0;tmux
+: 1526487152:0;emacs
+: 1526495161:0;exit
+: 1526512729:0;git status
+: 1526512764:0;git add .
+: 1526512877:0;git commit -m "Markup and implement Blogindex"
+: 1526512888:0;npm start
+: 1526512918:0;tree src
+: 1526512967:0;rm src/images/gallery/image.jpg
+: 1526512971:0;tree src
+: 1526513406:0;emacs
+: 1526532575:0;git status
+: 1526533196:0;git checkout -- .
+: 1526533207:0;git status
+: 1526533319:0;emacs
+: 1526537812:0;git status
+: 1526537826:0;rm src/images/gallery/image.jpg
+: 1526537828:0;git status
+: 1526537852:0;git add .
+: 1526537856:0;git status
+: 1526537886:0;git commit -m "Add transition to Blogindex"
+: 1526537893:0;git log
+: 1526537940:0;emacs
+: 1526537951:0;tree src
+: 1526540171:0;git dif
+: 1526540177:0;git diff
+: 1526540211:0;git status
+: 1526540222:0;git add .
+: 1526540373:0;git commit -m "add box-shadow to header and sidebar"
+: 1526540529:0;exit
+: 1526541189:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526541193:0;tmux
+: 1526541363:0;npm start
+: 1526541745:0;tree src
+: 1526541783:0;emacs
+: 1526542451:0;exit
+: 1526544278:0;emacs
+: 1526544303:0;cd ~/.dot-files
+: 1526544307:0;git status
+: 1526544345:0;git add .
+: 1526544382:0;git commit -m "many changes"
+: 1526544393:0;git log
+: 1526544411:0;git push -u origin master
+: 1526544428:0;emacs
+: 1526545837:0;cd -
+: 1526545841:0;emacs
+: 1526546016:0;emcs
+: 1526546019:0;emacs
+: 1526549102:0;cd src
+: 1526549139:0;grep -r "z-index" components
+: 1526589332:0;git status
+: 1526589345:0;git diff
+: 1526589423:0;git checkout -- .
+: 1526589427:0;git status
+: 1526589462:0;cd src/components/
+: 1526589483:0;rm Main.js ProvMenu.js ProvSalonInfo.js 
+: 1526589486:0;git status
+: 1526589506:0;emacs
+: 1526593516:0;cp components/Sidebar.js components/Sidebar_backup.js
+: 1526593521:0;tree
+: 1526594309:0;fg
+: 1526594331:0;exit
+: 1526594373:0;emacs
+: 1526598414:0;exit
+: 1526598552:0;cd G
+: 1526598560:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526598571:0;npm start
+: 1526598882:0;tmux
+: 1526598886:0;npm start
+: 1526598944:0;emacs
+: 1526598978:0;tree src
+: 1526599696:0;git diff  --help
+: 1526599812:0;git diff src/components/App.js
+: 1526599841:0;exit
+: 1526599899:0;git diff src/components/App.js
+: 1526602598:0;git diff src/components/Footer.js
+: 1526604471:0;tmux kill-server
+: 1526604476:0;tmux
+: 1526604521:0;npm start
+: 1526604593:0;tree src
+: 1526604598:0;emacs
+: 1526611908:0;tree src
+: 1526612012:0;git status
+: 1526612052:0;rm src/components/Sidebar_backup.js
+: 1526612056:0;git status
+: 1526612086:0;git add .
+: 1526612108:0;git log
+: 1526612224:0;git commit -m "Implement view switcher"
+: 1526612452:0;npm start
+: 1526612478:0;emacs
+: 1526615642:0;git status
+: 1526615687:0;git diff
+: 1526615902:0;emacs
+: 1526616094:0;git add .
+: 1526616325:0;git commit -m "Implement sidebar auto close and hide link to Home when Home view showen"
+: 1526628066:0;npm start
+: 1526628151:0;emacs
+: 1526637062:0;cd src/components/
+: 1526637134:0;ls
+: 1526637180:0;rm Blog.js
+: 1526637202:0;mv Scratch.js _Scratch.js
+: 1526637203:0;ls
+: 1526637235:0;mv _Scratch.js __Scratch.js
+: 1526637236:0;ls
+: 1526637270:0;git status
+: 1526637330:0;git commit -m "Implement sidebar auto close and hide link to"
+: 1526637345:0;git add .
+: 1526637350:0;git status
+: 1526637470:0;git commit -m "adjust main children's padding and made boxshadow function"
+: 1526637560:0;emacs
+: 1526637569:0;..
+: 1526637573:0;tree
+: 1526642251:0;lv ~/.dot-files/.emacs.d/etc/js-mode-expansions.el
+: 1526642327:0;cd ~/.dot-files/.emacs.d
+: 1526642329:0;ls
+: 1526642345:0;etc
+: 1526642346:0;ls
+: 1526642368:0;emacs js-mode-expansions.el
+: 1526642537:0;exit
+: 1526642542:0;tree
+: 1526643311:0;grep -r "isSidebarOpen" components
+: 1526644042:0;emacs
+: 1526644866:0;git diff
+: 1526644875:0;git status
+: 1526644883:0;git diff
+: 1526644999:0;git add .
+: 1526645050:0;git commit -m "Imprement Home view toggle hide show"
+: 1526645076:0;npm start
+: 1526645093:0;emacs
+: 1526647584:0;git status
+: 1526647595:0;emacs
+: 1526648731:0;tree
+: 1526658771:0;git status
+: 1526658790:0;git add .
+: 1526658901:0;git commit -m "Lift BlogIndex state up to App and add photo to Menu "
+: 1526658906:0;git log
+: 1526658961:0;emacs
+: 1526658969:0;tree
+: 1526663602:0;grep -r "isSidebarOpen" components
+: 1526663641:0;grep -r "handleMainView" components
+: 1526663874:0;grep -r --color=auto  "handleMainView" components
+: 1526663995:0;grep -nr --color=auto  "handleMainView" components
+: 1526671194:0;exit
+: 1526671220:0;cd ~/Desktop/Codes
+: 1526671237:0;git status
+: 1526671340:0;git checkout -- .
+: 1526671346:0;git status
+: 1526671370:0;emacs webpack.config.js
+: 1526671411:0;tmux
+: 1526671421:0;npm start
+: 1526671519:0;exit
+: 1526671653:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526671656:0;tmux
+: 1526671673:0;npm start
+: 1526671708:0;tree src
+: 1526671735:0;emacs
+: 1526671762:0;git status
+: 1526671784:0;git diff | lv
+: 1526671954:0;git diff
+: 1526672003:0;git add .
+: 1526672064:0;git commit -m "Change main view switching logic"
+: 1526672090:0;emacs
+: 1526677123:0;emacs src/images/assets/balloon_e.svg
+: 1526677173:0;exit
+: 1526681918:0;npm start
+: 1526682502:0;  exit
+: 1526682519:0;git diff
+: 1526682523:0;emacs
+: 1526720237:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming
+: 1526720262:0;create-react-app animetion
+: 1526720622:0;cd animetion
+: 1526720626:0;npm start
+: 1526720658:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/animetion
+: 1526720713:0;npm install --save styled-components
+: 1526720905:0;npm start
+: 1526720923:0;ls
+: 1526720932:0;ls src
+: 1526720969:0;cd src
+: 1526721001:0;rm App.css App.js App.test.js index.css registerServiceWorker.js
+: 1526721004:0;ls
+: 1526721012:0;emacs index.js
+: 1526722012:0;cp src/components/Balloon.js ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/animetion/src
+: 1526722039:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/animetion
+: 1526722044:0;ls src
+: 1526722153:0;exit
+: 1526726797:0;cp Balloon.js ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes/src/components/BalloonSvg,js
+: 1526726809:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526726816:0;cd src
+: 1526726820:0;ls components
+: 1526726844:0;cd components
+: 1526726865:0;mv BalloonSvg,js BalloonSvg.js
+: 1526726867:0;ls
+: 1526726901:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526726906:0;npm start
+: 1526726934:0; ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/animetion
+: 1526726940:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526726961:0;../../
+: 1526726965:0;emacs
+: 1526729245:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/animetion
+: 1526729250:0;npm start
+: 1526729284:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/animetion
+: 1526729299:0;cd src
+: 1526729301:0;ls
+: 1526729308:0;emacs index.js
+: 1526733370:0;exit
+: 1526736290:0;git status
+: 1526736452:0;mv src/components/Balloon.js
+: 1526736465:0;rm src/components/Balloon.js
+: 1526736469:0;git status
+: 1526736486:0;git diff
+: 1526736537:0;git add 
+: 1526736543:0;git add .
+: 1526736604:0;git status
+: 1526736676:0;git commit -m "add BalloonSvg to Home"
+: 1526736689:0;emacs
+: 1526736709:0;tree src
+: 1526741277:0;exit
+: 1526742647:0;git status
+: 1526742671:0;emacs
+: 1526742847:0;tree src
+: 1526743802:0;git status
+: 1526743822:0;git diff
+: 1526743881:0;emacs
+: 1526743904:0;git add .
+: 1526743957:0;git commit -m "change link text to svg"
+: 1526743982:0;exit
+: 1526743984:0;eit
+: 1526743986:0;exit
+: 1526751253:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1526751256:0;tmux
+: 1526751579:0;emacs package.json
+: 1526751830:0;emacs webpack.config.js
+: 1526751924:0;npm run build
+: 1526751945:0;ls
+: 1526751961:0;tree dist
+: 1526751985:0;lv dist/main.js
+: 1526752450:0;cd ~
+: 1526752473:0;brew install heroku/brew/heroku
+: 1526752561:0;heroku -v
+: 1526752613:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/
+: 1526752614:0;ls
+: 1526752652:0;cd dist
+: 1526752664:0;git init
+: 1526752681:0;heroku login
+: 1526752717:0;heroku git:remote -a fuwafuwa-hiar-salon-demo
+: 1526752737:0;git add .
+: 1526752759:0;git commit -m "demo"
+: 1526752778:0;git push heroku master
+: 1526753529:0;cd ../Codes
+: 1526753536:0;git status
+: 1526753593:0;~
+: 1526753614:0;cd Codes
+: 1526753621:0;cd Code
+: 1526753633:0;cd Desktop/Codes
+: 1526753696:0;~
+: 1526753770:0;ls
+: 1526753778:0;cd Desktop
+: 1526753779:0;ls
+: 1526753796:0;Codes
+: 1526753803:0;git add . 
+: 1526753819:0;git commit -m "production"
+: 1526753832:0;heroku git:remote -a fuwafuwa-hiar-salon-demo
+: 1526753843:0;git push heroku master
+: 1526754283:0;ls
+: 1526754417:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/dist
+: 1526754419:0;ls
+: 1526754491:0;ls ../
+: 1526754504:0;cd ..
+: 1526754505:0;ls
+: 1526754599:0;git clone https://github.com/nulltask/heroku-static-provider.git my-site
+: 1526754605:0;ls
+: 1526754623:0;cd my-site
+: 1526754833:0;heroku create
+: 1526754862:0;git push -u heroku master
+: 1526754896:0;git add .
+: 1526754925:0;git commit -am "demo site"
+: 1526754944:0;git push heroku master
+: 1526755027:0;heroku open
+: 1526755302:0;heroku config:set USER=fuwafuwa
+: 1526755319:0;heroku config:set PASS=hitsuji
+: 1526756721:0;heroku logout
+: 1526768448:0;exit
+: 1526820319:0;cd .dot-files/
+: 1526820322:0;git diff
+: 1526820356:0;~
+: 1526820357:0;ls
+: 1526820438:0;mv .eslintrc .dot-files/etc/
+: 1526820440:0;ls
+: 1526820480:0;ln -s .dot-files/etc/.eslintrc
+: 1526820481:0;ls
+: 1526820503:0;cd .dot-files/
+: 1526820507:0;git add .
+: 1526820537:0;git commit -m "move .eslintrc"
+: 1526820556:0;git push -u origin master
+: 1526822658:0;~
+: 1526822660:0;tmux
+: 1526822724:0;ssh -p 10022 asahi@160.16.107.88
+: 1526828610:0;ls
+: 1526829275:0;scp -P 10022 .zsh_hist asahi@160.16.107.88:/~
+: 1526829922:0;scp -P 10022 .zsh_hist asahi@160.16.107.88:~
+: 1526831565:0;exit
+: 1526831891:0;ssh -p 10022 asahi@160.16.107.88
+: 1526834271:0;emacs --varsion
+: 1526834284:0;emacs --version
+: 1526834372:0;emacs
+: 1526834623:0;cd .dot-files/.emacs.d/custom-themes
+: 1526834624:0;ls
+: 1526834629:0;ls elpa/expand-region-20171217.2125
+: 1526834631:0;ls
+: 1526834640:0;cd emacs-color-theme-solarized
+: 1526834641:0;ls
+: 1526834691:0;..
+: 1526834724:0;scp -P 10022 -r emacs-color-theme-solarized asahi@160.16.107.88:~
+: 1526835009:0;emacs
+: 1526835048:0;exit
+: 1526835557:0;tmux
+: 1526835575:0;ssh -p 10022 asahi@160.16.107.88
+: 1526835651:0;cd .dot-files/.emacs.d/custom-themes
+: 1526835654:0;ls
+: 1526835661:0;ls emacs-color-theme-solarized
+: 1526836215:0;exit
+: 1526836365:0;ssh -p 10022 asahi@160.16.107.88
+: 1526836648:0;exit
+: 1526836732:0;ssh -p 10022 asahi@160.16.107.88
+: 1526838114:0;npm list --depth=0 -g
+: 1526843670:0;exit
+: 1526843692:0;ssh -p 10022 asahi@160.16.107.88
+: 1526848059:0;brew install nmap
+: 1526848092:0;nmap 160.16.107.88
+: 1526848617:0;scp -P 10022 -r Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/my-site/public asahi@160.16.107.88:~
+: 1526852091:0;exit
+: 1526897319:0;echo user
+: 1526897444:0;users
+: 1526897459:0;ipconfig
+: 1526897468:0;ping
+: 1526897510:0;ip
+: 1526897660:0;ifconfig
+: 1526897980:0;ssh -p 10022 asahi@160.16.107.88
+: 1526931779:0;cd Desktop
+: 1526931781:0;ls
+: 1526931837:0;scp -P 10022 -r main-image.png asahi@160.16.107.88:~/ASAHI/test.png
+: 1526939640:0;tree
+: 1526940880:0;emacs .zshrc
+: 1526940899:0;..
+: 1526940902:0;emacs .zshrc
+: 1526940973:0;tree -C
+: 1526940979:0;ls
+: 1526941003:0;tmux list-sessions
+: 1526941015:0;exit
+: 1526941056:0;ssh -p 10022 asahi@160.16.107.88
+: 1526941157:0;cd Desktop
+: 1526941159:0;tree
+: 1526941168:0;tree -C
+: 1526941195:0;cd ~/.dot-files
+: 1526941198:0;git status
+: 1526941890:0;mv .emacs.d/projectile-bookmarks.eld ~
+: 1526941894:0;git status
+: 1526941914:0;ls ~
+: 1526941936:0;ls .emacs.d/
+: 1526941979:0;git checkout -- .
+: 1526941985:0;git status
+: 1526942054:0;h
+: 1526942230:0;git pull origin master
+: 1526942247:0;cd ~
+: 1526942251:0;exec $SHELL -l
+: 1526942259:0;emacs
+: 1526945187:0;scp -P 10022 -r .dot-files/.emacs.d/custom-themes/emacs-color-theme-solarized asahi@160.16.107.88:~
+: 1526998240:0;exit
+: 1526998460:0;ssh -p 10022 asahi@160.16.107.88
+: 1527012448:0;users
+: 1527012465:0;tmux
+: 1527012471:0;exit
+: 1527012497:0;ssh -p 10022 asahi@160.16.107.88
+: 1527038859:0;cd .dot-files
+: 1527038871:0;git status
+: 1527038890:0;git pull origin master
+: 1527079529:0;ssh -p 10022 asahi@160.16.107.88
+: 1527089956:0;ls
+: 1527089963:0;cd .dot-files
+: 1527089967:0;git status
+: 1527090105:0;git pull origin master
+: 1527090138:0;tmux
+: 1527090152:0;~
+: 1527090156:0;ssh -p 10022 asahi@160.16.107.88
+: 1527090231:0;git pull origin master
+: 1527090264:0;emacs .emacs.d/init.el
+: 1527090315:0;exec $SHELL -l
+: 1527090326:0;cd zsh
+: 1527090343:0;cd ../.emacs.d
+: 1527090406:0;rm -rf custom-themes
+: 1527090414:0;ls
+: 1527090422:0;..
+: 1527090429:0;git status
+: 1527090465:0;exit
+: 1527090907:0;tmux
+: 1527090913:0;exit
+: 1527090944:0;ssh -p 10022 asahi@160.16.107.88
+: 1527104959:0;scp -P 10022 -r Desktop/initializr asahi@160.16.107.88:~
+: 1527106768:0;tmux
+: 1527106781:0;cd .dot-files
+: 1527106785:0;git status
+: 1527106795:0;git pull origin master
+: 1527109421:0;exit
+: 1527109427:0;cd ~
+: 1527115165:0;mdcd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/
+: 1527115266:0;mdcd GoogleDrive/programming
+: 1527115274:0;ls
+: 1527115294:0;cd GoogleDrive/programming
+: 1527115314:0;npm install -g stream-adventure
+: 1527115330:0;npm install learnyounode -g
+: 1527115360:0;npm install -g npm
+: 1527115429:0;learnyounode
+: 1527115435:0;ndenv rehash
+: 1527115500:0;learnyounode
+: 1527115699:0;mdcd learnyounode
+: 1527115724:0;ls
+: 1527115737:0;mdcd test
+: 1527115771:0;exec $SHELL -l
+: 1527115777:0;mdcd test
+: 1527115805:0;emacs ~/.dot-files/zsh/scripts/mdcd.sh
+: 1527115855:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming
+: 1527115867:0;mdcd test
+: 1527116307:0;cd react_practice
+: 1527116416:0;..
+: 1527116420:0;mdcd test
+: 1527116797:0;cd
+: 1527116867:0;mdcd test
+: 1527116913:0;mdcd -p hoge
+: 1527117016:0;mdcd hoge
+: 1527117054:0;mdcd -p hoge
+: 1527117082:0;mdcd test
+: 1527117086:0;mdcd -p hoge
+: 1527117487:0;mdcd hoge fuga
+: 1527117494:0;mdcd hoge
+: 1527117745:0;mdcd ""
+: 1527117776:0;mdcd hoge
+: 1527117962:0;mdcd -p hoge/hoge
+: 1527119703:0;../../
+: 1527119706:0;..
+: 1527119717:0;rm -r hoge
+: 1527119718:0;ls
+: 1527119839:0;ls node.js_tutorial
+: 1527119876:0;mdcd nodejs_technics
+: 1527119948:0;mdcd chapter_01
+: 1527120020:0;mdcd 07_column
+: 1527120022:0;ls
+: 1527120051:0;..
+: 1527120060:0;rm 07_column
+: 1527120067:0;rm -r 07_column
+: 1527120086:0;mdcd 07_generator
+: 1527120225:0;exit
+: 1527120266:0;emacs generator_text.js fib.js
+: 1527120297:0;cd nodejs_technics
+: 1527120311:0;cd chapter_01/07_generator
+: 1527120369:0;~/Google ãƒ£ƒ¨ã‚ƒ¹ãƒ£©ã‚¤ãƒ£ƒµã‚ƒ¹/programming/nodejs_technics/chapter_01/07_generator
+: 1527120387:0;cd ~/Google ãƒ£ƒ¨ã‚ƒ¹ãƒ£©ã‚¤ãƒ£ƒµã‚ƒ¹/programming/nodejs_technics/chapter_01/07_generator
+: 1527120614:0;cd ~/Google\ ãƒ£ƒ¨ã‚ƒ¹ãƒ£©ã‚¤ãƒ£ƒµã‚ƒ¹/programming/nodejs_technics/chapter_01/07_generator
+: 1527120676:0;emacs
+: 1527120823:0;exit
+: 1527120990:0;node generator_text.js
+: 1527122054:0;node fib.js
+: 1527122441:0;..
+: 1527122462:0;mv 07_generator 06.5_generator
+: 1527122464:0;ls
+: 1527122525:0;mdcd 08_promise-async
+: 1527122620:0;..
+: 1527122657:0;mv 08_promise-async 07_promise-async
+: 1527122662:0;cd 07_promise-async
+: 1527123176:0;cp ~/Desktop/src/ch1/kakugen.txt .
+: 1527123177:0;ls
+: 1527123212:0;node readfile_sync.js
+: 1527124771:0;node readfile_cb.js
+: 1527125249:0;node mumei.js
+: 1527126479:0;cp /Users/asahi/Desktop/src/ch1/a.txt /Users/asahi/Desktop/src/ch1/b.txt /Users/asahi/Desktop/src/ch1/c.txt . 
+: 1527126481:0;ls
+: 1527126782:0;node readfile_cb3.js
+: 1527132619:0;..
+: 1527132691:0;mdcd chapter_07
+: 1527132729:0;mdcd 02_express_test
+: 1527132748:0;npm init -y 
+: 1527132779:0;../../
+: 1527132783:0;../
+: 1527132809:0;ls
+: 1527132818:0;cd chapter_01
+: 1527132860:0;..
+: 1527132899:0;mdcd -p chapter_05/02_express_test
+: 1527132905:0;npm init -y 
+: 1527132923:0;npm i -S express
+: 1527132951:0;exit
+: 1527133001:0;../../chapter_05/02_express_test
+: 1527139791:0;cat package.json
+: 1527139806:0;emacs hello.js
+: 1527140191:0;node hello.js
+: 1527140496:0;emacs
+: 1527140765:0;node hello.js
+: 1527178345:0;node post_test.js
+: 1527179682:0;cat > request.txt
+: 1527179695:0;ls
+: 1527179702:0;less request.txt
+: 1527179746:0;grep --color=auto  "hoge" request.txt
+: 1527179775:0;grep -nr --color=auto  "hogehoge" .
+: 1527179857:0;node post_test.js
+: 1527179893:0;grep -nr --color=auto  "memo" .
+: 1527180010:0;node post_test.js
+: 1527181021:0;npm i -S multer
+: 1527181347:0;emacs post_test.js
+: 1527181806:0;exit
+: 1527182511:0;node post_update.js
+: 1527184153:0;mkdir ASAHI
+: 1527184154:0;ls
+: 1527184216:0;cp -r Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/nodejs_technics ASAHI
+: 1527184225:0;cd ASAHI
+: 1527184267:0;cd ~/ASAHI/
+: 1527184295:0;mkdir Study
+: 1527184308:0;mv nodejs_technics Study
+: 1527184338:0;cd Study/nodejs_technics/chapter_05/02_express_test
+: 1527184345:0;ls tmp
+: 1527184395:0;emacs
+: 1527184640:0;cd ~/ASAHI/Study/nodejs_technics/chapter_05/02_express_test
+: 1527184644:0;node post_update.js
+: 1527191641:0;mkdir pub
+: 1527191645:0;node post_update.js
+: 1527193747:0;..
+: 1527193767:0;mdcd 05_bbs
+: 1527193776:0;npm init -y 
+: 1527193790:0;../05_bbs
+: 1527193794:0;ls
+: 1527193883:0;npm i -S express react react-dom nedb superagent
+: 1527193949:0;npm i -D webpack-cli webpack
+: 1527194115:0;npm i -D babel-loader babel-core babel-preset-env babel-preset-react
+: 1527194745:0;emacs webpack.config.js
+: 1527197125:0;npm install --save-dev html-webpack-plugin
+: 1527197245:0;emacs webpack.config.js
+: 1527197357:0;npm install webpack-serve --save-dev
+: 1527197840:0;mdcd src
+: 1527197848:0;emacs index.js
+: 1527198853:0;mdcd public
+: 1527198868:0;emacs index.html
+: 1527199235:0;emacs webpack.config.js
+: 1527199256:0;emacs ../webpack.config.js
+: 1527199296:0;webpack-serve ./webpack.config.js
+: 1527199305:0;npx webpack-serve ./webpack.config.js
+: 1527199344:0;cat package.json
+: 1527199348:0;..
+: 1527199351:0;cat package.json
+: 1527199368:0;webpack-serve ./webpack.config.js
+: 1527199375:0;npx webpack-serve ./webpack.config.js
+: 1527199496:0;cd Study/nodejs_technics/chapter_05/05_bbs
+: 1527199500:0;ls public
+: 1527199521:0;..
+: 1527199545:0;emacs webpack.config.js
+: 1527199637:0;npx webpack
+: 1527199644:0;ls public
+: 1527199679:0;emacs
+: 1527199747:0;exit
+: 1527199941:0;npx webpack
+: 1527200146:0;npx webpack-serve ./webpack.config.js
+: 1527200365:0;mv public/index.html src
+: 1527200414:0;npx webpack-serve ./webpack.config.js
+: 1527202321:0;npm install --save styled-components
+: 1527203411:0;emacs
+: 1527204989:0;npm list --depth=0 -g
+: 1527205051:0;npm install --save-dev stylelint stylelint-processor-styled-components stylelint-config-styled-components stylelint-config-recommended
+: 1527205109:0;cat > .stylelintrc
+: 1527205132:0;cat .stylelintrc
+: 1527205215:0;npx stylelint './src/**/*.js\
+
+: 1527205235:0;npx stylelint src/index.js\
+
+: 1527205918:0;npm i -D stylelint-custom-processor-loader
+: 1527205986:0;c
+: 1527205993:0;emacs webpack.config.js
+: 1527206215:0;npx webpack-serve ./webpack.config.js
+: 1527206478:0;cat .stylelintrc
+: 1527206521:0;emacs .stylelintrc
+: 1527206542:0;npx stylelint src/index.js\
+
+: 1527206763:0;npx stylelint index.css\
+
+: 1527206930:0;npx stylelint src/index.js\
+
+: 1527208041:0;npm install --global prettier
+: 1527208076:0;ndenv rehash
+: 1527208109:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1527208113:0;ndenv rehash
+: 1527208216:0;emacs src/index.js
+: 1527208245:0;prettier src/index.js
+: 1527208339:0;emacs src/index.js
+: 1527208434:0;prettier --write src/prev-index.js
+: 1527208463:0;diff src/index.js src/prev-index.js
+: 1527208788:0;brew install colordiff
+: 1527208853:0;colordiff install colordiff
+: 1527208866:0;colordiff src/index.js src/prev-index.js
+: 1527209006:0;colordiff -u src/index.js src/prev-index.js
+: 1527209082:0;colordiff -c src/index.js src/prev-index.js
+: 1527209128:0;colordiff -y src/index.js src/prev-index.js
+: 1527211080:0;prettier --write --no-semi  src/prev-index.js
+: 1527211099:0;cat src/prev-index.js
+: 1527211147:0;prettier --write --no-semi --jsx-bracket-same-line src/prev-index.js
+: 1527211151:0;cat src/prev-index.js
+: 1527211172:0;emacs
+: 1527211625:0;echo $PATH
+: 1527211655:0;echo $PATH | lv
+: 1527211670:0;echo $PATH
+: 1527211835:0;export -p | lv
+: 1527211990:0;emacs ~/.dot-files/zsh/.zshenv
+: 1527212218:0;exec $SHELL -l
+: 1527212228:0;export -p | lv
+: 1527212306:0;mdcd public
+: 1527212347:0;source ~/.zshenv
+: 1527212368:0;emacs ~/.dot-files/zsh/.zshenv
+: 1527212408:0;exec $SHELL -l
+: 1527212488:0;cd src
+: 1527212495:0;rm prev-index.js
+: 1527212498:0;cd ..
+: 1527212505:0;rm index.css
+: 1527212506:0;ls
+: 1527212542:0;cd src
+: 1527212548:0;emacs
+: 1527212605:0;npm i -g npm
+: 1527212630:0;ndenv rehash
+: 1527213056:0;npx webpack-serve ./webpack.config.js
+: 1527213190:0;exit
+: 1527213615:0;emacs
+: 1527216485:0;exit
+: 1527218410:0;cd ASAHI/Study/nodejs_technics/chapter_05/05_bbs
+: 1527218644:0;node bbs_server.js
+: 1527219212:0;npm install -g nodemon
+: 1527219234:0;ndenv rehash
+: 1527219269:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1527219273:0;ndenv rehash
+: 1527219292:0;nodemon bbs_server.js
+: 1527219508:0;npx webpack
+: 1527219516:0;ls
+: 1527219559:0;;s;
+: 1527219569:0;ls -A public
+: 1527219593:0;nodemon bbs_server.js
+: 1527219706:0;npx webpack -watch
+: 1527219772:0;npx webpack -w
+: 1527221407:0;tmux
+: 1527221411:0;cd ASAHI/Study/nodejs_technics/chapter_05/05_bbs
+: 1527221427:0;emacs ~/.dot-files/zsh/.zshrc
+: 1527221476:0;npm install -g browser-sync
+: 1527221511:0;ndenv rehash
+: 1527221694:0;cd public
+: 1527222186:0;browser-sync "http://localhost:3001/public/" -w
+: 1527222594:0;..
+: 1527222881:0;browser-sync start --proxy localhost:8080 --files "public/*"
+: 1527222988:0;nodemon bbs_server.js
+: 1527227386:0;emacs
+: 1527228491:0;fg
+: 1527228495:0;emacs
+: 1527236206:0;..
+: 1527236209:0;cat package.json
+: 1527236240:0;emacs package.json
+: 1527236514:0;exit
+: 1527236772:0;..
+: 1527236962:0;mdcd 06-socketio
+: 1527237015:0;cd ../05_bbs
+: 1527237051:0;cp webpack.config.js package.json .stylelintrc ../06-socketio
+: 1527237058:0;cd ../06-socketio
+: 1527237075:0;exec $SHELL -l
+: 1527237081:0;cd ..
+: 1527237086:0;cd 06-socketio
+: 1527237157:0;emacs
+: 1527237166:0;emacs package.json
+: 1527237271:0;npm i
+: 1527237373:0;npm i -S socketio socket.io-client
+: 1527237444:0;npm audit fix
+: 1527271455:0;emacs package.json
+: 1527271671:0;ls
+: 1527271686:0;cp -r ../05_bbs/src .
+: 1527271687:0;ls
+: 1527271699:0;src
+: 1527271702:0;ls
+: 1527271731:0;npm run watch
+: 1527271760:0;emacs ../package.json
+: 1527271783:0;cd ../06-socketio
+: 1527271788:0;npm run watch
+: 1527271810:0;emacs ../package.json
+: 1527271827:0;emacs
+: 1527271851:0;exit
+: 1527271951:0;npm run serve
+: 1527272045:0;npx webpack-serve ./webpack.config.js
+: 1527272125:0;npx webpack-serve ./webpack.config.js
+: 1527272246:0;cd ..
+: 1527272272:0;diff webpack.config.js ../05_bbs/webpack.config.js
+: 1527272338:0;diff package.json ../05_bbs/package.json
+: 1527272404:0;npm run serve
+: 1527272437:0;npx webpack
+: 1527272510:0;cat package.json
+: 1527272937:0;diff -y package.json ../05_bbs/package.json
+: 1527273102:0;cp ../05_bbs/bbs_server.js
+: 1527273106:0;cp ../05_bbs/bbs_server.js .
+: 1527273107:0;ls
+: 1527273127:0;mv bbs_server.js chat_server.js
+: 1527273129:0;ls
+: 1527273165:0;cd ../06-socketio/
+: 1527273176:0;nodemon chat_server.js
+: 1527273230:0;cd ~/ASAHI/Study/nodejs_technics/chapter_05/06-socketio
+: 1527273244:0;browser-sync start --proxy localhost:8080 --files "public/*"
+: 1527273278:0;npm run watch
+: 1527273301:0;cd src
+: 1527273310:0;emacs
+: 1527275684:0;nodemon chat_server.js > log.txt
+: 1527275712:0;lv log.txt
+: 1527276749:0;emacs
+: 1527276925:0;nodemon chat_server.js
+: 1527281368:0;cd ../../
+: 1527281386:0;../
+: 1527281391:0;ls
+: 1527281406:0;mdcd chapter_06
+: 1527281435:0;mdcd wiki
+: 1527281500:0;cp package.json webpack.config.js .stylelintrc ../../chapter_06/wiki
+: 1527281502:0;ls
+: 1527281529:0;cd ../../chapter_06/wiki
+: 1527281618:0;cd ~/ASAHI/Study/nodejs_technics/chapter_06/wiki
+: 1527281626:0;exec $SHELL -l
+: 1527281863:0;npm i
+: 1527281953:0;npm i -S nedb body-parser superagent
+: 1527281990:0;npm i -D pegjs
+: 1527282030:0;cat package.json
+: 1527282065:0;npm uninstall socketio socket.io-client
+: 1527282075:0;cat package.json
+: 1527282217:0;cd Desktop/src/ch6/wiki
+: 1527282222:0;npm i
+: 1527282269:0;npm run build:parser
+: 1527282281:0;npm run build
+: 1527282295:0;npm start
+: 1527282307:0;ls
+: 1527282323:0;emacs wiki-server.js
+: 1527282350:0;npm start
+: 1527282763:0;tmux kill-server
+: 1527282765:0;exit
+: 1527282885:0;cd ASAHI/Study/nodejs_technics/chapter_06/wiki
+: 1527282889:0;tmux
+: 1527282905:0;exit
+: 1527282938:0;cd ~/Desktop/src/ch6/wiki/
+: 1527282951:0;emacs wiki-server.js
+: 1527282994:0;mdcd src
+: 1527282999:0;emacs
+: 1527283074:0;exit
+: 1527284216:0;ls
+: 1527284238:0;ls src
+: 1527284247:0;mv src/wiki-server.js .
+: 1527284256:0;nodemon wiki-server.js
+: 1527285370:0;npm ran watch
+: 1527285379:0;npm run watch
+: 1527285443:0;cp ../../chapter_05/06-socketio/src/index.html src
+: 1527285446:0;npm run watch
+: 1527285460:0;cat package.json
+: 1527285490:0;npm run watch
+: 1527285643:0;browser-sync start --proxy localhost:4040 --files "./public/*"
+: 1527287583:0;exit
+: 1527287908:0;nodemon wiki-server.js > respons.txt
+: 1527287957:0;emacs respons.txt
+: 1527288070:0;grep -nr --color=auto  "hogehoge" respons.txt
+: 1527288169:0;nodemon wiki-server.js > respons.txt
+: 1527288230:0;grep -nr --color=auto  "fugafuga" respons.txt
+: 1527288277:0;grep -nr --color=auto  "hogehoge" respons.txt
+: 1527288283:0;ls
+: 1527288303:0;nodemon wiki-server.js > respons.txt
+: 1527288327:0;ls
+: 1527288335:0;grep -nr --color=auto  "fugafuga" respons.txt
+: 1527288578:0;cat -n respons.txt | head -n 10
+: 1527288617:0;grep -nr --color=auto  "fugafuga" respons.txt
+: 1527288622:0;grep -nr --color=auto  "hogehoge" respons.txt
+: 1527288750:0;nodemon wiki-server.js > respons.txt
+: 1527288773:0;grep -nr --color=auto  "fugafuga" respons.txt
+: 1527288929:0;nodemon wiki-server.js > respons.txt
+: 1527288957:0;grep -nr --color=auto  "fugafuga" respons.txt
+: 1527289184:0;grep -nr --color=auto  "hogehoge|fugafuga" respons.txt
+: 1527289200:0;grep -nr --color=auto  "(hogehoge|fugafuga)" respons.txt
+: 1527289252:0;grep -nr -E --color=auto  "(hogehoge|fugafuga)" respons.txt
+: 1527289534:0;nodemon wiki-server.js
+: 1527289697:0;nodemon wiki-server.js > respons.txt
+: 1527289724:0;grep -nr -E --color=auto  "(hogehoge|fugafuga|cocoa)" respons.txt
+: 1527289764:0;nodemon wiki-server.js > respons.txt
+: 1527289777:0;grep -nr -E --color=auto  "(hogehoge|fugafuga|cocoa)" respons.txt
+: 1527289874:0;nodemon wiki-server.js > respons_noParser.txt
+: 1527289895:0;grep -nr -E --color=auto  "(hogehoge|fugafuga|cocoa)" respons_noParser.txt
+: 1527289922:0;diff  package.json ../05_bbs/package.json
+: 1527289946:0;diff -u respons.txt respons_noParser.txt
+: 1527290102:0;diff respons.txt respons_noParser.txt
+: 1527290235:0;grep -nr -E --color=auto  "(fugafuga)" respons.txt
+: 1527290261:0;grep -nr -E --color=auto  "(fugafuga)" respons_noParser.txt
+: 1527290699:0;diff -U respons.txt respons_noParser.txt
+: 1527290715:0;diff respons.txt respons_noParser.txt
+: 1527290726:0;diff -U respons.txt respons_noParser.txt
+: 1527290825:0;diff -u respons.txt respons_noParser.txt
+: 1527291010:0;cd ~/Desktop/src/ch6/wiki/
+: 1527291017:0;npm start
+: 1527291072:0;exit
+: 1527291592:0;nodemon wiki-server.js
+: 1527291621:0;npx webpack -w
+: 1527295031:0;npm install stylelint-config-standard --save-dev
+: 1527295052:0;emacs .stylelintrc
+: 1527295124:0;npx webpack -w
+: 1527299366:0;tmux kill-server
+: 1527299400:0;exit
+: 1527304792:0;mdcd  ASAHI/Study/nodejs_technics/chapter_06/sns
+: 1527304812:0;cd ../wiki
+: 1527304856:0;cp webpack.config.js package.json .stylelintrc src/index.html ../sns
+: 1527304862:0;cd ../sns
+: 1527304874:0;cat package.json
+: 1527305983:0;man diff
+: 1527306095:0;emacs
+: 1527306103:0;tmux
+: 1527306111:0;emacs init.el
+: 1527306117:0;emacs package.json
+: 1527306176:0;npm i
+: 1527306294:0;cd ~/Desktop/src/ch6/sns
+: 1527306303:0;npm i
+: 1527306338:0;npm run build
+: 1527306352:0;npm start
+: 1527307542:0;cd ~/Desktop/src/ch6/sns
+: 1527307545:0;npm start
+: 1527307564:0;cd src
+: 1527307580:0;emacs index.js sns_login.js sns_timeline.js sns_users.js styles.js 
+: 1527307673:0;exit
+: 1527307711:0;ls
+: 1527307726:0;cd src
+: 1527307738:0;mdcd src
+: 1527307750:0;cp ../index.html .
+: 1527307751:0;ls
+: 1527307760:0;emacs
+: 1527308244:0;npx webpack-serve ./webpack.config.js
+: 1527308345:0;npx webpack-serve
+: 1527308364:0;npm uninstall webpack-serve
+: 1527308482:0;npm install webpack-serve --save-dev
+: 1527308541:0;npx webpack-serve --config ./webpack.config.js
+: 1527308618:0;cd ../../
+: 1527308626:0;ls chapter_0
+: 1527308631:0;ls chapter_01
+: 1527308647:0;cd chapter_05
+: 1527308658:0;cd 05_bbs
+: 1527308667:0;npx webpack-serve ./webpack.config.js
+: 1527308758:0;grep -nr --color=auto  "chalk" .
+: 1527308884:0;npm i -D chalk
+: 1527308898:0;npx webpack-serve ./webpack.config.js
+: 1527349385:0;exit
+: 1527357047:0;cat ~/.tern-config
+: 1527357211:0;cat ~/.dot-files/.emacs.d/etc/.tern-config
+: 1527357252:0;emacs ~/.dot-files/.emacs.d/etc/.tern-config
+: 1527357276:0;cd ~
+: 1527357291:0;rm .tern-config
+: 1527357292:0;ls
+: 1527357313:0;ln -s .dot-files/.emacs.d/etc/.tern-config
+: 1527357314:0;ls
+: 1527360043:0;npm run watch
+: 1527360221:0;npx webpack-serve ./webpack.config.js
+: 1527377672:0;nodemon sns-server.js
+: 1527377919:0;npm run watch
+: 1527377988:0;ls
+: 1527378002:0;rm -r public
+: 1527378003:0;ls
+: 1527378011:0;npx webpack-serve ./webpack.config.js
+: 1527378028:0;ls
+: 1527378080:0;npx webpack-serve ./webpack.config.js --port 4040
+: 1527379236:0;nodemon sns-server.js
+: 1527379452:0;npm i -D http-proxy-middleware koa-connect koa-router
+: 1527379494:0;emacs webpack.config.js
+: 1527379706:0;npx webpack-serve ./webpack.config.js
+: 1527379770:0;nodemon sns-server.js
+: 1527379959:0;emacs webpack.config.js
+: 1527380000:0;npx webpack-serve ./webpack.config.js
+: 1527380047:0;npm run watch
+: 1527380201:0;emacs webpack.config.js
+: 1527380250:0;npm run watch
+: 1527380284:0;nodemon sns-server.js
+: 1527380375:0;npm run serve
+: 1527380465:0;npm run watch 
+: 1527380568:0;nodemon sns-server.js
+: 1527381206:0;browser-sync start --proxy localhost:4040 --files "./public/*"
+: 1527381653:0;eit
+: 1527381655:0;exit
+: 1527384109:0;mkdir server
+: 1527384184:0;exit
+: 1527386534:0;nodemon sns-server.js
+: 1527426651:0;../../../
+: 1527426655:0;../
+: 1527426657:0;ls
+: 1527426706:0;git clone https://github.com/ternjs/tern.git
+: 1527426823:0;ls
+: 1527426834:0;cd tern
+: 1527426896:0;ls bin
+: 1527426921:0;cat tern
+: 1527426931:0;cd bin
+: 1527426938:0;cat tern
+: 1527426951:0;cd ../
+: 1527426965:0;ls plugin
+: 1527427039:0;cd ASAHI/Study/nodejs_technics/chapter_01/chapter_07
+: 1527427054:0;cd 02_express_test
+: 1527427095:0;cd ../../06.5_generator
+: 1527427096:0;ls
+: 1527427105:0;npm i tern
+: 1527427113:0;ls
+: 1527427118:0;cd node_modules
+: 1527427130:0;cd tern
+: 1527427214:0;cd emacs
+: 1527427358:0;..
+: 1527427366:0;tern --help
+: 1527427394:0;tern -h
+: 1527428142:0;cd -
+: 1527428147:0;cat package.json
+: 1527428255:0;../
+: 1527428256:0;ls
+: 1527428269:0;rm -r tern
+: 1527428280:0;ls
+: 1527428296:0;rm -rf tern
+: 1527428297:0;ls
+: 1527430487:0;python
+: 1527430515:0;python -v
+: 1527430536:0;python --version
+: 1527430548:0;anyenv install list
+: 1527430562:0;anyenv install -l
+: 1527430636:0;anyenv install pyenv
+: 1527430651:0;anyenv rehash
+: 1527430657:0;ndenv rehash
+: 1527430706:0;exec $SHELL -l
+: 1527430721:0;anyenv version
+: 1527430831:0;pyenv install --list
+: 1527430942:0;pyenv install 3.6.5
+: 1527431101:0;pyenv versions
+: 1527431126:0;python --version
+: 1527431153:0;pyenv global 3.6.5
+: 1527431174:0;python --version
+: 1527431195:0;pyenv rehash
+: 1527431198:0;python --version
+: 1527431224:0;exec $SHELL -l
+: 1527431228:0;python --version
+: 1527431246:0;pyenv global 3.6.5
+: 1527431275:0;python --version
+: 1527431292:0;pyenv versions
+: 1527431396:0;python --version
+: 1527431639:0;tmux kill-server
+: 1527431724:0;python --version
+: 1527431998:0;which python
+: 1527432024:0;cat /etc/paths
+: 1527432065:0;which anyenv
+: 1527432096:0;which node
+: 1527432134:0;which pyenv
+: 1527432226:0;eval "$(pyenv init -)"
+: 1527432232:0;python --version
+: 1527432364:0;brew install global --with-exuberant-ctags --with-pygments
+: 1527432509:0;emacs .dot-files/zsh/.zshenv
+: 1527432761:0;exit
+: 1527432780:0;emacs
+: 1527433819:0;gtags
+: 1527433849:0;cd ASAHI/Study/nodejs_technics/chapter_06/wiki
+: 1527433859:0;gtags --help
+: 1527434132:0;global --help
+: 1527434162:0;global React
+: 1527434189:0;ls ~
+: 1527434219:0;cd ~
+: 1527434245:0;lv GTAGS
+: 1527434461:0;which global
+: 1527434516:0;which gtags
+: 1527434584:0;cat /usr/local/bin/gtags
+: 1527434704:0;cd -
+: 1527434712:0;gtags -v --debug
+: 1527434885:0;ls
+: 1527434947:0;global -f src/index.js
+: 1527434982:0;global -f wiki-server.js
+: 1527434993:0;emacs src/index.js
+: 1527435534:0;lv GTAGS
+: 1527435630:0;anyenv uninstall pyenv
+: 1527435648:0;python --version
+: 1527435665:0;anyenv version
+: 1527435673:0;exec $SHELL -l
+: 1527435746:0;anyenv version
+: 1527435763:0;anyenv uninstall pyenv
+: 1527435789:0;python --version
+: 1527435793:0;exec $SHELL -l
+: 1527435809:0;anyenv version
+: 1527435821:0;ls
+: 1527435846:0;rm GPATH GRTAGS GTAGS
+: 1527435847:0;ls
+: 1527435874:0;cd ASAHI/Study/nodejs_technics/chapter_05/05_bbs
+: 1527435879:0;gtags
+: 1527436081:0;ls
+: 1527436094:0;lv GTAGS
+: 1527436143:0;emacs src/index.js
+: 1527436977:0;locate gtags.conf
+: 1527437021:0;cd ~
+: 1527437027:0;which gtags
+: 1527437039:0;tmux
+: 1527437051:0;which gtags
+: 1527437067:0;ls /usr/local/bin/gtags
+: 1527437201:0;ls /usr/local/Cellar/global/6.6.2_1/bin/gtags
+: 1527437218:0;ls /usr/local/Cellar/global/6.6.2_1/bin/
+: 1527437242:0;lv /usr/local/Cellar/global/6.6.2_1/bin/gtags
+: 1527437296:0;brew list -l
+: 1527437409:0;brew uninstall global --force
+: 1527437418:0;brew list -l
+: 1527437494:0;brew uninstall gdbm python@2 readline sqlite --force
+: 1527437502:0;brew list -l
+: 1527437532:0;brew install global --with-exuberant-ctags --with-pygments
+: 1527437662:0;exec $SHELL -l
+: 1527437689:0;ls /usr/local/share/gtags
+: 1527437724:0;which gtags
+: 1527437761:0;grep -nr --color=auto  "gtag.conf" /usr/local
+: 1527437847:0;grep -nr --color=auto  "gtags\.conf" /usr/local
+: 1527438033:0;find -L "gtags\.conf" /usr/local
+: 1527438136:0;find -L -name  "gtags\.conf"
+: 1527438177:0;find -L /usr/local  -name  "gtags\.conf"
+: 1527438245:0;cd ASAHI/Study/nodejs_technics/chapter_05/
+: 1527438262:0;cd 06-socketio
+: 1527438269:0;gtags
+: 1527438348:0;ls
+: 1527438360:0;rm GPATH GRTAGS GTAGS 
+: 1527438368:0;cd src
+: 1527438372:0;gtags
+: 1527438376:0;ls
+: 1527438382:0;emacs src/index.js
+: 1527438419:0;emacs index.js
+: 1527438520:0;exit
+: 1527441230:0;cd ASAHI/Study/nodejs_technics/chapter_05/
+: 1527441239:0;git clone https://github.com/yoshizow/global-pygments-plugin.git
+: 1527441296:0;mv global-pygments-plugin/sample.globalrc ~/.globalrc
+: 1527441311:0;ls -/
+: 1527441326:0;ls ~
+: 1527441378:0;cd ~
+: 1527441390:0;cat .globalrc
+: 1527441477:0;exec $SHELL -l
+: 1527441608:0;gtags --gtagslabel=ctags
+: 1527441631:0;cd ASAHI
+: 1527441658:0;gtags --gtagslabel=ctags
+: 1527441667:0;ls
+: 1527441680:0;rm GPATH GRTAGS GTAGS 
+: 1527442040:0;ls
+: 1527442051:0;cd Study/nodejs_technics/chapter_06/sns
+: 1527442064:0;tmux
+: 1527442089:0;gtags
+: 1527442103:0;rm GPATH GRTAGS GTAGS 
+: 1527442109:0;cd src
+: 1527442111:0;gtags
+: 1527442133:0;rm GPATH GRTAGS GTAGS 
+: 1527442134:0;ls
+: 1527442137:0;gtags
+: 1527442181:0;exit
+: 1527442184:0;cd src
+: 1527442192:0;emacs
+: 1527442210:0;exit
+: 1527445898:0;emacs ~/.dot-files/zsh/.zshenv
+: 1527445931:0;ls
+: 1527445936:0;cd ~
+: 1527446002:0;source ~/.zshenv
+: 1527446012:0;echo $GTAGSCONF
+: 1527446024:0;emacs ~/.dot-files/zsh/.zshenv
+: 1527446040:0;source ~/.zshenv
+: 1527446043:0;echo $GTAGSCONF
+: 1527446055:0;exit
+: 1527446572:0;tmux
+: 1527446595:0;cd ASAHI/Study/nodejs_technics/chapter_06/sns/
+: 1527446609:0;cd src
+: 1527446618:0;rm GPATH GRTAGS GTAGS 
+: 1527446623:0;gtags
+: 1527446627:0;emacs
+: 1527448991:0;emacs 
+: 1527449153:0;exit
+: 1527449227:0;emacs
+: 1527449769:0;tmux
+: 1527449774:0;exit
+: 1527449776:0;tmux
+: 1527449815:0;exit
+: 1527449840:0;cd ASAHI/Study/nodejs_technics/chapter_06/sns/
+: 1527449848:0;nodemon sns-server.js
+: 1527449856:0;cd ASAHI/Study/nodejs_technics/chapter_06/sns/
+: 1527449866:0;npm run watch 
+: 1527449873:0;cd ASAHI/Study/nodejs_technics/chapter_06/sns/
+: 1527449878:0;cd src
+: 1527449887:0;rm GPATH GRTAGS GTAGS 
+: 1527449890:0;gtags
+: 1527449900:0;emacs
+: 1527449914:0;cd Desktop/src/ch6/sns
+: 1527449928:0;emacs
+: 1527449957:0;cd Desktop/src/ch6/sns
+: 1527449963:0;npm start
+: 1527449986:0;browser-sync start --proxy localhost:4040 --files "./public/*"
+: 1527450082:0;gtags
+: 1527450160:0;emacs
+: 1527451553:0;exit
+: 1527453151:0;../../../
+: 1527453157:0;cd ..
+: 1527453173:0;../
+: 1527453184:0;mdcd Test
+: 1527453242:0;mdcd http_server_without_librarys
+: 1527453769:0;exit
+: 1527454032:0;mdcd server
+: 1527454075:0;exit
+: 1527454085:0;cd ~/ASAHI/Test/http_server_without_librarys/server
+: 1527454108:0;emacs
+: 1527454305:0;cp -r ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming/prev_fuwafuwa/prev_fuwafuwa/heroku_demo_site ../public
+: 1527454309:0;ls ..
+: 1527454316:0;cd ../public
+: 1527454330:0;rm .DS_Store .git .gitignore 
+: 1527454362:0;rm  -r .DS_Store .git .gitignore Procfile Readme.md package.json server.js
+: 1527454368:0;ls
+: 1527454411:0;mv ../public ../hi
+: 1527454414:0;..
+: 1527454429:0;../../
+: 1527454446:0;cd ~/ASAHI/Test/http_server_without_librarys/
+: 1527454456:0;mv hi/public .
+: 1527454459:0;ls
+: 1527454464:0;ls hi
+: 1527454468:0;rm hi
+: 1527454470:0;ls
+: 1527454477:0;rm -r hi
+: 1527454478:0;ls
+: 1527454870:0;nodemon server/server.js
+: 1527455636:0;emacs server/server.js
+: 1527456159:0;emacs
+: 1527456842:0;cat > jsconfig.json
+: 1527457748:0;cat jsconfig.json
+: 1527457763:0;mv jsconfig.json server
+: 1527457765:0;ls
+: 1527457769:0;ls server
+: 1527457961:0;emacs
+: 1527458067:0;emacs ~/.dot-files/.emacs.d/init.el
+: 1527458180:0;emacs
+: 1527460125:0;emacs --version
+: 1527460553:0;emacs
+: 1527461516:0;emacs server.js
+: 1527462343:0;emacs ~/.dot-files/.emacs.d/init.el
+: 1527462506:0;emacs server.js
+: 1527462870:0;emacs ~/.dot-files/.emacs.d/init.el
+: 1527463005:0;emacs server.js
+: 1527463064:0;emacs ~/.dot-files/.emacs.d/init.el
+: 1527463093:0;emacs server.js
+: 1527463124:0;emacs ~/.dot-files/.emacs.d/init.el
+: 1527463195:0;emacs server.js
+: 1527463656:0;nodemon server/server.js
+: 1527464238:0;cd server
+: 1527464280:0;npm init -y 
+: 1527464288:0;npm install -D webpack webpack-cli babel-core babel-loader babel-preset-env\
+
+: 1527464355:0;emacs webpack.config.js
+: 1527464787:0;cat webpack.config.js
+: 1527464804:0;npx webpadk
+: 1527464823:0;npx webpack
+: 1527464834:0;ls ..
+: 1527464846:0;nodemon ../bundle_server.js
+: 1527464948:0;emacs ../bundle_server.js
+: 1527465006:0;ls
+: 1527465030:0;rm -rf node_modules package-lock.json package.json webpack.config.js
+: 1527465033:0;ls
+: 1527465055:0;rm ../bundle_server.js
+: 1527465058:0;ls ../
+: 1527465067:0;emacs server.js
+: 1527465384:0;nodemon server.js
+: 1527465524:0;cd ASAHI/Test/http_server_without_librarys
+: 1527465536:0;mv public server
+: 1527465537:0;ls
+: 1527465543:0;cd server
+: 1527465657:0;tree -C
+: 1527465662:0;tree
+: 1527466202:0;gtags
+: 1527468288:0;ssh -p 10022 asahi@160.16.107.88
+: 1527468462:0;scp -P 10022 -r asahi@160.16.107.88:~/ASAHI/Study/nodejs_biginnersbook ASAHI/Study
+: 1527468485:0;cd ASAHI/Study
+: 1527468500:0;cd nodejs_biginnersbook
+: 1527468532:0;emacs *.js
+: 1527468589:0;exit
+: 1527468627:0;cd ASAHI/Study/nodejs_biginnersbook
+: 1527468631:0;gtags
+: 1527468683:0;cp ../../Test/http_server_without_librarys/server/jsconfig.json
+: 1527468687:0;cp ../../Test/http_server_without_librarys/server/jsconfig.json .
+: 1527468726:0;exit
+: 1527468738:0;emacs index.js
+: 1527468767:0;cd ASAHI/Study/nodejs_biginnersbook
+: 1527468785:0;emacs index.js
+: 1527469788:0;exit
+: 1527471729:0;cd ~/ASAHI/Test/http_server_without_librarys/server/public
+: 1527471740:0;browser-sync start --proxy localhost:4040 --files
+: 1527471763:0;browser-sync start --proxy localhost:3000 --files
+: 1527472303:0;..
+: 1527472333:0;browser-sync start --proxy localhost:3000 --files "./public/*"
+: 1527477478:0;nodemon biginner_server.js
+: 1527477903:0;tmux kill-server
+: 1527477906:0;tmux
+: 1527477914:0;cd ~/ASAHI/Test/http_server_without_librarys/server
+: 1527477933:0;emacs
+: 1527477964:0;nodemon biginner_server.js
+: 1527479205:0;nodemon biginner_index.js
+: 1527480855:0;exit
+: 1527480882:0;cd ~/ASAHI/Test/http_server_without_librarys/server
+: 1527480904:0;mv biginennr_router.js biginnr_router.js
+: 1527480941:0;mv biginnr_router.js biginner_router.js
+: 1527480953:0;ls
+: 1527481173:0;gtags
+: 1527481541:0;exit
+: 1527482488:0;tmux attach
+: 1527482521:0;tmux kill-server
+: 1527482526:0;tmux
+: 1527482559:0;exit
+: 1527482567:0;cd ~/ASAHI/Test/http_server_without_librarys/server
+: 1527482586:0;emacs biginner_index.js biginner_requestHandler.js biginner_router.js biginner_server.js 
+: 1527482621:0;exit
+: 1527482774:0;emacs biginner_index.js biginner_requestHandler.js biginner_router.js biginner_server.js 
+: 1527483523:0;cd ~/ASAHI/Test/http_server_without_librarys/server
+: 1527483535:0;nodemon biginner_index.js
+: 1527489062:0;ls
+: 1527489074:0;nodemon biginner_index.js
+: 1527489442:0;npm i formidable
+: 1527489453:0;ls node_modules
+: 1527489467:0;ls node_modules/formidable
+: 1527489488:0;cat node_modules/formidable/Readme.md
+: 1527489592:0;nodemon biginner_index.js
+: 1527490815:0;ls
+: 1527490820:0;cd public
+: 1527490841:0;..
+: 1527490858:0;mdcd tmp
+: 1527490870:0;cp ~/Desktop/no_pic.png .
+: 1527490871:0;ls
+: 1527490876:0;..
+: 1527490879:0;nodemon biginner_index.js
+: 1527568656:0;nodemon server.js
+: 1527568670:0;emacs server.js
+: 1527570651:0;nodemon server.js
+: 1527582722:0;ls
+: 1527582743:0;mkdir biginner
+: 1527582759:0;mv biginner biginner_index.js biginner_requestHandler.js biginner_router.js biginner_server.js biginner
+: 1527582760:0;ls
+: 1527582784:0;mv biginner* biginner
+: 1527582788:0;ls
+: 1527582795:0;ls biginner
+: 1527582812:0;mkdir databases
+: 1527583010:0;cd ASAHI/Test/http_server_without_librarys
+: 1527583017:0;server
+: 1527583019:0;ls
+: 1527583026:0;nodemon server.js
+: 1527583096:0;cd databases
+: 1527583112:0;touch userdata.json
+: 1527583199:0;ls
+: 1527583344:0;chmod 777 userdata.json
+: 1527583468:0;ls
+: 1527583479:0;cat userdata.json
+: 1527587057:0;nodemon server.js
+: 1527587374:0;cat userdata.json
+: 1527589678:0;lv userdata.json
+: 1527591976:0;xeit
+: 1527591979:0;exit
+: 1527592602:0;lv userdata.json
+: 1527596898:0;ls
+: 1527596926:0;rm -rf biginner
+: 1527596928:0;ls
+: 1527596977:0;../../
+: 1527597006:0;cd -
+: 1527597017:0;rm -rf node_modules
+: 1527597019:0;ls
+: 1527597029:0;rm package-lock.json
+: 1527597030:0;ls
+: 1527597161:0;cp /Users/asahi/ASAHI/Study/nodejs_technics/chapter_06/sns/webpack.config.js /Users/asahi/ASAHI/Study/nodejs_technics/chapter_06/sns/package.json /Users/asahi/ASAHI/Study/nodejs_technics/chapter_06/sns/.stylelintrc .
+: 1527597162:0;ls
+: 1527597181:0;emacs package.json
+: 1527597289:0;ls
+: 1527597310:0;emacs webpack.config.js
+: 1527597538:0;emacs package.json
+: 1527597558:0;ls
+: 1527597585:0;npm i
+: 1527597598:0;emacs package.json
+: 1527597606:0;npm i
+: 1527597645:0;mdcd src
+: 1527597672:0;cp /Users/asahi/ASAHI/Study/nodejs_technics/chapter_06/sns/src/index.html .
+: 1527597690:0;cp ../public/index.js
+: 1527597701:0;cp ../public/index.js .
+: 1527597702:0;ls
+: 1527597712:0;cat index.js
+: 1527597731:0;rm -f ../public
+: 1527597751:0;rm -rf ../public/
+: 1527597755:0;ls ..
+: 1527597825:0;emacs index.js
+: 1527598031:0;mv index.js index.jsx
+: 1527598034:0;ls
+: 1527598043:0;emacs index.jsx
+: 1527598269:0;..
+: 1527598272:0;emacs webpack.config.js
+: 1527598370:0;ls
+: 1527598375:0;npx webpack
+: 1527598394:0;ls
+: 1527598400:0;ls public
+: 1527598409:0;nodemon server.js
+: 1527598917:0;emacs
+: 1527598934:0;nodemon server.js
+: 1527598947:0;npm run watch 
+: 1527602450:0;npm i -S formidable
+: 1527602522:0;emacs
+: 1527602561:0;npm run watch 
+: 1527608521:0;nodemon server.js
+: 1527608813:0;mkdir -p public/images/gallery
+: 1527608818:0;ls public
+: 1527608830:0;tree public
+: 1527609625:0;nodemon server.js
+: 1527612895:0;cat >  databases/gallerydata.json
+: 1527612912:0;cat databases/gallerydata.json
+: 1527612916:0;nodemon server.js
+: 1527619075:0;node -v
+: 1527619101:0;ndenv install -l
+: 1527619154:0;ndenv install v10.3.0
+: 1527624011:0;emacs
+: 1527624635:0;npm run watch 
+: 1527636512:0;emacs server.js
+: 1527637266:0;nodemon server.js
+: 1527723693:0;npm run watch 
+: 1527724377:0;nodemon server.js
+: 1527725398:0;mkdir sever
+: 1527725405:0;nodemon server.js
+: 1527725449:0;ls
+: 1527725461:0;mv sever server
+: 1527725463:0;ls
+: 1527725472:0;nodemon server.js
+: 1527733228:0;ls
+: 1527733275:0;emacs testServer.js
+: 1527733799:0;nodemon testServer.js
+: 1527734191:0;fg
+: 1527734331:0;nodemon testServer.js
+: 1527739446:0;exit
+: 1527739616:0;ls server
+: 1527739637:0;nodemon testServer.js
+: 1527739992:0;../../
+: 1527739993:0;ls
+: 1527740025:0;ndenv list
+: 1527740037:0;ndenv --help
+: 1527740053:0;ndenv versions
+: 1527740114:0;mdcd v10-3-0_http_server_without_librarys
+: 1527740132:0;ndenv install -l
+: 1527740146:0;ndenv versions
+: 1527740160:0;ndenv --help
+: 1527740185:0;ndenv local v10.3.0
+: 1527740187:0;ls
+: 1527740197:0;node -v
+: 1527740215:0;cd ../http_server_without_librarys
+: 1527740216:0;ls
+: 1527740225:0;server
+: 1527740226:0;ls
+: 1527740302:0;cd GPATH GRTAGS GTAGS databases jsconfig.json node_modules package-lock.json package.json public server server.js src testServer.js tmp webpack.config.js .stylelintrc ../../v10-3-0_http_server_without_librarys
+: 1527740321:0;cd -
+: 1527740328:0;cp GPATH GRTAGS GTAGS databases jsconfig.json node_modules package-lock.json package.json public server server.js src testServer.js tmp webpack.config.js .stylelintrc ../../v10-3-0_http_server_without_librarys
+: 1527740348:0;cp  -r GPATH GRTAGS GTAGS databases jsconfig.json node_modules package-lock.json package.json public server server.js src testServer.js tmp webpack.config.js .stylelintrc ../../v10-3-0_http_server_without_librarys
+: 1527740364:0;cd -
+: 1527740378:0;rm -rf *
+: 1527740383:0;ls
+: 1527740412:0;../
+: 1527740434:0;rm -rf v10-3-0_http_server_without_librarys
+: 1527740438:0;node -v
+: 1527740469:0;cp -r http_server_without_librarys/server/ v10-3-0_http_server_without_librarys
+: 1527740483:0;cd v10-3-0_http_server_without_librarys
+: 1527740503:0;rm -rf node_modules
+: 1527740507:0;ls
+: 1527740528:0;emacs package.json
+: 1527740712:0;ls
+: 1527740741:0;node -v
+: 1527740747:0;ndenv local v10.3.0
+: 1527740750:0;node -v
+: 1527740766:0;npm i
+: 1527740814:0;npm-check-updates
+: 1527740834:0;npm install -g npm-check-updates
+: 1527740857:0;npm list --depth=0 -g
+: 1527740890:0;cd ASAHI/Test/v10-3-0_http_server_without_librarys
+: 1527740896:0;..
+: 1527740901:0;npm list --depth=0 -g
+: 1527741036:0;npm i -g nodemon prettier
+: 1527741071:0;npm-check-updates
+: 1527741082:0;ndenv rehash
+: 1527741099:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1527741102:0;ndenv rehash
+: 1527741106:0;npm-check-updates
+: 1527741146:0;ncu -u
+: 1527741155:0;npm i
+: 1527741222:0;cat ~/.eslintrc
+: 1527741400:0;npm i -S eslint-plugin-react eslint babel-eslint
+: 1527741445:0;ls
+: 1527741460:0;rm .eslintrc
+: 1527741477:0;npm list --depth=0 -g
+: 1527741553:0;npm i -g tern
+: 1527741568:0;emacs testServer.js
+: 1527741644:0;exit
+: 1527741687:0;ls
+: 1527741735:0;emacs testServer.js
+: 1527741774:0;node -v
+: 1527741786:0;eslint testServer.js
+: 1527741811:0;npx eslint testServer.js
+: 1527742473:0;cp ~/.dot-files/etc/.eslintrc .
+: 1527742474:0;ls
+: 1527742486:0;mv .eslintrc .eslintrc.js
+: 1527742499:0;npx eslint testServer.js
+: 1527742515:0;emacs
+: 1527742525:0;emacs .eslintrc.js
+: 1527742662:0;mv .eslintrc.js .eslintrc.json
+: 1527742667:0;npx eslint testServer.js
+: 1527742687:0;emacs .eslintrc.json
+: 1527742932:0;npm i -S eslint-plugin-node
+: 1527742962:0;emacs .eslintrc.json
+: 1527743024:0;npx eslint testServer.js
+: 1527743227:0;cp ~/.dot-files/etc/.eslintrc .
+: 1527743239:0;rm .eslintrc.json
+: 1527743250:0;exit
+: 1527743280:0;cd ASAHI/Test/v10-3-0_http_server_without_librarys
+: 1527743292:0;emacs server.js
+: 1527743298:0;emacs
+: 1527743326:0;nodemon testServer.js
+: 1527743473:0;npx eslint testServer.js
+: 1527743710:0;emacs
+: 1527743903:0;npx eslint testServer.js
+: 1527743969:0;emacs testServer.js
+: 1527744007:0;emacs server.js
+: 1527744015:0;npx eslint server.js
+: 1527744029:0;ls
+: 1527744065:0;emacs .eslintrc
+: 1527744107:0;mv .eslintrc .eslintrc.json
+: 1527744108:0;ls
+: 1527744113:0;npx eslint server.js
+: 1527744121:0;emacs .eslintrc
+: 1527744129:0;emacs .eslintrc.json
+: 1527744174:0;npx eslint server.js
+: 1527744200:0;emacs testServer.js
+: 1527744264:0;emacs .eslintrc.json
+: 1527744302:0;npx eslint testServer.js
+: 1527744309:0;emacs .eslintrc.json
+: 1527744386:0;npx eslint testServer.js
+: 1527744392:0;emacs
+: 1527744419:0;nodemon testServer.js
+: 1527744582:0;..
+: 1527744593:0;cd v10-3-0_http_server_without_librarys
+: 1527744616:0;nodemon testServer.js
+: 1527744707:0;node testServer.js
+: 1527744749:0;nodemon testServer.js
+: 1527744775:0;emacs
+: 1527745801:0;emacs .eslintrc.json
+: 1527745876:0;cat .dot-files/etc/.eslintrc
+: 1527746098:0;npx eslint testServer.js
+: 1527746336:0;mv .eslintrc.json .eslintrc
+: 1527746340:0;emacs
+: 1527746488:0;npx eslint testServer.js
+: 1527746492:0;cp ~/.dot-files/etc/.eslintrc .
+: 1527746497:0;npx eslint testServer.js
+: 1527746503:0;emacs
+: 1527746567:0;cd ../http_server_without_librarys/server
+: 1527746573:0;emacs testServer.js
+: 1527746604:0;cp ~/.dot-files/etc/.eslintrc .
+: 1527746615:0;emacs testServer.js
+: 1527746672:0;rm .eslintrc
+: 1527746683:0;cp ../../v10-3-0_http_server_without_librarys/.eslintrc
+: 1527746687:0;cp ../../v10-3-0_http_server_without_librarys/.eslintrc .
+: 1527746691:0;emacs testServer.js
+: 1527746737:0;npx eslint testServer.js
+: 1527746807:0;cd ../../v10-3-0_http_server_without_librarys
+: 1527746820:0;cat package.json
+: 1527746844:0;npm uninstall eslint eslint-plugin-node eslint-plugin-react
+: 1527746851:0;cat package.json
+: 1527746868:0;npm i -g eslint eslint-plugin-node eslint-plugin-react
+: 1527746878:0;ls
+: 1527746898:0;ndenv rehash
+: 1527746927:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1527746929:0;ndenv rehash
+: 1527746936:0;emacs testServer.js
+: 1527746968:0;ls
+: 1527746987:0;eslint testServer.js
+: 1527747011:0;ls
+: 1527747028:0;cat .eslintrc.js
+: 1527747033:0;cat .eslintrc
+: 1527747051:0;rm .eslintrc
+: 1527747066:0;eslint testServer.js
+: 1527747073:0;emacs testServer.js
+: 1527747133:0;emacs .eslintrc.json
+: 1527747140:0;emacs .eslintrc
+: 1527747163:0;mv .eslintrc .eslintrc.json
+: 1527747175:0;emacs testServer.js
+: 1527747187:0;emacs .eslintrc.json
+: 1527747280:0;exit
+: 1527747535:0;npm list --depth=0 -g
+: 1527747709:0;eslint testServer.js
+: 1527747732:0;emacs testServer.js
+: 1527747812:0;emacs .eslintrc.json
+: 1527747891:0;nodemon testServer.js
+: 1527747896:0;emacs
+: 1527750884:0;cd ../../v10-3-0_http_server_without_librarys
+: 1527750893:0;cd ASAHI/Test/v10-3-0_http_server_without_librarys
+: 1527750905:0;npm run watch 
+: 1527774534:0;tmux
+: 1527774650:0;cd ASAHI/Test/http_server_without_librarys
+: 1527774654:0;cd server
+: 1527774668:0;nodemon server.js
+: 1527774733:0;cd ASAHI/Test/http_server_without_librarys/server
+: 1527774739:0;emacs server.js
+: 1527774845:0;nodemon server.js
+: 1527775254:0;ls
+: 1527775259:0;ls server
+: 1527775278:0;rm -rf server/
+: 1527775290:0;rm testServer.js
+: 1527775291:0;ls
+: 1527775364:0;cp -r  ../../v10-3-0_http_server_without_librarys/testServer.js ../../v10-3-0_http_server_without_librarys/server/ .
+: 1527775370:0;ls
+: 1527775384:0;nodemon testServer.js
+: 1527775464:0;mkdir sever
+: 1527775465:0;ls
+: 1527775475:0;lv api.js
+: 1527775510:0;mv api.js server
+: 1527775511:0;ls
+: 1527775519:0;ls server
+: 1527775548:0;cd server
+: 1527775580:0;rm server
+: 1527775588:0;ls sever
+: 1527775601:0;rm sever
+: 1527775607:0;rm  -r sever
+: 1527775632:0;cp -r  ../../v10-3-0_http_server_without_librarys/server/
+: 1527775641:0;cp -r  ../../v10-3-0_http_server_without_librarys/server/ .
+: 1527775643:0;ls
+: 1527775655:0;mkdir server
+: 1527775656:0;ls
+: 1527775670:0;mv api.js server
+: 1527775671:0;ls
+: 1527775678:0;ls server
+: 1527775776:0;cd server
+: 1527775783:0;emacs api.js
+: 1527776035:0;cd ASAHI/Test/http_server_without_librarys/server
+: 1527776038:0;npm run watch 
+: 1527776414:0;nodemon testServer.js
+: 1527776630:0;nodemon server.js
+: 1527776919:0;nodemon testServer.js
+: 1527778115:0;cd ../../v10-3-0_http_server_without_librarys
+: 1527778159:0;nodemon testServer.js
+: 1527778196:0;cd ../../v10-3-0_http_server_without_librarys
+: 1527778199:0;npm run watch 
+: 1527778221:0;..
+: 1527778226:0;cd ../../v10-3-0_http_server_without_librarys
+: 1527778229:0;emacs
+: 1527783893:0;nodemon testServer.js
+: 1527790279:0;fg
+: 1527790811:0;cat >  ~/Desktop/OBJC.txt
+: 1527790824:0;fg
+: 1527799072:0;exit
+: 1527801597:0;ls
+: 1527801607:0;ls server
+: 1527802618:0;mkdir logs
+: 1527802943:0;touch logs/errorLog.txt
+: 1527803015:0;cat logs/errorLog.txt
+: 1527807357:0;cat >  ~/Desktop/OBJC.txt
+: 1527807754:0;nodemon testServer.js
+: 1527809807:0;npm run watch 
+: 1527827209:0;nodemon testServer.js
+: 1527829102:0;exit
+: 1527838868:0;tmux
+: 1527840560:0;exit
+: 1527840600:0;cd ASAHI/Projects/fuwafuwa_hair_salon/Codes
+: 1527840614:0;gtags
+: 1527840656:0;mv testServer.js server.js
+: 1527840657:0;ls
+: 1527840681:0;tmp
+: 1527840695:0;ls
+: 1527840701:0;..
+: 1527840714:0;cat logs/errorLog.txt
+: 1527840774:0;cat > logs/errorLog.txt
+: 1527840785:0;cat logs/errorLog.txt
+: 1527840798:0;cd databases
+: 1527840831:0;rm gallerydata.json userdata.json 
+: 1527841061:0;cat [] > gallerydata.json
+: 1527841071:0;ls
+: 1527841087:0;cat < [] > gallerydata.json
+: 1527841102:0;cat "[]" > gallerydata.json
+: 1527841114:0;cat > gallerydata.json
+: 1527841134:0;cat  gallerydata.json
+: 1527841152:0;cat > userdata.json
+: 1527841166:0;cat userdata.json
+: 1527841176:0;cat > gallerydata.json
+: 1527841188:0;cat  gallerydata.json
+: 1527841204:0;..
+: 1527841208:0;tmux
+: 1527841242:0;node -v
+: 1527841254:0;ndenv local v10.3.0
+: 1527841259:0;node -v
+: 1527841271:0;..
+: 1527841279:0;npm list --depth=0 -g
+: 1527841311:0;cd Code
+: 1527841321:0;cd Codes
+: 1527841335:0;npm i -g browser-sync
+: 1527841425:0;npm list --depth=0 -g
+: 1527841439:0;ncu -u
+: 1527841466:0;cat package.json
+: 1527841478:0;ncu --help
+: 1527841533:0;ncu -a
+: 1527841538:0;cat package.json
+: 1527841601:0;emacs package.json
+: 1527841625:0;ndenv rehash
+: 1527841642:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1527841644:0;ndenv rehash
+: 1527841892:0;cat package.json
+: 1527841987:0;npm i -D stylelint stylelint-config-styled-components stylelint-custom-processor-loader stylelint-processor-styled-components
+: 1527842013:0;npm i
+: 1527842058:0;npm i -S styled-components
+: 1527842068:0;cat package.json
+: 1527842340:0;cd src/components/
+: 1527842454:0;for filename in *.js; do mv $filename ${filename%.js}.jsx; done
+: 1527842457:0;ls
+: 1527842567:0;..
+: 1527842569:0;ls
+: 1527842584:0;mv index.js index.jsx
+: 1527842585:0;ls
+: 1527842601:0;mv favicon.ico assets
+: 1527842603:0;ls
+: 1527842608:0;..
+: 1527842614:0;cat webpack.config.js
+: 1527842735:0;ls
+: 1527842893:0;ls src
+: 1527843601:0;emacs webpack.config.js
+: 1527843707:0;npm install raw-loader --save-dev
+: 1527844074:0;git init
+: 1527844081:0;git status
+: 1527844109:0;emacs .gitignore
+: 1527844130:0;git status
+: 1527844932:0;git add .
+: 1527845001:0;git commit -m "init project"
+: 1527845086:0;npm run watch 
+: 1527845117:0;ls
+: 1527845123:0;cat package.json
+: 1527845147:0;cat webpack.config.js
+: 1527845181:0;npm i -S stylelint-config-standard
+: 1527845193:0;npm run watch 
+: 1527845229:0;cd src/
+: 1527845235:0;emacs
+: 1527845349:0;npm list --depth=0 -g
+: 1527845370:0;..
+: 1527845372:0;npm list --depth=0 -g
+: 1527845413:0;cp ~/.dot-files/etc/.eslintrc .
+: 1527845421:0;cat .eslintrc
+: 1527845464:0;npm i -g babel-eslint
+: 1527845471:0;ndenv rehash
+: 1527845475:0;npm i -g babel-eslint
+: 1527845482:0;npm list --depth=0 -g
+: 1527845496:0;ndenv rehash
+: 1527845507:0;exit
+: 1527845522:0;emacs
+: 1527845582:0;ls
+: 1527845626:0;..
+: 1527845656:0;mv .eslintrc.json server
+: 1527845657:0;ls
+: 1527845698:0;mv server.js server
+: 1527845700:0;ls
+: 1527845725:0;mv jsconfig.json server
+: 1527845726:0;ls
+: 1527845733:0;cd src/
+: 1527845737:0;emacs
+: 1527846097:0;cat src/components/Header.jsx
+: 1527846491:0;npm run watch 
+: 1527847156:0;npm i -S file-loader
+: 1527847172:0;npm uninstall file-loader
+: 1527847187:0;npm i -D file-loader
+: 1527847206:0;emacs
+: 1527847391:0;npm run watch 
+: 1527851388:0;npm uninstall raw-loader
+: 1527851406:0;npm install --save-dev url-loader
+: 1527851500:0;npm run watch 
+: 1527851613:0;git status
+: 1527851650:0;git add .
+: 1527851737:0;git commit -m "resolve file paths
+: 1527851740:0;git commit -m "resolve file paths"
+: 1527851963:0;nodemon server/server.js
+: 1527852618:0;npm run watch 
+: 1527852729:0;cd server
+: 1527852817:0;mv api.js apiHandlers.js
+: 1527853036:0;..
+: 1527853039:0;ls
+: 1527853070:0;mv databases/ logs server
+: 1527853072:0;ls
+: 1527853080:0;ls server
+: 1527853110:0;mv server/jsconfig.json .
+: 1527853115:0;ls 
+: 1527853213:0;npm run watch 
+: 1527854580:0;cd src/components
+: 1527854594:0;mv logIn.jsx LogIn.jsx
+: 1527854596:0;ls
+: 1527854619:0;-
+: 1527854624:0;cd -
+: 1527854628:0;nodemon server/server.js
+: 1527860109:0;npm run watch 
+: 1527894850:0;nodemon server/server.js
+: 1527895335:0;npm install webpack-serve --save-dev
+: 1527895564:0;npx webpack-serve ./webpack.config.js
+: 1527895643:0;npm i -D koa-connect connect-history-api-fallback http-proxy-middleware
+: 1527895656:0;npx webpack-serve ./webpack.config.js
+: 1527895681:0;nodemon server/server.js
+: 1527896194:0;npx webpack-serve ./webpack.config.js
+: 1527896604:0;emacs
+: 1527896656:0;npx webpack-serve ./webpack.config.js
+: 1527898042:0;ls
+: 1527898052:0;cat .eslintrc
+: 1527898125:0;emacs
+: 1527904477:0;npx webpack-serve ./webpack.config.js
+: 1527904559:0;cat package.json
+: 1527904617:0;npx webpack-serve ./webpack.config.js
+: 1527904913:0;npm i -D koa
+: 1527905056:0;tmux kill-server
+: 1527905084:0;cd ~/ASAHI/Study/nodejs_technics/chapter_06/sns
+: 1527905092:0;tmux
+: 1527905099:0;ls
+: 1527905122:0;cat package.json
+: 1527905136:0;npx webpack-serve ./webpack.config.js
+: 1527905183:0;cd src
+: 1527905194:0;cat webpack.config.js
+: 1527905198:0;..
+: 1527905200:0;cat webpack.config.js
+: 1527905247:0;cd ../wiki
+: 1527905271:0;cat webpack.config.js
+: 1527905278:0;cd src
+: 1527905291:0;cat package.json
+: 1527905297:0;npx webpack-serve ./webpack.config.js
+: 1527905320:0;npm i -D chalk
+: 1527905333:0;npx webpack-serve ./webpack.config.js
+: 1527905354:0;emacs index.jsx
+: 1527905378:0;emacs index.js
+: 1527905779:0;npx webpack-serve ./webpack.config.js --hot
+: 1527905857:0;cd ../../
+: 1527905861:0;../
+: 1527905868:0;ls
+: 1527905882:0;chapter_05
+: 1527905888:0;ls
+: 1527905909:0;02_express_test
+: 1527905911:0;ls
+: 1527905927:0;..
+: 1527905930:0;05_bbs
+: 1527905931:0;ls
+: 1527905953:0;cd ~/ASAHI/Study/nodejs_technics/chapter_05/05_bbs
+: 1527905959:0;npx webpack-serve ./webpack.config.js
+: 1527905990:0;cd src
+: 1527905999:0;emacs index.js
+: 1527906142:0;cd ~/ASAHI/Test
+: 1527906162:0;mdcd webpack-serve
+: 1527906173:0;ndenv local v10.3.0
+: 1527906271:0;npm init -y 
+: 1527906282:0;npm install -D webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react
+: 1527906343:0;npm i -D webpack-serve
+: 1527906421:0;cat package.json
+: 1527906444:0;npm install webpack-serve --save-dev
+: 1527906459:0;emacs package.json
+: 1527906489:0;npm i -D webpack-serve
+: 1527906517:0;npm install -S react react-dom\
+
+: 1527906546:0;emacs webpack.config.js
+: 1527906623:0;cd ~/ASAHI/Test/webpack-serve
+: 1527906630:0;mdcd stc
+: 1527906642:0;emacs index.js
+: 1527906924:0;mdcd dist
+: 1527906962:0;cp ../../v10-3-0_http_server_without_librarys/src/index.html .
+: 1527906975:0;cat index.html
+: 1527906986:0;..
+: 1527906991:0;npx webpack-serve ./webpack.config.js
+: 1527907023:0;emacs webpack.config.js
+: 1527907082:0;emacs dist/index.html
+: 1527907162:0;npx webpack-serve ./webpack.config.js
+: 1527907191:0;ls
+: 1527907200:0;mv stc src
+: 1527907203:0;npx webpack-serve ./webpack.config.js
+: 1527907250:0;cd ~/ASAHI/Test/webpack-serve
+: 1527907330:0;ls src
+: 1527907345:0;ls dist
+: 1527907417:0;npm i -D html-webpack-plugin
+: 1527907450:0;emacs webpack.config.js
+: 1527907576:0;mv -rf dist
+: 1527907589:0;rm -rf dist
+: 1527907591:0;ls
+: 1527907596:0;npx webpack-serve ./webpack.config.js
+: 1527907741:0;..
+: 1527907747:0;ls
+: 1527907754:0;ls src
+: 1527907760:0;rm stc
+: 1527907767:0;rm -r stc
+: 1527907769:0;ls
+: 1527907774:0;ce src
+: 1527907779:0;cd src
+: 1527907785:0;emacs index.js
+: 1527908694:0;npx webpack-serve ./webpack.config.js --hot
+: 1527908769:0;npx webpack-serve ./webpack.config.js --dev
+: 1527908854:0;npx webpack-serve ./webpack.config.js --content
+: 1527909011:0;npx webpack-serve ./webpack.config.js --hot
+: 1527909217:0;npx webpack-serve
+: 1527909608:0;xeit
+: 1527909610:0;exit
+: 1527909818:0;npx webpack-serve ./webpack.config.js --hot
+: 1527910219:0;webpack-serve --config ./webpack.config.js
+: 1527910226:0;npx webpack-serve --config ./webpack.config.js
+: 1527910275:0;emacs webpack.config.js
+: 1527910896:0;webpack-serve --config ./webpack.config.js
+: 1527911221:0;npx webpack-serve --config ./webpack.config.js --no-reload 
+: 1527911278:0;npx webpack-serve --config ./webpack.config.js --hot
+: 1527911386:0;npm install -D  react-hot-loader
+: 1527911680:0;npx webpack-serve --config ./webpack.config.js
+: 1527912044:0;cd ~/ASAHI/Test/webpack-serve
+: 1527912094:0;cp ../v10-3-0_http_server_without_librarys/testServer.js .
+: 1527912260:0;cd T]
+: 1527912267:0;cd ~/ASAHI/Test/webpack-serve
+: 1527912273:0;nodemon testServer.js
+: 1527912421:0;npm i -D koa-connect connect-history-api-fallback http-proxy-middleware
+: 1527912518:0;npx webpack-serve --config ./webpack.config.js
+: 1527912677:0;ls
+: 1527912687:0;nodemon testServer.js
+: 1527915716:0;tmux kill-server
+: 1527915746:0;cd ~/ASAHI/Projects/fuwafuwa_hair_salon/Codes
+: 1527915759:0;tmux
+: 1527915767:0;cd src
+: 1527915779:0;emacs
+: 1527915801:0;npx webpack-serve --config ./webpack.config.js
+: 1527915970:0;nodemon server/server.js
+: 1527915979:0;npx webpack-serve --config ./webpack.config.js
+: 1527916126:0;npm install -D  react-hot-loader
+: 1527916318:0;npx webpack-serve --config ./webpack.config.js
+: 1527916448:0;..
+: 1527916453:0;emacs
+: 1527916475:0;ls
+: 1527916492:0;mv src/.eslintrc .
+: 1527916494:0;ls
+: 1527916556:0;mv server/.eslintrc.json ~/Desktop
+: 1527916561:0;ls server
+: 1527916576:0;emacs
+: 1527934363:0;ls
+: 1527934393:0;npm i
+: 1527934436:0;ls
+: 1527934461:0;rm -rf node_modules
+: 1527934471:0;rm package-lock.json
+: 1527934480:0;ncu -a
+: 1527934519:0;cat package.json
+: 1527934529:0;npm i
+: 1527934570:0;cat webpack.config.js
+: 1527934675:0;cd src
+: 1527934693:0;mv index.jsx index.js
+: 1527934695:0;ls
+: 1527934710:0;npm start
+: 1527935367:0;npm uninstall webpack-cli
+: 1527935376:0;..
+: 1527935382:0;cat package.json
+: 1527935409:0;npm i -D webpack-cli "^2.1.4"
+: 1527935517:0;npm i -D webpack-cli@2.1.4
+: 1527935553:0;npm start
+: 1527935600:0;emacs webpack.config.js
+: 1527935629:0;npm start
+: 1527935752:0;emacs
+: 1527935996:0;tmux kill-server
+: 1527936028:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1527936052:0;cat webpack.config.js
+: 1527936069:0;tmux
+: 1527936083:0;npm start
+: 1527936148:0;git log
+: 1527936186:0;ls
+: 1527936213:0;git diff webpack.config.js
+: 1527936241:0;emacs
+: 1527936250:0;emacs webpack.config.js
+: 1527936270:0;npm start
+: 1527936295:0;emacs
+: 1527936904:0;cp -r ~/ASAHI/Projects/fuwafuwa_hair_salon/Codes/server .
+: 1527936906:0;ls
+: 1527937555:0;emacs
+: 1527938035:0;ls
+: 1527938064:0;emacs webpack.config.js
+: 1527938301:0;exit
+: 1527938320:0;nodemon server/server.js
+: 1527938373:0;npm i -S formidable
+: 1527938392:0;nodemon server/server.js
+: 1527938401:0;npm start
+: 1527938520:0;cat package.json
+: 1527938599:0;cat .stylelintrc
+: 1527938649:0;emacs .stylelintrc
+: 1527938697:0;npm start
+: 1527938723:0;emacs webpack.config.js
+: 1527938758:0;npm start
+: 1527939584:0;git diff package.json
+: 1527939696:0;git status
+: 1527939743:0;git checkout -- package.json
+: 1527939748:0;git status
+: 1527940249:0;exit
+: 1527940270:0;git diff src/components/App.js
+: 1527940339:0;git checkout -- src/components/App.js
+: 1527940346:0;git status
+: 1527940380:0;git add .
+: 1527940416:0;git commit -m "add server"
+: 1527940436:0;ls
+: 1527940460:0;gtags
+: 1527940684:0;emacs
+: 1527940754:0;ls
+: 1527940773:0;cp ~/.dot-files/etc/.eslintrc .
+: 1527940782:0;fg
+: 1527940791:0;emacs
+: 1527942233:0;npm start
+: 1527946492:0;nodemon server/server.js
+: 1527983162:0;npm start
+: 1527983206:0;nodemon server/server.js
+: 1527983677:0;git status
+: 1527983731:0;emacs .gitignore
+: 1527984004:0;exit
+: 1527984007:0;git status
+: 1527984046:0;emacs .gitignore
+: 1527984089:0;git status
+: 1527984597:0;git commit -m "add fetch apis"
+: 1527984615:0;git add .
+: 1527984619:0;git commit -m "add fetch apis"
+: 1527984662:0;exit
+: 1527984755:0;tmux kill-server
+: 1527985811:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1527985833:0;tmux
+: 1527986319:0;npm start
+: 1527986342:0;emacs
+: 1527986443:0;exit
+: 1527993844:0;git status
+: 1527993853:0;ls
+: 1527993876:0;emacs .gitignore
+: 1527993909:0;git status
+: 1527993921:0;git add .
+: 1527993950:0;git commit -m "make Main component"
+: 1527993967:0;exit
+: 1527994017:0;rm src/components/DummyHome.js
+: 1527994019:0;ls
+: 1527994026:0;git status
+: 1527994144:0;emacs
+: 1528004413:0;git status
+: 1528004445:0;git add .
+: 1528004553:0;git commit -m "implement browser back and forward"
+: 1528004615:0;emacs 
+: 1528042486:0;emacs webpack.config.js
+: 1528042766:0;cat package.json
+: 1528042795:0;cat .stylelintrc
+: 1528042821:0;emacs .stylelintrc
+: 1528042865:0;npm start
+: 1528042901:0;emacs webpack.config.js
+: 1528042953:0;emacs .stylelintrc
+: 1528042964:0;npm start
+: 1528043030:0;npm i -D stylelint-config-recommended
+: 1528043045:0;npm start
+: 1528043105:0;npm i -D stylelint-config-standard
+: 1528043126:0;emacs .stylelintrc
+: 1528043146:0;npm start
+: 1528043242:0;cat package.json
+: 1528043261:0;npx stylelint src/index.js\
+
+: 1528043501:0;exit
+: 1528043530:0;cd ~/ASAHI/Test/Codes
+: 1528043570:0;ncu -a
+: 1528043618:0;npm install -g npm-check-updates
+: 1528043651:0;ndenv rehash
+: 1528043655:0;ncu
+: 1528043693:0;ncu -u
+: 1528043732:0;cat package.json
+: 1528043962:0;ncu -a
+: 1528043971:0;cat package.json
+: 1528044003:0;npm update
+: 1528044036:0;npm start
+: 1528044098:0;npx webpack-dev-server
+: 1528044155:0;rm -rf node_modules
+: 1528044164:0;npm i
+: 1528044199:0;npm start
+: 1528044539:0;tmux
+: 1528044545:0;cat package.json
+: 1528044564:0;emacs .stylelintrc
+: 1528044580:0;npm start
+: 1528044647:0;ls
+: 1528044663:0;ndenv local v10.3.0
+: 1528044669:0;node -v
+: 1528044674:0;npm start
+: 1528044756:0;npm i -D url-loader
+: 1528044905:0;npm start
+: 1528045412:0;..
+: 1528045434:0;mv Codes TestCodes
+: 1528045436:0;ls
+: 1528045457:0;cd TestCodes
+: 1528045469:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1528045478:0;git status
+: 1528045498:0;ndenv local v10.3.0
+: 1528045507:0;ndenv install -l
+: 1528045517:0;node -v
+: 1528045534:0;rm -rf node_modules
+: 1528045555:0;emacs package.json
+: 1528045702:0;ls
+: 1528045720:0;ncu -a
+: 1528045727:0;cat package.json
+: 1528045743:0;npm i
+: 1528045803:0;rm webpack.config.js
+: 1528045811:0;cat .stylelintrc
+: 1528045828:0;cp ~/ASAHI/Test/TestCodes/webpack.config.js .
+: 1528045833:0;npm start
+: 1528045895:0;exit
+: 1528045903:0;exit
+: 1528045914:0;cd ~/Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/Projects/fuwafuwa_hair_salon/Codes
+: 1528045918:0;tumx
+: 1528045920:0;tmux
+: 1528045945:0;ls
+: 1528045955:0;git status
+: 1528045973:0;git add .
+: 1528046051:0;git commit -m "update packages and change webpack config"
+: 1528046140:0;emacs webpack.config.js
+: 1528046183:0;npx webpack -w
+: 1528046333:0;cd dist
+: 1528046352:0;browser-sync start
+: 1528046448:0;browser-sync start --files *
+: 1528046485:0;browser-sync start --files '*'
+: 1528046518:0;..
+: 1528046553:0;browser-sync start --files "./dist/*"
+: 1528046598:0;emacs
+: 1528046678:0;browser-sync start --files "./dist/*"
+: 1528046752:0;npx webpack -w
+: 1528046780:0;cd dist
+: 1528046808:0;browser-sync start --files "./*"
+: 1528046962:0;npm start
+: 1528047014:0;emacs webpack.config.js
+: 1528047036:0;npm start
+: 1528047097:0;browser-sync start --proxy localhost:8080 --files "./*"
+: 1528047498:0;emacs
+: 1528048896:0;cd ../src
+: 1528048932:0;browser-sync start --proxy localhost:8080 --files "./*"
+: 1528049001:0;browser-sync start --proxy localhost:8080 --files "./**/*"
+: 1528051072:0;cat package.json
+: 1528051170:0;npm install stylelint-config-recommended --save-dev
+: 1528051231:0;npm start
+: 1528063152:0;git status
+: 1528063180:0;git add .
+: 1528063234:0;git commit -m "refact Home,Sidear,Footer styles"
+: 1528063246:0;emacs
+: 1528063279:0;exit
+: 1528156789:0;nodemon server/server.js
+: 1528173240:0;npm start
+: 1528186725:0;npm run watch 
+: 1528186778:0;git status
+: 1528186807:0;rm src/components/TextInput.js
+: 1528186812:0;emacs
+: 1528188630:0;node
+: 1528189294:0;tmux kill-server
+: 1528189296:0;tmux
+: 1528189304:0;exit
+: 1528189324:0;cd ~/ASAHI/Projects/fuwafuwa_hair_salon/Codes
+: 1528189370:0;tmux
+: 1528189391:0;nodemon server/server.js
+: 1528189396:0;npm run watch 
+: 1528189409:0;emacs
+: 1528189590:0;mkdir dist/images/gallery
+: 1528189594:0;fg
+: 1528194419:0;git status
+: 1528194470:0;emacs .gitignore
+: 1528194575:0;git status
+: 1528194608:0;git add .
+: 1528194663:0;git commit -m "implement singin login checkToken uploadPicture"
+: 1528194723:0;exit
+: 1528194752:0;cd ~/.dot-files/.emacs.d
+: 1528194786:0;emacs .mc-lists.el
+: 1528194895:0;emacs projectile-bookmarks.eld
+: 1528194951:0;rm projectile-bookmarks.eld projectile.cache 
+: 1528194954:0;ls
+: 1528194974:0;cd -
+: 1528195180:0;git status
+: 1528195188:0;git add .
+: 1528195234:0;git commit -m "delete database files"
+: 1528195341:0;git status
+: 1528195590:0;emacs
+: 1528195794:0;cd dist
+: 1528195852:0;browser-sync start --proxy localhost:3000 --files "./main.js"
+: 1528265269:0;git status
+: 1528265295:0;git add .
+: 1528265384:0;git commit -m "implement picture upload, update and delete"
+: 1528274963:0;emacs
+: 1528275782:0;nodemon server/server.js
+: 1528275790:0;npm start
+: 1528374967:0;exit
+: 1528379134:0;git status
+: 1528379180:0;cd src/components
+: 1528379225:0;git checkout -- App.js Greeting.js Main.js Sidebar.js
+: 1528379230:0;ls
+: 1528379238:0;../../
+: 1528379246:0;git status
+: 1528379250:0;emacs
+: 1528393857:0;browser-sync start --proxy localhost:8080 --files "./main.js"
+: 1528464547:0;fg
+: 1528465488:0;git status
+: 1528465493:0;git add .
+: 1528465527:0;git commit -m "Responsive view"
+: 1528465536:0;emacs
+: 1528466182:0;ls src/databases
+: 1528466195:0;rm -r src/databases
+: 1528466199:0;fg
+: 1528466853:0;git add .
+: 1528466866:0;git commit -m "Responsive view Gallary"
+: 1528466888:0;emacs
+: 1528467179:0;git add .
+: 1528467191:0;git commit -m "Responsive view Greeting"
+: 1528467194:0;emacs
+: 1528470407:0;git add .
+: 1528470454:0;git commit -m "Responsive view Home SalonInfo"
+: 1528471283:0;tmux kill-server
+: 1528471579:0;git remote add origin https://github.com/yasushiasahi/fuwafuwaApp.git
+: 1528471589:0;git push -u origin master
+: 1528471784:0;ssh -p 10022 asahi@160.16.107.88
+: 1528472066:0;tmux
+: 1528472073:0;emacs
+: 1528472504:0;npm i -D cross-env
+: 1528473201:0;emacs
+: 1528473234:0;npm run prod
+: 1528473258:0;nodemon server/server.js
+: 1528473796:0;nodemon server/server.js 3200
+: 1528474807:0;git status
+: 1528474820:0;git add .
+: 1528474866:0;git commit -m "add conditional bundling"
+: 1528474874:0;git push -u origin master
+: 1528474887:0;exit
+: 1528474902:0;ssh -p 10022 asahi@160.16.107.88
+: 1528477660:0;tmux
+: 1528477669:0;cd ~/.dot-files/
+: 1528477673:0;git status
+: 1528477694:0;git add .
+: 1528477709:0;git commit -m "many"
+: 1528477718:0;git push -u origin master
+: 1528477759:0;exit
+: 1528485533:0;ssh -p 10022 asahi@160.16.107.88
+: 1528489747:0;exit
+: 1528506522:0;tmux
+: 1528506529:0;exit
+: 1528506543:0;ssh -p 10022 asahi@160.16.107.88
+: 1528512403:0;tmux
+: 1528512461:0;cd Google\ ãƒ£ƒ©ãƒ£©ã‚¤ãƒ£ƒ¶/programming
+: 1528512468:0;cd prev_fuwafuwa
+: 1528512486:0;cd heroku_demo_site
+: 1528512497:0;cd public
+: 1528512506:0;ls images
+: 1528512536:0;..
+: 1528512618:0;scp -P 10022 -r public asahi@160.16.107.88:ASAHI
+: 1528530018:0;exit
+: 1528530026:0;ssh -p 10022 asahi@160.16.107.88
+: 1528530642:0;tmux
+: 1528530761:0;ls /etc/
+: 1528530798:0;ssh -p 10022 asahi@160.16.107.88
+: 1528540888:0;ls /etc/
+: 1528541438:0;mdcd -p /etc/nginx/conf.d/
+: 1528541453:0;sudo mkdir -p /etc/nginx/conf.d/
+: 1528541482:0;cd /etc/nginx/conf.d/
+: 1528541498:0;sudo mkdir -p /etc/nginx/conf.d/
+: 1528541545:0;exit
+: 1528541600:0;ssh -p 10022 asahi@160.16.107.88
+: 1528595579:0;exit
+: 1528595681:0;ssh -p 10022 asahi@160.16.107.88
+: 1528651606:0;hexit
+: 1528651609:0;exit
+: 1528651621:0;ssh -p 10022 asahi@160.16.107.88
+: 1528656723:0;exit
+: 1528656737:0;ssh -p 10022 asahi@160.16.107.88
+: 1528665309:0;docker version
+: 1528665356:0;docker-compose version
+: 1528665804:0;docker pull ubuntu:16.04
+: 1528665903:0;docker run -d -it ubuntu:16:04 bash
+: 1528665938:0;docker run -d -it ubuntu:16:04 zsh
+: 1528666005:0;docker run -d -it ubuntu:16.04 bash
+: 1528666025:0;docker ps
+: 1528666106:0;docker exec 175 bash
+: 1528666126:0;docker exec -it 175 bash
+: 1528666400:0;docker commit 175
+: 1528666490:0;docker tag 0f31 sampledocker1234/ubuntu_with_php:1_0
+: 1528666521:0;docker images
+: 1528666587:0;ls /tmp
+: 1528666628:0;ls /private/tmp
+: 1528666725:0;docker save -o /tmp/ubuntu_with_php_1_0 sampledocker1234/ubuntu_with_php:1_0
+: 1528666741:0;ls tmp
+: 1528666749:0;ls /tmp
+: 1528666757:0;ls /private/tmp
+: 1528666810:0;docker rmi 0f31
+: 1528666847:0;docker images
+: 1528666893:0;docker load < /tmp/ubuntu_with_php_1_0
+: 1528666913:0;docker images
+: 1528666990:0;cd ASAHI
+: 1528666991:0;ls
+: 1528667007:0;touch samplefile
+: 1528667101:0;docker cp samplefile 0f31:/
+: 1528667139:0;docker cp samplefile 0f31a2863462:/
+: 1528667192:0;docker cp samplefile 5e8b97a2a082:/
+: 1528667292:0;docker ps
+: 1528667309:0;docker cp samplefile 1755:/
+: 1528667382:0;docker exec 1755 bash -c 'ls -al /'
+: 1528667453:0;docker cp 1755:/samplefile /tmp
+: 1528667460:0;ls /private/tmp
+: 1528667505:0;docker stop 1755
+: 1528667516:0;docker ps
+: 1528667529:0;docker ps -a
+: 1528667582:0;docker start 1755
+: 1528667592:0;docker ps
+: 1528667631:0;docker kill 1755
+: 1528667645:0;docker ps -a
+: 1528667676:0;docker rm 1755
+: 1528667687:0;docker ps -a
+: 1528667693:0;docker images
+: 1528685147:0;cd Study
+: 1528685163:0;mdcd docker
+: 1528685186:0;cp ~/Desktop/SampleData_20180518
+: 1528685195:0;cp -r  ~/Desktop/SampleData_20180518
+: 1528685201:0;cp -r  ~/Desktop/SampleData_20180518 .
+: 1528685203:0;ls
+: 1528685254:0;cd SampleData_20180518/Chapter02/Dockerfile
+: 1528685257:0;ls ..
+: 1528685271:0;cd from
+: 1528685294:0;cd ../../../
+: 1528685297:0;..
+: 1528685334:0;mdcd chapter_02
+: 1528685354:0;mdcd from
+: 1528685518:0;emacs Dockerfile_simple
+: 1528685570:0;cd ../../
+: 1528685577:0;tmux
+: 1528685600:0;cd chapter_02/from
+: 1528685756:0;..
+: 1528685784:0;docker build -f from/Dockerfile_simple -t build:from_simple .
+: 1528685908:0;docker images
+: 1528686051:0;cd chapter_02/from
+: 1528686056:0;cd ..
+: 1528686079:0;emacs from/Dockerfile_tag
+: 1528686158:0;docker build -f from/Dockerfile_tag -t build:from_simple .
+: 1528686176:0;docker build -f from/Dockerfile_tag -t build:from_tag .
+: 1528686184:0;docker images
+: 1528686397:0;docker images --digest
+: 1528686410:0;docker images --digests
+: 1528686645:0;docker build -f from/Dockerfile_digest  -t build:from_digest .
+: 1528686656:0;docker images --digests
+: 1528686685:0;ls
+: 1528686839:0;mkdir env
+: 1528687062:0;docker build -f env/Dockerfile_digest  -t build:from_digest .
+: 1528687104:0;docker build -f env/Dockerfile_first  -t build:env_first .
+: 1528687233:0;docker images
+: 1528687319:0;docker run -d -it ed36 zsh
+: 1528687345:0;docker run -d -it ed36 bash
+: 1528687353:0;docker ps
+: 1528687400:0;docker exec -it fb78 bash
+: 1528687468:0;docker kill ed36
+: 1528687483:0;docker kill fb78
+: 1528687493:0;docker ps
+: 1528687497:0;docker ps -a
+: 1528687556:0;docker rm fb78 60c6
+: 1528687559:0;docker ps -a
+: 1528687812:0;docker build -f env/Dockerfile_second  -t build:env_second .
+: 1528687944:0;docker history build:env_second
+: 1528687974:0;mkdir label
+: 1528688180:0;docker build -f label/Dockerfile -t build:label .
+: 1528688189:0;docker images
+: 1528688237:0;docker inspect build:label
+: 1528688258:0;docker inspect build:label | emacs
+: 1528688272:0;docker inspect build:label > emacs
+: 1528688278:0;ls
+: 1528688310:0;rm emacs
+: 1528688320:0;emacs | docker inspect build:label
+: 1528688331:0;ls
+: 1528688340:0;docker inspect build:label
+: 1528689067:0;mkdir run
+: 1528689227:0;docker build -f run/Dockerfile -t build:run_shell_with_error .
+: 1528689239:0;docker build -f run/Dockerfile_with_error -t build:run_shell_with_error .
+: 1528689501:0;docker build -f run/Dockerfile_success -t build:run_shell_success .
+: 1528689584:0;ls
+: 1528689619:0;mkdir run/env
+: 1528689857:0;docker build -f run/env/Dockerfile -t build:run_env ./run/env
+: 1528689949:0;cat ../SampleData_20180518/Chapter02/Dockerfile/run/env/Dockerfile
+: 1528689973:0;docker build -f run/env/Dockerfile -t build:run_env ./run/env
+: 1528690174:0;docker history build:run_env
+: 1528690294:0;mkdir shell
+: 1528690403:0;docker build -f shell/Dockerfile -t build:shell .
+: 1528690488:0;mkdir workdir
+: 1528690594:0;docker build -f workdir/Dockerfile -t build:workdir .
+: 1528690764:0;mkdir add
+: 1528690854:0;ls ../SampleData_20180518/Chapter02/Dockerfile/add
+: 1528690875:0;cp -r ../SampleData_20180518/Chapter02/Dockerfile/add add
+: 1528690878:0;ls add
+: 1528690886:0;tree add
+: 1528690946:0;mv add/add/* add
+: 1528690948:0;ls add
+: 1528690951:0;tree add
+: 1528690964:0;rm -f add/add
+: 1528690969:0;rm -r add/add
+: 1528690988:0;tree add
+: 1528691694:0;docker build -f add/Dockerfile -t build:add ./add/
+: 1528693680:0;mkdir copy
+: 1528697415:0;cp -r ../SampleData_20180518/Chapter02/Dockerfile/copy/files/ copy
+: 1528697420:0;tree copy
+: 1528697464:0;mkdir copy/files
+: 1528697508:0;mv copy/bzip2_file.bz2  copy/gzip_file.gz copy/multi_stage_docker_file copy/not_archived_file copy/tar_bzip2_file.tar.bzip2 copy/tar_file.tar copy/tar_gz_file.tar.gz copy/tar_xz_file.tar.xz copy/xz_file.xz copy/zip_file.zip copy/files
+: 1528697513:0;tree copy
+: 1528697568:0;emacs copy/Dockerfile
+: 1528698306:0;docker build -f copy/Dockerfile -t build:copy ./copy/
+: 1528699046:0;mkdir expose
+: 1528699136:0;docker build -f expose/Dockerfile -t build:expose .
+: 1528699225:0;docker history build:expose
+: 1528699349:0;mkdir -p entrypoint/exec
+: 1528699434:0;top -H
+: 1528699441:0;top -h
+: 1528699518:0;docker build -f entrypoint/exec/Dockerfile -t build:entrypoint_exec ./entrypoint/exec
+: 1528699592:0;docker run --rm -it build:entrypoint_exec
+: 1528699655:0;mkdir entrypoint/shell
+: 1528699770:0; docker build -f entrypoint/shell/Dockerfile -t build:entrypoint_shell ./entrypoint/shell/
+: 1528699780:0;docker run --rm -it build:entrypoint_shell
+: 1528700167:0;mkdir entrypoint/signal
+: 1528700646:0;entrypoint/signal/sample.sh
+: 1528700679:0;chmod 755 entrypoint/signal/sample.sh
+: 1528700684:0;entrypoint/signal/sample.sh
+: 1528701062:0;ps -ef | grep sample
+: 1528701114:0;kill 47691
+: 1528701128:0;exit
+: 1528701368:0;ls entrypoint/signal
+: 1528701436:0; docker build -f entrypoint/signal/Dockerfile -t build:entrypoint_signal_exec ./entrypoint/signal
+: 1528701453:0; docker build -f entrypoint/signal/Dockerfile_exec -t build:entrypoint_signal_exec ./entrypoint/signal
+: 1528701564:0;docker run --name entrypoint_signal_exec --rm -it build:entrypoint_signal_exec
+: 1528701681:0; docker build -f entrypoint/signal/Dockerfile_exec -t build:entrypoint_signal_exec ./entrypoint/signal
+: 1528701688:0;docker run --name entrypoint_signal_exec --rm -it build:entrypoint_signal_exec
+: 1528701700:0; docker build -f entrypoint/signal/Dockerfile_exec -t build:entrypoint_signal_exec ./entrypoint/signal
+: 1528701703:0;docker run --name entrypoint_signal_exec --rm -it build:entrypoint_signal_exec
+: 1528701731:0;docker ps
+: 1528701780:0;docker kill -s SIGHUP entrypoint_signal/exec
+: 1528701795:0;docker kill -s SIGHUP entrypoint_signal_exec
+: 1528701825:0;docker stop entrypoint_signal/exec
+: 1528701830:0;docker stop entrypoint_signal_exec
+: 1528701986:0; docker build -f entrypoint/signal/Dockerfile_shell -t build:entrypoint_signal_shell ./entrypoint/signal
+: 1528702016:0; docker build -f entrypoint/signal/Dockerfile_shell -t build:entrypoint_signal_shell ./entrypoint/signal/
+: 1528702066:0;cd exit
+: 1528702069:0;exit
+: 1528702077:0; docker build -f entrypoint/signal/Dockerfile_shell -t build:entrypoint_signal_shell ./entrypoint/signal/
+: 1528702108:0;docker run --name entrypoint_signal_shell --rm -it build:entrypoint_signal_shell
+: 1528702142:0; docker build -f entrypoint/signal/Dockerfile_shell -t build:entrypoint_signal_shell ./entrypoint/signal/
+: 1528702146:0;docker run --name entrypoint_signal_shell --rm -it build:entrypoint_signal_shell
+: 1528702182:0;docker kill -s SIGHUP entrypoint_signal_shell
+: 1528702213:0;docker stop entrypoint_signal_shell
+: 1528703221:0;exit
+: 1528703234:0;mkdir cmd
+: 1528703407:0;mkdir cmd/exec
+: 1528703420:0;mv cmd/Dockerfile cmd/exec
+: 1528703424:0;tree cmd
+: 1528703458:0;docker build -f cmd/exec/Dockerfile -t build:cmd_exec ./cmd/exec
+: 1528703513:0;docker run --rm -it build:cmd_exec
+: 1528703555:0;mkdir cmd/parameter
+: 1528703565:0;emacs
+: 1528703688:0;docker build -f cmd/parameter/Dockerfile -t build:cmd_parameter ./cmd/parameter
+: 1528703707:0;docker run --rm -it build:cmd_parameter
+: 1528703762:0;mkdir cmd/shell
+: 1528703838:0;docker build -f cmd/shell/Dockerfile -t build:cmd_sell ./cmd/shell
+: 1528703847:0;docker run --rm -it build:cmd_shell
+: 1528703958:0;docker run --rm -it build:cmd_sell
+: 1528704067:0;docker run --rm -it build:cmd_exec top -b
+: 1528704287:0;docker images
+: 1528704603:0;mkdir sample
+: 1528704814:0;docker build -f sample/Dockerfile -t sample:nginx ./sample
+: 1528705141:0;docker images
+: 1528705219:0;docker run -d -p 80:80 sample:nginx
+: 1528705236:0;curl localhost
+: 1528705301:0;..
+: 1528705323:0;curl asahi-internet.fun
+: 1528705337:0;curl asahi-internet.fun:334
+: 1528705345:0;curl asahi-internet.fun:443
+: 1528705441:0;exit
+: 1528705639:0;cp sample/Dockerfile sample/Dockerfile_modified
+: 1528705702:0;docker build -f sample/Dockerfile_modified -t sample:nginx_modified ./sample
+: 1528707791:0;docker pull hello-world
+: 1528707815:0;docker images
+: 1528707918:0;docker tag hello-world:latest asahi1600/sample:latest
+: 1528707933:0;docker images
+: 1528708006:0;docker push asahi1600/sample:latest
+: 1528708254:0;mkdir WordPress
+: 1528708322:0;docker-compose version
+: 1528708873:0;docker ps
+: 1528708903:0;docker kill cb
+: 1528708914:0;docker ps
+: 1528708934:0;docker-compose up -d
+: 1528708961:0;cd WordPress/
+: 1528708963:0;docker-compose up -d
+: 1528709383:0;docker ps
+: 1528709419:0;docker-compose ps
+: 1528716371:0;docker-compose kill
+: 1528716378:0;docker-compose os
+: 1528716383:0;docker-compose ps
+: 1528722648:0;cd ../../SampleData_20180518/Chapter04
+: 1528722672:0;cd ../
+: 1528722674:0;ls
+: 1528722707:0;cd Chapter05
+: 1528722732:0;..
+: 1528722737:0;cd Chapter04
+: 1528722761:0;cd sampleCode
+: 1528722784:0;cd expressSample
+: 1528722810:0;cd todos
+: 1528722882:0;~/ASAHI/Study/docker
+: 1528722883:0;ls
+: 1528722911:0;mdcd chapter_04
+: 1528722961:0;node i -g express-generator@4.15.5
+: 1528722977:0;npm i -g express-generator@4.15.5
+: 1528722998:0;ndenv rehash
+: 1528723010:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1528723012:0;ndenv rehash
+: 1528723048:0;express --veiw-ejs todos
+: 1528723225:0;express --view ejs
+: 1528723238:0;ls
+: 1528723255:0;rm -rf *
+: 1528723259:0;ls
+: 1528723272:0;express --view ejs todos
+: 1528723276:0;cd todos
+: 1528723298:0;cat package.json
+: 1528723318:0;npm i
+: 1528723340:0;npm start
+: 1528723377:0;emacs bin/www 
+: 1528723686:0;pip install awsebcli --upgrade --user
+: 1528723799:0;exec $SHELL -l
+: 1528723898:0;emacs ~/.dot-files/zsh/.zshenv
+: 1528723977:0;ls /Library/Python/2.7/
+: 1528724007:0;ls ~
+: 1528724026:0;ls ~/Library/Python/2.7/bin
+: 1528724112:0;exec $SHELL -l
+: 1528724119:0;eb -v
+: 1528724128:0;eb --version
+: 1528724183:0;eb init
+: 1528724692:0;sl
+: 1528724693:0;ls
+: 1528724704:0;emacs .gitignore
+: 1528724804:0;mkdir .ebextensions
+: 1528724815:0;emacs .ebextensions/nodecommand.config
+: 1528724997:0;eb list
+: 1528725032:0;eb deploy
+: 1528726055:0;cd ../SampleData_20180518/Chapter04/sampleCode
+: 1528726101:0;..
+: 1528726117:0;ls
+: 1528726127:0;cd -
+: 1528726130:0;ls
+: 1528726139:0;cd nodemonSample
+: 1528726146:0;cd todos
+: 1528726348:0;brew install mysql-client
+: 1528726587:0;exec $SHELL -l
+: 1528726619:0;mysql -v
+: 1528726629:0;which mysql
+: 1528726704:0;emacs ~/.dot-files/zsh/.zshenv
+: 1528726721:0;exec $SHELL -l
+: 1528726754:0;mysql -h docker-sample.cwgvjwdtbztw.ap-northeast-1.rds.amazonaws.com -u sampleuser -p
+: 1528727222:0;emacs
+: 1528728092:0;mysql -h docker-sample.cwgvjwdtbztw.ap-northeast-1.rds.amazonaws.com -u sampleuser -p
+: 1528728422:0;exit
+: 1528728494:0;../../
+: 1528728497:0;ls
+: 1528728508:0;cd readApplicationSample
+: 1528728513:0;cd todos
+: 1528728536:0;ls views
+: 1528728546:0;ls views/todos
+: 1528728571:0;npm i
+: 1528728595:0;npm start
+: 1528728632:0;eb init
+: 1528728667:0;eb deploy
+: 1528728861:0;ls
+: 1528728876:0;emacs routes/todos.js
+: 1528729484:0;..
+: 1528729489:0;ls
+: 1528729498:0;cudApplicationSample
+: 1528729503:0;cd todos
+: 1528729509:0;npm i
+: 1528729536:0;eb init
+: 1528730335:0;eb deploy
+: 1528730728:0;..
+: 1528730747:0;cd cacheApplicationSample/todos
+: 1528730749:0;npm i
+: 1528731004:0;eb init
+: 1528731042:0;eb deploy
+: 1528733019:0;..
+: 1528733021:0;ls
+: 1528733029:0;rm -rf todos
+: 1528733094:0;emacs docker-compose_01.yml
+: 1528733599:0;cd ../../
+: 1528733611:0;../
+: 1528733612:0;ls
+: 1528733631:0;cd sampleComposeFile
+: 1528733638:0;cat docker-compose_01.yml
+: 1528733684:0;cd chapter_04/
+: 1528733704:0;docker-compose up -d
+: 1528733714:0;ls
+: 1528733764:0;mv docker-compose_01.yml docker-compose.yml
+: 1528733767:0;docker-compose up -d
+: 1528734072:0;emacs docker-compose.yml
+: 1528734136:0;rm docker-compose_01.yml
+: 1528734141:0;docker-compose up -d
+: 1528734380:0;ls /var/lib
+: 1528734505:0;mysql -h 127.0.0.1 -u sampleUser -p
+: 1528734734:0;exit
+: 1528734768:0;cd ~/ASAHI/Study/docker/chapter_04
+: 1528734778:0;emacs docker-compose.yml
+: 1528734906:0;docker-compose up -d
+: 1528735068:0;brew install telnet
+: 1528735108:0;telnet 127.0.0.1 6379
+: 1528735673:0;docker-compose up -d
+: 1529127418:0;tmux
+: 1529128910:0;brew cask install minikube
+: 1529128991:0;minikube -v
+: 1529129004:0;minikube version
+: 1529129021:0;kubectl version --client
+: 1529129042:0;minikube ip
+: 1529129131:0;docker-machine ls
+: 1529129145:0;docker-machine create
+: 1529129188:0;minikube start
+: 1529129498:0;brew insatall virtualbox
+: 1529129507:0;brew install virtualbox
+: 1529129579:0; brew cask install virtualbox
+: 1529130763:0;tmux
+: 1529130773:0;minikube start
+: 1529130872:0;brew cask uninstall virtualbox
+: 1529130915:0;brew cask install appcleaner
+: 1529131001:0;brew cask install virtualbox
+: 1529134721:0;/Volumes/VirtualBox/VirtualBox_Uninstall.tool ; exit;
+: 1529135104:0;hyperkit
+: 1529135146:0;minikube start
+: 1529135189:0;minikube ip
+: 1529135329:0;cat ~/.minikube/machines/minikubeVM/config.json | grep DriverName
+: 1529135384:0;brew cask uninstall minikube kubectl
+: 1529135403:0;brew cask uninstall minikube
+: 1529135426:0;brew list -l
+: 1529135453:0;brew cask install minikube
+: 1529135480:0;minikube version
+: 1529135488:0;kubectl version --client
+: 1529135528:0;minikube ip
+: 1529135783:0;minikube start --vm-driver hyperkit
+: 1529135836:0;minikube start
+: 1529135952:0;cat ~/.minikube/machines/minikube/config.json | grep DriverName
+: 1529138106:0; minikube start --vm-driver=hyperkit
+: 1529138235:0;cat ~/.minikube/machines/minikube/config.json | grep -i ISO or minikube ssh cat /etc/VERSION
+: 1529138260:0;cat ~/.minikube/machines/minikube/config.json | grep DriverName
+: 1529138273:0;virtualbox
+: 1529138286:0;virtualbox -version
+: 1529138292:0;which virtualbox
+: 1529138404:0;minikube -v10 start
+: 1529138604:0; minikube start --vm-driver=hyperkit
+: 1529138622:0;hyperkit --version
+: 1529138630:0;hyperkit -V
+: 1529138643:0;hyperkit -v
+: 1529138682:0;virtualbox
+: 1529138692:0;which virtualbox
+: 1529138720:0;ls /usr/local/bin/
+: 1529138783:0;sudo minikube start
+: 1529138914:0;ls /usr/local/bin/vbox-img
+: 1529138930:0;ls /usr/local/bin/VirtualBox
+: 1529138941:0;cat /usr/local/bin/VirtualBox
+: 1529139120:0;exit
+: 1529139136:0;minikube start
+: 1529139160:0;minikube start --vm-driver=hyperkit
+: 1529139402:0;cd ASAHI
+: 1529139422:0;curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit
+: 1529139451:0;ls
+: 1529139460:0;chmod +x docker-machine-driver-hyperkit
+: 1529139480:0;sudo mv docker-machine-driver-hyperkit /usr/local/bin/
+: 1529139500:0;sudo chown root:wheel /usr/local/bin/docker-machine-driver-hyperkit
+: 1529139512:0;sudo chmod u+s /usr/local/bin/docker-machine-driver-hyperkit
+: 1529139538:0;minikube start --vm-driver=hyperkit
+: 1529139585:0;minikube ip
+: 1529139599:0;docker-machine create hoge
+: 1529214175:0;spctl kext-consent add VB5E2TV963
+: 1529214240:0;brew cask reinstall --force virtualbox --verbose --debug
+: 1529214304:0;sudo spctl --master-disable
+: 1529216692:0;go version
+: 1529216700:0;tmux
+: 1529216740:0;anyenv install goenv
+: 1529216795:0;exec $SHELL -l
+: 1529216869:0;goenv install -;
+: 1529216872:0;goenv install -l
+: 1529216903:0;goenv install 1.10.3
+: 1529217333:0;goenv versions
+: 1529217340:0;goenv install 1.10.3
+: 1529218032:0;goenv global 1.10.3
+: 1529218035:0;go version
+: 1529218061:0;ls
+: 1529218064:0;Study
+: 1529218065:0;ls
+: 1529218090:0;mkdir go_Lessons
+: 1529218093:0;cd go_Lessons
+: 1529218099:0;..
+: 1529218109:0;mv go_Lessons golang_Lessons
+: 1529218117:0;cd golang_Lessons
+: 1529218181:0;touch hello.go
+: 1529218190:0;emacs hello.go
+: 1529218719:0;cd golang_Lessons
+: 1529218725:0;ls
+: 1529218730:0;Study
+: 1529218739:0;cd golang_Lessons
+: 1529218782:0;ls
+: 1529218796:0;go build hello.go
+: 1529218798:0;ls
+: 1529218804:0;./hello
+: 1529218819:0;go run hello.go
+: 1529220450:0;fg
+: 1529220454:0;go run hello.go
+: 1529223647:0;emacs Lesson.go
+: 1529224099:0;echo $GOROOT
+: 1529224245:0;which go
+: 1529224412:0;ls ~/.anyenv/envs/goenv/shims/go
+: 1529224421:0;ls ~/.anyenv/envs/goenv/shims/
+: 1529224698:0;go get -u github.com/nsf/gocode
+: 1529224714:0;goenv rehash
+: 1529224728:0;ls ~/.anyenv/envs/goenv/shims/
+: 1529224742:0;exec $SHELL -l
+: 1529224771:0;ls ~/.anyenv/envs/goenv
+: 1529224785:0;ls ~/.anyenv/envs/goenv/bin
+: 1529224801:0;ls ~/.anyenv/envs/goenv/plugins
+: 1529224814:0;ls ~/.anyenv/envs/goenv/src
+: 1529224886:0;emacs ~/.dot-files/.emacs.d/init.el
+: 1529225148:0;exec $SHELL -l
+: 1529225157:0;ls
+: 1529225164:0;emacs hello.go
+: 1529225337:0;ls ~/.anyenv/envs/goenv/versions
+: 1529225343:0;ls ~/.anyenv/envs/goenv/versions/1.10.3
+: 1529225354:0;ls ~/.anyenv/envs/goenv/versions/1.10.3/bin
+: 1529225447:0;exec $SHELL -l
+: 1529225453:0;echo $GOROOT
+: 1529225461:0;source ~/.zshenv
+: 1529225465:0;echo $GOROOT
+: 1529225471:0;echo GOROOT
+: 1529225482:0;emacs
+: 1529225519:0;exec $SHELL -l
+: 1529225524:0;echo GOROOT
+: 1529225529:0;echo $GOROOT
+: 1529225534:0;emacs hello.go
+: 1529225617:0;go get github.com/nsf/gocode
+: 1529225628:0;exec $SHELL -l
+: 1529225633:0;go get github.com/nsf/gocode
+: 1529225650:0;echo $GOROOT
+: 1529225661:0;go get -u github.com/nsf/gocode
+: 1529225691:0;go remove
+: 1529225702:0;go help
+: 1529225728:0;go list
+: 1529225761:0;ls
+: 1529225794:0;go get -u github.com/nsf/gocode
+: 1529225807:0;echo $GOROOT
+: 1529225858:0;gocode close
+: 1529225958:0;exec $SHELL -l
+: 1529225969:0;echo $GOPATH
+: 1529225979:0;go get -u github.com/nsf/gocode
+: 1529226096:0;exec $SHELL -l
+: 1529226101:0;echo $GOPATH
+: 1529226109:0;echo $GOROOT
+: 1529226123:0;go get -u github.com/nsf/gocode
+: 1529226134:0;ls ~
+: 1529226141:0;ls ~/.go
+: 1529226150:0;ls ~/.go/bin
+: 1529226168:0;exec $SHELL -l
+: 1529226175:0;emacs hello.go
+: 1529226209:0;emacs 
+: 1529226416:0;emacs hello.go
+: 1529226455:0;emacs Lesson.go
+: 1529226662:0;mv hello.go.sample
+: 1529226672:0;mv hello.go hello.go.sample
+: 1529226695:0;ls
+: 1529226707:0;rm hello.go.sample
+: 1529226719:0;emacs Lesson.go
+: 1529226730:0;go run Lesson.go
+: 1529226782:0;emacs Lesson.go
+: 1529226793:0;go run Lesson.go
+: 1529226989:0;emacs Lesson.go
+: 1529226994:0;go run Lesson.go
+: 1529227219:0;emacs Lesson.go
+: 1529227224:0;go run Lesson.go
+: 1529228210:0;emacs Lesson.go
+: 1529228215:0;go run Lesson.go
+: 1529228758:0;emacs Lesson.go
+: 1529229252:0;go run Lesson.go
+: 1529230436:0;emacs Lesson.go
+: 1529230443:0;go run Lesson.go
+: 1529235492:0;exit
+: 1529235507:0;go tool tour
+: 1529244289:0;brew cask list
+: 1529244297:0;brew cask list -l
+: 1529244314:0;brew cask ls
+: 1529247333:0;brew ls
+: 1529248049:0;ls
+: 1529248058:0;ls ~
+: 1529253823:0;brew cask ls
+: 1529395801:0;cd ASAHI/Projects/fuwafuwa_hair_salon/Codes
+: 1529395810:0;git status
+: 1529395813:0;git log
+: 1529396191:0;git pull origin master
+: 1529396196:0;ls
+: 1529396212:0;docker-compose up -d
+: 1529396583:0;docker-compose ps
+: 1529396615:0;ls
+: 1529396648:0;tree data
+: 1529396686:0;cd data/databases
+: 1529396697:0;cat > gallerydata.json
+: 1529396716:0;cat > userdata.json
+: 1529396764:0;..
+: 1529396775:0;cat logs/nginx_access.log
+: 1529396798:0;..
+: 1529396799:0;tree
+: 1529396806:0;cd data
+: 1529396807:0;tree
+: 1529396831:0;cat logs/errorLog.txt
+: 1529397066:0;now
+: 1529397074:0;time
+: 1529397242:0;..
+: 1529397248:0;cd nginx
+: 1529397260:0;emacs Dockerfile
+: 1529397308:0;docker-compose up -d --build
+: 1529397363:0;..
+: 1529397381:0;cat data/logs/nginx_access.log
+: 1529397650:0;emacs nginx/Dockerfile
+: 1529397697:0;docker-compose up -d --build
+: 1529397733:0;cat data/logs/nginx_access.log
+: 1529397770:0;emacs nginx/Dockerfile
+: 1529397927:0;docker-compose up -d --build
+: 1529397970:0;docker-compose ps
+: 1529397996:0;emacs apiserver/Dockerfile
+: 1529398007:0;emacs docker-compose.yml
+: 1529398137:0;docker-compose up -d --build
+: 1529398147:0;docker-compose ps
+: 1529398198:0;emacs docker-compose.yml
+: 1529398217:0;emacs apiserver/Dockerfile
+: 1529398248:0;docker-compose up -d --build
+: 1529398279:0;docker-compose ps
+: 1529398301:0;cd data/databases
+: 1529398311:0;mv gallerydata.json ..
+: 1529398313:0;ls
+: 1529398344:0;mv ../gallerydata.json .
+: 1529398355:0;..
+: 1529398361:0;cat logs/errorLog.txt
+: 1529398437:0;git status
+: 1529398443:0;git add .
+: 1529398472:0;git commit -m "set timezone to containers"
+: 1529398510:0;git status
+: 1529398525:0;git add .
+: 1529398529:0;git status
+: 1529398549:0;..
+: 1529398553:0;git add 
+: 1529398556:0;git add .
+: 1529398559:0;git status
+: 1529398566:0;git commit -m "set timezone to containers"
+: 1529398569:0;git pull origin master
+: 1529398577:0;cd ~/.dot-files/
+: 1529398579:0;git status
+: 1529398613:0;emacs .emacs.d/init.el
+: 1529398859:0;cd .emacs.d
+: 1529398883:0;rm projectile-bookmarks.eld projectile.cache 
+: 1529398885:0;ls
+: 1529398910:0;tmux
+: 1529398921:0;cd ~
+: 1529398948:0;..
+: 1529398949:0;ls
+: 1529398960:0;cp ~/.gitconfig .
+: 1529399011:0;ls zsh
+: 1529399037:0;ls .emacs.d
+: 1529399055:0;ls .emacs.d/etc
+: 1529399086:0;mv .emacs.d/etc/.tern-config .
+: 1529399087:0;ls
+: 1529399104:0;ls zsh
+: 1529399120:0;mv zsh/dircolors.ansi-dark .
+: 1529399124:0;ls
+: 1529399146:0;mv dircolors.ansi-dark .dircolors.ansi-dark
+: 1529399147:0;ls
+: 1529399155:0;ls etc
+: 1529399240:0;cp ~/ASAHI/Projects/fuwafuwa_hair_salon/Codes/jsconfig.json etc
+: 1529399261:0;ls ~/ASAHI/Projects/fuwafuwa_hair_salon/Codes/
+: 1529399294:0;co ~/.globalrc .
+: 1529399301:0;cp ~/.globalrc .
+: 1529399303:0;ls
+: 1529399343:0;ls zsh
+: 1529399367:0;mv zsh/* .
+: 1529399368:0;ls
+: 1529399390:0;ls zsh
+: 1529399405:0;mv zsh/* .
+: 1529399415:0;mv zsh/.* .
+: 1529399417:0;ls
+: 1529399422:0;ls zsh
+: 1529399428:0;rm zsh
+: 1529399440:0;ls
+: 1529399477:0;cd ~
+: 1529399490:0;..
+: 1529399942:0;rm .zshenv .zshrc
+: 1529399943:0;ls
+: 1529399981:0;ln -s .dot-files/.zshenv .dot-files/.zshrc .
+: 1529399982:0;ls
+: 1529400015:0;mdcd test
+: 1529400042:0;mkdir test
+: 1529400045:0;test
+: 1529400046:0;ls
+: 1529400059:0;cd test
+: 1529400070:0;rm test
+: 1529400082:0;ls test
+: 1529400087:0;rm -r test
+: 1529400094:0;mkdir hogehoge
+: 1529400096:0;hogehoge
+: 1529400120:0;ln -s .dot-files/.*
+: 1529400137:0;ln -s ~/.dot-files/.*
+: 1529400144:0;ln -s ~/.dot-files/.* .
+: 1529400146:0;ls
+: 1529400237:0;emacs ~/.dot-files/.zshrc
+: 1529400263:0;cd ~
+: 1529400273:0;exec $SHELL -l
+: 1529400277:0;cd ~
+: 1529400304:0;rm .dircolors-solarized .tern-config
+: 1529400333:0;ln -s .dot-files/.dircolors.ansi-dark .dot-files/.tern-config .
+: 1529400334:0;ls
+: 1529400347:0;exec $SHELL -l
+: 1529400349:0;ls
+: 1529400416:0;cd .dot-files
+: 1529400434:0;ls zsh
+: 1529400439:0;rm zsh
+: 1529400447:0;rm -r  zsh
+: 1529400448:0;ls
+: 1529400471:0;git status
+: 1529400497:0;git add .
+: 1529400522:0;git commit -m "change directry tree"
+: 1529400532:0;git push -u origin master
+: 1529401011:0;~
+: 1529401015:0;exit
+: 1529401034:0;..
+: 1529401035:0;ls
+: 1529401066:0;cp ~/.zsh_hist .
