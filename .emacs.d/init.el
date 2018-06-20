@@ -192,7 +192,7 @@
           (lambda ()
             (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
             (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
-            (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON")) ;指定した文字列の警告をオフ
+            (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON" "location" "fetch")) ;指定した文字列の警告をオフ
             (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
 	    ))
 
