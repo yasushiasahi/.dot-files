@@ -1,3 +1,19 @@
+# PATH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+# /usr/local/を優先に
+export PATH="/usr/local/bin:$PATH"
+
+# export GOPATH="$HOME/.go"
+# export GOROOT="$HOME/.anyenv/envs/goenv/versions/1.10.3"
+# export PATH="$GOPATH/bin:$PATH"
+
+# export PATH="/usr/local/opt/openssl/bin:$PATH" なぜ設定してたのか解らない。
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PATH
+
+
 # プロンプト
 PROMPT='%m:%c %n$ '
 
@@ -38,11 +54,14 @@ export TERM=xterm-256color
 # emacsを標準エディターにする
 export EDITOR=emacs
 
+# gtags
+export GTAGSCONF="$HOME/.dot-files/etc/.globalrc"
+export GTAGSLABEL=pygments
+
 # 補完候補のファイル、ディレクトリにlsと同様の色付け
 if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
-
 
 
 # alias >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -51,11 +70,11 @@ scripts_path=~/.dot-files/scripts
 # lsの色の設定 https://qiita.com/yuyuchu3333/items/84fa4e051c3325098be3
 case ${OSTYPE} in
     darwin*) # macosの場合
-        eval $(gdircolors ~/.dircolors-solarized)
+        eval $(gdircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
 	alias ls='gls -Al --color=auto'
         ;;
     linux*) # linuxの場合
-        eval $(dircolors ~/.dircolors-solarized)
+        eval $(gdircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
 	alias ls='ls -Al --color=auto'
         ;;
 esac
@@ -96,7 +115,6 @@ zplug load --verbose
 # theme pure の設定
 autoload -U promptinit; promptinit
 prompt pure
-export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # zsh-autosuggestionsの文字色を変更 default='fg=8'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'

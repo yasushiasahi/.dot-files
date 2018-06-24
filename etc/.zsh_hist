@@ -5304,3 +5304,1099 @@ exit
 : 1529401034:0;..
 : 1529401035:0;ls
 : 1529401066:0;cp ~/.zsh_hist .
+: 1529411622:0;ls
+: 1529411639:0;cat .zsh_hist
+: 1529411659:0;ls
+: 1529411680:0;exit
+: 1529411687:0;ls
+: 1529411691:0;exec $SHELL -l
+: 1529411715:0;brew install tmux
+: 1529411742:0;brew list -l
+: 1529411749:0;brew install emacs
+: 1529411843:0;brew install tree
+: 1529411888:0;brew install global --with-exuberant-ctags --with-pygments
+: 1529412031:0;brew list -l
+: 1529412059:0;brew install mas
+: 1529412268:0;brew cask install docker
+: 1529412589:0;mas install 53988330
+: 1529412686:0;exit
+: 1529412694:0;mas install 53988330
+: 1529412717:0;brew uninstall mas
+: 1529412724:0;brew install mas
+: 1529412734:0;mas install 53988330
+: 1529412776:0;brew uninstall mas
+: 1529413223:0;tmux
+: 1529413236:0;emacs
+: 1529413243:0;exit
+: 1529413333:0;ls
+: 1529413393:0;rm .bash_history .bash_sessions 
+: 1529413403:0;rm -rf .bash_history .bash_sessions 
+: 1529413405:0;ls
+: 1529413421:0;rm .viminfo
+: 1529413422:0;ls
+: 1529414135:0;exit
+: 1529414750:0;ssh asahi@160.16.107.88
+: 1529415754:0;cd .dot-files
+: 1529415766:0;git status
+: 1529415825:0;git add .
+: 1529415851:0;git commit -m "dircolor change"
+: 1529415855:0;git push -u origin master
+: 1529416101:0;..
+: 1529416103:0;ls
+: 1529416163:0;ssh asahi@160.16.107.88
+: 1529425718:0;ls
+: 1529425735:0;ssh asahi@160.16.107.88
+: 1529425966:0;ssh root@160.16.107.88
+: 1529426199:0;ssh asahi@160.16.107.88
+: 1529427164:0;ssh root@160.16.107.88
+: 1529430247:0;ssh asahi@160.16.107.88
+: 1529430546:0;ssh root@160.16.107.88
+: 1529431231:0;ssh asahi@160.16.107.88
+: 1529431253:0;ls
+: 1529431263:0;cd ssh
+: 1529431270:0;cd .ssh
+: 1529431291:0;..
+: 1529431303:0;rm -r .ssh/
+: 1529431309:0;ssh asahi@160.16.107.88
+: 1529446787:0;ssh root@160.16.107.88
+: 1529446818:0;exit
+: 1529447818:0;ls
+: 1529447827:0;emacs --version
+: 1529447839:0;zsh --version
+: 1529447847:0;tmux --version
+: 1529447877:0;git clone https://github.com/riywo/anyenv ~/.anyenv
+: 1529447890:0;exec $SHELL -l
+: 1529447904:0;anyenv install ndenv
+: 1529447911:0;exec $SHELL -l
+: 1529447921:0;ndenv install -l
+: 1529447948:0;ndenv install v10.4.1
+: 1529447978:0;node -v
+: 1529448005:0;ndenv global v10.4.1
+: 1529448008:0;node -v
+: 1529448015:0;ndenv rehash
+: 1529448031:0;npm i -g prettier
+: 1529448042:0;brew list
+: 1529448064:0;brew install global --with-exuberant-ctags --with-pygments
+: 1529448243:0;exit
+: 1529466863:0;ls
+: 1529466913:0;npm i -g nodemon
+: 1529467744:0;ls
+: 1529467760:0;ssh
+: 1529467873:0;tmux
+: 1529467882:0;exit
+: 1529467932:0;node -v
+: 1529467993:0;mdcd ASAHI
+: 1529468033:0;mdcd Project
+: 1529468072:0;git clone https://github.com/yasushiasahi/fuwafuwaApp.git
+: 1529468098:0;cd fuwafuwaApp
+: 1529468105:0;tmux
+: 1529468109:0;ls
+: 1529468132:0;rm docker-compose.yml.orign
+: 1529468134:0;ls
+: 1529468839:0;cd data/databases
+: 1529468846:0;cat > userdata.json
+: 1529468858:0;cat > gallerydata.json
+: 1529468865:0;ls
+: 1529468945:0;../../
+: 1529468947:0;ls
+: 1529469000:0;npm run watch 
+: 1529469009:0;npm i
+: 1529469110:0;npm run watch 
+: 1529469152:0;npm start
+: 1529469246:0;cd apiserver
+: 1529469261:0;nodemon apiServer.js
+: 1529469281:0;npm i
+: 1529469293:0;nodemon apiServer.js
+: 1529469485:0;gtags
+: 1529469712:0;ls
+: 1529469738:0;ls -h
+: 1529469767:0;emacs
+: 1529470086:0;exit
+: 1529470184:0;emacs
+: 1529470374:0;npx eslint src/components/App.js
+: 1529470422:0;npx eslint src/index.js
+: 1529470440:0;cat package.json
+: 1529470480:0;npm list --depth=0 -g
+: 1529470496:0;cat .eslintrc
+: 1529470633:0;npm i -S eslint-plugin-react eslint babel-eslint
+: 1529470659:0;npx eslint src/components/App.js
+: 1529470676:0;exit
+: 1529470681:0;emacs
+: 1529470781:0;cat jsconfig.json
+: 1529471239:0;emacs jsconfig.json
+: 1529471276:0;exit
+: 1529471280:0;emacs
+: 1529472059:0;emacs ~/.dot-files/.emacs.d/init.el
+: 1529472121:0;emacs
+: 1529472363:0;emacs ~/.dot-files/.globalrc
+: 1529472468:0;ls
+: 1529472535:0;rm GPATH GRTAGS GTAGS 
+: 1529472539:0;gtags
+: 1529472555:0;ls
+: 1529472561:0;exit
+: 1529472564:0;emacs
+: 1529472665:0;rm GPATH GRTAGS GTAGS 
+: 1529472670:0;cd src
+: 1529472682:0;gtags
+: 1529472684:0;ls
+: 1529472688:0;..
+: 1529472695:0;ls
+: 1529472702:0;emacs
+: 1529474146:0;cp data/logs ~/.dot-files/.emacs.d/backups
+: 1529474153:0;fg
+: 1529474193:0;cp -r  data/logs ~/.dot-files/.emacs.d/backups
+: 1529474206:0;ls  ~/.dot-files/.emacs.d/backups
+: 1529474213:0;fg
+: 1529474747:0;cd data
+: 1529474756:0;ls logs
+: 1529474777:0;..
+: 1529474811:0;cp -r data/logs apiserver/tmp
+: 1529474817:0;ls apiserver
+: 1529474844:0;nodemon apiServer.js
+: 1529474944:0;cat data/logs/errorLog.txt
+: 1529474971:0;mkdir dist/images/gallery
+: 1529475013:0;fg
+: 1529478116:0;brew cask search google music
+: 1529478139:0;brew cask search google
+: 1529483202:0;exit
+: 1529484229:0;brew cask search adobe
+: 1529484282:0;brew cask install adobe-creative-cloud
+: 1529484407:0;brew cask uninstall adobe-creative-cloud
+: 1529506760:0;npm i -g eslint-plugin-react eslint babel-eslint
+: 1529506785:0;ndenv rehash
+: 1529507037:0;emacs
+: 1529507126:0;eslint src/index.js
+: 1529507164:0;rm /Users/asahi/.anyenv/envs/ndenv/shims/.ndenv-shim
+: 1529507171:0;ndenv rehash
+: 1529507175:0;eslint src/index.js
+: 1529507193:0;cat .eslintrc
+: 1529507270:0;mv .eslintrc .eslintrcHOGEHOGE
+: 1529507274:0;cat .eslintrc
+: 1529507278:0;eslint src/index.js
+: 1529507370:0;eslint --init
+: 1529507412:0;ls
+: 1529507422:0;eslint src/index.js
+: 1529507502:0;ls
+: 1529507525:0;rm .eslintrc.js
+: 1529507548:0;mv .eslintrcHOGEHOGE .eslintrcjs
+: 1529507563:0;mv .eslintrcjs .eslintrc.js
+: 1529507568:0;eslint src/index.js
+: 1529507594:0;mv .eslintrc.js .eslintrc
+: 1529507598:0;eslint src/index.js
+: 1529507646:0;eslint --init
+: 1529507695:0;npx eslint src/index.js
+: 1529507740:0;ls
+: 1529507786:0;emacs .eslintrc.js 
+: 1529507820:0;rm .eslintrc.js
+: 1529507835:0;cat package.json
+: 1529507847:0;eslint --init
+: 1529508021:0;ls
+: 1529508026:0;cat .eslintrc
+: 1529508037:0;cat .eslintrc.js
+: 1529508082:0;eslint src/index.js
+: 1529508121:0;eslint src/components/App.js
+: 1529508161:0;emacs src/components/App.js
+: 1529508326:0;emacs .eslintrc .eslintrc.js 
+: 1529508558:0;eslint src/components/App.js
+: 1529508576:0;emacs .eslintrc .eslintrc.js 
+: 1529508656:0;eslint src/components/App.js
+: 1529508682:0;emacs
+: 1529508693:0;emacs .eslintrc .eslintrc.js 
+: 1529508711:0;eslint src/components/App.js
+: 1529508984:0;emacs
+: 1529509229:0;eslint src/components/App.js
+: 1529509378:0;tmux attach
+: 1529509396:0;tmux kill-server
+: 1529509402:0;tmux
+: 1529509426:0;emacs .eslintrc .eslintrc.js 
+: 1529509463:0;eslint src/components/App.js
+: 1529509603:0;eslint src/components/Main.js
+: 1529509643:0;eslint src/components/App.js
+: 1529509650:0;eslint src/components/Main.js
+: 1529509674:0;eslint src/components/App.js
+: 1529509705:0;emacs src/components/App.js
+: 1529509736:0;ls
+: 1529509792:0;mv .eslintrc .eslintrcHOGEHOGE
+: 1529509794:0;ls
+: 1529509800:0;emacs src/components/App.js
+: 1529509808:0;eslint src/components/App.js
+: 1529509823:0;mv .eslintrc.js src
+: 1529509824:0;ls
+: 1529509828:0;eslint src/components/App.js
+: 1529509859:0;emacs src/components/App.js
+: 1529509893:0;ls
+: 1529509899:0;ls src
+: 1529509933:0;mv src/.eslintrc.js .
+: 1529509935:0;ls
+: 1529510080:0;npm uninstall -g eslint
+: 1529510087:0;npm list --depth=0 -g
+: 1529510108:0;ndenv rehash
+: 1529510111:0;npm list --depth=0 -g
+: 1529510151:0;npx eslint src/components/App.js
+: 1529510188:0;npm i g eslint
+: 1529510219:0;npm list --depth=0 -g
+: 1529510232:0;ndenv rehash
+: 1529510237:0;npm list --depth=0 -g
+: 1529510294:0;ndenv global system
+: 1529510315:0;mas ndenv 
+: 1529510322:0;man ndenv 
+: 1529510334:0;ndenv --help
+: 1529510385:0;ndenv uninstall v10.4.1
+: 1529510425:0;ndenv versions
+: 1529510468:0;ndenv version
+: 1529510552:0;ndenv uninstall v10.4.1
+: 1529510565:0;ndenv versions
+: 1529510579:0;node -v
+: 1529510599:0;ndenv version
+: 1529510618:0;ndenv install -l
+: 1529510638:0;ndenv install v10.4.1
+: 1529510930:0;ndenv global v10.4.1
+: 1529510940:0;ndenv rehash
+: 1529510944:0;node
+: 1529510955:0;npm list --depth=0 -g
+: 1529511030:0;npm i -g eslint-plugin-react eslint babel-eslint
+: 1529511055:0;npm i -g nodemon prettier
+: 1529511100:0;ndenv rehash
+: 1529511110:0;npm list --depth=0 -g
+: 1529511292:0;cat package.json
+: 1529511434:0;npm uninstall eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+: 1529511448:0;cat package.json
+: 1529511463:0;eslint src/components/App.js
+: 1529511487:0;exit
+: 1529511530:0;npm start
+: 1529511580:0;cd apiserver
+: 1529511588:0;nodemon apiServer.js
+: 1529511611:0;emacs
+: 1529511657:0;ls
+: 1529511668:0;rm .eslintrcHOGEHOGE
+: 1529511669:0;ls
+: 1529511675:0;ls src
+: 1529511701:0;mv .eslintrc.js src
+: 1529511702:0;ls
+: 1529511705:0;ls src
+: 1529511712:0;emacs
+: 1529511743:0;mv src/.eslintrc.js .
+: 1529511744:0;ls
+: 1529511748:0;emacs
+: 1529511806:0;exit
+: 1529532621:0;git status
+: 1529532643:0;git diff package.json
+: 1529532723:0;npm remove g
+: 1529532756:0;npm remove babel-eslint
+: 1529532767:0;git status
+: 1529532814:0;git add .
+: 1529532966:0;git commit -m "css respontive"
+: 1529532988:0;tmux kill-server
+: 1529532990:0;exit
+: 1529533484:0;ls
+: 1529533569:0;ls ASAHI
+: 1529533607:0;mv ASAHI/Project/ Documents
+: 1529533609:0;ls
+: 1529533617:0;ls ASAHI
+: 1529533630:0;ls Documents
+: 1529533660:0;rm ASAHI
+: 1529533665:0;rm -r  ASAHI
+: 1529533666:0;sl
+: 1529533669:0;ls
+: 1529533678:0;cd Documents
+: 1529533691:0;cd Project/fuwafuwaApp
+: 1529533721:0;cd ~/.dot-files
+: 1529533725:0;git status
+: 1529533766:0;cd .emacs.d
+: 1529533833:0;..
+: 1529533881:0;emacs .gitignore
+: 1529534011:0;git status
+: 1529534045:0;git add .
+: 1529534048:0;git status
+: 1529534147:0;git diff .emacs.d/init.el
+: 1529534182:0;git commit -m "mouce scrolling"
+: 1529534209:0;git status
+: 1529534233:0;git push -u origin master
+: 1529534417:0;tmux
+: 1529534428:0;exit
+: 1529534475:0;git log --graph 
+: 1529534530:0;cd ~/Documents/Project/fuwafuwaApp
+: 1529534536:0;git log --graph 
+: 1529587498:0;ls
+: 1529587532:0;tmux
+: 1529587562:0;npm start
+: 1529587581:0;cd apiserver
+: 1529587639:0;nodemon apiServer.js
+: 1529587646:0;emacs
+: 1529601174:0;git status
+: 1529601267:0;git add 
+: 1529601270:0;git add .
+: 1529601275:0;git commit -m "implement logout"
+: 1529601284:0;git status
+: 1529601288:0;git push -u origin master
+: 1529601304:0;git log --graph 
+: 1529603267:0;emacs
+: 1529607753:0;git status
+: 1529607774:0;git add .
+: 1529607824:0;git commit -m "Responsive fullScreenPicture"
+: 1529607856:0;emacs
+: 1529609267:0;exit
+: 1529609324:0;git status
+: 1529609335:0;git add .
+: 1529609380:0;git commit -m "implement quit update picture"
+: 1529609382:0;emacs
+: 1529609914:0;git status
+: 1529609923:0;git add .
+: 1529609975:0;git commit -m "LInk null"
+: 1529609976:0;ls
+: 1529611396:0;git status
+: 1529612018:0;mv dist/images/gallery data/databases
+: 1529612060:0;cd dist/images
+: 1529612125:0;ln -s ../../data/databases/gallery .
+: 1529612258:0;../../
+: 1529612264:0;emacs docker-compose.yml
+: 1529612632:0;docker images
+: 1529612657:0;docker-compose up -d
+: 1529612701:0;npm run prod
+: 1529612740:0;tree dist
+: 1529612829:0;cd dist/images
+: 1529612839:0;rm gallery
+: 1529612868:0;mkdir gallery
+: 1529612882:0;ls
+: 1529613081:0;git status
+: 1529613101:0;git add .
+: 1529613145:0;git commit -m "change gallerty directory"
+: 1529613163:0;git status
+: 1529613174:0;../../
+: 1529613179:0;git status
+: 1529613185:0;git add .
+: 1529613189:0;git status
+: 1529613195:0;git commit -m "change gallerty directory"
+: 1529613200:0;git status
+: 1529613209:0;git push -u origin master
+: 1529613244:0;ssh asahi@160.16.107.88
+: 1529613309:0;cd ~/.dot-files
+: 1529613315:0;git status
+: 1529613622:0;scp - data asahi@160.16.107.88:ASAHI
+: 1529613640:0;scp data asahi@160.16.107.88:ASAHI
+: 1529613667:0;scp -r data asahi@160.16.107.88:ASAHI
+: 1529615782:0;ssh asahi@160.16.107.88
+: 1529615894:0;exit
+: 1529615905:0;tmux kill-server
+: 1529615908:0;exit
+: 1529637616:0;cd Documents/Project/fuwafuwaApp
+: 1529637635:0;=
+: 1529637640:0;-
+: 1529637650:0;~
+: 1529637662:0;ssh asahi@160.16.107.88
+: 1529638308:0;cd Documents/Project/fuwafuwaApp
+: 1529638312:0;tmux
+: 1529638714:0;emacs
+: 1529638765:0;cd apiserver
+: 1529638775:0;nodemon apiServer.js
+: 1529638796:0;npm start
+: 1529638874:0;cd dist/images
+: 1529638879:0;rm gallery
+: 1529638896:0;ls gallery
+: 1529638902:0;rm -r gallery
+: 1529638904:0;ls
+: 1529638919:0;ln -s ../../data/databases/gallery .
+: 1529638921:0;ls
+: 1529639126:0;-
+: 1529639131:0;cd -
+: 1529639141:0;emacs
+: 1529639151:0;fg
+: 1529639238:0;cd -
+: 1529639245:0;rm gallery
+: 1529639247:0;..
+: 1529639277:0;ln -s ../data/databases/gallery .
+: 1529639325:0;fg
+: 1529639874:0;cd ..
+: 1529639886:0;cat data/logs/errorLog.txt
+: 1529639964:0;tree data
+: 1529639987:0;fg
+: 1529640107:0;cd data
+: 1529640121:0;tree
+: 1529640495:0;..
+: 1529640498:0;cd apiserver
+: 1529640512:0;gtags
+: 1529640515:0;ls
+: 1529642097:0;git status
+: 1529642113:0;docker-compose up -d --build
+: 1529642179:0;rm dist/gallery
+: 1529642188:0;tree dist
+: 1529642199:0;tree data/databases
+: 1529642215:0;docker-compose up -d --build
+: 1529642240:0;cat docker-compose_01.yml
+: 1529642250:0;cat docker-compose.yml
+: 1529642278:0;emacs
+: 1529642320:0;docker-compose up -d --build
+: 1529642351:0;npm run prod
+: 1529642377:0;tree dist
+: 1529642405:0;mkdir dist/gallery
+: 1529642409:0;tree dist
+: 1529642417:0;docker-compose up -d --build
+: 1529642620:0;docker-compose ps
+: 1529642639:0;docker-compose up -d --build
+: 1529642652:0;docker-compose ps
+: 1529642733:0;docker-compose down
+: 1529642749:0;docker images -a
+: 1529642773:0;docker rmi ad856
+: 1529642777:0;docker images -a
+: 1529642799:0;docker rmi b5ab
+: 1529642802:0;docker images -a
+: 1529642829:0;docker rmi 7abd
+: 1529642838:0;docker images -a
+: 1529642857:0;docker-compose up -d
+: 1529642928:0;cd ..
+: 1529642937:0;cd data/logs
+: 1529642963:0;docker-compose ps
+: 1529642984:0;cat errorLog.txt
+: 1529643005:0;cat nginx_error.log
+: 1529643035:0;nodemon apiServer.js
+: 1529643070:0;emacs docker-compose.yml
+: 1529643135:0;cd dist
+: 1529643142:0;ls gallery
+: 1529643150:0;rm -r gallery
+: 1529643158:0;ln -s ../data/databases/gallery .
+: 1529643160:0;ls
+: 1529643167:0;cd gallery
+: 1529643179:0;ls
+: 1529643196:0;cd ../../
+: 1529643204:0;docker-compose up -d --build
+: 1529643267:0;docker-compose ps
+: 1529648659:0;nodemon apiServer.js
+: 1529648666:0;npm start
+: 1529648712:0;ls
+: 1529648721:0;cd ../../
+: 1529648755:0;emacs docker-compose.yml
+: 1529648850:0;docker-compose ps
+: 1529648900:0;docker-compose up -d
+: 1529648908:0;docker ps
+: 1529648928:0;docker exec -it 4804 bash
+: 1529649054:0;docker exec -it 5a6d bash
+: 1529650975:0;cat data/databases/gallerydata.json
+: 1529651024:0;emacs data/databases/gallerydata.json
+: 1529651088:0;docker-compose up -d
+: 1529651342:0;docker ps
+: 1529651355:0;docker exec -it 5a6d bash
+: 1529651415:0;docker exec -it 4804 bash
+: 1529653160:0;git status
+: 1529653201:0;git checkout -- docker-compose.yml
+: 1529653206:0;git status
+: 1529653211:0;git add .
+: 1529653271:0;emacs docker-compose.yml
+: 1529653358:0;docker-compose up -d --build
+: 1529653447:0;rm data/databases/gallery
+: 1529653469:0;rm dist/gallery
+: 1529653478:0;mkdir dist/gallery
+: 1529653483:0;tree dist
+: 1529653499:0;docker-compose up -d --build
+: 1529653724:0;docker-compose ps
+: 1529653741:0;cat data/logs/errorLog.txt
+: 1529653765:0;docker-compose up -d --build
+: 1529653776:0;docker ps
+: 1529653796:0;docker 0b36
+: 1529653803:0;docker exec -it 4804 bash
+: 1529653815:0;docker exec -it 0b36 bash
+: 1529654086:0;tree apiserver 
+: 1529654371:0;cat data/logs/errorLog.txt
+: 1529654771:0;fg
+: 1529654897:0;mkdir data/tmp
+: 1529654902:0;ls data
+: 1529655078:0;ls data/databases/gallery
+: 1529655103:0;fg
+: 1529655136:0;docker-compose up -d --build
+: 1529655842:0;cat data/logs/errorLog.txt
+: 1529656307:0;docker-compose up -d --build
+: 1529656320:0;fg
+: 1529656565:0;npm run prod
+: 1529656987:0;git status
+: 1529657021:0;git add .
+: 1529657024:0;git status
+: 1529657235:0;git commit -m "change docker structure and cahnge gallery opration"
+: 1529657286:0;tree data
+: 1529657320:0;ls data
+: 1529657341:0;ls data/databases
+: 1529657361:0;git push -u origin master
+: 1529657468:0;cp data/logs/.gitignore data/tmp
+: 1529657474:0;ls data/tmp
+: 1529657554:0;exit
+: 1529657566:0;docker-compose down
+: 1529657595:0;emacs
+: 1529657663:0;git status
+: 1529657710:0;tmux attach
+: 1529657717:0;git add .
+: 1529657734:0;git commit -m "add data/tmp/"
+: 1529657739:0;git push -u origin master
+: 1529657757:0;tmux kill-server
+: 1529657759:0;exit
+: 1529658247:0;cd Documents/Project/fuwafuwaApp
+: 1529658250:0;tmux
+: 1529658256:0;npm start
+: 1529659437:0;exit
+: 1529659439:0;emacs
+: 1529659459:0;nodemon apiServer.js
+: 1529659476:0;npm start
+: 1529659500:0;nodemon apiserver/apiServer.js
+: 1529659544:0;git status
+: 1529659551:0;npm start
+: 1529659588:0;emacs
+: 1529659855:0;tmux kill-server
+: 1529659860:0;exit
+: 1529659961:0;tmux
+: 1529659978:0;brew serch zxp
+: 1529659986:0;brew search zxp
+: 1529659998:0;brew cask search zxp
+: 1529660037:0;brew cask install zxpinstaller
+: 1529660228:0;brew cask uninstall zxpinstaller
+: 1529660239:0;exit
+: 1529662762:0;ssh asahi@160.16.107.88
+: 1529662768:0;cd Documents/Project/fuwafuwaApp
+: 1529662771:0;git status
+: 1529662793:0;git diff src/components/Header.js
+: 1529662827:0;git checkout -- src/components/Header.js
+: 1529662834:0;git status
+: 1529662910:0;tmcu
+: 1529662912:0;tmux
+: 1529662921:0;nodemon apiserver/apiServer.js
+: 1529662926:0;npm start
+: 1529663041:0;tmux kill-server
+: 1529663045:0;git status
+: 1529663054:0;git add .
+: 1529663080:0;tree dist
+: 1529663099:0;git status
+: 1529663118:0;git commit -m "change png"
+: 1529663123:0;git push -u origin master
+: 1529663132:0;ssh asahi@160.16.107.88
+: 1529667790:0;exit
+: 1529671234:0;ssh asahi@160.16.107.88
+: 1529671873:0;exit
+: 1529674873:0;cd Documents/Project/fuwafuwaApp
+: 1529674879:0;tmux
+: 1529674921:0;ls
+: 1529674980:0;emacs
+: 1529675039:0;rm -r dist/gallery
+: 1529675062:0;cd dist
+: 1529675071:0;ln -s ../data/databases/gallery .
+: 1529675077:0;cd -
+: 1529675080:0;nodemon apiserver/apiServer.js
+: 1529675086:0;npm start
+: 1529681931:0;exit
+: 1529681939:0;tmux attach
+: 1529681983:0;npm start
+: 1529682953:0;brew cask search cot
+: 1529683010:0;brew cask install coteditor
+: 1529683233:0;exit
+: 1529686407:0;git status
+: 1529686419:0;emacs
+: 1529692413:0;git status
+: 1529692441:0;git diff src/components/Sidebar.js
+: 1529692464:0;git checkout -- src/components/Sidebar.js
+: 1529692469:0;git status
+: 1529692488:0;git diff src/index.js
+: 1529692497:0;git add .
+: 1529692534:0;git commit -m "set backgrond-image to top"
+: 1529692535:0;ls
+: 1529693463:0;git push -u origin master
+: 1529693492:0;tmux kill-server
+: 1529693503:0;ssh asahi@160.16.107.88
+: 1529742440:0;host
+: 1529742445:0;hostname
+: 1529742461:0;ssh asahi@160.16.107.88
+: 1529755229:0;cd Documents/Project/fuwafuwaApp
+: 1529755239:0;git pull origin master
+: 1529772408:0;exit
+: 1529774050:0;cd Documents/Project/fuwafuwaApp
+: 1529774080:0;tree dist
+: 1529774119:0;tmux
+: 1529774138:0;emacs
+: 1529774172:0;nodemon apiserver/apiServer.js
+: 1529774175:0;npm start
+: 1529782572:0;tmux kill-server
+: 1529782574:0;exit
+: 1529788544:0;cd Documents/Project/fuwafuwaApp
+: 1529788548:0;npm start
+: 1529789406:0;cd ~
+: 1529789411:0;cd Desktop
+: 1529789420:0;git clone https://github.com/airbnb/lottie-web.git
+: 1529791460:0;..
+: 1529791465:0;cd ls
+: 1529791528:0;ls
+: 1529791535:0;cd Documents/Project/fuwafuwaApp
+: 1529791710:0;npm start
+: 1529792165:0;git status
+: 1529792191:0;git checkout -- src/index.html
+: 1529792195:0;git status
+: 1529792227:0;npm i -g browser-sync
+: 1529792347:0;cd ~/Desktop/lottie
+: 1529792353:0;ndenv rehash
+: 1529792488:0;..
+: 1529792519:0;browser-sync start --server 'lottie' --files 'lottie'
+: 1529801269:0;..
+: 1529801278:0;cd Documents/Project/fuwafuwaApp
+: 1529801283:0;tmux
+: 1529801287:0;emacs
+: 1529801508:0;npm start
+: 1529801789:0;git status
+: 1529801801:0;git add .
+: 1529801811:0;git status
+: 1529801841:0;git reset HEAD src/index.html
+: 1529801849:0;git status
+: 1529801882:0;git commit -m "change background-image"
+: 1529801889:0;git status
+: 1529801897:0;emacs
+: 1529814078:0;nodemon apiserver/apiServer.js
+: 1529815397:0;browser-sync start --server 'lottie' --files 'lottie'
+: 1529815452:0;cd ~/Desktop
+: 1529815455:0;browser-sync start --server 'lottie' --files 'lottie'
+: 1529815535:0;cd -
+: 1529815563:0;git status
+: 1529815593:0;exit
+: 1529817107:0;tree src
+: 1529817161:0;mkdir src/loding
+: 1529817237:0;ls src/loding
+: 1529817259:0;fg
+: 1529817860:0;cp ~/Desktop/lottie-web/build/player/lottie_light.js src/loding
+: 1529817865:0;fg
+: 1529818091:0;emacs webpack.config.js
+: 1529818642:0;tmux kill-server
+: 1529818654:0;cd ../../
+: 1529818671:0;mdcd Test
+: 1529818692:0;mdcd src
+: 1529818725:0;cp ~/Desktop/lottie-web/build/player/lottie_light.js .
+: 1529818806:0;browser-sync start --server './' --files './'
+: 1529819555:0;tmux
+: 1529819565:0;browser-sync start --server './' --files './'
+: 1529819623:0;emacs lottie_light.js
+: 1529819764:0;npm init -y 
+: 1529819819:0;npm i -D webpack webpack-cli\
+
+: 1529819860:0;ls
+: 1529819876:0;mv anime.js index.js
+: 1529819877:0;ls
+: 1529819888:0;..
+: 1529819897:0;npx webpack
+: 1529819921:0;ls
+: 1529819931:0;cd
+: 1529819973:0;cd Documents/Test
+: 1529819991:0;mkdir lottie
+: 1529819995:0;cd lottie
+: 1529820006:0;cp ../src .
+: 1529820014:0;cp -r ../src .
+: 1529820017:0;ls
+: 1529820065:0;cp -r src/package-lock.json src/package.json src/node_modules .
+: 1529820068:0;ls
+: 1529820073:0;ls src
+: 1529820085:0;cd src
+: 1529820099:0;rm -rf node_modules package-lock.json package.json 
+: 1529820101:0;ls
+: 1529820130:0;..
+: 1529820136:0;npx webpack
+: 1529820148:0;ls
+: 1529820161:0;dist
+: 1529820162:0;ls
+: 1529820191:0;mv ../src/index.html ../src/data.json .
+: 1529820192:0;ls
+: 1529820199:0;tmux
+: 1529820209:0;browser-sync start --server './' --files './'
+: 1529820857:0;ls ..
+: 1529820863:0;npm install --save-dev json-loader
+: 1529820877:0;emacs webpack.config.js
+: 1529820942:0;ls
+: 1529820963:0;cd ..
+: 1529820968:0;cat package.json
+: 1529821001:0;mv dist/webpack.config.js .
+: 1529821002:0;ls
+: 1529821022:0;cat webpack.config.js
+: 1529821056:0;emacs webpack.config.js
+: 1529821124:0;mv dist/data.json src
+: 1529821134:0;ls src
+: 1529821152:0;npx webpack
+: 1529821163:0;ls
+: 1529821289:0;fg
+: 1529821708:0;rm webpack.config.js
+: 1529821714:0;emacs src/index.js
+: 1529821771:0;npx webpack
+: 1529821788:0;ls dist
+: 1529821794:0;fg
+: 1529821832:0;npx webpack
+: 1529821858:0;cat package.json
+: 1529821880:0;npm install --save-dev json-loader
+: 1529821893:0;npx webpack
+: 1529822104:0;fg
+: 1529822120:0;npx webpack
+: 1529822220:0;emacs webpack.config.js
+: 1529822321:0;ls
+: 1529822328:0;npx webpack
+: 1529822419:0;fg
+: 1529822454:0;npx webpack
+: 1529822472:0;fg
+: 1529822618:0;rm webpack.config.js
+: 1529822622:0;npx webpack
+: 1529822637:0;emacs src/index.js
+: 1529822654:0;npx webpack
+: 1529822750:0;fg
+: 1529822769:0;npx webpack
+: 1529823699:0;fg
+: 1529823703:0;emacs src/index.js
+: 1529823721:0;npx webpack
+: 1529823758:0;fg
+: 1529824495:0;cd src
+: 1529824517:0;mv alart.js log.js
+: 1529824521:0;node log.js
+: 1529824745:0;..
+: 1529824759:0;emacs webpack.config.js
+: 1529824891:0;npx webpack
+: 1529824948:0;fg
+: 1529825047:0;npx webpack
+: 1529825060:0;ls dist
+: 1529825085:0;cat dist/log.js
+: 1529825112:0;fg
+: 1529825179:0;npm i --save-dev html-webpack-plugin
+: 1529825197:0;fg
+: 1529825243:0;mv dist/index.html src
+: 1529825247:0;ls dist
+: 1529825253:0;npx webpack
+: 1529825269:0;ls dist
+: 1529825282:0;cat dist/index.html
+: 1529825402:0;fg
+: 1529825409:0;emacs src/index.js
+: 1529825758:0;npx webpack
+: 1529825778:0;fg
+: 1529825824:0;npx webpack
+: 1529825851:0;fg
+: 1529825906:0;npx webpack
+: 1529825929:0;fg
+: 1529825937:0;emacs src/index.js
+: 1529825982:0;npx webpack
+: 1529826545:0;fg
+: 1529826666:0;npx webpack -w
+: 1529826683:0;..
+: 1529826691:0;emacs src/index.js
+: 1529826848:0;exit
+: 1529828124:0;fg
+: 1529829453:0;ls src
+: 1529829475:0;exit
+: 1529829510:0;cd ~/Documents/Project/fuwafuwaApp
+: 1529829517:0;git status
+: 1529829537:0;git checkout -- src/index.html
+: 1529829539:0;git status
+: 1529829577:0;rm -rf src/loding
+: 1529829614:0;cp ~/Documents/Test/lottie/src/ src
+: 1529829618:0;ls src
+: 1529829636:0;cp -r ~/Documents/Test/lottie/src/ src
+: 1529829639:0;ls src
+: 1529829653:0;cd src
+: 1529829662:0;mkdir lottie
+: 1529829686:0;git status
+: 1529829713:0;git checkout -- .
+: 1529829717:0;git status
+: 1529829755:0;rm data.json log.js lottie lottie.js lottie.min.js lottie_light.js lottie_light.min.js msg.js
+: 1529829762:0;rm -r data.json log.js lottie lottie.js lottie.min.js lottie_light.js lottie_light.min.js msg.js
+: 1529829771:0;rm -rf data.json log.js lottie lottie.js lottie.min.js lottie_light.js lottie_light.min.js msg.js
+: 1529829773:0;ls
+: 1529829778:0;..
+: 1529829780:0;git status
+: 1529829797:0;mkdir src/lottie
+: 1529829825:0;cp -r ~/Documents/Test/lottie/src/ src/lottie
+: 1529829831:0;cd src/lottie
+: 1529829874:0;rm index.html log.js lottie.js lottie.min.js lottie_light.min.js msg.js
+: 1529829875:0;ls
+: 1529830019:0;mv index.js nowLoading.js
+: 1529830021:0;ls
+: 1529830029:0;cd ../../
+: 1529830038:0;git status
+: 1529830045:0;emacs webpack.config.js
+: 1529830194:0;nodemon apiserver/apiServer.js
+: 1529830225:0;tmux kill-server
+: 1529830238:0;cd ~/Documents/Project/fuwafuwaApp
+: 1529830243:0;tmux
+: 1529830256:0;nodemon apiserver/apiServer.js
+: 1529830270:0;npm start
+: 1529830298:0;emacs
+: 1529830343:0;npm start
+: 1529830379:0;tree src
+: 1529830413:0;npm start
+: 1529830958:0;npm run prod
+: 1529831065:0;git status
+: 1529831086:0;git add .
+: 1529831101:0;git commit -m "add road window"
+: 1529831105:0;emacs
+: 1529831121:0;exit
+: 1529831281:0;nodemon apiserver/apiServer.js
+: 1529831284:0;npm start
+: 1529831861:0;exit
+: 1529833304:0;npm start
+: 1529833833:0;npm run prod
+: 1529833920:0;git status
+: 1529833941:0;git checkout -- src/index.html
+: 1529833945:0;git status
+: 1529833966:0;git add .
+: 1529833999:0;git commit -m "remove html"
+: 1529834016:0;git push -u origin master
+: 1529834369:0;ssh asahi@160.16.107.88
+: 1529835087:0;tmux
+: 1529835116:0;nodemon apiserver/apiServer.js
+: 1529835121:0;npm start
+: 1529835124:0;emacs
+: 1529835140:0;npm start
+: 1529835169:0;npm run prod
+: 1529835192:0;ls
+: 1529835215:0;npm start
+: 1529835224:0;nodemon apiserver/apiServer.js
+: 1529835228:0;exit
+: 1529835236:0;tmux kill-server
+: 1529835239:0;exit
+: 1529835264:0;cd ~/Documents/Project/fuwafuwaApp
+: 1529835268:0;tmux
+: 1529835280:0;nodemon apiserver/apiServer.js
+: 1529835285:0;npm start
+: 1529835301:0;emacs
+: 1529836277:0; cd ~/.dot-files
+: 1529836283:0;git status
+: 1529836291:0;cd ..
+: 1529836396:0;tmux kill-server
+: 1529836400:0;ssh asahi@160.16.107.88
+: 1529837271:0;exit
+: 1529841132:0;anyenv --help
+: 1529841154:0;anyenv install -l
+: 1529841183:0;anyenv install goenv
+: 1529841191:0;exec $SHELL -l
+: 1529841200:0;tmux
+: 1529841208:0;anyenv versions
+: 1529841227:0;goenv install -l
+: 1529841238:0;goenv install 1.10.3
+: 1529841781:0;goenv --help
+: 1529841806:0;goenv global 1.10.3
+: 1529841816:0;go --version
+: 1529841826:0;go -v
+: 1529841847:0;go --help
+: 1529841884:0;go env GOROOT
+: 1529841955:0;ls
+: 1529841972:0;ls Documents
+: 1529842016:0;cd Documents
+: 1529842033:0;../../
+: 1529842041:0;cd asahi
+: 1529842110:0;mkdir Development
+: 1529842161:0;echo $GOPATH
+: 1529842169:0;ls
+: 1529842201:0;emacs .dot-files/.zshenv
+: 1529842294:0;ls
+: 1529842306:0;rm -r Development
+: 1529842312:0;mkdir dev
+: 1529842314:0;ls
+: 1529842340:0;go env GOROOT
+: 1529842343:0;which go
+: 1529842405:0;export GOPATH=$HOME/dev
+: 1529842437:0;echo $GOPATH
+: 1529842491:0;export PATH=$PATH:$GOPATH/bin
+: 1529842507:0;echo &PATH
+: 1529842527:0;echo $PATH
+: 1529842616:0;cd dev
+: 1529842723:0;go get github.com/motemen/gore
+: 1529842771:0;ls $GOPATH
+: 1529842791:0;ls
+: 1529842803:0;ls bin
+: 1529842825:0;ls src
+: 1529842840:0;tree src
+: 1529842858:0;ls src
+: 1529842886:0;tree depth=2 src
+: 1529842905:0;ls src/github.com
+: 1529843001:0;goenv rehash
+: 1529843050:0;gore -autoimport
+: 1529843140:0;which go
+: 1529843150:0;go env GOROOT
+: 1529843176:0;exec $SHELL -l
+: 1529843183:0;gore -autoimport
+: 1529845943:0;go help
+: 1529845961:0;go get help
+: 1529845968:0;go get -help
+: 1529845987:0;go list
+: 1529846003:0;go packages
+: 1529846064:0;go get github.com/nsf/gcode
+: 1529846072:0;go get github.com/nsf/gocode
+: 1529846106:0;go get github.com/k0kubun/pp
+: 1529846132:0;go get github.com/x/tools/cmd/godoc
+: 1529846164:0;go get golang.org/x/tools/cmd/godoc
+: 1529846177:0;goenv rehash
+: 1529846191:0;ls
+: 1529846361:0;brew install ghq
+: 1529846435:0;git config --global ghq.root 4GOPATH/src
+: 1529846445:0;git config --global ghq.root $GOPATH/src
+: 1529846466:0;ghq list
+: 1529846531:0;brew install peco
+: 1529846636:0;emacs ../.dot-files/.zshrc
+: 1529847055:0;exec $SHELL -l
+: 1529847125:0;emacs ../.dot-files/.zshrc
+: 1529847176:0;exec $SHELL -l
+: 1529847217:0;emacs ../.dot-files/.zshrc
+: 1529847345:0;exec $SHELL -l
+: 1529847365:0;peco
+: 1529847388:0;emacs ../.dot-files/.zshrc
+: 1529847492:0;exec $SHELL -l
+: 1529847929:0;go get golang.org/x/tools/cmd/...
+: 1529847955:0;ghq list
+: 1529848136:0;mdcd study
+: 1529848987:0;ghq list | grep import
+: 1529849026:0;go get golang.org/x/tools/cmd/goimports
+: 1529849040:0;cd 
+: 1529849055:0;cd ..
+: 1529849062:0;cd study
+: 1529849122:0;mdcd golang
+: 1529849138:0;mdcd test
+: 1529849150:0;emacs main.go
+: 1529849187:0;emacs .dot-files/.emacs.d/init.el
+: 1529849239:0;cd dev/study/golang/test
+: 1529849356:0;goimports
+: 1529849374:0;goenv rehash
+: 1529849420:0;echo $GOPATH
+: 1529849453:0;cd ~
+: 1529849523:0;export GOPATH=$HOME/dev
+: 1529849529:0;echo $GOPATH
+: 1529849544:0;exec $SHELL -l
+: 1529849551:0;echo $GOPATH
+: 1529849559:0;goimports
+: 1529849581:0;go get golang.org/x/tools/cmd/...
+: 1529849591:0;echo $GOPATH
+: 1529849599:0;exec $SHELL -l
+: 1529849615:0;go get golang.org/x/tools/cmd/goimports
+: 1529849645:0;echo $GOPATH
+: 1529850494:0;goenv -v
+: 1529850527:0;which goenv
+: 1529850557:0;which nedenv
+: 1529850565:0;which ndenv
+: 1529850581:0;anyenv --help
+: 1529850619:0;anyenv version
+: 1529850648:0;anyenv commands
+: 1529850670:0;anyenv envs
+: 1529850691:0;anyenv root
+: 1529850748:0;anyenv global
+: 1529850767:0;anyenv init -help
+: 1529850801:0;anyenv uninstall -help
+: 1529850840:0;anyenv uninstall goenv
+: 1529850855:0;anyenv envs
+: 1529850867:0;anyenv uninstall -f goenv
+: 1529850872:0;anyenv envs
+: 1529850884:0;go version
+: 1529850913:0;cd .dot-files
+: 1529850916:0;git status
+: 1529850934:0;git diff .gitconfig
+: 1529850967:0;emacs .zshrc
+: 1529850989:0;open .zshrc
+: 1529851034:0;git checkout -- .
+: 1529851396:0;env
+: 1529851433:0;echo $PATH
+: 1529851517:0;env | emacs
+: 1529851537:0;..
+: 1529851542:0;cd Desktop
+: 1529851553:0;env > env.txt
+: 1529851562:0;open env.txt
+: 1529851732:0;env | grep GO
+: 1529851773:0;unset GOENV_ROOT
+: 1529851777:0;env | grep GO
+: 1529851791:0;unset GOENV_SHELL
+: 1529851804:0;unset GOPATH
+: 1529851808:0;env | grep GO
+: 1529851827:0;unset GOROOT
+: 1529851829:0;env | grep GO
+: 1529851864:0;emacs .dot-files/.zshenv
+: 1529852016:0;echo $PATH > path.txt
+: 1529852024:0;open path.txt
+: 1529852380:0;echo $PATH > path_before.txt
+: 1529852530:0;export PATH=/usr/local/opt/openssl/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/Users/asahi/.zplug/bin:/Users/asahi/.anyenv/bin:/Users/asahi/.anyenv/envs/ndenv/bin:/Users/asahi/.anyenv/envs/ndenv/shims
+: 1529852544:0;echo $PATH
+: 1529852558:0;tmux kill-server
+: 1529852566:0;exit
+: 1529852580:0;tmux
+: 1529852588:0;echo $PATH
+: 1529852592:0;env
+: 1529852615:0;env | grep go
+: 1529852689:0;anyenv envs
+: 1529852712:0;echo $PATH > path_after.txt
+: 1529852717:0;anyenv envs
+: 1529852724:0;anyenv install goenv
+: 1529852734:0;exec $SHELL -l
+: 1529852746:0;env | grep GO
+: 1529852757:0;echo $PATH
+: 1529852781:0;goenv -v
+: 1529852791:0;anyenv envs
+: 1529852798:0;exec $SHELL -l
+: 1529852862:0;env | grep any
+: 1529852910:0;echo $PATH
+: 1529852962:0;echo $PATH > path_new.txt
+: 1529852989:0;mv path_after.txt path_new.txt Desktop
+: 1529853495:0;export PATH=""
+: 1529853527:0;echo $PATH
+: 1529853592:0;emacs .dot-files/.zshenv
+: 1529853618:0;tmux
+: 1529853628:0;emacs .dot-files/.zshenv
+: 1529854215:0;exit
+: 1529854232:0;echo $PATH
+: 1529854271:0;tmux
+: 1529854280:0;emacs .dot-files/.zshrc
+: 1529854296:0;ndenv rehash
+: 1529854302:0;emacs .dot-files/.zshrc
+: 1529854373:0;exec $SHELL -l
+: 1529854379:0;echo $PATH
+: 1529854410:0;echo $PATH > Desktop/path_newnew.txt
+: 1529854480:0;goenv -v
+: 1529854487:0;anyenv envs
+: 1529854501:0;env | grep GO
+: 1529854523:0;anyenv uninstall -f goenv
+: 1529854532:0;anyenv envs
+: 1529854535:0;exec $SHELL -l
+: 1529854540:0;anyenv envs
+: 1529854552:0;echo $PATH
+: 1529854591:0;anyenv envs
+: 1529854597:0;anyenv list
+: 1529854605:0;anyenv --help
+: 1529854621:0;anyenv varsion
+: 1529854626:0;anyenv version
+: 1529854635:0;anyenv envs
+: 1529854639:0;exec $SHELL -l
+: 1529854656:0;echo $PATH
+: 1529854670:0;export PATH=""
+: 1529854690:0;echo $PATH
+: 1529854727:0;emacs .dot-files/.zshrc
+: 1529854792:0;anyenv install goenv
+: 1529854803:0;exec $SHELL -l
+: 1529854812:0;goenv install 1.10.3
+: 1529855128:0;env | grep GO
+: 1529855208:0;ls
+: 1529855275:0;rm -rf .gore 
+: 1529855286:0;rm -rf dev
+: 1529855289:0;ls
+: 1529855304:0;rm .zshenv
+: 1529855306:0;ls
+: 1529855316:0;cd .dot-files
+: 1529855445:0;mkdir dotfiles
+: 1529855497:0;mv .emacs.d .gitconfig .gitignore .globalrc .tern-config .tmux.conf .zshrc dotfiles
+: 1529855500:0;ls
+: 1529855522:0;open .
+: 1529855550:0;gls etc
+: 1529855558:0;ls etc
+: 1529855623:0;rm etc/One\ Light.terminal etc/Solarized\ Dark.terminal 
+: 1529855665:0;rm .zshenv
+: 1529855667:0;ls
+: 1529855703:0;cd ..
+: 1529855816:0;rm .emacs.d .gitconfig .gitignore .globalrc .tern-config .tmux.conf .zshrc
+: 1529855817:0;ls
+: 1529855849:0;ln -s .dot-files/dotfiles/.* .
+: 1529855851:0;ls
+: 1529855991:0;emacs .dot-files/dotfiles/.zshrc
+: 1529856121:0;cd .dot-files
+: 1529856142:0;mv dircolors.ansi-dark etc
+: 1529856189:0;mv dotfiles/.globalrc etc
+: 1529856194:0;ls etc
+: 1529856463:0;exit
+: 1529856479:0;ls
+: 1529856499:0;rm .dircolors-solarized .globalrc
+: 1529856500:0;ls
+: 1529856518:0;cd Documents/Project/fuwafuwaApp
+: 1529856527:0;cd apiserver
+: 1529856537:0;cd ../../
+: 1529856539:0;../
+: 1529856547:0;cd Test/lottie
+: 1529856552:0;cd src
+: 1529856554:0;ls
+: 1529856559:0;gtags
+: 1529856568:0;ls
+: 1529856599:0;cd .dot-files
+: 1529856609:0;cd ~/.dot-files
+: 1529856641:0;cp ~/.zsh_hist etc
