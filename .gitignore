@@ -1,0 +1,10 @@
+.DS_Store
+
+### Emacs ###
+dotfiles/.emacs.d/auto-save-list/*
+dotfiles/.emacs.d/backups/*
+dotfiles/.emacs.d/undohist/*
+dotfiles/.emacs.d/init.el~
+dotfiles/.emacs.d/recentf
+dotfiles/.emacs.d/projectile-bookmarks.eld
+dotfiles/.emacs.d/company-statistics-cache.el
