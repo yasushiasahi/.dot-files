@@ -37,6 +37,8 @@
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (global-set-key (kbd "C-m") 'newline-and-indent) ; 改行してインデント
 (global-set-key (kbd "C-x ?") 'help-command) ; ヘルプコマンド
+(global-set-key (kbd "C-^") 'universal-argument) ; defaultのC-u
+(global-unset-key (kbd "C-u")) ;C-uは一旦無効化
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ; C-hでバックスペース
 (define-key key-translation-map (kbd "C-l") (kbd "<ESC>")) ; C-lでesc
 (global-set-key (kbd "C-c r")  'recenter-top-bottom) ; 元のC-l
@@ -53,7 +55,6 @@
 (global-set-key (kbd "C-x \\") 'split-window-right) ; ウィンドウを横分割
 (global-set-key (kbd "C-M-d") 'kill-word) ; 単語ごとに削除
 (global-set-key (kbd "C-c l") 'toggle-truncate-lines) ; 折り返しをトグル
-(global-set-key (kbd "C-c -") 'recenter-top-bottom) ; 折り返しをトグル
 (global-set-key (kbd "C-c c s") 'css-mode) ; css-modo
 (global-set-key (kbd "C-c j s") 'rjsx-mode) ; rjsx-modo
 
@@ -111,7 +112,6 @@
 
 ;;; @curxを使ったテキスト操作
 (require 'crux)
-(global-unset-key (kbd "C-u")) ; デフォルトのC-u(universal-argument)を無効化
 (global-set-key (kbd "C-u") 'crux-smart-open-line-above) ;; 現在行を改行せずに上に空行を作ってその行に移動
 (global-set-key (kbd "C-j") 'crux-smart-open-line) ;; 現在行を改行せずに下に空行を作ってその行に移動
 (global-set-key (kbd "M-k") 'crux-kill-whole-line) ;; 現在行全体を削除して詰める
@@ -169,21 +169,6 @@
 
 ;;; rjsx-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
-;; (add-hook 'rjsx-mode-hook
-;;           (lambda ()
-;;             (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
-;;             (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
-;;             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON")) ;指定した文字列の警告をオフ
-;;             (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
-;; 	    (setq company-backends '((
-;; 				      company-files
-;; 				      company-keywords
-;; 				      company-capf
-;; 				      company-tern
-;; 				      company-dabbrev-code
-;; 				      company-yasnippet
-;; 				      ) (company-abbrev company-dabbrev))))) ;加えたいcompanyの設定を書く
-
 
 ;;; js2-mode
 ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -195,15 +180,6 @@
             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON" "location" "fetch")) ;指定した文字列の警告をオフ
             (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
 	    ))
-
-
-;; (setq company-backends '((company-tide
-;; 			  company-dabbrev-code
-;; 			  company-yasnippet
-;; 			  company-files
-;; 			  company-keywords
-;; 			  company-capf) (company-abbrev company-dabbrev))) ;加えたいcompanyの設定を書く
-
 
 
 ;;; tide-mode
@@ -218,28 +194,36 @@
 (setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
 (add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
 (add-hook 'js2-mode-hook #'setup-tide-mode)
-;; configure javascript-tide checker to run after your default javascript checker
-;;(flycheck-add-next-checker 'javascript-eslint 'javascript-tide 'append) ;エラーが出る原因不明
 
 
 
 ;; go-mode
-(require 'company-go)
-(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
-(add-hook 'go-mode-hook (lambda ()
-                          (set (make-local-variable 'company-backends) '(company-go))
-			  (company-mode)
-			  (setq indent-tabs-mode nil)    ; タブを利用
-			  (setq c-basic-offset 4)        ; tabサイズを4にする
-			  (setq tab-width 4)))
-
-
-
+(require 'go-mode)
+(defun setup-go-mode ()
+  "Hooks for Go mode."
+  (define-key go-mode-map (kbd "C-c g a") 'godoc-at-point)
+  (define-key go-mode-map (kbd "C-c g d") 'godoc)
+  (define-key go-mode-map (kbd "C-c g i") 'go-import-add)
+  (setq tab-width 4)
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (go-eldoc-setup)
+  (set (make-local-variable 'company-backends) '((company-go
+  						  company-yasnippet
+  						  company-dabbrev
+  						  company-keywords
+  						  company-capf
+  						  company-files
+  						  )
+  						 (company-abbrev company-dabbrev)
+  						 ))
+  (setq company-go-show-annotation t)
+  (setq company-begin-commands '(self-insert-command))
+  )
+(add-hook 'go-mode-hook 'setup-go-mode)
 
 ;; 入力補完
 (electric-pair-mode t) ; 閉じ括弧自動挿入
-
-
 
 
 
@@ -319,7 +303,7 @@
  '(helm-gtags-pulse-at-cursor t)
  '(package-selected-packages
    (quote
-    (company-go go-mode projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
+    (go-eldoc company-go go-mode projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
 
 ;; key bindings
 (with-eval-after-load 'helm-gtags
@@ -377,19 +361,8 @@
 (require 'company-statistics)
 (company-statistics-mode)
 
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++
-;;; @company-tern
-;; (setq company-tern-property-marker "")
-;; (defun company-tern-depth (candidate)
-;;   "Return depth attribute for CANDIDATE. 'nil' entries are treated as 0."
-;;   (let ((depth (get-text-property 0 'depth candidate)))
-;;     (if (eq depth nil) 0 depth)))
-;; (add-hook 'rjsx-mode-hook 'tern-mode) ; 自分が使っているjs用メジャーモードに変える
-
-;; 参考
-; 「emacsの補完用パッケージcompany-mode」 https://qiita.com/sune2/items/b73037f9e85962f5afb7
-; https://github.com/company-mode/company-mode/issues/407
-
+;;; @company-go
+(require 'company-go)
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -446,28 +419,6 @@
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; @rainbow-delimiters
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-;; (require 'cl-lib)
-;; (require 'color)
-;; (defun rainbow-delimiters-using-stronger-colors ()
-;;   (interactive)
-;;   (cl-loop
-;;    for index from 1 to rainbow-delimiters-max-face-count
-;;    do
-;;    (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
-;;     (cl-callf color-saturate-name (face-foreground face) 30))))
-;; (add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors)
-
-;; 参考
-;; https://qiita.com/megane42/items/ee71f1ff8652dbf94cf7
-
-
-
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @Prettier-js
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (require 'prettier-js)
@@ -481,13 +432,43 @@
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 
 
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @google-translate
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'google-translate)
+(require 'google-translate-default-ui)
+(defvar google-translate-english-chars "[:ascii:]"
+  "これらの文字が含まれているときは英語とみなす")
+(defun google-translate-enja-or-jaen (&optional string)
+  "regionか現在位置の単語を翻訳する。C-u付きでquery指定も可能"
+  (interactive)
+  (setq string
+        (cond ((stringp string) string)
+              (current-prefix-arg
+               (read-string "Google Translate: "))
+              ((use-region-p)
+               (buffer-substring (region-beginning) (region-end)))
+              (t
+               (thing-at-point 'word))))
+  (let* ((asciip (string-match
+                  (format "\\`[%s]+\\'" google-translate-english-chars)
+                  string)))
+    (run-at-time 0.1 nil 'deactivate-mark)
+    (google-translate-translate
+     (if asciip "en" "ja")
+     (if asciip "ja" "en")
+     string)))
+(global-set-key (kbd "C-c t") 'google-translate-enja-or-jaen)
 
 
 
-
-
-
-
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; @popwin
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'popwin)
+(popwin-mode 1)
+(push '("*Google Translate*" :height 0.4)  popwin:special-display-config)
+(push '("godoc" :regexp t  :height 0.4) popwin:special-display-config)
 
 
 
