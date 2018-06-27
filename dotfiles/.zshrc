@@ -3,19 +3,17 @@
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
+# Golang
+export GOROOT=`go env GOROOT`
+export GOPATH="$HOME/dev"
+export PATH="$PATH:$GOPATH/bin"
+
 # /usr/local/を優先に
 export PATH="/usr/local/bin:$PATH"
-
-# export GOPATH="$HOME/.go"
-# export GOROOT="$HOME/.anyenv/envs/goenv/versions/1.10.3"
-# export PATH="$GOPATH/bin:$PATH"
 
 # export PATH="/usr/local/opt/openssl/bin:$PATH" なぜ設定してたのか解らない。
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PATH
 
-
-# プロンプト
-PROMPT='%m:%c %n$ '
 
 # 日本語を使用
 export LANG=ja_JP.UTF-8
@@ -63,6 +61,18 @@ if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
+
+bindkey '^]' peco-src
+
+function peco-src() {
+    local src=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [-n "$src"]; then
+	BUFFER="cd $src"
+	zle accept-line
+    fi
+    zle -R -c
+}
+zle -N peco-src
 
 # alias >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 scripts_path=~/.dot-files/scripts

@@ -7,3 +7,5 @@
 	branch = auto
 [push]
 	default = simple
+[ghq]
+	root = /Users/asahi/dev/src
