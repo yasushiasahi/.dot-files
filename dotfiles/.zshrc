@@ -1,4 +1,7 @@
 # PATH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# postgres
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
+
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
@@ -81,11 +84,11 @@ scripts_path=~/.dot-files/scripts
 case ${OSTYPE} in
     darwin*) # macosの場合
         eval $(gdircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
-	alias ls='gls -Al --color=auto'
+	alias ls='gls -AlXhrF --color=auto'
         ;;
     linux*) # linuxの場合
         eval $(gdircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
-	alias ls='ls -Al --color=auto'
+	alias ls='ls -AlXhF --color=auto'
         ;;
 esac
 
