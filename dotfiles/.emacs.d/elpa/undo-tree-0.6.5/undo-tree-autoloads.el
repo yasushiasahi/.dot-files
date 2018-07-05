@@ -1,11 +1,14 @@
 ;;; undo-tree-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory #$) (car load-path))))
+
 
-;;;### (autoloads nil "undo-tree" "undo-tree.el" (23228 13261 901304
-;;;;;;  791000))
-;;; Generated autoloads from undo-tree.el
+;;;### (autoloads nil "undo-tree" "../../../../../.emacs.d/elpa/undo-tree-0.6.5/undo-tree.el"
+;;;;;;  "694d9d2bb8e90b4b01ecf954d3b093da")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/undo-tree-0.6.5/undo-tree.el
 
 (autoload 'undo-tree-mode "undo-tree" "\
 Toggle undo-tree mode.
@@ -48,6 +51,20 @@ Undo-Tree mode is enabled in all buffers where
 See `undo-tree-mode' for more information on Undo-Tree mode.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "undo-tree" "../../../../../.emacs.d/elpa/undo-tree-0.6.5/undo-tree.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/undo-tree-0.6.5/undo-tree.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "undo-tree" '("undo-" "turn-on-undo-tree-mode" "*undo-tree-id-counter*" "buffer-undo-tree")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/undo-tree-0.6.5/undo-tree-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/undo-tree-0.6.5/undo-tree.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
@@ -55,5 +72,6 @@ See `undo-tree-mode' for more information on Undo-Tree mode.
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
+;; coding: utf-8
 ;; End:
 ;;; undo-tree-autoloads.el ends here

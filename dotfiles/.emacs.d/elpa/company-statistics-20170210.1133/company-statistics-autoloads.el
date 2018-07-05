@@ -1,11 +1,14 @@
 ;;; company-statistics-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory #$) (car load-path))))
+
 
-;;;### (autoloads nil "company-statistics" "company-statistics.el"
-;;;;;;  (23300 45778 857654 486000))
-;;; Generated autoloads from company-statistics.el
+;;;### (autoloads nil "company-statistics" "../../../../../.emacs.d/elpa/company-statistics-20170210.1133/company-statistics.el"
+;;;;;;  "858eaf65a94d525435823fd42caa8fe4")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/company-statistics-20170210.1133/company-statistics.el
 
 (defvar company-statistics-mode nil "\
 Non-nil if Company-Statistics mode is enabled.
@@ -29,6 +32,21 @@ configuration.  You can customize this behavior with
 `company-statistics-file'.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "company-statistics"
+;;;;;;  "../../../../../.emacs.d/elpa/company-statistics-20170210.1133/company-statistics.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/company-statistics-20170210.1133/company-statistics.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-statistics" '("company-s")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/company-statistics-20170210.1133/company-statistics-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/company-statistics-20170210.1133/company-statistics.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
@@ -36,5 +54,6 @@ configuration.  You can customize this behavior with
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
+;; coding: utf-8
 ;; End:
 ;;; company-statistics-autoloads.el ends here

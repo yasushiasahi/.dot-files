@@ -11,6 +11,7 @@
 	end-of-buffer
 	helm-M-x
 	helm-for-files
+	helm-show-kill-ring
 	js2r-ternary-to-if
 	kill-region
 	kill-sexp

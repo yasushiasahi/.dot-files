@@ -1,11 +1,14 @@
 ;;; quickrun-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory #$) (car load-path))))
+
 
-;;;### (autoloads nil "quickrun" "quickrun.el" (23293 15123 170235
-;;;;;;  899000))
-;;; Generated autoloads from quickrun.el
+;;;### (autoloads nil "quickrun" "../../../../../.emacs.d/elpa/quickrun-20170222.1715/quickrun.el"
+;;;;;;  "996871617736d6ab8ce7bdaa58bab709")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/quickrun-20170222.1715/quickrun.el
 
 (autoload 'quickrun-set-default "quickrun" "\
 Set `key' as default key in programing language `lang'
@@ -70,6 +73,20 @@ Run commands in shell for interactive programs
 
 
 \(fn)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "quickrun" "../../../../../.emacs.d/elpa/quickrun-20170222.1715/quickrun.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/quickrun-20170222.1715/quickrun.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "quickrun" '("quick" "helm-quickrun-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/quickrun-20170222.1715/quickrun-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/quickrun-20170222.1715/quickrun.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
@@ -77,5 +94,6 @@ Run commands in shell for interactive programs
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
+;; coding: utf-8
 ;; End:
 ;;; quickrun-autoloads.el ends here

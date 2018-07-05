@@ -179,7 +179,15 @@
             (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON" "location" "fetch")) ;指定した文字列の警告をオフ
             (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
-	    ))
+	    (set (make-local-variable 'company-backends) '((company-tide
+  							    company-yasnippet
+  							    company-dabbrev
+  							    company-keywords
+  							    company-capf
+  							    company-files
+  							    )
+  							   (company-abbrev company-dabbrev)
+  							   ))))
 
 
 ;;; tide-mode
