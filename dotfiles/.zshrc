@@ -1,15 +1,7 @@
 # PATH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# postgres
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
-
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
-
-# Golang
-export GOROOT=`go env GOROOT`
-export GOPATH="$HOME/dev"
-export PATH="$PATH:$GOPATH/bin"
 
 # /usr/local/を優先に
 export PATH="/usr/local/bin:$PATH"
@@ -84,10 +76,10 @@ scripts_path=~/.dot-files/scripts
 case ${OSTYPE} in
     darwin*) # macosの場合
         eval $(gdircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
-	alias ls='gls -AlXhrF --color=auto'
+	alias ls='gls -AlXhF --color=auto'
         ;;
     linux*) # linuxの場合
-        eval $(gdircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
+        eval $(dircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
 	alias ls='ls -AlXhF --color=auto'
         ;;
 esac
