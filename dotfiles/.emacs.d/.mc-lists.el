@@ -3,18 +3,24 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	backward-sexp
 	beginning-of-buffer
+	comment-dwim
+	crux-duplicate-current-line-or-region
 	crux-kill-whole-line
 	crux-move-beginning-of-line
 	crux-smart-open-line-above
 	electric-pair-delete-pair
 	end-of-buffer
+	forward-sexp
 	helm-M-x
 	helm-for-files
 	helm-show-kill-ring
+	indent-for-tab-command
 	js2r-ternary-to-if
 	kill-region
 	kill-sexp
+	mark-sexp
 	rjsx-delete-creates-full-tag
 	rjsx-electric-gt
 	set-linum
@@ -25,4 +31,11 @@
 
 (setq mc/cmds-to-run-once
       '(
+	multiple-cursors-hydra/*
+	multiple-cursors-hydra/body
+	multiple-cursors-hydra/mc/edit-lines-and-exit
+	multiple-cursors-hydra/mc/mark-all-like-this-and-exit
+	multiple-cursors-hydra/mc/mark-next-like-this
+	multiple-cursors-hydra/mc/mark-previous-like-this
+	multiple-cursors-hydra/mc/unmark-next-like-this
 	))

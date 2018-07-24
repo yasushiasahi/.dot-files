@@ -76,11 +76,11 @@ scripts_path=~/.dot-files/scripts
 case ${OSTYPE} in
     darwin*) # macosの場合
         eval $(gdircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
-	alias ls='gls -AlXhF --color=auto'
+	alias ls='gls -AlXh --color=auto'
         ;;
     linux*) # linuxの場合
         eval $(dircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
-	alias ls='ls -AlXhF --color=auto'
+	alias ls='ls -AlXh --color=auto'
         ;;
 esac
 
