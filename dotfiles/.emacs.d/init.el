@@ -327,8 +327,8 @@ _jb_: jump-back
 (setq prettier-js-args '(
   "--no-semi" "false"
   "--jsx-bracket-same-line" "true"
-  "--print-width" "100"
   "--trailing-comma" "es5"
+  "--arrow-parens" "always"
   ))
 
 ;; @js2-refactor
@@ -422,7 +422,6 @@ _-_: callees       ^ ^                     ^ ^
   (define-key go-mode-map (kbd "C-x 4 C-c C-j") nil) ; godef-jump-other-window
   (define-key go-mode-map (kbd "C-c C-d") nil) ;godef-describe
   (define-key go-mode-map (kbd "C-c C-a") nil) ; go-import-add
-  (define-key go-mode-map (kbd "C-o") 'go-guru-expand-region) ;; x for expand
   (define-key go-mode-map (kbd "C-q") 'hydra-go-mode-map/body)
   )
 

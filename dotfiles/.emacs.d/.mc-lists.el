@@ -16,6 +16,9 @@
 	helm-M-x
 	helm-for-files
 	helm-show-kill-ring
+	hydra-window/body
+	hydra-window/windmove-left
+	hydra-window/windmove-right
 	indent-for-tab-command
 	js2r-ternary-to-if
 	kill-region
@@ -37,5 +40,6 @@
 	multiple-cursors-hydra/mc/mark-all-like-this-and-exit
 	multiple-cursors-hydra/mc/mark-next-like-this
 	multiple-cursors-hydra/mc/mark-previous-like-this
+	multiple-cursors-hydra/mc/skip-to-next-like-this
 	multiple-cursors-hydra/mc/unmark-next-like-this
 	))
