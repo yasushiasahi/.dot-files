@@ -197,21 +197,21 @@
 ;;; HTML
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; web-mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
-(defun my-web-mode-hook ()
-  "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 2) ; HTMLのンデント幅
-  (setq web-mode-css-indent-offset 2)  ; CSSのンデント幅
-  (setq web-mode-code-indent-offset 2)  ; Ruby、PHP等のンデント幅
-  (setq indent-tabs-mode nil)
-  (setq tab-width 2)
-  (setq web-mode-enable-auto-closing 2) ; 閉じタグ自動補完
-  (setq web-mode-enable-auto-pairing 2) ; 閉じタグ自動補完
-)
-(add-hook 'web-mode-hook  'my-web-mode-hook)
+;; (require 'web-mode)
+;; (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+;; (defun my-web-mode-hook ()
+;;   "Hooks for Web mode."
+;;   (setq web-mode-markup-indent-offset 2) ; HTMLのンデント幅
+;;   (setq web-mode-css-indent-offset 2)  ; CSSのンデント幅
+;;   (setq web-mode-code-indent-offset 2)  ; Ruby、PHP等のンデント幅
+;;   (setq indent-tabs-mode nil)
+;;   (setq tab-width 2)
+;;   (setq web-mode-enable-auto-closing 2) ; 閉じタグ自動補完
+;;   (setq web-mode-enable-auto-pairing 2) ; 閉じタグ自動補完
+;; )
+;; (add-hook 'web-mode-hook  'my-web-mode-hook)
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -303,7 +303,7 @@ _jb_: jump-back
 
 ;; rjsx-mode
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
+;;(add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
 
 
 ;; tide-mode
@@ -320,6 +320,25 @@ _jb_: jump-back
 (setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
 
 (add-hook 'js2-mode-hook #'setup-tide-mode)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setup-tide-mode)
+  (prettier-js-mode)
+  (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
+  (setq web-mode-code-indent-offset 2) ;スペースは２つ、デフォルトは4
+  (set (make-local-variable 'company-backends) '((company-tide
+  						  company-dabbrev
+  						  company-keywords
+  						  company-capf
+  						  company-files
+  						  )
+  						 (company-abbrev company-dabbrev)
+  						 ))
+  )
+(add-hook 'web-mode-hook  'my-web-mode-hook)
 
 
 ;; @Prettier-js
