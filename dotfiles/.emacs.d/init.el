@@ -320,6 +320,7 @@ _jb_: jump-back
 (setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
 
 (add-hook 'js2-mode-hook #'setup-tide-mode)
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
@@ -339,6 +340,21 @@ _jb_: jump-back
   						 ))
   )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
+
+;; vue-mode
+(defun setup-vue-mode ()
+  "Hooks for vue-mode"
+  (set-face-background 'mmm-default-submode-face nil)
+  (set (make-local-variable 'company-backends) '((company-tide
+  						  company-dabbrev
+  						  company-keywords
+  						  company-capf
+  						  company-files
+  						  )
+  						 (company-abbrev company-dabbrev)
+  						 ))
+  )
+(add-hook 'vue-mode-hook 'setup-vue-mode)
 
 
 ;; @Prettier-js
@@ -383,6 +399,7 @@ _jb_: jump-back
   						 ))
   (setq company-go-show-annotation t)
   (setq company-begin-commands '(self-insert-command))
+  (flycheck-mode)
   )
 
 
@@ -590,7 +607,7 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;;flycheck
 (require 'flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 
