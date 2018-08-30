@@ -341,21 +341,6 @@ _jb_: jump-back
   )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-;; vue-mode
-(defun setup-vue-mode ()
-  "Hooks for vue-mode"
-  (set-face-background 'mmm-default-submode-face nil)
-  (set (make-local-variable 'company-backends) '((company-tide
-  						  company-dabbrev
-  						  company-keywords
-  						  company-capf
-  						  company-files
-  						  )
-  						 (company-abbrev company-dabbrev)
-  						 ))
-  )
-(add-hook 'vue-mode-hook 'setup-vue-mode)
-
 
 ;; @Prettier-js
 (require 'prettier-js)
@@ -369,10 +354,6 @@ _jb_: jump-back
 ;; @js2-refactor
 (require 'js2-refactor)
 (js2r-add-keybindings-with-prefix "C-c <RET>")
-
-
-
-
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -485,7 +466,6 @@ _-_: callees       ^ ^                     ^ ^
 ;;; Enable helm-gtags-mode
 (add-hook 'rjsx-mode-hook 'helm-gtags-mode)
 (add-hook 'js2-mode-hook 'helm-gtags-mode)
-(add-hook 'go-mode-hook 'helm-gtags-mode)
 
 ;; customize
 (custom-set-variables
@@ -501,7 +481,7 @@ _-_: callees       ^ ^                     ^ ^
  '(helm-gtags-pulse-at-cursor t)
  '(package-selected-packages
    (quote
-    (hydra godoctor smartparens lispxmp open-junk-file vue-mode go-eldoc company-go go-mode projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
+    (dockerfile-mode yaml-mode go-guru hydra godoctor smartparens lispxmp open-junk-file go-eldoc company-go go-mode projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
 
 
 ;; key bindings
@@ -558,7 +538,7 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @company
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode)
 (require 'company)
 (global-company-mode) ; 全バッファで有効にする
 (setq company-transformers '(company-sort-by-statistics company-sort-by-backend-importance)) ;; 使用履歴＆ソート順
@@ -614,11 +594,15 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @projectile
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(when (require 'projectile nil t)
-  (projectile-mode))                           ;;自動的にプロジェクト管理を開始
+;; (when (require 'projectile nil t)
+;;   (projectile-mode))                           ;;自動的にプロジェクト管理を開始
 
-(when (require 'helm-projectile nil t)        ;; Helmを使って利用する
-  (setq projectile-completion-system 'helm))
+;; (when (require 'helm-projectile nil t)        ;; Helmを使って利用する
+;;   (setq projectile-completion-system 'helm))
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 
 
