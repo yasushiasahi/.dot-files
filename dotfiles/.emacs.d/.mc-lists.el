@@ -29,6 +29,7 @@
 	set-linum
 	smart-open-line
 	xterm-paste
+	yaml-electric-backspace
 	yas-expand
 	))
 
@@ -41,5 +42,6 @@
 	multiple-cursors-hydra/mc/mark-next-like-this
 	multiple-cursors-hydra/mc/mark-previous-like-this
 	multiple-cursors-hydra/mc/skip-to-next-like-this
+	multiple-cursors-hydra/mc/skip-to-previous-like-this
 	multiple-cursors-hydra/mc/unmark-next-like-this
 	))
