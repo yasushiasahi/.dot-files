@@ -197,9 +197,10 @@
 ;;; HTML
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; web-mode
-(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 
 (defhydra hydra-web-mode-map (:color blue
 				     :hint nil)
@@ -276,9 +277,6 @@ _ef_: element-children-fold-or-unfold                       _dt_: dom-traverse
   ("dt" web-mode-dom-traverse)
   )
 
-
-
-
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2) ; HTMLのンデント幅
@@ -288,19 +286,33 @@ _ef_: element-children-fold-or-unfold                       _dt_: dom-traverse
   (setq tab-width 2)
   (setq web-mode-enable-auto-closing 2) ; 閉じタグ自動補完
   (setq web-mode-enable-auto-pairing 2) ; 閉じタグ自動補完
-  (prettier-js-mode)
-  (define-key web-mode-map (kbd "C-q") 'hydra-web-mode-map/body)
-  (set (make-local-variable 'company-backends) '((company-web-html
-  						  company-yasnippet
-  						  company-dabbrev
-  						  company-keywords
-  						  company-capf
-  						  company-files
-  						  )
-  						 (company-abbrev company-dabbrev)
-  						 ))
+  (lambda ()
+    (when (string-equal "html" (file-name-extension buffer-file-name))
+      (define-key web-mode-map (kbd "C-q") 'hydra-web-mode-map/body)
+      (prettier-js-mode)
+      (set (make-local-variable 'company-backends) '((company-web-html
+  						      company-yasnippet
+  						      company-dabbrev
+  						      company-keywords
+  						      company-capf
+  						      company-files
+  						      )
+  						     (company-abbrev company-dabbrev)
+  						     ))
+      )
+    (when (string-equal "tsx" (file-name-extension buffer-file-name))
+      (define-key web-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
+      (setup-tide-mode)
+      )
+    (when (string-equal "vue" (file-name-extension buffer-file-name))
+      (define-key web-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
+      (setup-tide-mode)
+      (global-flycheck-mode -1)
+      )
+    )
   )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
+
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -371,33 +383,28 @@ _jb_: jump-back
 
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-hook 'js2-mode-hook
           (lambda ()
-            (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
-            (setq js-indent-level 2) ;スペースは２つ、デフォルトは4
 	    (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
 	    (setq js2-mode-show-parse-errors          nil)
             (setq js2-mode-show-strict-warnings       nil)
+	    (setup-tide-mode)
 	    (js2-refactor-mode)
-	    (prettier-js-mode)
             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON" "location" "fetch")) ;指定した文字列の警告をオフ
-	    (set (make-local-variable 'company-backends) '((company-tide
-  							    company-yasnippet
-  							    company-dabbrev
-  							    company-keywords
-  							    company-capf
-  							    company-files
-  							    )
-  							   (company-abbrev company-dabbrev)
-  							   ))))
+	    ))
 
 
 ;; rjsx-mode
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
-;;(add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
 
+;; typescript-mode
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+(defun setup-typescript-mode ()
+  (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
+  (setq typescript-indent-level 2) ;スペースは２つ、デフォルトは4
+  )
+(add-hook 'typescript-mode-hook 'setup-typescript-mode )
 
 ;; tide-mode
 (defun setup-tide-mode ()
@@ -409,21 +416,9 @@ _jb_: jump-back
   (tide-hl-identifier-mode +1)
   ;;(add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
   (define-key tide-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
-  (company-mode +1))
-(setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
-
-(add-hook 'js2-mode-hook #'setup-tide-mode)
-(add-hook 'typescript-mode-hook #'setup-tide-mode)
-
-
-;; vue-mode
-(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "vue" (file-name-extension buffer-file-name))
-              (setup-tide-mode)
-	      (global-flycheck-mode -1)
-	      (set (make-local-variable 'company-backends) '((company-tide
+  (company-mode +1)
+  (prettier-js-mode)
+  (set (make-local-variable 'company-backends) '((company-tide
   							      company-yasnippet
   							      company-dabbrev
   							      company-keywords
@@ -432,27 +427,9 @@ _jb_: jump-back
   							      )
   							     (company-abbrev company-dabbrev)
   							     ))
-	      )))
-
-
-;; (require 'web-mode)
-;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-;; (defun my-web-mode-hook ()
-;;   "Hooks for Web mode."
-;;   (setup-tide-mode)
-;;   (prettier-js-mode)
-;;   (setq indent-tabs-mode nil) ;インデントはタブではなくスペース
-;;   (setq web-mode-code-indent-offset 2) ;スペースは２つ、デフォルトは4
-;;   (set (make-local-variable 'company-backends) '((company-tide
-;;   						  company-dabbrev
-;;   						  company-keywords
-;;   						  company-capf
-;;   						  company-files
-;;   						  )
-;;   						 (company-abbrev company-dabbrev)
-;;   						 ))
-;;   )
-;; (add-hook 'web-mode-hook  'my-web-mode-hook)
+  )
+(setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 
 ;; @Prettier-js
