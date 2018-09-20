@@ -288,7 +288,7 @@ _ef_: element-children-fold-or-unfold                       _dt_: dom-traverse
   (setq tab-width 2)
   (setq web-mode-enable-auto-closing 2) ; 閉じタグ自動補完
   (setq web-mode-enable-auto-pairing 2) ; 閉じタグ自動補完
-  (add-hook 'after-save-hook 'web-mode-buffer-indent)
+  (prettier-js-mode)
   (define-key web-mode-map (kbd "C-q") 'hydra-web-mode-map/body)
   (set (make-local-variable 'company-backends) '((company-web-html
   						  company-yasnippet
@@ -407,13 +407,33 @@ _jb_: jump-back
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
-  (add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
+  ;;(add-hook 'before-save-hook 'tide-format-before-save) ;; formats the buffer before saving
   (define-key tide-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
   (company-mode +1))
 (setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
 
 (add-hook 'js2-mode-hook #'setup-tide-mode)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+
+;; vue-mode
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "vue" (file-name-extension buffer-file-name))
+              (setup-tide-mode)
+	      (global-flycheck-mode -1)
+	      (set (make-local-variable 'company-backends) '((company-tide
+  							      company-yasnippet
+  							      company-dabbrev
+  							      company-keywords
+  							      company-capf
+  							      company-files
+  							      )
+  							     (company-abbrev company-dabbrev)
+  							     ))
+	      )))
+
 
 ;; (require 'web-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
@@ -438,9 +458,10 @@ _jb_: jump-back
 ;; @Prettier-js
 (require 'prettier-js)
 (setq prettier-js-args '(
+			 "--single-quote"
 			 "--no-semi" "false"
 			 "--jsx-bracket-same-line" "true"
-			 "--trailing-comma" "es5"
+			 "--trailing-comma" "all"
 			 "--arrow-parens" "always"
 			 ))
 
@@ -553,38 +574,38 @@ _-_: callees       ^ ^                     ^ ^
 
 
 
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; @helm-tags
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; Enable helm-gtags-mode
-(add-hook 'rjsx-mode-hook 'helm-gtags-mode)
-(add-hook 'js2-mode-hook 'helm-gtags-mode)
+;; ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;; ;;; @helm-tags
+;; ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;; ;;; Enable helm-gtags-mode
+;; (add-hook 'rjsx-mode-hook 'helm-gtags-mode)
+;; (add-hook 'js2-mode-hook 'helm-gtags-mode)
 
-;; customize
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(helm-gtags-auto-update t)
- '(helm-gtags-fuzzy-match t)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-path-style (quote relative))
- '(helm-gtags-prefix-key nil)
- '(helm-gtags-pulse-at-cursor t)
- '(package-selected-packages
-   (quote
-    (company-web dockerfile-mode yaml-mode go-guru hydra godoctor smartparens lispxmp open-junk-file go-eldoc company-go go-mode projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
+;; ;; customize
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(helm-gtags-auto-update t)
+;;  '(helm-gtags-fuzzy-match t)
+;;  '(helm-gtags-ignore-case t)
+;;  '(helm-gtags-path-style (quote relative))
+;;  '(helm-gtags-prefix-key nil)
+;;  '(helm-gtags-pulse-at-cursor t)
+;;  '(package-selected-packages
+;;    (quote
+;;     (company-web dockerfile-mode yaml-mode go-guru hydra godoctor smartparens lispxmp open-junk-file go-eldoc company-go go-mode projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
 
 
-;; key bindings
-(with-eval-after-load 'helm-gtags
-  (define-key helm-gtags-mode-map (kbd "C-x d") 'helm-gtags-find-files)
-  (define-key helm-gtags-mode-map (kbd "C-c n") 'helm-gtags-dwim)
-  (define-key helm-gtags-mode-map (kbd "C-c m") 'helm-gtags-pop-stack)
-  (define-key helm-gtags-mode-map (kbd "C-c ,") 'helm-gtags-previous-history)
-  (define-key helm-gtags-mode-map (kbd "C-c .") 'helm-gtags-next-history)
-  (define-key helm-gtags-mode-map (kbd "C-c /") 'helm-gtags-show-stack))
+;; ;; key bindings
+;; (with-eval-after-load 'helm-gtags
+;;   (define-key helm-gtags-mode-map (kbd "C-x d") 'helm-gtags-find-files)
+;;   (define-key helm-gtags-mode-map (kbd "C-c n") 'helm-gtags-dwim)
+;;   (define-key helm-gtags-mode-map (kbd "C-c m") 'helm-gtags-pop-stack)
+;;   (define-key helm-gtags-mode-map (kbd "C-c ,") 'helm-gtags-previous-history)
+;;   (define-key helm-gtags-mode-map (kbd "C-c .") 'helm-gtags-next-history)
+;;   (define-key helm-gtags-mode-map (kbd "C-c /") 'helm-gtags-show-stack))
 
 
 
