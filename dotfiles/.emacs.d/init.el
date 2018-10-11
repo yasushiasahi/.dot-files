@@ -205,7 +205,7 @@
 (defhydra hydra-web-mode-map (:color blue
 				     :hint nil)
   "
-^tide commands^
+^web-mode commands^
 ^-^--------------------------^-^------------------------^-^-------------------------
 _eb_: element-beginning        _be_: block-end              _ab_: attribute-beginning
 _ee_: element-end              _bn_: block-next             _ap_: attribute-previous
@@ -277,6 +277,19 @@ _ef_: element-children-fold-or-unfold                       _dt_: dom-traverse
   ("dt" web-mode-dom-traverse)
   )
 
+(defun setup-html-mode()
+  (define-key web-mode-map (kbd "C-q") 'hydra-web-mode-map/body)
+  (set (make-local-variable 'company-backends) '((company-web-html
+  						  company-yasnippet
+  						  company-dabbrev
+  						  company-keywords
+  						  company-capf
+  						  company-files
+  						  )
+  						 (company-abbrev company-dabbrev)
+  						 ))
+  )
+
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2) ; HTMLのンデント幅
@@ -286,33 +299,25 @@ _ef_: element-children-fold-or-unfold                       _dt_: dom-traverse
   (setq tab-width 2)
   (setq web-mode-enable-auto-closing 2) ; 閉じタグ自動補完
   (setq web-mode-enable-auto-pairing 2) ; 閉じタグ自動補完
-  (lambda ()
-    (when (string-equal "html" (file-name-extension buffer-file-name))
-      (define-key web-mode-map (kbd "C-q") 'hydra-web-mode-map/body)
-      (prettier-js-mode)
-      (set (make-local-variable 'company-backends) '((company-web-html
-  						      company-yasnippet
-  						      company-dabbrev
-  						      company-keywords
-  						      company-capf
-  						      company-files
-  						      )
-  						     (company-abbrev company-dabbrev)
-  						     ))
-      )
-    (when (string-equal "tsx" (file-name-extension buffer-file-name))
-      (define-key web-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
-      (setup-tide-mode)
-      )
-    (when (string-equal "vue" (file-name-extension buffer-file-name))
-      (define-key web-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
-      (setup-tide-mode)
-      (global-flycheck-mode -1)
-      )
-    )
   )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+(add-hook 'web-mode-hook
+          (lambda ()
+	    (when (string-equal "html" (file-name-extension buffer-file-name))
+	      (setup-html-mode))
+	    (when (string-equal "php" (file-name-extension buffer-file-name))
+	      (setup-html-mode))
+	    (when (string-equal "tsx" (file-name-extension buffer-file-name))
+	      (define-key web-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
+	      (setup-tide-mode))
+	    (when (string-equal "vue" (file-name-extension buffer-file-name))
+	      (define-key web-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
+	      (setup-tide-mode)
+	      (global-flycheck-mode -1)
+	      )
+	    )
+	  )
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
