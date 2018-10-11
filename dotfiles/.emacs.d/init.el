@@ -394,6 +394,7 @@ _jb_: jump-back
 	    (setq js2-strict-missing-semi-warning nil) ;行末のセミコロンの警告はオフ
 	    (setq js2-mode-show-parse-errors          nil)
             (setq js2-mode-show-strict-warnings       nil)
+	    (setq js-indent-level 2)
 	    (setup-tide-mode)
 	    (js2-refactor-mode)
             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON" "location" "fetch")) ;指定した文字列の警告をオフ
