@@ -1,0 +1,11 @@
+[user]
+	name = yasushi asahi
+	email = zero.asahi@karabiner.tech
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[push]
+	default = simple
+[ghq]
+	root = ~/dev/src

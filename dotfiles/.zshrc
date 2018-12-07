@@ -47,27 +47,11 @@ export TERM=xterm-256color
 # emacsを標準エディターにする
 export EDITOR=emacs
 
-# gtags
-export GTAGSCONF="$HOME/.dot-files/etc/.globalrc"
-export GTAGSLABEL=pygments
 
 # 補完候補のファイル、ディレクトリにlsと同様の色付け
 if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
-
-
-bindkey '^]' peco-src
-
-function peco-src() {
-    local src=$(ghq list --full-path | peco --query "$LBUFFER")
-    if [-n "$src"]; then
-	BUFFER="cd $src"
-	zle accept-line
-    fi
-    zle -R -c
-}
-zle -N peco-src
 
 # alias >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 scripts_path=~/.dot-files/scripts
@@ -88,8 +72,10 @@ alias tree='tree -C' # treeに色を付ける
 alias diff='colordiff' # 色付きのdiffを使用
 alias cd='source ${scripts_path}/cdls.sh' # cdした後に自動でlsする
 alias mdcd='source ${scripts_path}/mdcd.sh' # mdcd hoge でhogeディレクトリを作って移動する
+alias gh='cd $(ghq list -p | peco)'
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< alias
+
 
 
 # zplug >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
