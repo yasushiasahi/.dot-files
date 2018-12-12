@@ -201,6 +201,7 @@
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 
 (defhydra hydra-web-mode-map (:color blue
 				     :hint nil)
@@ -298,20 +299,25 @@ _ef_: element-children-fold-or-unfold                       _dt_: dom-traverse
   (setq indent-tabs-mode nil)
   (setq tab-width 2)
   (setq web-mode-enable-auto-closing 2) ; 閉じタグ自動補完
-  (setq web-mode-enable-auto-pairing 2) ; 閉じタグ自動補完
   )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
 (add-hook 'web-mode-hook
           (lambda ()
 	    (when (string-equal "html" (file-name-extension buffer-file-name))
+	      (setq web-mode-enable-auto-pairing 2)
+	      (setup-html-mode))
+	    (when (string-equal "mustache" (file-name-extension buffer-file-name))
 	      (setup-html-mode))
 	    (when (string-equal "php" (file-name-extension buffer-file-name))
+	      (setq web-mode-enable-auto-pairing 2)
 	      (setup-html-mode))
 	    (when (string-equal "tsx" (file-name-extension buffer-file-name))
+	      (setq web-mode-enable-auto-pairing 2)
 	      (define-key web-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
 	      (setup-tide-mode))
 	    (when (string-equal "vue" (file-name-extension buffer-file-name))
+	      (setq web-mode-enable-auto-pairing 2)
 	      (define-key web-mode-map (kbd "C-q") 'hydra-js-mode-map/body)
 	      (setup-tide-mode)
 	      (global-flycheck-mode -1)
@@ -542,6 +548,12 @@ _-_: callees       ^ ^                     ^ ^
 (add-hook 'go-mode-hook 'setup-go-mode)
 (add-hook 'go-mode-hook 'setup-go-mode-map)
 
+
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;; Elixir
+;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(require 'elixir-mode)
+(require 'alchemist)
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -800,3 +812,11 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
 ;;; DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !! DO NOT TOUCH !!
 
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (alchemist elixir-mode yasnippet-snippets yaml-mode web-mode undo-tree tide smartparens rjsx-mode react-snippets quickrun prettier-js popwin open-junk-file lispxmp js2-refactor hydra helm-swoop helm-projectile helm-gtags google-translate godoctor go-guru go-eldoc expand-region edit-indirect dockerfile-mode crux company-web company-statistics company-go color-theme-solarized avy ace-isearch))))
