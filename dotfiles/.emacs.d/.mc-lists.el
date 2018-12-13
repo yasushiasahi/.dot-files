@@ -16,6 +16,8 @@
 	helm-M-x
 	helm-for-files
 	helm-show-kill-ring
+	hydra-web-mode-map/body
+	hydra-web-mode-map/web-mode-element-rename-and-exit
 	hydra-window/body
 	hydra-window/windmove-left
 	hydra-window/windmove-right
