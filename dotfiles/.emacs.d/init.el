@@ -431,14 +431,14 @@ _jb_: jump-back
   (company-mode +1)
   (prettier-js-mode)
   (set (make-local-variable 'company-backends) '((company-tide
-  							      company-yasnippet
-  							      company-dabbrev
-  							      company-keywords
-  							      company-capf
-  							      company-files
-  							      )
-  							     (company-abbrev company-dabbrev)
-  							     ))
+  						  company-yasnippet
+						  company-files
+  						  company-dabbrev
+  						  company-keywords
+  						  company-capf
+  						  )
+  						 (company-abbrev company-dabbrev)
+  						 ))
   )
 (setq company-tooltip-align-annotations t) ;; aligns annotation to the right hand side
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
@@ -447,11 +447,8 @@ _jb_: jump-back
 ;; @Prettier-js
 (require 'prettier-js)
 (setq prettier-js-args '(
-			 "--single-quote"
 			 "--no-semi" "false"
 			 "--jsx-bracket-same-line" "true"
-			 "--trailing-comma" "all"
-			 "--arrow-parens" "always"
 			 ))
 
 ;; @js2-refactor
@@ -568,43 +565,6 @@ _-_: callees       ^ ^                     ^ ^
 (global-set-key (kbd "C-c s") 'helm-swoop)
 
 
-
-;; ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;; ;;; @helm-tags
-;; ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;; ;;; Enable helm-gtags-mode
-;; (add-hook 'rjsx-mode-hook 'helm-gtags-mode)
-;; (add-hook 'js2-mode-hook 'helm-gtags-mode)
-
-;; ;; customize
-;; (custom-set-variables
-;;  ;; custom-set-variables was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(helm-gtags-auto-update t)
-;;  '(helm-gtags-fuzzy-match t)
-;;  '(helm-gtags-ignore-case t)
-;;  '(helm-gtags-path-style (quote relative))
-;;  '(helm-gtags-prefix-key nil)
-;;  '(helm-gtags-pulse-at-cursor t)
-;;  '(package-selected-packages
-;;    (quote
-;;     (company-web dockerfile-mode yaml-mode go-guru hydra godoctor smartparens lispxmp open-junk-file go-eldoc company-go go-mode projectile yasnippet-snippets web-mode undo-tree tide rjsx-mode react-snippets rainbow-delimiters quickrun prettier-js json-mode js2-refactor helm-swoop helm-projectile helm-gtags expand-region crux company-tern company-statistics color-theme-solarized avy atom-one-dark-theme ace-isearch))))
-
-
-;; ;; key bindings
-;; (with-eval-after-load 'helm-gtags
-;;   (define-key helm-gtags-mode-map (kbd "C-x d") 'helm-gtags-find-files)
-;;   (define-key helm-gtags-mode-map (kbd "C-c n") 'helm-gtags-dwim)
-;;   (define-key helm-gtags-mode-map (kbd "C-c m") 'helm-gtags-pop-stack)
-;;   (define-key helm-gtags-mode-map (kbd "C-c ,") 'helm-gtags-previous-history)
-;;   (define-key helm-gtags-mode-map (kbd "C-c .") 'helm-gtags-next-history)
-;;   (define-key helm-gtags-mode-map (kbd "C-c /") 'helm-gtags-show-stack))
-
-
-
-
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @multiple-cursors
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -676,7 +636,6 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
 (require 'company-go)
 
 
-
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @undo-tree
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -696,23 +655,17 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;;flycheck
 (require 'flycheck)
-					;(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;; @projectile
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;; (when (require 'projectile nil t)
-;;   (projectile-mode))                           ;;自動的にプロジェクト管理を開始
-
-;; (when (require 'helm-projectile nil t)        ;; Helmを使って利用する
-;;   (setq projectile-completion-system 'helm))
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -723,36 +676,6 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
 
 ;; react-snippets.el
 (require 'react-snippets)
-
-
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; @google-translate
-;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(require 'google-translate)
-(require 'google-translate-default-ui)
-(defvar google-translate-english-chars "[:ascii:]"
-  "これらの文字が含まれているときは英語とみなす")
-(defun google-translate-enja-or-jaen (&optional string)
-  "regionか現在位置の単語を翻訳する。C-u付きでquery指定も可能"
-  (interactive)
-  (setq string
-        (cond ((stringp string) string)
-              (current-prefix-arg
-               (read-string "Google Translate: "))
-              ((use-region-p)
-               (buffer-substring (region-beginning) (region-end)))
-              (t
-               (thing-at-point 'word))))
-  (let* ((asciip (string-match
-                  (format "\\`[%s]+\\'" google-translate-english-chars)
-                  string)))
-    (run-at-time 0.1 nil 'deactivate-mark)
-    (google-translate-translate
-     (if asciip "en" "ja")
-     (if asciip "ja" "en")
-     string)))
-(global-set-key (kbd "C-c t") 'google-translate-enja-or-jaen)
-
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -819,4 +742,4 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (alchemist elixir-mode yasnippet-snippets yaml-mode web-mode undo-tree tide smartparens rjsx-mode react-snippets quickrun prettier-js popwin open-junk-file lispxmp js2-refactor hydra helm-swoop helm-projectile helm-gtags google-translate godoctor go-guru go-eldoc expand-region edit-indirect dockerfile-mode crux company-web company-statistics company-go color-theme-solarized avy ace-isearch))))
+    (alchemist elixir-mode yasnippet-snippets yaml-mode web-mode undo-tree tide smartparens rjsx-mode react-snippets quickrun prettier-js popwin open-junk-file lispxmp js2-refactor hydra helm-swoop helm-projectile godoctor go-guru go-eldoc expand-region edit-indirect dockerfile-mode crux company-web company-statistics company-go color-theme-solarized avy ace-isearch))))
