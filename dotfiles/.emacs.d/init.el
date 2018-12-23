@@ -326,12 +326,17 @@ _ef_: element-children-fold-or-unfold                       _dt_: dom-traverse
 	  )
 
 
+(defun change-web-mode ()
+  (interactive)
+  (web-mode))
+(global-set-key (kbd "C-c m w") 'change-web-mode)
+
+
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;; CSS
+;;; CSS/SCSS
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; css-mode
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 (defun setup-css-mode()
   (setq indent-tabs-mode nil)
   (setq css-indent-offset 2)
@@ -339,17 +344,13 @@ _ef_: element-children-fold-or-unfold                       _dt_: dom-traverse
   )
 (add-hook 'css-mode-hook 'setup-css-mode)
 
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(add-hook 'scss-mode-hook 'setup-css-mode)
 
-(defun toggle-jsx-css-mode ()
-  "rjsxモードとcssモードをトグル"
+(defun change-scss-mode ()
   (interactive)
-  (with-current-buffer (buffer-name)  major-mode
-		       (cond ((equal major-mode 'rjsx-mode)
-			      (css-mode))
-			     (t
-			      (rjsx-mode))
-			     )))
-(global-set-key (kbd "C-c c s") 'toggle-jsx-css-mode)
+  (scss-mode))
+(global-set-key (kbd "C-c m s") 'change-scss-mode)
 
 
 ;;; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -402,10 +403,16 @@ _jb_: jump-back
             (setq js2-mode-show-strict-warnings       nil)
 	    (setq js-indent-level 2)
 	    (setup-tide-mode)
-	    (js2-refactor-mode)
             (setq-default js2-global-externs '("module" "require" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "__dirname" "console" "JSON" "location" "fetch")) ;指定した文字列の警告をオフ
+	    (when (string-equal "vue" (file-name-extension buffer-file-name))
+	      (global-flycheck-mode -1)
+	      )
 	    ))
 
+(defun change-js2-mode ()
+  (interactive)
+  (js2-mode))
+(global-set-key (kbd "C-c m j") 'change-js2-mode)
 
 ;; rjsx-mode
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
@@ -754,4 +761,4 @@ _M-p_: Unmark  _M-n_: Unmark  _r_: Mark by regexp
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (alchemist elixir-mode yasnippet-snippets yaml-mode web-mode undo-tree tide smartparens rjsx-mode react-snippets quickrun prettier-js popwin open-junk-file lispxmp js2-refactor hydra helm-swoop helm-projectile godoctor go-guru go-eldoc expand-region edit-indirect dockerfile-mode crux company-web company-statistics company-go color-theme-solarized avy ace-isearch))))
+    (scss-mode alchemist elixir-mode yasnippet-snippets yaml-mode web-mode undo-tree tide smartparens rjsx-mode react-snippets quickrun prettier-js popwin open-junk-file lispxmp js2-refactor hydra helm-swoop helm-projectile godoctor go-guru go-eldoc expand-region edit-indirect dockerfile-mode crux company-web company-statistics company-go color-theme-solarized avy ace-isearch))))
