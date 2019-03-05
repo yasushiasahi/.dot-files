@@ -3,8 +3,10 @@ export GOROOT=`go env GOROOT`
 export GOPATH="$HOME/dev"
 export PATH="$PATH:$GOPATH/bin"
 
+export GOOGLE_APPLICATION_CREDENTIALS=~/dev/src/bitbucket.org/karabinertech_pr39/pr39_app_ex/config/test_backet.json
+
 # postgres
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
+# export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
 
 # # erlang
 # export PATH="$PATH:$HOME/erlang/19.3/bin"

@@ -47,6 +47,14 @@ export TERM=xterm-256color
 # emacsを標準エディターにする
 export EDITOR=emacs
 
+#pecoでhistory検索
+function peco-select-history() {
+  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
 # 補完候補のファイル、ディレクトリにlsと同様の色付け
 if [ -n "$LS_COLORS" ]; then
