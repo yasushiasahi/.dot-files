@@ -1,5 +1,5 @@
 # Golang
-export GOROOT=`go env GOROOT`
+export GOROOT=$(go env GOROOT)
 export GOPATH="$HOME/dev"
 export PATH="$PATH:$GOPATH/bin"
 
