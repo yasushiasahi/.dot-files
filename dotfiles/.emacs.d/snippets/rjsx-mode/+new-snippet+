@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: bind
-# key: bind
-# --
-this.${1:methodNme} = this.${2:methodNme}.bind(this)

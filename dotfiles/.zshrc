@@ -61,17 +61,30 @@ if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
+#id_rsa置きかけ
+function asahi-git() {
+    rm ~/.ssh/id_rsa
+    cp ~/.ssh/id_rsa-asahi ~/.ssh/id_rsa
+    echo "u r asaji"
+}
+function ajike-git() {
+    rm ~/.ssh/id_rsa
+    cp ~/.ssh/id_rsa_ajike ~/.ssh/id_rsa
+    echo "u r ajike"
+}
+
+
 # alias >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-scripts_path=~/.dot-files/scripts
+scripts_path=$HOME/ghq/github.com/yasushiasahi/.dot-files/scripts
 
 # lsの色の設定 https://qiita.com/yuyuchu3333/items/84fa4e051c3325098be3
 case ${OSTYPE} in
     darwin*) # macosの場合
-        eval $(gdircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
+        eval $(gdircolors $HOME/ghq/github.com/yasushiasahi/.dot-files/etc/dircolors.ansi-dark)
 	alias ls='gls -AlXh --color=auto'
         ;;
     linux*) # linuxの場合
-        eval $(dircolors $HOME/.dot-files/etc/dircolors.ansi-dark)
+        eval $(dircolors  $HOME/ghq/github.com/yasushiasahi/.dot-files/etc/dircolors.ansi-dark)
 	alias ls='ls -AlXh --color=auto'
         ;;
 esac
