@@ -1,0 +1,47 @@
+## .gitignore
+
+# download packages
+/site-lisp
+/elpa
+/el-get
+/auto-install
+
+# compiled files
+*.elc
+
+# Makefile dummy file
+/.make
+
+# cask temporally folder
+/.cask
+
+# unneeded files
+/recentf
+/places
+/projectile*
+/persp-confs
+/skk
+/transient
+/prescient
+/session*
+/image-dired
+/themes
+/tramp
+/custom.el
+/request
+.lsp*
+/.cache/
+/bookmarks
+/eshell
+/elpy/
+/epkgs/
+/forge-database.sqlite
+/url/
+
+
+.DS_Store
+/backups/*
+!/backups/.gitkeep
+/var/
+/auto-save-list/
+/amx-items
