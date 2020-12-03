@@ -129,4 +129,12 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # zsh-autosuggestionsの文字色を変更 default='fg=8'
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+
+# emacs vtermの設定
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+    . "$(find ~/.emacs.d/elpa -maxdepth 1 -name 'vterm-*')/etc/emacs-vterm-zsh.sh"
+fi
+
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd (){ print -Pn "\e]2;%~\a" }
