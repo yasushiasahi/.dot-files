@@ -296,7 +296,19 @@
   :tag "emulation" "convenience"
   :added "2020-12-02"
   :url "http://github.com/joaotavora/yasnippet"
-  :ensure t)
+  :ensure t
+  :global-minor-mode yas-global-mode)
+
+(leaf yasnippet-snippets
+  :doc "Collection of yasnippet snippets"
+  :req "yasnippet-0.8.0"
+  :tag "snippets"
+  :added "2020-12-15"
+  :url "https://github.com/AndreaCrotti/yasnippet-snippets"
+  :ensure t
+  :after yasnippet)
+
+
 
 (leaf company
   :doc "Modular text completion framework"
@@ -472,6 +484,16 @@
                                  lambda (_caller)
                                  (/ (frame-height) 3)))))
   :global-minor-mode t)
+
+(leaf ivy-yasnippet
+  :doc "Preview yasnippets with ivy"
+  :req "emacs-24.1" "cl-lib-0.6" "ivy-0.10.0" "yasnippet-0.12.2" "dash-2.14.1"
+  :tag "convenience" "emacs>=24.1"
+  :added "2020-12-15"
+  :url "https://github.com/mkcms/ivy-yasnippet"
+  :emacs>= 24.1
+  :ensure t
+  :after ivy yasnippet)
 
 (leaf ivy-rich
   :doc "More friendly display transformer for ivy"
@@ -865,10 +887,7 @@
   :ensure t
   :after deferred
   :config
-  (ascmd:add '("/Users/zero.asahi/dev/src/github.com/karabiner-tokushimaru/tokushimaru_portal_system_source/resources/views/tokushimaru/**/.*\.blade.php"       "blade-formatter --w $FILE")))
-
-
-
+  (ascmd:add '("/Users/zero.asahi/ghq/github.com/karabiner-tokushimaru/tokushimaru_portal_system_source/resources/views/**/.*\.blade.php"       "blade-formatter --w $FILE")))
 
 (leaf scss-mode
   :doc "Major mode for editing SCSS files"
@@ -931,6 +950,14 @@
                            (setq tab-width 4)
                            (lsp-deferred)))
          (before-save-hook . gofmt-before-save)))
+
+(leaf yaml-mode
+  :doc "Major mode for editing YAML files"
+  :req "emacs-24.1"
+  :tag "yaml" "data" "emacs>=24.1"
+  :added "2020-12-15"
+  :emacs>= 24.1
+  :ensure t)
 
 
 
