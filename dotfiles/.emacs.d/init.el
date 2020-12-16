@@ -290,6 +290,15 @@
   :emacs>= 24.3
   :ensure t)
 
+(leaf beacon
+  :doc "Highlight the cursor whenever the window scrolls"
+  :req "seq-2.14"
+  :tag "convenience"
+  :added "2020-12-15"
+  :url "https://github.com/Malabarba/beacon"
+  :ensure t
+  :global-minor-mode t)
+
 (leaf yasnippet
   :doc "Yet another snippet extension for Emacs"
   :req "cl-lib-0.5"
@@ -493,7 +502,8 @@
   :url "https://github.com/mkcms/ivy-yasnippet"
   :emacs>= 24.1
   :ensure t
-  :after ivy yasnippet)
+  :after ivy yasnippet
+  :bind (("C-c y" . ivy-yasnippet)))
 
 (leaf ivy-rich
   :doc "More friendly display transformer for ivy"
@@ -740,9 +750,15 @@
   :added "2020-10-29"
   :url "http://www.emacswiki.org/cgi-bin/wiki/download/open-junk-file.el"
   :ensure t
+  :preface
+  (setq my-open-junk-file-format
+        (format "%s%s"
+                (string-trim (shell-command-to-string "ghq root"))
+                "/github.com/yasushiasahi/junkfiles/%Y/%m/%d-%H%M%S."))
   :bind (("C-c j" . open-junk-file))
-  :custom ((open-junk-file-find-file-function . 'find-file))
-  )
+  :custom ((open-junk-file-find-file-function . 'find-file)
+           (open-junk-file-format . my-open-junk-file-format)))
+
 
 (leaf multiple-cursors
   :doc "Multiple cursors for Emacs."
@@ -948,7 +964,8 @@
   :custom ((gofmt-command . "goimports"))
   :hook ((go-mode-hook . (lambda ()
                            (setq tab-width 4)
-                           (lsp-deferred)))
+                           (lsp-deferred)
+                           (setq lsp-diagnostics-provider :none)))
          (before-save-hook . gofmt-before-save)))
 
 (leaf yaml-mode
