@@ -135,6 +135,11 @@
   :config
   (delete-selection-mode t))
 
+(leaf delsel
+  :doc "delete selection if you insert"
+  :tag "builtin"
+  :global-minor-mode delete-selection-mode)
+
 (leaf leaf-convert
   :hook ((before-save-hook . delete-trailing-whitespace)))
 
