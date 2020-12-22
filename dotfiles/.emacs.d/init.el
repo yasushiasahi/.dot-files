@@ -123,7 +123,7 @@
 	       ("C-q")
 	       ("C-\\")
 	       ("C-m" . newline-and-indent)
-	       ("C-x ?" . help-command)
+	       ("M-/" . help-command)
 	       ("C-^" . universal-argument)
 	       ("C-M-d" . kill-word)
 	       ("C-c l" . toggle-truncate-lines)
@@ -170,45 +170,43 @@
   (prefer-coding-system 'utf-8)
   (set-default-coding-systems 'utf-8)
   (set-keyboard-coding-system 'utf-8)
-  (set-face-attribute 'default nil :family "Cascadia Code" :height 150)
-  (set-fontset-font nil 'japanese-jisx0208
-                    (font-spec :family "Noto Sans CJK JP"))
-  ;; リガチャ設定 https://github.com/tonsky/FiraCode/wiki/Emacs-instructions
-  (when (window-system)
-    (set-frame-font "Cascadia Code"))
-  (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
-                 (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
-                 (36 . ".\\(?:>\\)")
-                 (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
-                 (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
-                 (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
-                 (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
-                 (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
-                 (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
-                 (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
-                 (48 . ".\\(?:x[a-zA-Z]\\)")
-                 (58 . ".\\(?:::\\|[:=]\\)")
-                 (59 . ".\\(?:;;\\|;\\)")
-                 (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
-                 (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
-                 (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
-                 (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
-                 (91 . ".\\(?:]\\)")
-                 (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
-                 (94 . ".\\(?:=\\)")
-                 (119 . ".\\(?:ww\\)")
-                 (123 . ".\\(?:-\\)")
-                 (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-                 (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
-                 )
-               ))
-    (dolist (char-regexp alist)
-      (set-char-table-range composition-function-table (car char-regexp)
-                            `([,(cdr char-regexp) 0 font-shape-gstring])))))
+  ;; (set-fontset-font nil 'japanese-jisx0208
+  ;;                   (font-spec :family "Noto Sans CJK JP"))
 
-
-
-
+  (when (some (lambda (family)
+                (equal family "Fira Codef"))
+              (font-family-list))
+    (set-face-attribute 'default nil :family "Fira Code" :weight 'normal :height 150)
+    ;; リガチャ設定 https://github.com/tonsky/FiraCode/wiki/Emacs-instructions
+    (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
+                   (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
+                   (36 . ".\\(?:>\\)")
+                   (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
+                   (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
+                   (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
+                   (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
+                   (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
+                   (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+                   (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
+                   (48 . ".\\(?:x[a-zA-Z]\\)")
+                   (58 . ".\\(?:::\\|[:=]\\)")
+                   (59 . ".\\(?:;;\\|;\\)")
+                   (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
+                   (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
+                   (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
+                   (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
+                   (91 . ".\\(?:]\\)")
+                   (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
+                   (94 . ".\\(?:=\\)")
+                   (119 . ".\\(?:ww\\)")
+                   (123 . ".\\(?:-\\)")
+                   (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
+                   (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
+                   )
+                 ))
+      (dolist (char-regexp alist)
+        (set-char-table-range composition-function-table (car char-regexp)
+                              `([,(cdr char-regexp) 0 font-shape-gstring]))))))
 
 (leaf leaf-convert
   :setq ((inhibit-startup-screen . t)
@@ -461,6 +459,7 @@
   :ensure t
   :after all-the-icons ivy
   :custom ((all-the-icons-ivy-file-commands . '(counsel-find-file
+                                                counsel-imenu
 					                                      counsel-file-jump
 					                                      counsel-recentf
 					                                      counsel-ibuffer
@@ -470,6 +469,7 @@
 					                                      counsel-projectile-find-dir
 					                                      ivy-switch-buffer))
            (all-the-icons-ivy-buffer-commands . '(counsel-find-file
+                                                  counsel-imenu
 					                                        counsel-file-jump
 					                                        counsel-recentf
 					                                        counsel-ibuffer
@@ -566,6 +566,7 @@
   :ensure t
   :after swiper
   :bind (("M-C-r" . counsel-recentf)
+         ("C-c i" . counsel-imenu)
          ("C-x C-b" . counsel-ibuffer)
          ("C-x b" . counsel-switch-buffer))
   :custom ((counsel-find-file-ignore-regexp (regexp-opt completion-ignored-extensions)))
@@ -639,6 +640,12 @@
   :ensure t
   :global-minor-mode global-undo-tree-mode)
 
+(leaf restclient
+  :doc "An interactive HTTP client for Emacs"
+  :tag "http"
+  :added "2020-12-18"
+  :ensure t)
+
 (leaf which-key
   :doc "Display available keybindings in popup"
   :req "emacs-24.4"
@@ -711,17 +718,6 @@
 (leaf leaf-convert
   :setq ((scroll-conservatively . 1)))
 
-(leaf vterm
-  :doc "Fully-featured terminal emulator"
-  :req "emacs-25.1"
-  :tag "terminals" "emacs>=25.1"
-  :added "2020-11-27"
-  :url "https://github.com/akermu/emacs-libvterm"
-  :emacs>= 25.1
-  :ensure t
-  :custom ((vterm-buffer-name-string . "vt %s"))
-  :bind ((:vterm-mode-map
-          ("C-t" . hydra-window/body))))
 
 (leaf goto-chg
   :doc "goto last change"
@@ -828,6 +824,15 @@
   :ensure t
   :after with-editor
   :custom ((magit-completing-read-function . 'ivy-completing-read)))
+
+(leaf kubernetes
+  :doc "Magit-like porcelain for Kubernetes."
+  :req "emacs-25.1" "dash-2.12.0" "magit-2.8.0" "magit-popup-2.13.0"
+  :tag "emacs>=25.1"
+  :added "2020-12-19"
+  :emacs>= 25.1
+  :ensure t
+  :after magit magit-popup)
 
 (leaf add-node-modules-path
   :doc  "Add node_modules to your exec-path"
@@ -980,6 +985,18 @@
   :added "2020-12-15"
   :emacs>= 24.1
   :ensure t)
+
+(leaf vterm
+  :doc "Fully-featured terminal emulator"
+  :req "emacs-25.1"
+  :tag "terminals" "emacs>=25.1"
+  :added "2020-11-27"
+  :url "https://github.com/akermu/emacs-libvterm"
+  :emacs>= 25.1
+  :ensure t
+  :custom ((vterm-buffer-name-string . "vt %s"))
+  :bind ((:vterm-mode-map
+          ("C-t" . hydra-window/body))))
 
 
 

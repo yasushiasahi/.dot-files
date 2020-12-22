@@ -138,3 +138,4 @@ fi
 
 autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd (){ print -Pn "\e]2;%~\a" }
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
