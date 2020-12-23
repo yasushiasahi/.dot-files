@@ -22,4 +22,5 @@
         hydra-multiple-cursors/mc/mark-all-like-this-and-exit
         hydra-multiple-cursors/mc/mark-next-like-this
         hydra-multiple-cursors/mc/skip-to-next-like-this
+        sp-remove-active-pair-overlay
         ))

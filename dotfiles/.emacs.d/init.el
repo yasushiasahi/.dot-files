@@ -174,7 +174,7 @@
   ;;                   (font-spec :family "Noto Sans CJK JP"))
 
   (when (some (lambda (family)
-                (equal family "Fira Codef"))
+                (equal family "Fira Code"))
               (font-family-list))
     (set-face-attribute 'default nil :family "Fira Code" :weight 'normal :height 150)
     ;; リガチャ設定 https://github.com/tonsky/FiraCode/wiki/Emacs-instructions
@@ -947,9 +947,9 @@
 	         (web-mode-enable-auto-closing . t)
 	         (web-mode-enable-auto-expanding . t)
 	         (web-mode-comment-style . 2))
-  ;; :config
-  ;; (add-to-list 'web-mode-comment-formats '("jsx" . "//" ))
-  ;; (add-to-list 'web-mode-comment-formats '("javascript" . "//" ))
+  :config
+  (add-to-list 'web-mode-comment-formats '("jsx" . "//" ))
+  (add-to-list 'web-mode-comment-formats '("javascript" . "//" ))
   )
 
 ;; (leaf jsx-mode
