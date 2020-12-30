@@ -32,6 +32,9 @@ brew "anyenv"
 # zshのプラグイン管理
 brew "zplug"
 
+# rmの代替コマンドrmせずにゴミ箱に送る
+brew "trash"
+
 # 言わずもがな
 brew "git"
 brew "tree"
