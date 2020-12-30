@@ -1,0 +1,56 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+
+# emacs vterm-modeのビルドで必要
+brew "cmake"
+
+# 色付きdiffコマンド diffのエイリアスにしている
+brew "colordiff"
+
+# 何かを色付するために必要
+brew "coreutils"
+
+# ファイル検索
+brew "fzf"
+
+# これがないと生きていけない
+brew "ghq"
+
+# 言わずもがな
+brew "git"
+
+# JSONを綺麗に出力してくれる
+brew "jq"
+
+# ghqと組み合わせて使っている
+brew "peco"
+
+# 言わずもがな
+brew "tree"
+
+# 言わずもがな
+brew "wget"
+
+# 言わずもがな
+brew "zsh"
+
+
+cask "1password"
+cask "alfred"
+cask "biscuit"
+cask "coteditor"
+cask "docker"
+cask "emacs"
+cask "figma"
+cask "font-fira-code"
+cask "font-noto-sans-cjk-jp"
+cask "google-chrome"
+cask "google-cloud-sdk"
+cask "google-japanese-ime"
+cask "gyazo"
+cask "iterm2"
+cask "kindle"
+cask "transmit"
