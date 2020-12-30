@@ -1,21 +1,9 @@
-# Golang
-export GOROOT=$(go env GOROOT)
-export GOPATH="$HOME/dev"
-export PATH="$PATH:$GOPATH/bin"
+# XDG Base Directory の設定 https://wiki.archlinux.org/index.php/XDG_Base_Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
 
-export GOOGLE_APPLICATION_CREDENTIALS=~/dev/src/bitbucket.org/karabinertech_pr39/pr39_app_ex/config/test_backet.json
-
-# postgres
-# export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
-
-# # erlang
-# export PATH="$PATH:$HOME/erlang/19.3/bin"
-
-# # kiex
-# source $HOME/.kiex/scripts/kiex
-
-# # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/asahi/Desktop/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/asahi/Desktop/google-cloud-sdk/path.zsh.inc'; fi
-
-# # The next line enables shell command completion for gcloud.
-# if [ -f '/Users/asahi/Desktop/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/asahi/Desktop/google-cloud-sdk/completion.zsh.inc'; fi
+# zshの設定ファイル郡の場所を指示
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"

@@ -1,13 +1,14 @@
-# PATH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+# dockerのファイル群の場所
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
 # /usr/local/を優先に
 export PATH="/usr/local/bin:$PATH"
 
-# export PATH="/usr/local/opt/openssl/bin:$PATH" なぜ設定してたのか解らない。
-# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PATH
+# go module mode
+export GO111MODULE=on
+
+# anyenvの初期化
+eval "$(anyenv init -)"
 
 
 # 日本語を使用
@@ -17,9 +18,9 @@ export LANG=ja_JP.UTF-8
 bindkey -e
 
 # history
-HISTFILE=~/.zsh_hist
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTFILE="$XDG_CONFIG_HOME/zsh/.zsh_hist"
+export HISTSIZE=10000
+export SAVEHIST=10000
 setopt extended_history #ヒストリに実行時間も保存
 setopt hist_ignore_dups #直前と同じコマンドはヒストリに追加しない
 
@@ -100,7 +101,7 @@ alias gh='cd $(ghq list -p | peco)'
 
 
 # zplug >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-source ~/.zplug/init.zsh
+source /usr/local/opt/zplug/init.zsh
 # theme
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
@@ -133,7 +134,7 @@ prompt pure
 
 # emacs vtermの設定
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-    . "$(find ~/.emacs.d/elpa -maxdepth 1 -name 'vterm-*')/etc/emacs-vterm-zsh.sh"
+    . "$(find $XDG_CONFIG_HOME/emacs/elpa -maxdepth 1 -name 'vterm-*')/etc/emacs-vterm-zsh.sh"
 fi
 
 autoload -U add-zsh-hook

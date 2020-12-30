@@ -6,6 +6,7 @@ tap "homebrew/core"
 
 # emacs vterm-modeのビルドで必要
 brew "cmake"
+brew "libtool"
 
 # 色付きdiffコマンド diffのエイリアスにしている
 brew "colordiff"
@@ -19,22 +20,22 @@ brew "fzf"
 # これがないと生きていけない
 brew "ghq"
 
-# 言わずもがな
-brew "git"
-
 # JSONを綺麗に出力してくれる
 brew "jq"
 
 # ghqと組み合わせて使っている
 brew "peco"
 
+# 言語のバージョン管理のバージョン管理
+brew "anyenv"
+
+# zshのプラグイン管理
+brew "zplug"
+
 # 言わずもがな
+brew "git"
 brew "tree"
-
-# 言わずもがな
 brew "wget"
-
-# 言わずもがな
 brew "zsh"
 
 

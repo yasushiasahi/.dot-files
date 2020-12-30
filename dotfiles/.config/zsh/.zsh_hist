@@ -1,0 +1,98 @@
+: 1609336487:0;ls 
+: 1609336500:0;ls .config
+: 1609336512:0;exec $SHELL -l
+: 1609336640:0;ls -al
+: 1609336650:0;ls .emacs.d
+: 1609336662:0;rm -rf .emacs.d
+: 1609336663:0;ls
+: 1609336747:0;ls .anyenv
+: 1609336762:0;ls .anyenv/envs
+: 1609337119:0;exec $SHELL -l
+: 1609337603:0;ls
+: 1609337609:0;rm .zsh_history
+: 1609337611:0;ls
+: 1609337687:0;exit
+: 1609337776:0;git config
+: 1609337782:0;git user
+: 1609337809:0;git config --get name
+: 1609337815:0;git config --get user
+: 1609337823:0;cat .gitconfig
+: 1609337828:0;git user
+: 1609337857:0;git config --get user
+: 1609337871:0;git config --get color
+: 1609337875:0;git config color
+: 1609337878:0;git config user
+: 1609337912:0;git config --get-all
+: 1609337985:0;git config user.name
+: 1609337994:0;git config user.email
+: 1609337999:0;gh
+: 1609338008:0;cd dotfiles
+: 1609338014:0;cd .config
+: 1609338021:0;mkdir git
+: 1609338024:0;ls
+: 1609338060:0;mv ../.gitconfig git/config
+: 1609338064:0;ls git
+: 1609338067:0;cd ..
+: 1609338075:0;cd ~
+: 1609338081:0;rm .gitconfig
+: 1609338082:0;ls
+: 1609338090:0;exec $SHELL -l
+: 1609338094:0;git config user.email
+: 1609338100:0;git config user.name
+: 1609338103:0;ls
+: 1609338123:0;ls .docker
+: 1609338270:0;docker images
+: 1609338272:0;ls
+: 1609338276:0;rm .docker
+: 1609338279:0;rm -rf .docker
+: 1609338280:0;ls
+: 1609338299:0;exec $SHELL -l
+: 1609338302:0;ls -al
+: 1609338308:0;ls
+: 1609338316:0;docker images
+: 1609338324:0;docker container ls
+: 1609338328:0;ls .config
+: 1609338340:0;ls -al .config
+: 1609338349:0;cd .config
+: 1609338377:0;ls
+: 1609338382:0;cd ..
+: 1609338384:0;ls
+: 1609338391:0;env
+: 1609338447:0;env | grep docker
+: 1609338459:0;exec $SHELL -l
+: 1609338465:0;env | grep docker
+: 1609338484:0;exec $SHELL -l
+: 1609338493:0;env | grep docker
+: 1609338507:0;env | grep zsh
+: 1609338548:0;exec $SHELL -l
+: 1609338553:0;env | grep zsh
+: 1609338557:0;env | grep docker
+: 1609338592:0;cat .zshenv
+: 1609338596:0;ls
+: 1609338616:0;rm .zsh_hist
+: 1609338617:0;ls
+: 1609338716:0;exec $SHELL -l
+: 1609338723:0;env | grep docker
+: 1609338729:0;ls
+: 1609338733:0;rm -rf .docker
+: 1609338759:0;ls
+: 1609338774:0;gh
+: 1609338782:0;ls dotfiles/.config
+: 1609338810:0;ls dotfiles/.config/anyenv
+: 1609338965:0;gh
+: 1609338968:0;ls
+: 1609338972:0;git status
+: 1609339015:0;cat .gitignore
+: 1609339072:0;cd dotfiles/.config/emacs
+: 1609339079:0;cat .gitignore
+: 1609339112:0;cat ../../../.gitignore
+: 1609339167:0;git status
+: 1609339186:0;cd ../../../
+: 1609339190:0;git status
+: 1609339223:0;cd dotfiles/.config
+: 1609339277:0;git status
+: 1609339293:0;cd ../
+: 1609339296:0;ls
+: 1609339300:0;cd ..
+: 1609339303:0;git status
+: 1609339333:0;git add .
