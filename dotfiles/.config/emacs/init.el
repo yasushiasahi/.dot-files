@@ -97,6 +97,8 @@
 (leaf leaf-convert
   :custom ((inhibit-startup-screen . t)))
 
+(setq visible-bell t)
+
 (leaf recentf
   :custom
   `((recentf-max-saved-items . 128)

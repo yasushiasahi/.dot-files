@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: for counter
+# key: counter
+# contributor : @yasushiasahi
+# --
+for i := ${1:from}; i < ${2:to}; i++ {
+    $0
+}

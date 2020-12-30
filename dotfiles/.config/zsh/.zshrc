@@ -95,6 +95,7 @@ alias diff='colordiff' # 色付きのdiffを使用
 alias cd='source ${scripts_path}/cdls.sh' # cdした後に自動でlsする
 alias mdcd='source ${scripts_path}/mdcd.sh' # mdcd hoge でhogeディレクトリを作って移動する
 alias gh='cd $(ghq list -p | peco)'
+alias rm='trash'
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< alias
 
