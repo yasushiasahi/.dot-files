@@ -105,3 +105,9 @@
 : 1609339466:0;git status
 : 1609339493:0;git diff
 : 1609339524:0;git add .
+: 1609339531:0;git commit -m "zsh"
+: 1609339538:0;git diff
+: 1609339574:0;ls
+: 1609339610:0;cat .gitignore
+: 1609339663:0;git status
+: 1609339680:0;git add .
