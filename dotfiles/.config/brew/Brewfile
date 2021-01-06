@@ -16,6 +16,7 @@ brew "coreutils"
 
 # ファイル検索
 brew "fzf"
+brew "ag"
 
 # これがないと生きていけない
 brew "ghq"
