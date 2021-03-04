@@ -65,9 +65,6 @@
   :config
   (exec-path-from-shell-initialize))
 
-(leaf leaf-convert
-  :setq-default ((truncate-lines . t)))
-
 (leaf leaf
   :config
   (leaf leaf-convert :ensure t)
@@ -84,6 +81,10 @@
   :doc "tools for customizing Emacs and Lisp packages"
   :tag "builtin" "faces" "help"
   :custom `((custom-file . ,(locate-user-emacs-file "custom.el"))))
+
+
+(leaf 画面の右端で折り返すか否か
+  :setq-default ((truncate-lines . t)))
 
 (leaf leaf-convert
   :setq ((create-lockfiles))
@@ -930,7 +931,7 @@
   :url "http://web-mode.org"
   :emacs>= 23.1
   :ensure t
-  :mode ("\\.html\\'" "\\.php\\'" "\\.tsx\\'" "\\.jsx\\'" "\\.vue\\'" "\\.xml\\'")
+  :mode ("\\.html\\'" "\\.php\\'" "\\.jsx\\'" "\\.vue\\'" "\\.xml\\'")
   :custom ((web-mode-attr-indent-offset)
 	         (web-mode-markup-indent-offset . 2)
 	         (web-mode-css-indent-offset . 2)
@@ -962,7 +963,50 @@
   :url "http://github.com/ananthakumaran/typescript.el"
   :emacs>= 24.3
   :ensure t
-  :custom ((typescript-indent-level . 2)))
+  :mode ("\\.ts\\'" "\\.tsx\\'")
+  :custom ((typescript-indent-level . 2))
+  :config
+  (add-hook 'typescript-mode-hook
+          (lambda ()
+            (interactive)
+            (add-node-modules-path)
+            (lsp-deferred)
+            (prettier-js-mode)
+            (mmm-mode)
+            ))
+  )
+
+(leaf mmm-mode
+  :doc "Allow Multiple Major Modes in a buffer"
+  :req "cl-lib-0.2"
+  :tag "tools" "languages" "faces" "convenience"
+  :added "2021-02-28"
+  :url "https://github.com/purcell/mmm-mode"
+  :ensure t
+  :config
+  (setq mmm-global-mode t)
+  (setq mmm-submode-decoration-level 0)
+  (mmm-add-classes
+   '((mmm-jsx-mode
+      :submode web-mode
+      :face mmm-code-submode-face
+      :front "\\(return\s\\|n\s\\|(\n\s*\\)<"
+      :front-offset -1
+      :back ">\n?\s*)\n}\n"
+      :back-offset 1
+      )))
+  (mmm-add-mode-ext-class 'typescript-mode nil 'mmm-jsx-mode)
+
+  (defun mmm-reapply ()
+    (mmm-mode)
+    (mmm-mode))
+
+  (add-hook 'after-save-hook
+            (lambda ()
+              (when (string-match-p "\\.tsx?" buffer-file-name)
+                (mmm-reapply)
+                )))
+  )
 
 (leaf go-mode
   :doc "Major mode for the Go programming language"
