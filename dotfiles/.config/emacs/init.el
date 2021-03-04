@@ -984,7 +984,8 @@
   :url "https://github.com/purcell/mmm-mode"
   :ensure t
   :config
-  (setq mmm-global-mode t)
+  (require 'mmm-mode)
+  (setq mmm-global-mode 'maybe)
   (setq mmm-submode-decoration-level 0)
   (mmm-add-classes
    '((mmm-jsx-mode
@@ -1007,6 +1008,8 @@
                 (mmm-reapply)
                 )))
   )
+
+
 
 (leaf go-mode
   :doc "Major mode for the Go programming language"
