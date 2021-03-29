@@ -851,19 +851,16 @@
   :emacs>= 26.1
   :ensure t
   :after spinner markdown-mode lv
-  :hook ((lsp-mode-hook . lsp-enable-which-key-integration)
-         (web-mode-hook. lsp-deferred)
-         (css-mode-hook. lsp-deferred)
-         (scss-mode-hook. lsp-deferred)
-         (typescript-mode-hook . lsp-deferred))
-  :custom ((gc-cons-threshold . 100000000)
+  :hook (lsp-mode-hook . lsp-enable-which-key-integration)
+  :custom ((gc-cons-threshold . 1600000)
+           ;(read-process-output-max . 12800000)
+           (lsp-enable-file-watchers . nil)
 	         (lsp-idle-delay . 0.5)
 	         (lsp-response-timeout . 5)
 	         (lsp-completion-provider . :capf)
 	         (lsp-prefer-capf . t)
-           (lsp-keymap-prefix . "C-c l"))
-  :config
-  (setq read-process-output-max (* 1024 1024)))
+           (lsp-keymap-prefix . "C-c l")
+           (lsp-enable-indentation . nil)))
 
 (leaf lsp-ui
   :doc "UI modules for lsp-mode"
@@ -898,6 +895,19 @@
   :after treemacs lsp-mode
   :commands lsp-treemacs-errors-list)
 
+(leaf lsp-tailwindcss
+  :doc "A lsp-mode client for tailwindcss"
+  :req "lsp-mode-3.0" "emacs-24.3"
+  :tag "tools" "language" "emacs>=24.3"
+  :added "2021-03-24"
+  :url "https://github.com/merrickluo/lsp-tailwindcss"
+  :emacs>= 24.3
+  :ensure t
+  :after lsp-mode
+  :config
+  (setq lsp-tailwindcss-add-on-mode t)
+  (require 'lsp-tailwindcss))
+
 (leaf prettier-js
   :doc "Minor mode to format JS code on file save"
   :tag "js" "edit" "wp" "convenience"
@@ -915,6 +925,21 @@
   :config
   (ascmd:add '("/Users/zero.asahi/ghq/github.com/karabiner-tokushimaru/tokushimaru_portal_system_source/resources/views/**/.*\.blade.php"       "blade-formatter --w $FILE")))
 
+(leaf reformatter
+  :doc "Define commands which run reformatters on the current buffer"
+  :req "emacs-24.3"
+  :tag "tools" "convenience" "emacs>=24.3"
+  :added "2021-03-09"
+  :url "https://github.com/purcell/reformatter.el"
+  :emacs>= 24.3
+  :ensure t
+  :config
+  (reformatter-define eslint-fix
+    :program "yarn"
+    :args (list "eslint" (buffer-file-name) "--fix"))
+
+  )
+
 (leaf scss-mode
   :doc "Major mode for editing SCSS files"
   :tag "mode" "css" "scss"
@@ -931,8 +956,8 @@
   :url "http://web-mode.org"
   :emacs>= 23.1
   :ensure t
-  :mode ("\\.html\\'" "\\.php\\'" "\\.jsx\\'" "\\.vue\\'" "\\.xml\\'")
-  :custom ((web-mode-attr-indent-offset)
+  :mode ("\\.html\\'" "\\.php\\'" "\\.jsx\\'" "\\.tsx\\'" "\\.vue\\'" "\\.xml\\'")
+  :custom ((web-mode-attr-indent-offset . nil)
 	         (web-mode-markup-indent-offset . 2)
 	         (web-mode-css-indent-offset . 2)
 	         (web-mode-code-indent-offset . 2)
@@ -950,10 +975,19 @@
   :config
   (add-to-list 'web-mode-comment-formats '("jsx" . "//" ))
   (add-to-list 'web-mode-comment-formats '("javascript" . "//" ))
-  )
+  :hook (web-mode-hook . (lambda ()
+                           (add-node-modules-path)
+                           (prettier-js-mode)
+                           (when (string-suffix-p ".tsx" buffer-file-name)
+                             (lsp)
+                             (flycheck-select-checker 'javascript-eslint)))))
 
-;; (leaf jsx-mode
-;;   :mode ("\\.jsx\\'" "\\.tsx\\'" "\\.ts\\'" "\\.js\\'"))
+(leaf emmet-mode
+  :doc "Unofficial Emmet's support for emacs"
+  :tag "convenience"
+  :added "2021-03-09"
+  :url "https://github.com/smihica/emmet-mode"
+  :ensure t)
 
 (leaf typescript-mode
   :doc "Major mode for editing typescript"
@@ -963,18 +997,16 @@
   :url "http://github.com/ananthakumaran/typescript.el"
   :emacs>= 24.3
   :ensure t
-  :mode ("\\.ts\\'" "\\.tsx\\'")
   :custom ((typescript-indent-level . 2))
+  :mode ("\\.tsx\\'" "\\.ts\\'")
   :config
   (add-hook 'typescript-mode-hook
           (lambda ()
-            (interactive)
             (add-node-modules-path)
-            (lsp-deferred)
-            (prettier-js-mode)
             (mmm-mode)
-            ))
-  )
+            (emmet-mode)
+            (prettier-js-mode)
+            (lsp))))
 
 (leaf mmm-mode
   :doc "Allow Multiple Major Modes in a buffer"

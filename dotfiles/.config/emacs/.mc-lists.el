@@ -6,6 +6,7 @@
         crux-kill-whole-line
         crux-move-beginning-of-line
         forward-sentence
+        hydra-window/body
         ivy-occur-revert-buffer
         kill-region
         mark-sexp
@@ -14,6 +15,7 @@
         sp-kill-hybrid-sexp
         web-mode-element-rename
         web-mode-element-vanish
+        web-mode-element-wrap
         ))
 
 (setq mc/cmds-to-run-once
@@ -22,5 +24,6 @@
         hydra-multiple-cursors/mc/mark-all-like-this-and-exit
         hydra-multiple-cursors/mc/mark-next-like-this
         hydra-multiple-cursors/mc/skip-to-next-like-this
+        markdown-outdent-or-delete
         sp-remove-active-pair-overlay
         ))
