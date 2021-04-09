@@ -852,8 +852,8 @@
   :ensure t
   :after spinner markdown-mode lv
   :hook (lsp-mode-hook . lsp-enable-which-key-integration)
-  :custom ((gc-cons-threshold . 1600000)
-           ;(read-process-output-max . 12800000)
+  :custom ((gc-cons-threshold . 6400000)
+           (read-process-output-max . 12800000)
            (lsp-enable-file-watchers . nil)
 	         (lsp-idle-delay . 0.5)
 	         (lsp-response-timeout . 5)
@@ -1005,6 +1005,7 @@
             (add-node-modules-path)
             (mmm-mode)
             (emmet-mode)
+            (setq emmet-expand-jsx-className? t)
             (prettier-js-mode)
             (lsp))))
 
@@ -1021,13 +1022,11 @@
   (setq mmm-submode-decoration-level 0)
   (mmm-add-classes
    '((mmm-jsx-mode
-      :submode web-mode
-      :face mmm-code-submode-face
       :front "\\(return\s\\|n\s\\|(\n\s*\\)<"
       :front-offset -1
-      :back ">\n?\s*)\n}\n"
+      :back ">\n?\s*)"
       :back-offset 1
-      )))
+      :submode web-mode)))
   (mmm-add-mode-ext-class 'typescript-mode nil 'mmm-jsx-mode)
 
   (defun mmm-reapply ()
@@ -1075,6 +1074,16 @@
   :custom ((vterm-buffer-name-string . "vt %s"))
   :bind ((:vterm-mode-map
           ("C-t" . hydra-window/body))))
+
+(leaf editorconfig
+  :doc "EditorConfig Emacs Plugin"
+  :req "cl-lib-0.5" "nadvice-0.3" "emacs-24"
+  :tag "emacs>=24"
+  :added "2021-04-07"
+  :url "https://github.com/editorconfig/editorconfig-emacs#readme"
+  :emacs>= 24
+  :ensure t
+  :after nadvice)
 
 
 

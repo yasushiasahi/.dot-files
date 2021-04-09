@@ -7,6 +7,7 @@
         crux-move-beginning-of-line
         forward-sentence
         hydra-window/body
+        ignore
         ivy-occur-revert-buffer
         kill-region
         mark-sexp
@@ -24,6 +25,7 @@
         hydra-multiple-cursors/mc/mark-all-like-this-and-exit
         hydra-multiple-cursors/mc/mark-next-like-this
         hydra-multiple-cursors/mc/skip-to-next-like-this
+        lsp-ui-doc--handle-mouse-movement
         markdown-outdent-or-delete
         sp-remove-active-pair-overlay
         ))
