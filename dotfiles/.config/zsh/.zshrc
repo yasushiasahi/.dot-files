@@ -3,6 +3,16 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
 # /usr/local/を優先に
 export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# android studio sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
 
 # go module mode
 export GO111MODULE=on
@@ -141,3 +151,7 @@ fi
 autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd (){ print -Pn "\e]2;%~\a" }
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+. /usr/local/opt/asdf/asdf.sh
+
+export PATH="$HOME/.poetry/bin:$PATH"

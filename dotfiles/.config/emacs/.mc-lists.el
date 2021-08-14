@@ -3,9 +3,13 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        counsel-yank-pop
         crux-kill-whole-line
         crux-move-beginning-of-line
+        crux-smart-open-line-above
         forward-sentence
+        forward-sexp
+        hydra-multiple-cursors/body
         hydra-window/body
         ignore
         ivy-occur-revert-buffer
@@ -21,11 +25,13 @@
 
 (setq mc/cmds-to-run-once
       '(
+        beginning-of-buffer
         hydra-multiple-cursors/mc/edit-lines-and-exit
         hydra-multiple-cursors/mc/mark-all-like-this-and-exit
         hydra-multiple-cursors/mc/mark-next-like-this
         hydra-multiple-cursors/mc/skip-to-next-like-this
         lsp-ui-doc--handle-mouse-movement
         markdown-outdent-or-delete
+        mouse-set-region
         sp-remove-active-pair-overlay
         ))

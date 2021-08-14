@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: fc
+# key: fc
+# --
+
+import { FC } from 'react'
+
+export type $1Props = {
+  ${2:key}: ${3:type}
+}
+
+export const ${1:component}:FC<$1Props> = () => <div>$1</div>

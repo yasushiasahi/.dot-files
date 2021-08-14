@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: np
+# key: np
+# --
+
+import { NextPage } from 'next'
+import { WithBaseLayout } from 'components/compositions'
+import { ${1:component} } from 'components/templates'
+
+/**
+ * ${2:doc-comment}
+ */
+const Page$1: NextPage = () => (
+  <WithBaseLayout>
+    <$1 />
+  </WithBaseLayout>
+)
+
+export default Page$1

@@ -344,63 +344,63 @@
            (company-echo-delay . 0)
            (company-minimum-prefix-length . 1)))
 
-(leaf company-box
-  :doc "Company front-end with icons"
-  :req "emacs-26.0.91" "dash-2.13" "dash-functional-1.2.0" "company-0.9.6"
-  :tag "convenience" "front-end" "completion" "company" "emacs>=26.0.91"
-  :added "2020-08-12"
-  :url "https://github.com/sebastiencs/company-box"
-  :emacs>= 26.0
-  :ensure t
-  :after company all-the-icons
-  :custom ((company-box-max-candidates . 50)
-           (company-box-icons-alist . 'company-box-icons-all-the-icons))
-  :hook (company-mode-hook)
-  :config
-  (setq company-box-icons-alist 'company-box-icons-all-the-icons)
-  (declare-function all-the-icons-faicon 'all-the-icons)
-  (declare-function all-the-icons-fileicon 'all-the-icons)
-  (declare-function all-the-icons-material 'all-the-icons)
-  (declare-function all-the-icons-octicon 'all-the-icons)
-  (setq company-box-icons-all-the-icons
-        `((Unknown . ,(all-the-icons-material "find_in_page" :height 0.7 :v-adjust -0.15))
-          (Text . ,(all-the-icons-faicon "book" :height 0.68 :v-adjust -0.15))
-          (Method . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
-          (Function . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
-          (Constructor . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
-          (Field . ,(all-the-icons-faicon "tags" :height 0.65 :v-adjust -0.15 :face 'font-lock-warning-face))
-          (Variable . ,(all-the-icons-faicon "tag" :height 0.7 :v-adjust -0.05 :face 'font-lock-warning-face))
-          (Class . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01 :face 'font-lock-constant-face))
-          (Interface . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01))
-          (Module . ,(all-the-icons-octicon "package" :height 0.7 :v-adjust -0.15))
-          (Property . ,(all-the-icons-octicon "package" :height 0.7 :v-adjust -0.05 :face 'font-lock-warning-face)) ;; Golang module
-          (Unit . ,(all-the-icons-material "settings_system_daydream" :height 0.7 :v-adjust -0.15))
-          (Value . ,(all-the-icons-material "format_align_right" :height 0.7 :v-adjust -0.15 :face 'font-lock-constant-face))
-          (Enum . ,(all-the-icons-material "storage" :height 0.7 :v-adjust -0.15 :face 'all-the-icons-orange))
-          (Keyword . ,(all-the-icons-material "filter_center_focus" :height 0.7 :v-adjust -0.15))
-          (Snippet . ,(all-the-icons-faicon "code" :height 0.7 :v-adjust 0.02 :face 'font-lock-variable-name-face))
-          (Color . ,(all-the-icons-material "palette" :height 0.7 :v-adjust -0.15))
-          (File . ,(all-the-icons-faicon "file-o" :height 0.7 :v-adjust -0.05))
-          (Reference . ,(all-the-icons-material "collections_bookmark" :height 0.7 :v-adjust -0.15))
-          (Folder . ,(all-the-icons-octicon "file-directory" :height 0.7 :v-adjust -0.05))
-          (EnumMember . ,(all-the-icons-material "format_align_right" :height 0.7 :v-adjust -0.15 :face 'all-the-icons-blueb))
-          (Constant . ,(all-the-icons-faicon "tag" :height 0.7 :v-adjust -0.05))
-          (Struct . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01 :face 'font-lock-constant-face))
-          (Event . ,(all-the-icons-faicon "bolt" :height 0.7 :v-adjust -0.05 :face 'all-the-icons-orange))
-          (Operator . ,(all-the-icons-fileicon "typedoc" :height 0.65 :v-adjust 0.05))
-          (TypeParameter . ,(all-the-icons-faicon "hashtag" :height 0.65 :v-adjust 0.07 :face 'font-lock-const-face))
-          (Template . ,(all-the-icons-faicon "code" :height 0.7 :v-adjust 0.02 :face 'font-lock-variable-name-face)))))
+;; (leaf company-box
+;;   :doc "Company front-end with icons"
+;;   :req "emacs-26.0.91" "dash-2.13" "dash-functional-1.2.0" "company-0.9.6"
+;;   :tag "convenience" "front-end" "completion" "company" "emacs>=26.0.91"
+;;   :added "2020-08-12"
+;;   :url "https://github.com/sebastiencs/company-box"
+;;   :emacs>= 26.0
+;;   :ensure t
+;;   :after company all-the-icons
+;;   :custom ((company-box-max-candidates . 50)
+;;            (company-box-icons-alist . 'company-box-icons-all-the-icons))
+;;   :hook (company-mode-hook)
+;;   :config
+;;   (setq company-box-icons-alist 'company-box-icons-all-the-icons)
+;;   (declare-function all-the-icons-faicon 'all-the-icons)
+;;   (declare-function all-the-icons-fileicon 'all-the-icons)
+;;   (declare-function all-the-icons-material 'all-the-icons)
+;;   (declare-function all-the-icons-octicon 'all-the-icons)
+;;   (setq company-box-icons-all-the-icons
+;;         `((Unknown . ,(all-the-icons-material "find_in_page" :height 0.7 :v-adjust -0.15))
+;;           (Text . ,(all-the-icons-faicon "book" :height 0.68 :v-adjust -0.15))
+;;           (Method . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
+;;           (Function . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
+;;           (Constructor . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
+;;           (Field . ,(all-the-icons-faicon "tags" :height 0.65 :v-adjust -0.15 :face 'font-lock-warning-face))
+;;           (Variable . ,(all-the-icons-faicon "tag" :height 0.7 :v-adjust -0.05 :face 'font-lock-warning-face))
+;;           (Class . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01 :face 'font-lock-constant-face))
+;;           (Interface . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01))
+;;           (Module . ,(all-the-icons-octicon "package" :height 0.7 :v-adjust -0.15))
+;;           (Property . ,(all-the-icons-octicon "package" :height 0.7 :v-adjust -0.05 :face 'font-lock-warning-face)) ;; Golang module
+;;           (Unit . ,(all-the-icons-material "settings_system_daydream" :height 0.7 :v-adjust -0.15))
+;;           (Value . ,(all-the-icons-material "format_align_right" :height 0.7 :v-adjust -0.15 :face 'font-lock-constant-face))
+;;           (Enum . ,(all-the-icons-material "storage" :height 0.7 :v-adjust -0.15 :face 'all-the-icons-orange))
+;;           (Keyword . ,(all-the-icons-material "filter_center_focus" :height 0.7 :v-adjust -0.15))
+;;           (Snippet . ,(all-the-icons-faicon "code" :height 0.7 :v-adjust 0.02 :face 'font-lock-variable-name-face))
+;;           (Color . ,(all-the-icons-material "palette" :height 0.7 :v-adjust -0.15))
+;;           (File . ,(all-the-icons-faicon "file-o" :height 0.7 :v-adjust -0.05))
+;;           (Reference . ,(all-the-icons-material "collections_bookmark" :height 0.7 :v-adjust -0.15))
+;;           (Folder . ,(all-the-icons-octicon "file-directory" :height 0.7 :v-adjust -0.05))
+;;           (EnumMember . ,(all-the-icons-material "format_align_right" :height 0.7 :v-adjust -0.15 :face 'all-the-icons-blueb))
+;;           (Constant . ,(all-the-icons-faicon "tag" :height 0.7 :v-adjust -0.05))
+;;           (Struct . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01 :face 'font-lock-constant-face))
+;;           (Event . ,(all-the-icons-faicon "bolt" :height 0.7 :v-adjust -0.05 :face 'all-the-icons-orange))
+;;           (Operator . ,(all-the-icons-fileicon "typedoc" :height 0.65 :v-adjust 0.05))
+;;           (TypeParameter . ,(all-the-icons-faicon "hashtag" :height 0.65 :v-adjust 0.07 :face 'font-lock-const-face))
+;;           (Template . ,(all-the-icons-faicon "code" :height 0.7 :v-adjust 0.02 :face 'font-lock-variable-name-face)))))
 
-(leaf company-posframe
-  :doc "Use a posframe as company candidate menu"
-  :req "emacs-26.0" "company-0.9.0" "posframe-0.1.0"
-  :tag "matching" "convenience" "abbrev" "emacs>=26.0"
-  :url "https://github.com/tumashu/company-posframe"
-  :added "2020-08-12"
-  :emacs>= 26.0
-  :ensure t
-  :after company posframe
-  :global-minor-mode t)
+;; (leaf company-posframe
+;;   :doc "Use a posframe as company candidate menu"
+;;   :req "emacs-26.0" "company-0.9.0" "posframe-0.1.0"
+;;   :tag "matching" "convenience" "abbrev" "emacs>=26.0"
+;;   :url "https://github.com/tumashu/company-posframe"
+;;   :added "2020-08-12"
+;;   :emacs>= 26.0
+;;   :ensure t
+;;   :after company posframe
+;;   :global-minor-mode t)
 
 (leaf company-prescient
   :disabled t
@@ -414,21 +414,21 @@
   :after prescient company
   :global-minor-mode t)
 
-(leaf company-quickhelp
-  :disabled t
-  :doc "Popup documentation for completion candidates"
-  :req "emacs-24.3" "company-0.8.9" "pos-tip-0.4.6"
-  :tag "quickhelp" "documentation" "popup" "company" "emacs>=24.3"
-  :url "https://www.github.com/expez/company-quickhelp"
-  :added "2020-08-12"
-  :emacs>= 24.3
-  :ensure t
-  :after company pos-tip
-  :custom ((company-quickhelp-delay . 0.8)
-           (company-quickhelp-mode . t))
-  :bind (company-active-map
-         ("M-h" . company-quickhelp-manual-begin))
-  :hook (company-mode-hook))
+;; (leaf company-quickhelp
+;;   :disabled t
+;;   :doc "Popup documentation for completion candidates"
+;;   :req "emacs-24.3" "company-0.8.9" "pos-tip-0.4.6"
+;;   :tag "quickhelp" "documentation" "popup" "company" "emacs>=24.3"
+;;   :url "https://www.github.com/expez/company-quickhelp"
+;;   :added "2020-08-12"
+;;   :emacs>= 24.3
+;;   :ensure t
+;;   :after company pos-tip
+;;   :custom ((company-quickhelp-delay . 0.8)
+;;            (company-quickhelp-mode . t))
+;;   :bind (company-active-map
+;;          ("M-h" . company-quickhelp-manual-begin))
+;;   :hook (company-mode-hook))
 
 (leaf all-the-icons
   :doc "A library for inserting Developer icons"
@@ -743,7 +743,7 @@
            (neo-smart-open . t)
            (neo-show-hidden-files . t)
            (neo-theme . 'icons)
-           (neo-create-file-auto-open . t)))
+           (neo-window-width . '50)))
 
 (leaf open-junk-file
   :doc "Open a junk (memo) file to try-and-error"
@@ -873,27 +873,27 @@
   :after lsp-mode markdown-mode
   :commands lsp-ui-mode)
 
-(leaf lsp-ivy
-  :doc "LSP ivy integration"
-  :req "emacs-25.1" "dash-2.14.1" "lsp-mode-6.2.1" "ivy-0.13.0"
-  :tag "debug" "languages" "emacs>=25.1"
-  :added "2020-08-13"
-  :url "https://github.com/emacs-lsp/lsp-ivy"
-  :emacs>= 25.1
-  :ensure t
-  :after lsp-mode ivy
-  :commands lsp-ivy-workspace-symbol)
+;; (leaf lsp-ivy
+;;   :doc "LSP ivy integration"
+;;   :req "emacs-25.1" "dash-2.14.1" "lsp-mode-6.2.1" "ivy-0.13.0"
+;;   :tag "debug" "languages" "emacs>=25.1"
+;;   :added "2020-08-13"
+;;   :url "https://github.com/emacs-lsp/lsp-ivy"
+;;   :emacs>= 25.1
+;;   :ensure t
+;;   :after lsp-mode ivy
+;;   :commands lsp-ivy-workspace-symbol)
 
-(leaf lsp-treemacs
-  :doc "LSP treemacs"
-  :req "emacs-26.1" "dash-2.14.1" "dash-functional-2.14.1" "f-0.20.0" "ht-2.0" "treemacs-2.5" "lsp-mode-6.0"
-  :tag "languages" "emacs>=26.1"
-  :added "2020-08-13"
-  :url "https://github.com/emacs-lsp/lsp-treemacs"
-  :emacs>= 26.1
-  :ensure t
-  :after treemacs lsp-mode
-  :commands lsp-treemacs-errors-list)
+;; (leaf lsp-treemacs
+;;   :doc "LSP treemacs"
+;;   :req "emacs-26.1" "dash-2.14.1" "dash-functional-2.14.1" "f-0.20.0" "ht-2.0" "treemacs-2.5" "lsp-mode-6.0"
+;;   :tag "languages" "emacs>=26.1"
+;;   :added "2020-08-13"
+;;   :url "https://github.com/emacs-lsp/lsp-treemacs"
+;;   :emacs>= 26.1
+;;   :ensure t
+;;   :after treemacs lsp-mode
+;;   :commands lsp-treemacs-errors-list)
 
 (leaf lsp-tailwindcss
   :doc "A lsp-mode client for tailwindcss"
@@ -946,7 +946,9 @@
   :added "2020-08-13"
   :url "https://github.com/antonj/scss-mode"
   :ensure t
-  :custom ((css-indent-offset . 2)))
+  :custom ((css-indent-offset . 2))
+  :hook (scss-mode . prettier-js-mode))
+
 
 (leaf web-mode
   :doc "major mode for editing web templates"
@@ -1085,6 +1087,55 @@
   :ensure t
   :after nadvice)
 
+(leaf dockerfile-mode
+  :doc "Major mode for editing Docker's Dockerfiles"
+  :req "emacs-24"
+  :tag "emacs>=24"
+  :added "2021-04-22"
+  :url "https://github.com/spotify/dockerfile-mode"
+  :emacs>= 24
+  :ensure t)
+
+
+(leaf rust-mode
+  :doc "A major-mode for editing Rust source code"
+  :req "emacs-25.1"
+  :tag "languages" "emacs>=25.1"
+  :added "2021-08-13"
+  :url "https://github.com/rust-lang/rust-mode"
+  :emacs>= 25.1
+  :ensure t
+  :custom ((rust-enable-format-on-save . t)
+           (lsp-rust-server . 'rust-analyzer))
+  :hook ((rust-mode-hook . (lambda ()
+                             (cargo-minor-mode)
+                             (lsp)))))
+
+(leaf cargo
+  :doc "Emacs Minor Mode for Cargo, Rust's Package Manager."
+  :req "emacs-24.3" "markdown-mode-2.4"
+  :tag "tools" "emacs>=24.3"
+  :added "2021-08-13"
+  :emacs>= 24.3
+  :ensure t
+  :after markdown-mode)
+
+(leaf rust-cargo
+  :doc "Support for cargo"
+  :tag "out-of-MELPA"
+  :added "2021-08-13"
+  ;:el-get {{user}}/rust-cargo
+  :require t)
+
+(leaf flycheck-rust
+  :doc "Flycheck: Rust additions and Cargo support"
+  :req "emacs-24.1" "flycheck-28" "dash-2.13.0" "seq-2.3" "let-alist-1.0.4"
+  :tag "convenience" "tools" "emacs>=24.1"
+  :added "2021-08-13"
+  :url "https://github.com/flycheck/flycheck-rust"
+  :emacs>= 24.1
+  :ensure t
+  :after flycheck)
 
 
 (provide 'init)
