@@ -1,8 +1,8 @@
 ;;; init.el --- My init.el  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2020  Naoya Yamashita
+;; Copyright (C) 2021  Yasushi Asahi
 
-;; Author: Naoya Yamashita <conao3@gmail.com>
+;; Author: Naoya Yamashita <asahi1600@gmail.com>
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -53,21 +53,19 @@
     ;; initialize leaf-keywords.el
     (leaf-keywords-init)))
 
-;; ここにいっぱい設定を書く
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; start writing settings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(leaf cus-edit
+  :custom `((custom-file . ,(locate-user-emacs-file "custom.el"))))
+
 (leaf exec-path-from-shell
-  :doc "Get environment variables such as $PATH from the shell"
-  :req "emacs-24.1"
-  :tag "environment" "unix" "emacs>=24.1"
-  :added "2020-08-13"
-  :url "https://github.com/purcell/exec-path-from-shell"
-  :emacs>= 24.1
   :ensure t
-  :config
+  :init
   (exec-path-from-shell-initialize))
 
 (leaf leaf
   :config
-  (leaf leaf-convert :ensure t)
   (leaf leaf-tree
     :ensure t
     :custom ((imenu-list-size . 30)
@@ -77,598 +75,128 @@
   :ensure t
   :bind (("C-c e" . macrostep-expand)))
 
-(leaf cus-edit
-  :doc "tools for customizing Emacs and Lisp packages"
-  :tag "builtin" "faces" "help"
-  :custom `((custom-file . ,(locate-user-emacs-file "custom.el"))))
-
-
-(leaf 画面の右端で折り返すか否か
-  :setq-default ((truncate-lines . t)))
-
-(leaf leaf-convert
-  :setq ((create-lockfiles))
-  :config
-  (add-to-list 'backup-directory-alist
-	             (cons "." "~/.config/emacs/backups/"))
-  (setq auto-save-file-name-transforms `((".*" ,(expand-file-name "~/.config/emacs/backups/")
-					                                t)))
-  (global-auto-revert-mode t))
-
-(leaf leaf-convert
-  :custom ((inhibit-startup-screen . t)))
-
-(setq visible-bell t)
-
-(leaf recentf
-  :custom
-  `((recentf-max-saved-items . 128)
-    (recentf-auto-cleanup    . 'never)
-    (recentf-exclude         . '(".recentf"
-                                 "^/tmp\\.*"
-                                 "^/private\\.*"
-                                 "^/var/folders\\.*"
-                                 "/TAGS$"
-                                 "\\.*草稿\\.*"
-                                 "^#\\.*"
-                                 "^/[^/:]+:"
-                                 "bookmarks"
-                                 "org-recent-headings.dat"
-                                 ))))
-
-
-(leaf leaf-convert
+(leaf basic-keybindings
+  :init
+  (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
+  (leaf crux
+    :ensure t)
   :bind (("C-u")
-	       ("C-t")
-	       ("C-q")
-	       ("C-\\")
-	       ("C-m" . newline-and-indent)
-	       ("M-/" . help-command)
-	       ("C-^" . universal-argument)
-	       ("C-M-d" . kill-word)
-	       ("C-c l" . toggle-truncate-lines)
-	       ("<f5>" . leaf-convert-insert-template)
-	       ("<f6>" . leaf-convert-region-replace)))
-(define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
+	 ("C-t")
+	 ("C-q")
+	 ("C-\\")
+	 ("C-m" . newline-and-indent)
+	 ("M-/" . help-command)
+	 ("C-^" . universal-argument)
+	 ("C-M-d" . kill-word)
+	 ("C-c l" . toggle-truncate-lines)
+	 ("<f5>" . leaf-convert-insert-template)
+	 ("<f6>" . leaf-convert-region-replace)
+         ("C-u" . crux-smart-open-line-above)
+	 ("C-j" . crux-smart-open-line)
+	 ("M-k" . crux-kill-whole-line)
+	 ("M-h" . crux-kill-line-backwards)
+	 ("C-a" . crux-move-beginning-of-line)
+	 ("M-d" . crux-duplicate-current-line-or-region)
+	 ("M-\\" . crux-duplicate-and-comment-current-line-or-region)))
 
-(leaf leaf-convert
-  :config
-  (delete-selection-mode t))
-
-(leaf delsel
-  :doc "delete selection if you insert"
-  :tag "builtin"
-  :global-minor-mode delete-selection-mode)
-
-(leaf leaf-convert
-  :hook ((before-save-hook . delete-trailing-whitespace)))
-
-(leaf leaf-convert
-  :custom ((show-paren-delay . 0)
-	         (show-paren-style . 'mixed))
-  :config
-  (show-paren-mode t))
-
-(leaf leaf-convert
-  :setq ((scroll-conservatively . 1000)
-	       (scroll-step . 1)
-	       (scroll-preserve-screen-position . t)))
-
-(leaf leaf-convert
-  :config
-  (setq default-directory (concat
-                           (getenv "HOME")
-                           "/")))
-
-(defun my-set-fontsize (height)
-  (set-face-attribute 'default nil :height height))
-
-;; 文字コード
-(leaf leaf-convert
-  :config
-  (set-language-environment "Japanese")
-  (prefer-coding-system 'utf-8)
-  (set-default-coding-systems 'utf-8)
-  (set-keyboard-coding-system 'utf-8)
-  ;; (set-fontset-font nil 'japanese-jisx0208
-  ;;                   (font-spec :family "Noto Sans CJK JP"))
-
-  (when (some (lambda (family)
-                (equal family "Fira Code"))
-              (font-family-list))
-    (set-face-attribute 'default nil :family "Fira Code" :weight 'normal :height 150)
-    ;; リガチャ設定 https://github.com/tonsky/FiraCode/wiki/Emacs-instructions
-    (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
-                   (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
-                   (36 . ".\\(?:>\\)")
-                   (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
-                   (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
-                   (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
-                   (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
-                   (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
-                   (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
-                   (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
-                   (48 . ".\\(?:x[a-zA-Z]\\)")
-                   (58 . ".\\(?:::\\|[:=]\\)")
-                   (59 . ".\\(?:;;\\|;\\)")
-                   (60 . ".\\(?:\\(?:!--\\)\\|\\(?:~~\\|->\\|\\$>\\|\\*>\\|\\+>\\|--\\|<[<=-]\\|=[<=>]\\||>\\)\\|[*$+~/<=>|-]\\)")
-                   (61 . ".\\(?:\\(?:/=\\|:=\\|<<\\|=[=>]\\|>>\\)\\|[<=>~]\\)")
-                   (62 . ".\\(?:\\(?:=>\\|>[=>-]\\)\\|[=>-]\\)")
-                   (63 . ".\\(?:\\(\\?\\?\\)\\|[:=?]\\)")
-                   (91 . ".\\(?:]\\)")
-                   (92 . ".\\(?:\\(?:\\\\\\\\\\)\\|\\\\\\)")
-                   (94 . ".\\(?:=\\)")
-                   (119 . ".\\(?:ww\\)")
-                   (123 . ".\\(?:-\\)")
-                   (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-                   (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
-                   )
-                 ))
-      (dolist (char-regexp alist)
-        (set-char-table-range composition-function-table (car char-regexp)
-                              `([,(cdr char-regexp) 0 font-shape-gstring]))))))
-
-(leaf leaf-convert
-  :setq ((inhibit-startup-screen . t)
-	       (scroll-conservatively . 1)
-	       (initial-scratch-message . ""))
-  :config
-  (defalias 'yes-or-no-p 'y-or-n-p)
+(leaf basic-settings
+  :custom ((truncate-lines . t)                  ; do not wrap end of sentence
+           (inhibit-startup-screen . t)          ; do not show startup screeen
+           (scroll-preserve-screen-position . t) ; keep cursor position when scrolling
+           (scroll-conservatively . 1)           ;
+           (initial-scratch-message . "")        ; show nothing in scratch when statrup
+           (visible-bell . t)                    ; show bell altanative of beep sound
+           (auto-save-timeout . 15)
+           (auto-save-interval . 60)
+           (version-control . t)
+           (delete-old-versions . t)
+           )
+  :hook ((before-save-hook . delete-trailing-whitespace)) ; delete trailing whitespace when save
+  :preface
+  (defalias 'yes-or-no-p 'y-or-n-p)     ; reduce typing, yas -> y, no -> n
   (when (eq window-system 'ns)
-    (tool-bar-mode 0)
-    (scroll-bar-mode 0))
-  (when (eq window-system 'nil)
+    (tool-bar-mode 0)                   ; no tool bar
+    (scroll-bar-mode 0))                ; no scroll bar
+
+
+  (when (eq window-system 'nil)         ; syncronise cripboard emacs and osx
     (defun copy-from-osx nil
       (shell-command-to-string "pbpaste"))
-
-    (defun paste-to-osx (text &optional push)
+    (defun paste-to-osx (text)
       (let ((process-connection-type nil))
-	      (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-	        (process-send-string proc text)
-	        (process-send-eof proc))))
-
+	(let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+	  (process-send-string proc text)
+	  (process-send-eof proc))))
     (setq interprogram-cut-function 'paste-to-osx)
-    (setq interprogram-paste-function 'copy-from-osx)))
+    (setq interprogram-paste-function 'copy-from-osx))
 
-(leaf crux
-  :doc "A Collection of Ridiculously Useful eXtensions"
-  :req "seq-1.11"
-  :tag "convenience"
-  :added "2020-08-13"
-  :url "https://github.com/bbatsov/crux"
-  :ensure t
-  :bind (("C-u" . crux-smart-open-line-above)
-	       ("C-j" . crux-smart-open-line)
-	       ("M-k" . crux-kill-whole-line)
-	       ("M-h" . crux-kill-line-backwards)
-	       ("C-a" . crux-move-beginning-of-line)
-	       ("M-d" . crux-duplicate-current-line-or-region)
-	       ("M-\\" . crux-duplicate-and-comment-current-line-or-region)))
+  (leaf autorevert
+    :doc "reflesh buffers when files on disk change"
+    :custom ((auto-revert-interval . 1))
+    :global-minor-mode global-auto-revert-mode)
+
+  (leaf delsel
+    :doc "overwrite region when yank or type"
+    :global-minor-mode delete-selection-mode)
+
+  (leaf recentf
+    :custom ((recentf-max-saved-items . 1000)      ; max save limit
+             (recentf-exclude . '(".recentf"))     ; exclude file list
+             (recentf-auto-save-timer . '(run-with-idle-timer 30 t 'recentf-save-list))) ; after 30 second when no 作業 save .recentf file
+    :global-minor-mode recentf-mode)
+
+  (leaf paren
+    :custom ((show-paren-delay . 0)
+             (show-paren-style . 'mixed))
+    :global-minor-mode show-paren-mode)
+
+  (leaf language
+    :preface
+    (set-language-environment "Japanese")
+    (prefer-coding-system 'utf-8)
+    (set-default-coding-systems 'utf-8)
+    (set-keyboard-coding-system 'utf-8))
+
+  (leaf files
+    :custom `((auto-save-timeout . 15)
+              (auto-save-interval . 60)
+              (auto-save-file-name-transforms . '((".*" ,(locate-user-emacs-file "backup/") t)))
+              (backup-directory-alist . '((".*" . ,(locate-user-emacs-file "backup"))
+                                          (,tramp-file-name-regexp . nil)))
+              (version-control . t)
+              (delete-old-versions . t)))
+  (leaf startup
+    :custom `((auto-save-list-file-prefix . ,(locate-user-emacs-file "backup/.saves-"))))
+  )
 
 (leaf solarized-theme
-  :doc "The Solarized color theme"
-  :req "emacs-24.1" "dash-2.16"
-  :tag "solarized" "themes" "convenience" "emacs>=24.1"
-  :added "2020-08-13"
-  :url "http://github.com/bbatsov/solarized-emacs"
-  :emacs>= 24.1
   :ensure t
-  :custom((x-underline-at-descent-line . t)
-          (solarized-emphasize-indicators . nil))
+  :custom ((x-underline-at-descent-line . t)
+           (solarized-emphasize-indicators . nil))
   :config
   (load-theme 'solarized-dark-high-contrast t))
 
-(leaf expand-region
-  :doc "Increase selected region by semantic units."
-  :added "2020-08-21"
-  :ensure t
-  :bind (("C-o" . er/expand-region)))
+(leaf fira-code-mode
+    :ensure t
+    :preface
+    (set-face-attribute 'default nil :height 130)
+    :global-minor-mode global-fira-code-mode)
 
-
-(leaf rainbow-delimiters
-  :doc "Highlight brackets according to their depth"
-  :tag "tools" "lisp" "convenience" "faces"
-  :added "2020-08-13"
-  :url "https://github.com/Fanael/rainbow-delimiters"
-  :ensure t
-  :hook (prog-mode-hook . rainbow-delimiters-mode))
-
-(leaf flycheck
-  :doc "On-the-fly syntax checking"
-  :req "dash-2.12.1" "pkg-info-0.4" "let-alist-1.0.4" "seq-1.11" "emacs-24.3"
-  :tag "tools" "languages" "convenience" "emacs>=24.3"
-  :added "2020-08-12"
-  :url "http://www.flycheck.org"
-  :emacs>= 24.3
-  :ensure t
-  :global-minor-mode global-flycheck-mode)
-
-
-(leaf use-package
-  :doc "A configuration macro for simplifying your .emacs"
-  :req "emacs-24.3" "bind-key-2.4"
-  :tag "package" "config" "speed" "startup" "dotemacs" "emacs>=24.3"
-  :added "2020-08-13"
-  :url "https://github.com/jwiegley/use-package"
-  :emacs>= 24.3
-  :ensure t)
-
-(leaf beacon
-  :doc "Highlight the cursor whenever the window scrolls"
-  :req "seq-2.14"
-  :tag "convenience"
-  :added "2020-12-15"
-  :url "https://github.com/Malabarba/beacon"
+(leaf mini-modeline
   :ensure t
   :global-minor-mode t)
 
-(leaf yasnippet
-  :doc "Yet another snippet extension for Emacs"
-  :req "cl-lib-0.5"
-  :tag "emulation" "convenience"
-  :added "2020-12-02"
-  :url "http://github.com/joaotavora/yasnippet"
-  :ensure t
-  :global-minor-mode yas-global-mode)
-
-(leaf yasnippet-snippets
-  :doc "Collection of yasnippet snippets"
-  :req "yasnippet-0.8.0"
-  :tag "snippets"
-  :added "2020-12-15"
-  :url "https://github.com/AndreaCrotti/yasnippet-snippets"
-  :ensure t
-  :after yasnippet)
-
-
-
-(leaf company
-  :doc "Modular text completion framework"
-  :req "emacs-24.3"
-  :tag "matching" "convenience" "abbrev" "emacs>=24.3"
-  :added "2020-08-12"
-  :url "http://company-mode.github.io/"
-  :emacs>= 24.3
-  :ensure t
-  :global-minor-mode global-company-mode
-  :bind ((company-active-map
-          ("C-s" . company-filter-candidates)
-          ("C-n" . company-select-next)
-          ("C-p" . company-select-previous)
-          ("C-f" . company-complete-selection)
-          ("<tab>" . company-complete-selection))
-         (company-search-map
-          ("C-n" . company-select-next)
-          ("C-p" . company-complete-common-or-cycle)))
-  :custom ((company-idle-delay . 0)
-           (company-echo-delay . 0)
-           (company-minimum-prefix-length . 1)))
-
-;; (leaf company-box
-;;   :doc "Company front-end with icons"
-;;   :req "emacs-26.0.91" "dash-2.13" "dash-functional-1.2.0" "company-0.9.6"
-;;   :tag "convenience" "front-end" "completion" "company" "emacs>=26.0.91"
-;;   :added "2020-08-12"
-;;   :url "https://github.com/sebastiencs/company-box"
-;;   :emacs>= 26.0
-;;   :ensure t
-;;   :after company all-the-icons
-;;   :custom ((company-box-max-candidates . 50)
-;;            (company-box-icons-alist . 'company-box-icons-all-the-icons))
-;;   :hook (company-mode-hook)
-;;   :config
-;;   (setq company-box-icons-alist 'company-box-icons-all-the-icons)
-;;   (declare-function all-the-icons-faicon 'all-the-icons)
-;;   (declare-function all-the-icons-fileicon 'all-the-icons)
-;;   (declare-function all-the-icons-material 'all-the-icons)
-;;   (declare-function all-the-icons-octicon 'all-the-icons)
-;;   (setq company-box-icons-all-the-icons
-;;         `((Unknown . ,(all-the-icons-material "find_in_page" :height 0.7 :v-adjust -0.15))
-;;           (Text . ,(all-the-icons-faicon "book" :height 0.68 :v-adjust -0.15))
-;;           (Method . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
-;;           (Function . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
-;;           (Constructor . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
-;;           (Field . ,(all-the-icons-faicon "tags" :height 0.65 :v-adjust -0.15 :face 'font-lock-warning-face))
-;;           (Variable . ,(all-the-icons-faicon "tag" :height 0.7 :v-adjust -0.05 :face 'font-lock-warning-face))
-;;           (Class . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01 :face 'font-lock-constant-face))
-;;           (Interface . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01))
-;;           (Module . ,(all-the-icons-octicon "package" :height 0.7 :v-adjust -0.15))
-;;           (Property . ,(all-the-icons-octicon "package" :height 0.7 :v-adjust -0.05 :face 'font-lock-warning-face)) ;; Golang module
-;;           (Unit . ,(all-the-icons-material "settings_system_daydream" :height 0.7 :v-adjust -0.15))
-;;           (Value . ,(all-the-icons-material "format_align_right" :height 0.7 :v-adjust -0.15 :face 'font-lock-constant-face))
-;;           (Enum . ,(all-the-icons-material "storage" :height 0.7 :v-adjust -0.15 :face 'all-the-icons-orange))
-;;           (Keyword . ,(all-the-icons-material "filter_center_focus" :height 0.7 :v-adjust -0.15))
-;;           (Snippet . ,(all-the-icons-faicon "code" :height 0.7 :v-adjust 0.02 :face 'font-lock-variable-name-face))
-;;           (Color . ,(all-the-icons-material "palette" :height 0.7 :v-adjust -0.15))
-;;           (File . ,(all-the-icons-faicon "file-o" :height 0.7 :v-adjust -0.05))
-;;           (Reference . ,(all-the-icons-material "collections_bookmark" :height 0.7 :v-adjust -0.15))
-;;           (Folder . ,(all-the-icons-octicon "file-directory" :height 0.7 :v-adjust -0.05))
-;;           (EnumMember . ,(all-the-icons-material "format_align_right" :height 0.7 :v-adjust -0.15 :face 'all-the-icons-blueb))
-;;           (Constant . ,(all-the-icons-faicon "tag" :height 0.7 :v-adjust -0.05))
-;;           (Struct . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01 :face 'font-lock-constant-face))
-;;           (Event . ,(all-the-icons-faicon "bolt" :height 0.7 :v-adjust -0.05 :face 'all-the-icons-orange))
-;;           (Operator . ,(all-the-icons-fileicon "typedoc" :height 0.65 :v-adjust 0.05))
-;;           (TypeParameter . ,(all-the-icons-faicon "hashtag" :height 0.65 :v-adjust 0.07 :face 'font-lock-const-face))
-;;           (Template . ,(all-the-icons-faicon "code" :height 0.7 :v-adjust 0.02 :face 'font-lock-variable-name-face)))))
-
-;; (leaf company-posframe
-;;   :doc "Use a posframe as company candidate menu"
-;;   :req "emacs-26.0" "company-0.9.0" "posframe-0.1.0"
-;;   :tag "matching" "convenience" "abbrev" "emacs>=26.0"
-;;   :url "https://github.com/tumashu/company-posframe"
-;;   :added "2020-08-12"
-;;   :emacs>= 26.0
-;;   :ensure t
-;;   :after company posframe
-;;   :global-minor-mode t)
-
-(leaf company-prescient
-  :disabled t
-  :doc "prescient.el + Company"
-  :req "emacs-25.1" "prescient-4.0" "company-0.9.6"
-  :tag "extensions" "emacs>=25.1"
-  :url "https://github.com/raxod502/prescient.el"
-  :added "2020-08-12"
-  :emacs>= 25.1
-  :ensure t
-  :after prescient company
-  :global-minor-mode t)
-
-;; (leaf company-quickhelp
-;;   :disabled t
-;;   :doc "Popup documentation for completion candidates"
-;;   :req "emacs-24.3" "company-0.8.9" "pos-tip-0.4.6"
-;;   :tag "quickhelp" "documentation" "popup" "company" "emacs>=24.3"
-;;   :url "https://www.github.com/expez/company-quickhelp"
-;;   :added "2020-08-12"
-;;   :emacs>= 24.3
-;;   :ensure t
-;;   :after company pos-tip
-;;   :custom ((company-quickhelp-delay . 0.8)
-;;            (company-quickhelp-mode . t))
-;;   :bind (company-active-map
-;;          ("M-h" . company-quickhelp-manual-begin))
-;;   :hook (company-mode-hook))
-
-(leaf all-the-icons
-  :doc "A library for inserting Developer icons"
-  :req "emacs-24.3" "memoize-1.0.1"
-  :tag "lisp" "convenient" "emacs>=24.3"
-  :added "2020-08-12"
-  :url "https://github.com/domtronn/all-the-icons.el"
-  :emacs>= 24.3
-  :ensure t
-  :after memoize)
-
-(leaf all-the-icons-dired
-  :doc "Shows icons for each file in dired mode"
-  :req "emacs-24.4" "all-the-icons-2.2.0"
-  :tag "dired" "icons" "files" "emacs>=24.4"
-  :added "2020-08-12"
-  :url "https://github.com/jtbm37/all-the-icons-dired"
-  :emacs>= 24.4
-  :ensure t
-  :after all-the-icons)
-
-(leaf all-the-icons-ivy
-  :doc "Shows icons while using ivy and counsel"
-  :req "emacs-24.4" "all-the-icons-2.4.0" "ivy-0.8.0"
-  :tag "faces" "emacs>=24.4"
-  :added "2020-08-12"
-  :emacs>= 24.4
-  :ensure t
-  :after all-the-icons ivy
-  :custom ((all-the-icons-ivy-file-commands . '(counsel-find-file
-                                                counsel-imenu
-					                                      counsel-file-jump
-					                                      counsel-recentf
-					                                      counsel-ibuffer
-                                                counsel-switch-buffer
-					                                      counsel-projectile
-					                                      counsel-projectile-find-file
-					                                      counsel-projectile-find-dir
-					                                      ivy-switch-buffer))
-           (all-the-icons-ivy-buffer-commands . '(counsel-find-file
-                                                  counsel-imenu
-					                                        counsel-file-jump
-					                                        counsel-recentf
-					                                        counsel-ibuffer
-                                                  counsel-switch-buffer
-					                                        counsel-projectile
-					                                        counsel-projectile-find-file
-					                                        counsel-projectile-find-dir
-					                                        ivy-switch-buffer)))
-  :config
-  (all-the-icons-ivy-setup))
-
-(leaf ivy
-  :doc "Incremental Vertical completYon"
-  :req "emacs-24.5"
-  :tag "matching" "emacs>=24.5"
-  :added "2020-08-13"
-  :url "https://github.com/abo-abo/swiper"
-  :emacs>= 24.5
-  :ensure t
-  :custom ((ivy-truncate-lines)
-	         (ivy-wrap . t)
-	         (enable-recursive-minibuffers . t)
-	         (ivy-fixed-height-minibuffer . t)
-	         (ivy-count-format . "(%d/%d) ")
-           (ivy-height-alist . '((t
-                                 lambda (_caller)
-                                 (/ (frame-height) 3)))))
-  :global-minor-mode t)
-
-(leaf ivy-yasnippet
-  :doc "Preview yasnippets with ivy"
-  :req "emacs-24.1" "cl-lib-0.6" "ivy-0.10.0" "yasnippet-0.12.2" "dash-2.14.1"
-  :tag "convenience" "emacs>=24.1"
-  :added "2020-12-15"
-  :url "https://github.com/mkcms/ivy-yasnippet"
-  :emacs>= 24.1
-  :ensure t
-  :after ivy yasnippet
-  :bind (("C-c y" . ivy-yasnippet)))
-
-(leaf ivy-rich
-  :doc "More friendly display transformer for ivy"
-  :req "emacs-25.1" "ivy-0.13.0"
-  :tag "ivy" "convenience" "emacs>=25.1"
-  :added "2020-08-13"
-  :url "https://github.com/Yevgnen/ivy-rich"
-  :emacs>= 25.1
-  :ensure t
-  :after ivy
-  :global-minor-mode t)
-
-(leaf all-the-icons-ivy-rich
-  :doc "Better experience with icons for ivy"
-  :req "emacs-25.1" "ivy-rich-0.1.0" "all-the-icons-2.2.0"
-  :tag "ivy" "icons" "convenience" "emacs>=25.1"
-  :added "2020-08-13"
-  :url "https://github.com/seagle0128/all-the-icons-ivy-rich"
-  :emacs>= 25.1
-  :ensure t
-  :after ivy-rich all-the-icons
-  :global-minor-mode t)
-
-
-(leaf ivy-prescient
-  :doc "prescient.el + Ivy"
-  :req "emacs-25.1" "prescient-5.0" "ivy-0.11.0"
-  :tag "extensions" "emacs>=25.1"
-  :added "2020-08-13"
-  :url "https://github.com/raxod502/prescient.el"
-  :emacs>= 25.1
-  :ensure t
-  :after prescient ivy
-  :custom ((ivy-prescient-retain-classic-highlighting . t))
-  :global-minor-mode t)
-
-(leaf swiper
-  :doc "Isearch with an overview. Oh, man!"
-  :req "emacs-24.5" "ivy-0.13.0"
-  :tag "matching" "emacs>=24.5"
-  :added "2020-08-13"
-  :url "https://github.com/abo-abo/swiper"
-  :emacs>= 24.5
-  :ensure t
-  :after ivy
-  :bind (("C-c s" . swiper)))
-
-(leaf counsel
-  :doc "Various completion functions using Ivy"
-  :req "emacs-24.5" "swiper-0.13.0"
-  :tag "tools" "matching" "convenience" "emacs>=24.5"
-  :added "2020-08-13"
-  :url "https://github.com/abo-abo/swiper"
-  :emacs>= 24.5
-  :ensure t
-  :after swiper
-  :bind (("M-C-r" . counsel-recentf)
-         ("C-c i" . counsel-imenu)
-         ("C-x C-b" . counsel-ibuffer)
-         ("C-x b" . counsel-switch-buffer))
-  :custom ((counsel-find-file-ignore-regexp (regexp-opt completion-ignored-extensions)))
-  :global-minor-mode t)
-
-(leaf counsel-projectile
-  :doc "Ivy integration for Projectile"
-  :req "counsel-0.13.0" "projectile-2.0.0"
-  :tag "convenience" "project"
-  :added "2020-08-13"
-  :url "https://github.com/ericdanan/counsel-projectile"
-  :ensure t
-  :after counsel projectile
-  :custom ((counsel-projectile-sort-files . t)
-           (counsel-projectile-sort-projects . t)
-           (counsel-projectile-mode . t)))
-
-(leaf prescient
-  :doc "Better sorting and filtering"
-  :req "emacs-25.1"
-  :tag "extensions" "emacs>=25.1"
-  :added "2020-08-13"
-  :url "https://github.com/raxod502/prescient.el"
-  :emacs>= 25.1
-  :ensure t
-  :global-minor-mode prescient-persist-mode)
-
-(leaf avy
-  :doc "Jump to arbitrary positions in visible text and select text quickly."
-  :req "emacs-24.1" "cl-lib-0.5"
-  :tag "location" "point" "emacs>=24.1"
-  :added "2020-08-13"
-  :url "https://github.com/abo-abo/avy"
-  :emacs>= 24.1
-  :ensure t)
-
-(leaf amx
-  :doc "Alternative M-x with extra features."
-  :req "emacs-24.4" "s-0"
-  :tag "usability" "convenience" "emacs>=24.4"
-  :added "2020-08-13"
-  :url "http://github.com/DarwinAwardWinner/amx/"
-  :emacs>= 24.4
-  :ensure t
-  :custom ((amx-history-length . 35)
-	         (amx-backend . 'ivy)))
-
-(leaf ace-isearch
-  :doc "A seamless bridge between isearch, ace-jump-mode, avy, helm-swoop and swiper"
-  :req "emacs-24"
-  :tag "emacs>=24"
-  :added "2020-08-13"
-  :url "https://github.com/tam17aki/ace-isearch"
-  :emacs>= 24
-  :ensure t
-  :global-minor-mode global-ace-isearch-mode)
-
-(leaf smartparens
-  :doc "Automatic insertion, wrapping and paredit-like navigation with user defined pairs."
-  :req "dash-2.13.0" "cl-lib-0.3"
-  :added "2020-08-13"
-  :ensure t
-  :require smartparens-config
-  :global-minor-mode smartparens-global-mode)
-
-(leaf undo-tree
-  :doc "Treat undo history as a tree"
-  :tag "tree" "history" "redo" "undo" "files" "convenience"
-  :added "2020-08-13"
-  :url "http://www.dr-qubit.org/emacs.php"
-  :ensure t
-  :global-minor-mode global-undo-tree-mode)
-
-(leaf restclient
-  :doc "An interactive HTTP client for Emacs"
-  :tag "http"
-  :added "2020-12-18"
-  :ensure t)
-
-(leaf which-key
-  :doc "Display available keybindings in popup"
-  :req "emacs-24.4"
-  :tag "emacs>=24.4"
-  :added "2020-08-13"
-  :url "https://github.com/justbur/emacs-which-key"
-  :emacs>= 24.4
-  :ensure t
-  :global-minor-mode t)
-
-(leaf leaf-convert
-  :bind (("C-t" . hydra-window/body))
-  :config
+(leaf window-customize
+  :preface
   (defun split-window-horizontally-n (num_wins)
     "任意の数だけ横に分割"
     (interactive "p")
-    (dotimes (i
-	            (- num_wins 1))
-      (split-window-horizontally))
+    (let ((n 1))
+      (while (< n num_wins)
+        (split-window-horizontally)
+        (setq n (1+ n))))
     (balance-windows))
-
   (defhydra hydra-window nil
-    ("t" neotree-toggle)
     ("b" windmove-left)
     ("n" windmove-down)
     ("p" windmove-up)
@@ -687,84 +215,15 @@
     ("0" delete-window)
     ("1" delete-other-windows)
     ("3"
-     (lambda nil
-       "3分割"
-       (interactive)
+     (lambda ()
        (split-window-horizontally-n 3)))
     ("4"
-     (lambda nil
-       "4分割"
-       (interactive)
-       (split-window-horizontally-n 4)))
-    ("6"
-     (lambda nil
-       "6分割"
-       (interactive)
-       (split-window-horizontally-n 3)
-       (split-window-vertically)
-       (setq i 0)
-       (while (< i 2)
-	       (windmove-right)
-	       (split-window-vertically)
-	       (setq i (+ 1 i)))))))
-
-(leaf wgrep
-  :doc "Writable grep buffer and apply the changes to files"
-  :tag "extensions" "edit" "grep"
-  :added "2020-11-19"
-  :url "http://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"
-  :ensure t)
-
-(leaf leaf-convert
-  :setq ((scroll-conservatively . 1)))
-
-
-(leaf goto-chg
-  :doc "goto last change"
-  :tag "matching" "convenience"
-  :added "2020-11-27"
-  :url "https://github.com/emacs-evil/goto-chg"
-  :ensure t
-  :bind (("M-[" . hydra-goto-chg/goto-last-change)
-         ("M-[" . hydra-goto-chg/goto-last-change-reverse))
-  :config
-  (defhydra hydra-goto-chg ()
-    ("[" goto-last-change)
-    ("]" goto-last-change-reverse)))
-
-(leaf neotree
-  :doc "A tree plugin like NerdTree for Vim"
-  :req "cl-lib-0.5"
-  :added "2020-08-13"
-  :url "https://github.com/jaypei/emacs-neotree"
-  :ensure t
-  :custom ((neo-theme . 'ascii)
-           (neo-persist-show . t)
-           (neo-smart-open . t)
-           (neo-show-hidden-files . t)
-           (neo-theme . 'icons)
-           (neo-window-width . '50)))
-
-(leaf open-junk-file
-  :doc "Open a junk (memo) file to try-and-error"
-  :tag "tools" "convenience"
-  :added "2020-10-29"
-  :url "http://www.emacswiki.org/cgi-bin/wiki/download/open-junk-file.el"
-  :ensure t
-  :preface
-  (setq my-open-junk-file-format
-        (format "%s%s"
-                (string-trim (shell-command-to-string "ghq root"))
-                "/github.com/yasushiasahi/junkfiles/%Y/%m/%d-%H%M%S."))
-  :bind (("C-c j" . open-junk-file))
-  :custom ((open-junk-file-find-file-function . 'find-file)
-           (open-junk-file-format . my-open-junk-file-format)))
-
+     (lambda ()
+       (split-window-horizontally-n 4))))
+  :defun (split-window-horizontally-n)
+  :bind (("C-t" . hydra-window/body)))
 
 (leaf multiple-cursors
-  :doc "Multiple cursors for Emacs."
-  :req "cl-lib-0.5"
-  :added "2020-08-13"
   :ensure t
   :bind (("C-q" . hydra-multiple-cursors/body))
   :config
@@ -774,8 +233,8 @@
 ------------------------------------------------------------------
  [_p_]   Next     [_n_]   Next     [_l_] Edit lines  [_0_] Insert numbers
  [_P_]   Skip     [_N_]   Skip     [_a_] Mark all    [_A_] Insert letters
- [_M-p_] Unmark   [_M-n_] Unmark   [_s_] Search
- [Click] Cursor at point       [_q_] Quit"
+ [_M-p_] Unmark   [_M-n_] Unmark   [_s_] Search      [_q_] Quit
+ [_|_] Align with input CHAR       [Click] Cursor at point"
     ("l" mc/edit-lines :exit t)
     ("a" mc/mark-all-like-this :exit t)
     ("n" mc/mark-next-like-this)
@@ -784,6 +243,7 @@
     ("p" mc/mark-previous-like-this)
     ("P" mc/skip-to-previous-like-this)
     ("M-p" mc/unmark-previous-like-this)
+    ("|" mc/vertical-align)
     ("s" mc/mark-all-in-region-regexp :exit t)
     ("0" mc/insert-numbers :exit t)
     ("A" mc/insert-letters :exit t)
@@ -793,353 +253,211 @@
     ("<drag-mouse-1>" ignore)
     ("q" nil)))
 
-
-(leaf projectile
-  :doc "Manage and navigate projects in Emacs easily"
-  :req "emacs-25.1" "pkg-info-0.4"
-  :tag "convenience" "project" "emacs>=25.1"
-  :added "2020-08-13"
-  :url "https://github.com/bbatsov/projectile"
-  :emacs>= 25.1
+(leaf rainbow-delimiters
   :ensure t
-  :custom ((projectile-completion-system . 'ivy))
-  :bind (("C-c p" . projectile-command-map))
+  :hook (prog-mode-hook . rainbow-delimiters-mode))
+
+(leaf expand-region
+  :ensure t
+  :bind (("C-o" . er/expand-region)))
+
+(leaf smartparens
+  :ensure t
+  :require smartparens-config
+  :global-minor-mode smartparens-global-mode)
+
+(leaf which-key
+  :ensure t
   :global-minor-mode t)
 
-(leaf with-editor
-  :doc "Use the Emacsclient as $EDITOR"
-  :req "emacs-24.4" "async-1.9"
-  :tag "tools" "emacs>=24.4"
-  :added "2020-11-27"
-  :url "https://github.com/magit/with-editor"
-  :emacs>= 24.4
-  :ensure t)
-
-(leaf magit
-  :doc "A Git porcelain inside Emacs."
-  :req "emacs-25.1" "async-20200113" "dash-20200524" "git-commit-20200516" "transient-20200601" "with-editor-20200522"
-  :tag "vc" "tools" "git" "emacs>=25.1"
-  :added "2020-08-13"
-  :emacs>= 25.1
-  :ensure t
-  :after with-editor
-  :custom ((magit-completing-read-function . 'ivy-completing-read)))
-
-(leaf kubernetes
-  :doc "Magit-like porcelain for Kubernetes."
-  :req "emacs-25.1" "dash-2.12.0" "magit-2.8.0" "magit-popup-2.13.0"
-  :tag "emacs>=25.1"
-  :added "2020-12-19"
-  :emacs>= 25.1
-  :ensure t
-  :after magit magit-popup)
-
-(leaf add-node-modules-path
-  :doc  "Add node_modules to your exec-path"
-  :tag "eslint" "node_modules" "node" "javascript"
-  :added "2020-08-13"
-  :url "https://github.com/codesuki/add-node-modules-path"
-  :ensure t
-  :hook ((js-mode-hook css-mode-hook web-mode-hook scss-mode typescript-mode) . add-node-modules-path))
-
-(leaf lsp-mode
-  :doc "LSP mode"
-  :req "emacs-26.1" "dash-2.14.1" "dash-functional-2.14.1" "f-0.20.0" "ht-2.0" "spinner-1.7.3" "markdown-mode-2.3" "lv-0"
-  :tag "languages" "emacs>=26.1"
-  :added "2020-08-13"
-  :url "https://github.com/emacs-lsp/lsp-mode"
-  :emacs>= 26.1
-  :ensure t
-  :after spinner markdown-mode lv
-  :hook (lsp-mode-hook . lsp-enable-which-key-integration)
-  :custom ((gc-cons-threshold . 6400000)
-           (read-process-output-max . 12800000)
-           (lsp-enable-file-watchers . nil)
-	         (lsp-idle-delay . 0.5)
-	         (lsp-response-timeout . 5)
-	         (lsp-completion-provider . :capf)
-	         (lsp-prefer-capf . t)
-           (lsp-keymap-prefix . "C-c l")
-           (lsp-enable-indentation . nil)))
-
-(leaf lsp-ui
-  :doc "UI modules for lsp-mode"
-  :req "emacs-26.1" "dash-2.14" "dash-functional-1.2.0" "lsp-mode-6.0" "markdown-mode-2.3"
-  :tag "tools" "languages" "emacs>=26.1"
-  :added "2020-08-13"
-  :url "https://github.com/emacs-lsp/lsp-ui"
-  :emacs>= 26.1
-  :ensure t
-  :after lsp-mode markdown-mode
-  :commands lsp-ui-mode)
-
-;; (leaf lsp-ivy
-;;   :doc "LSP ivy integration"
-;;   :req "emacs-25.1" "dash-2.14.1" "lsp-mode-6.2.1" "ivy-0.13.0"
-;;   :tag "debug" "languages" "emacs>=25.1"
-;;   :added "2020-08-13"
-;;   :url "https://github.com/emacs-lsp/lsp-ivy"
-;;   :emacs>= 25.1
-;;   :ensure t
-;;   :after lsp-mode ivy
-;;   :commands lsp-ivy-workspace-symbol)
-
-;; (leaf lsp-treemacs
-;;   :doc "LSP treemacs"
-;;   :req "emacs-26.1" "dash-2.14.1" "dash-functional-2.14.1" "f-0.20.0" "ht-2.0" "treemacs-2.5" "lsp-mode-6.0"
-;;   :tag "languages" "emacs>=26.1"
-;;   :added "2020-08-13"
-;;   :url "https://github.com/emacs-lsp/lsp-treemacs"
-;;   :emacs>= 26.1
-;;   :ensure t
-;;   :after treemacs lsp-mode
-;;   :commands lsp-treemacs-errors-list)
-
-(leaf lsp-tailwindcss
-  :doc "A lsp-mode client for tailwindcss"
-  :req "lsp-mode-3.0" "emacs-24.3"
-  :tag "tools" "language" "emacs>=24.3"
-  :added "2021-03-24"
-  :url "https://github.com/merrickluo/lsp-tailwindcss"
-  :emacs>= 24.3
-  :ensure t
-  :after lsp-mode
-  :config
-  (setq lsp-tailwindcss-add-on-mode t)
-  (require 'lsp-tailwindcss))
-
-(leaf prettier-js
-  :doc "Minor mode to format JS code on file save"
-  :tag "js" "edit" "wp" "convenience"
-  :added "2020-08-13"
-  :url "https://github.com/prettier/prettier-emacs"
-  :ensure t)
-
-(leaf auto-shell-command
-  :doc "Run the shell command asynchronously that you specified when you save the file."
-  :req "deferred-20130312" "popwin-20130329"
-  :tag "auto" "deferred" "async" "save" "shell"
-  :added "2020-11-19"
-  :ensure t
-  :after deferred
-  :config
-  (ascmd:add '("/Users/zero.asahi/ghq/github.com/karabiner-tokushimaru/tokushimaru_portal_system_source/resources/views/**/.*\.blade.php"       "blade-formatter --w $FILE")))
-
-(leaf reformatter
-  :doc "Define commands which run reformatters on the current buffer"
-  :req "emacs-24.3"
-  :tag "tools" "convenience" "emacs>=24.3"
-  :added "2021-03-09"
-  :url "https://github.com/purcell/reformatter.el"
-  :emacs>= 24.3
-  :ensure t
-  :config
-  (reformatter-define eslint-fix
-    :program "yarn"
-    :args (list "eslint" (buffer-file-name) "--fix"))
-
-  )
-
-(leaf scss-mode
-  :doc "Major mode for editing SCSS files"
-  :tag "mode" "css" "scss"
-  :added "2020-08-13"
-  :url "https://github.com/antonj/scss-mode"
-  :ensure t
-  :custom ((css-indent-offset . 2))
-  :hook (scss-mode . prettier-js-mode))
-
-
-(leaf web-mode
-  :doc "major mode for editing web templates"
-  :req "emacs-23.1"
-  :tag "languages" "emacs>=23.1"
-  :added "2020-08-13"
-  :url "http://web-mode.org"
-  :emacs>= 23.1
-  :ensure t
-  :mode ("\\.html\\'" "\\.php\\'" "\\.jsx\\'" "\\.tsx\\'" "\\.vue\\'" "\\.xml\\'")
-  :custom ((web-mode-attr-indent-offset . nil)
-	         (web-mode-markup-indent-offset . 2)
-	         (web-mode-css-indent-offset . 2)
-	         (web-mode-code-indent-offset . 2)
-	         (web-mode-sql-indent-offset . 2)
-	         (indent-tabs-mode)
-	         (tab-width . 2)
-	         (web-mode-script-padding . 0)
-	         (web-mode-style-padding . 0)
-	         (web-mode-block-padding . 0)
-	         (web-mode-enable-current-element-highlight . t)
-	         (web-mode-enable-current-column-highlight . t)
-	         (web-mode-enable-auto-closing . t)
-	         (web-mode-enable-auto-expanding . t)
-	         (web-mode-comment-style . 2))
-  :config
-  (add-to-list 'web-mode-comment-formats '("jsx" . "//" ))
-  (add-to-list 'web-mode-comment-formats '("javascript" . "//" ))
-  :hook (web-mode-hook . (lambda ()
-                           (add-node-modules-path)
-                           (prettier-js-mode)
-                           (when (string-suffix-p ".tsx" buffer-file-name)
-                             (lsp)
-                             (flycheck-select-checker 'javascript-eslint)))))
-
-(leaf emmet-mode
-  :doc "Unofficial Emmet's support for emacs"
-  :tag "convenience"
-  :added "2021-03-09"
-  :url "https://github.com/smihica/emmet-mode"
-  :ensure t)
-
-(leaf typescript-mode
-  :doc "Major mode for editing typescript"
-  :req "emacs-24.3"
-  :tag "languages" "typescript" "emacs>=24.3"
-  :added "2020-08-23"
-  :url "http://github.com/ananthakumaran/typescript.el"
-  :emacs>= 24.3
-  :ensure t
-  :custom ((typescript-indent-level . 2))
-  :mode ("\\.tsx\\'" "\\.ts\\'")
-  :config
-  (add-hook 'typescript-mode-hook
-          (lambda ()
-            (add-node-modules-path)
-            (mmm-mode)
-            (emmet-mode)
-            (setq emmet-expand-jsx-className? t)
-            (prettier-js-mode)
-            (lsp))))
-
-(leaf mmm-mode
-  :doc "Allow Multiple Major Modes in a buffer"
-  :req "cl-lib-0.2"
-  :tag "tools" "languages" "faces" "convenience"
-  :added "2021-02-28"
-  :url "https://github.com/purcell/mmm-mode"
-  :ensure t
-  :config
-  (require 'mmm-mode)
-  (setq mmm-global-mode 'maybe)
-  (setq mmm-submode-decoration-level 0)
-  (mmm-add-classes
-   '((mmm-jsx-mode
-      :front "\\(return\s\\|n\s\\|(\n\s*\\)<"
-      :front-offset -1
-      :back ">\n?\s*)"
-      :back-offset 1
-      :submode web-mode)))
-  (mmm-add-mode-ext-class 'typescript-mode nil 'mmm-jsx-mode)
-
-  (defun mmm-reapply ()
-    (mmm-mode)
-    (mmm-mode))
-
-  (add-hook 'after-save-hook
-            (lambda ()
-              (when (string-match-p "\\.tsx?" buffer-file-name)
-                (mmm-reapply)
-                )))
-  )
-
-
-
-(leaf go-mode
-  :doc "Major mode for the Go programming language"
-  :tag "go" "languages"
-  :added "2020-09-16"
-  :url "https://github.com/dominikh/go-mode.el"
-  :ensure t
-  :custom ((gofmt-command . "goimports"))
-  :hook ((go-mode-hook . (lambda ()
-                           (setq tab-width 4)
-                           (lsp-deferred)
-                           (setq lsp-diagnostics-provider :none)))
-         (before-save-hook . gofmt-before-save)))
-
-(leaf yaml-mode
-  :doc "Major mode for editing YAML files"
-  :req "emacs-24.1"
-  :tag "yaml" "data" "emacs>=24.1"
-  :added "2020-12-15"
-  :emacs>= 24.1
-  :ensure t)
-
 (leaf vterm
-  :doc "Fully-featured terminal emulator"
-  :req "emacs-25.1"
-  :tag "terminals" "emacs>=25.1"
-  :added "2020-11-27"
-  :url "https://github.com/akermu/emacs-libvterm"
-  :emacs>= 25.1
   :ensure t
   :custom ((vterm-buffer-name-string . "vt %s"))
   :bind ((:vterm-mode-map
           ("C-t" . hydra-window/body))))
 
-(leaf editorconfig
-  :doc "EditorConfig Emacs Plugin"
-  :req "cl-lib-0.5" "nadvice-0.3" "emacs-24"
-  :tag "emacs>=24"
-  :added "2021-04-07"
-  :url "https://github.com/editorconfig/editorconfig-emacs#readme"
-  :emacs>= 24
+(leaf undo-tree
   :ensure t
-  :after nadvice)
+  :global-minor-mode global-undo-tree-mode)
 
-(leaf dockerfile-mode
-  :doc "Major mode for editing Docker's Dockerfiles"
-  :req "emacs-24"
-  :tag "emacs>=24"
-  :added "2021-04-22"
-  :url "https://github.com/spotify/dockerfile-mode"
-  :emacs>= 24
+(leaf projectile
+  :ensure t
+  :custom ((projectile-completion-system . 'ivy))
+  :bind (("C-c p" . projectile-command-map))
+  :global-minor-mode t)
+
+(leaf all-the-icons
   :ensure t)
 
-
-(leaf rust-mode
-  :doc "A major-mode for editing Rust source code"
-  :req "emacs-25.1"
-  :tag "languages" "emacs>=25.1"
-  :added "2021-08-13"
-  :url "https://github.com/rust-lang/rust-mode"
-  :emacs>= 25.1
+(leaf ivy
   :ensure t
-  :custom ((rust-enable-format-on-save . t)
-           (lsp-rust-server . 'rust-analyzer))
-  :hook ((rust-mode-hook . (lambda ()
-                             (cargo-minor-mode)
-                             (lsp)))))
+  :custom ((ivy-truncate-lines)
+	   (ivy-wrap . t)
+	   (enable-recursive-minibuffers . t)
+	   (ivy-fixed-height-minibuffer . t)
+	   (ivy-count-format . "(%d/%d) ")
+           (ivy-height-alist . '((t
+                                  lambda (_caller)
+                                  (/ (frame-height) 3)))))
+  :global-minor-mode t)
 
-(leaf cargo
-  :doc "Emacs Minor Mode for Cargo, Rust's Package Manager."
-  :req "emacs-24.3" "markdown-mode-2.4"
-  :tag "tools" "emacs>=24.3"
-  :added "2021-08-13"
-  :emacs>= 24.3
+(leaf ivy-yasnippet
   :ensure t
-  :after markdown-mode)
+  :bind (("C-c y" . ivy-yasnippet)))
 
-(leaf rust-cargo
-  :doc "Support for cargo"
-  :tag "out-of-MELPA"
-  :added "2021-08-13"
-  ;:el-get {{user}}/rust-cargo
-  :require t)
-
-(leaf flycheck-rust
-  :doc "Flycheck: Rust additions and Cargo support"
-  :req "emacs-24.1" "flycheck-28" "dash-2.13.0" "seq-2.3" "let-alist-1.0.4"
-  :tag "convenience" "tools" "emacs>=24.1"
-  :added "2021-08-13"
-  :url "https://github.com/flycheck/flycheck-rust"
-  :emacs>= 24.1
+(leaf ivy-prescient
   :ensure t
-  :after flycheck)
+  :custom ((ivy-prescient-retain-classic-highlighting . t))
+  :global-minor-mode t)
 
+(leaf swiper
+  :ensure t
+  :bind (("C-c s" . swiper-thing-at-point)))
+
+(leaf counsel
+  :ensure t
+  :bind (("M-C-r" . counsel-recentf)
+         ("C-c i" . counsel-imenu)
+         ("C-x C-b" . counsel-ibuffer)
+         ("C-x b" . counsel-switch-buffer))
+  :custom ((counsel-find-file-ignore-regexp (regexp-opt completion-ignored-extensions)))
+  :global-minor-mode t)
+
+(leaf counsel-projectile
+  :ensure t
+  :custom ((counsel-projectile-sort-files . t)
+           (counsel-projectile-sort-projects . t)
+           (counsel-projectile-mode . t)))
+
+
+(leaf prescient
+  :ensure t
+  :global-minor-mode prescient-persist-mode)
+
+(leaf avy
+  :ensure t)
+
+(leaf amx
+  :ensure t
+  :custom ((amx-history-length . 35)
+	         (amx-backend . 'ivy)))
+
+(leaf ace-isearch
+  :ensure t
+  :global-minor-mode global-ace-isearch-mode)
+
+(leaf ivy-rich
+  :ensure t)
+
+(leaf all-the-icons-ivy-rich
+  :ensure t
+  :config
+  (all-the-icons-ivy-rich-mode 1)
+  (ivy-rich-mode 1))
+
+(leaf flycheck
+  :ensure t)
+
+(leaf yasnippet
+  :ensure t
+  :defun (yas-reload-all)
+  :config
+  (yas-reload-all)
+  :global-minor-mode yas-global-mode)
+
+(leaf yasnippet-snippets
+  :ensure t)
+
+(leaf company
+  :ensure t
+  :bind ((company-active-map
+          ("C-s" . company-filter-candidates)
+          ("C-n" . company-select-next)
+          ("C-p" . company-select-previous)
+          ("C-f" . company-complete-selection)
+          ("<tab>" . company-complete-selection))
+         (company-search-map
+          ("C-n" . company-select-next)
+          ("C-p" . company-complete-common-or-cycle)))
+  :custom ((company-idle-delay . 0)
+           (company-echo-delay . 0)
+           (company-minimum-prefix-length . 1))
+  :global-minor-mode global-company-mode)
+
+(leaf company-prescient
+  :disabled t
+  :ensure t
+  :global-minor-mode t)
+
+(leaf lsp-mode
+  :ensure t
+  :init
+  (yas-global-mode)
+  :hook ((lsp-mode-hook . lsp-enable-which-key-integration)
+         ((rust-mode-hook typescript-mode-hook) . lsp))
+  :custom ((gc-cons-threshold . 104857600)
+           (read-process-output-max . 1048576)
+	   (lsp-idle-delay . 0.5)
+	   (lsp-response-timeout . 5)
+	   (lsp-completion-provider . :capf)
+	   (lsp-prefer-capf . t)
+           (lsp-keymap-prefix . "C-c l")
+           (lsp-enable-indentation . nil)
+           ;; rust
+           (lsp-rust-analyzer-cargo-watch-command . "clippy")
+           (lsp-rust-analyzer-proc-macro-enable . t)
+           (lsp-rust-analyzer-server-display-inlay-hints . t)))
+
+(leaf lsp-tailwindcss
+  :ensure t
+  :require t
+  :custom ((lsp-tailwindcss-add-on-mode . t)))
+
+(leaf lsp-ui
+  :ensure t)
+
+(leaf add-node-modules-path
+  :ensure t
+  :hook ((typescript-mode) . add-node-modules-path))
+
+(leaf prettier
+  :ensure t
+  :global-minor-mode global-prettier-mode)
+
+(leaf tree-sitter
+  :ensure t
+  :custom ((global-tree-sitter-mode . t))
+  :hook (tree-sitter-after-on-hook . tree-sitter-hl-mode))
+
+(leaf tree-sitter-langs
+  :ensure t
+  :require t
+  :defvar tree-sitter-major-mode-language-alist
+  :config
+  (tree-sitter-require 'tsx)
+  (add-to-list 'tree-sitter-major-mode-language-alist '(react-tsx-mode . tsx)))
+
+(leaf rustic
+  :ensure t
+  :custom ((rustic-format-trigger . 'on-save)))
+
+(leaf typescript-mode
+  :ensure t
+  :preface
+  (define-derived-mode react-tsx-mode typescript-mode "React")
+  :mode ("\\.ts\\'"
+         ("\\.tsx\\'" . react-tsx-mode))
+  :custom ((typescript-indent-level . 2)))
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; end writing settings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'init)
-
 
 ;; Local Variables:
 ;; indent-tabs-mode: nil

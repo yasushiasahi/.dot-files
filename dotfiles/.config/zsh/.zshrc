@@ -1,18 +1,9 @@
-# dockerのファイル群の場所
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-
 # /usr/local/を優先に
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.poetry/bin:$PATH"
 
-# android studio sdk
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-
+# cargoのパスを通す
+. "$HOME/.cargo/env"
+export RA_LOG=project_model=debug
 
 # go module mode
 export GO111MODULE=on
@@ -140,9 +131,6 @@ zplug load --verbose
 autoload -U promptinit; promptinit
 prompt pure
 
-# zsh-autosuggestionsの文字色を変更 default='fg=8'
-# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
-
 # emacs vtermの設定
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
     . "$(find $XDG_CONFIG_HOME/emacs/elpa -maxdepth 1 -name 'vterm-*')/etc/emacs-vterm-zsh.sh"
@@ -150,8 +138,3 @@ fi
 
 autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd (){ print -Pn "\e]2;%~\a" }
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
-
-. /usr/local/opt/asdf/asdf.sh
-
-export PATH="$HOME/.poetry/bin:$PATH"
