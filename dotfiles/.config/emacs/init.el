@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2021  Yasushi Asahi
 
-;; Author: Naoya Yamashita <asahi1600@gmail.com>
+;; Author: Yasushi Asahi <asahi1600@gmail.com>
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -160,13 +160,13 @@
   (leaf files
     :custom `((auto-save-timeout . 15)
               (auto-save-interval . 60)
-              (auto-save-file-name-transforms . '((".*" ,(locate-user-emacs-file "backup/") t)))
-              (backup-directory-alist . '((".*" . ,(locate-user-emacs-file "backup"))
+              (auto-save-file-name-transforms . '((".*" ,(locate-user-emacs-file "backups/") t)))
+              (backup-directory-alist . '((".*" . ,(locate-user-emacs-file "backups"))
                                           (,tramp-file-name-regexp . nil)))
               (version-control . t)
               (delete-old-versions . t)))
   (leaf startup
-    :custom `((auto-save-list-file-prefix . ,(locate-user-emacs-file "backup/.saves-"))))
+    :custom `((auto-save-list-file-prefix . ,(locate-user-emacs-file "backups/.saves-"))))
   )
 
 (leaf solarized-theme
@@ -184,6 +184,7 @@
 
 (leaf mini-modeline
   :ensure t
+  :config
   :global-minor-mode t)
 
 (leaf window-customize
@@ -257,14 +258,14 @@
   :ensure t
   :hook (prog-mode-hook . rainbow-delimiters-mode))
 
-(leaf expand-region
-  :ensure t
-  :bind (("C-o" . er/expand-region)))
-
 (leaf smartparens
   :ensure t
   :require smartparens-config
   :global-minor-mode smartparens-global-mode)
+
+(leaf expand-region
+  :ensure t
+  :bind (("C-o" . er/expand-region)))
 
 (leaf which-key
   :ensure t
@@ -275,6 +276,18 @@
   :custom ((vterm-buffer-name-string . "vt %s"))
   :bind ((:vterm-mode-map
           ("C-t" . hydra-window/body))))
+
+(leaf open-junk-file
+  :ensure t
+  :defvar (my-open-junk-file-format)
+  :preface
+  (setq my-open-junk-file-format (format
+                                  "%s%s"
+                                  (string-trim (shell-command-to-string "ghq root"))
+                                  "/github.com/yasushiasahi/junkfiles/%Y/%m/%d-%H%M%S."))
+  :bind (("C-c j" . open-junk-file))
+  :custom ((open-junk-file-find-file-function . 'find-file)
+           (open-junk-file-format . my-open-junk-file-format)))
 
 (leaf undo-tree
   :ensure t
@@ -287,7 +300,22 @@
   :global-minor-mode t)
 
 (leaf all-the-icons
-  :ensure t)
+  :ensure t
+  :config
+  (set-fontset-font t 'unicode (font-spec :family "all-the-icons") nil 'append)
+  (set-fontset-font t 'unicode (font-spec :family "file-icons") nil 'append)
+  (set-fontset-font t 'unicode (font-spec :family "Material Icons") nil 'append)
+  (set-fontset-font t 'unicode (font-spec :family "github-octicons") nil 'append)
+  (set-fontset-font t 'unicode (font-spec :family "FontAwesome") nil 'append)
+  (set-fontset-font t 'unicode (font-spec :family "Weather Icons") nil 'append)
+  (set-fontset-font t 'unicode (font-spec :family "Apple Color Emoji") nil 'append)
+  (add-to-list 'face-font-rescale-alist '(".*all-the-icons.*" . 0.8))
+  (add-to-list 'face-font-rescale-alist '(".*file-icons.*" . 0.8))
+  (add-to-list 'face-font-rescale-alist '(".*Material Icons.*" . 0.8))
+  (add-to-list 'face-font-rescale-alist '(".*octicons.*" . 0.8))
+  (add-to-list 'face-font-rescale-alist '(".*FontAwesome.*" . 0.8))
+  (add-to-list 'face-font-rescale-alist '(".*Weather Icons.*" . 0.8))
+  (add-to-list 'face-font-rescale-alist '(".*Apple Color Emoji.*" . 0.9)))
 
 (leaf ivy
   :ensure t
@@ -329,7 +357,6 @@
            (counsel-projectile-sort-projects . t)
            (counsel-projectile-mode . t)))
 
-
 (leaf prescient
   :ensure t
   :global-minor-mode prescient-persist-mode)
@@ -355,8 +382,18 @@
   (all-the-icons-ivy-rich-mode 1)
   (ivy-rich-mode 1))
 
-(leaf flycheck
+(leaf wgrep
   :ensure t)
+
+(leaf flycheck
+  :ensure t
+  :config
+  (leaf flycheck-package
+    :doc "A Flycheck checker for elisp package authors"
+    :ensure t
+    :config
+    (flycheck-package-setup)
+    (global-flycheck-mode)))
 
 (leaf yasnippet
   :ensure t
@@ -397,10 +434,10 @@
          ((rust-mode-hook typescript-mode-hook) . lsp))
   :custom ((gc-cons-threshold . 104857600)
            (read-process-output-max . 1048576)
-	   (lsp-idle-delay . 0.5)
-	   (lsp-response-timeout . 5)
-	   (lsp-completion-provider . :capf)
-	   (lsp-prefer-capf . t)
+	         (lsp-idle-delay . 0.5)
+	         (lsp-response-timeout . 5)
+	         (lsp-completion-provider . :capf)
+	         (lsp-prefer-capf . t)
            (lsp-keymap-prefix . "C-c l")
            (lsp-enable-indentation . nil)
            ;; rust
@@ -418,7 +455,7 @@
 
 (leaf add-node-modules-path
   :ensure t
-  :hook ((typescript-mode) . add-node-modules-path))
+  :hook ((typescript-mode web-mode scss-mode css-mode) . add-node-modules-path))
 
 (leaf prettier
   :ensure t
@@ -426,7 +463,7 @@
 
 (leaf tree-sitter
   :ensure t
-  :custom ((global-tree-sitter-mode . t))
+  :global-minor-mode global-tree-sitter-mode
   :hook (tree-sitter-after-on-hook . tree-sitter-hl-mode))
 
 (leaf tree-sitter-langs
@@ -437,8 +474,7 @@
   (tree-sitter-require 'tsx)
   (add-to-list 'tree-sitter-major-mode-language-alist '(react-tsx-mode . tsx)))
 
-(leaf rustic
-  :ensure t
+(leaf rustic :ensure t
   :custom ((rustic-format-trigger . 'on-save)))
 
 (leaf typescript-mode
@@ -449,6 +485,28 @@
          ("\\.tsx\\'" . react-tsx-mode))
   :custom ((typescript-indent-level . 2)))
 
+(leaf web-mode
+  :ensure t
+  :mode ("\\.html\\'" "\\.php\\'" "\\.vue\\'" "\\.xml\\'")
+  :custom ((web-mode-attr-indent-offset . nil)
+	         (web-mode-markup-indent-offset . 4)
+	         (web-mode-css-indent-offset . 2)
+	         (web-mode-code-indent-offset . 4)
+	         (web-mode-sql-indent-offset . 2)
+	         (indent-tabs-mode . nil)
+	         (tab-width . 2)
+	         (web-mode-script-padding . 4)
+	         (web-mode-style-padding . 0)
+	         (web-mode-block-padding . 0)
+	         (web-mode-enable-current-element-highlight . t)
+	         (web-mode-enable-current-column-highlight . t)
+	         (web-mode-enable-auto-closing . t)
+	         (web-mode-enable-auto-expanding . t)
+	         (web-mode-comment-style . 2)))
+
+(leaf scss-mode
+  :ensure t
+  :custom ((css-indent-offset . 2)))
 
 
 
