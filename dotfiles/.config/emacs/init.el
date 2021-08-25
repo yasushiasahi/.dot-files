@@ -184,8 +184,101 @@
 
 (leaf mini-modeline
   :ensure t
+  :global-minor-mode t
   :config
-  :global-minor-mode t)
+  (leaf smart-mode-line
+    :ensure t
+    :custom ((rm-whitelist . '("lsp")))
+    :config
+    (sml/setup))
+  (leaf nyan-mode
+    :ensure t
+    :global-minor-mode t))
+
+  ;; ;; https://github.com/tomoya/.emacs.d/blob/master/init.el
+  ;; (defun my-flycheck-mode-line-status-text (&optional status)
+  ;;   (let ((text (pcase (or status flycheck-last-status-change)
+  ;;                 (`not-checked "😴")
+  ;;                 (`no-checker "😎")
+  ;;                 (`running "🤔")
+  ;;                 (`errored "😭")
+  ;;                 (`finished
+  ;;                  (let-alist (flycheck-count-errors flycheck-current-errors)
+  ;;                    (if (or .error .warning)
+  ;;                        (concat
+  ;;                         "😰"
+  ;;                         (propertize (format "%s" (or .error 0)) 'face '(:foreground "#ec5aaa"))
+  ;;                         "😥"
+  ;;                         (propertize (format "%s" (or .warning 0)) 'face '(:foreground "#fad900"))
+  ;;                         )
+  ;;                      "🤩")))
+  ;;                 (`interrupted "🤯")
+  ;;                 (`suspicious "🙃"))))
+  ;;     text))
+  ;; (setq flycheck-mode-line '(:eval (my-flycheck-mode-line-status-text)))
+
+  ;; ;; https://github.com/tomoya/.emacs.d/blob/master/init.el
+  ;; (defun my-mode-line-region-info ()
+  ;;   (when mark-active
+  ;;     (let* ((beg (region-beginning))
+  ;;            (end (region-end))
+  ;;            (lines (count-lines beg end))
+  ;;            (words (count-words beg end))
+  ;;            (chars (abs (- beg end))))
+  ;;       (propertize
+  ;;        (format " %s行/%s語/%s字" lines words chars)
+  ;;        'face '(:foreground "#9090fa" :height 1)))))
+
+  ;; ;; https://github.com/tomoya/.emacs.d/blob/master/init.el
+  ;; (defun my-mode-line-vc ()
+  ;;   (let ((file (buffer-file-name)))
+  ;;     (if (or (null file) (null vc-mode)) nil
+  ;;       (let* ((branch
+  ;;               (let ((backend (vc-backend file)))
+  ;;                 (substring vc-mode (+ (if (eq backend 'Hg) 2 3) 2))))
+  ;;              (diff-count (vc-git--run-command-string file "diff" "--numstat" "--"))
+  ;;              (diff-count-text
+  ;;               (if (and diff-count
+  ;;                        (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" diff-count))
+  ;;                   (concat
+  ;;                    (propertize (format "+%s" (match-string 1 diff-count)) 'face '(:foreground "#58e06f"))
+  ;;                    (propertize (format "-%s" (match-string 2 diff-count)) 'face '(:foreground "#f56bb7")))
+  ;;                 "")))
+  ;;         (format "%s %s %s"
+  ;;                 (all-the-icons-octicon "git-branch" :v-adjust 0.1)
+  ;;                 (truncate-string-to-width branch 21 nil nil "…")
+  ;;                 diff-count-text)))))
+
+  ;; (setq-default mini-modeline-r-format '(""
+  ;;                                        mode-line-mule-info
+  ;;                                        mode-line-modified
+  ;;                                        " %b %m "
+  ;;                                        (:eval (my-mode-line-vc))
+  ;;                                        " "
+  ;;                                        flycheck-mode-line
+  ;;                                        (:eval (my-mode-line-region-info))))
+
+
+  ;; (setq-default mini-modeline-r-format '("%b %m %I"
+  ;;                                        " "
+  ;;                                        mode-line-modified
+  ;;                                        " "
+  ;;                                        mode-line-mule-info
+  ;;                                        "<"
+  ;;                                        mode-line-position
+  ;;                                        ">"
+  ;;                                        (:eval (my-mode-line-region-info))
+  ;;                                        " "
+  ;;                                        (:eval (my-mode-line-vc))
+  ;;                                        "|"
+  ;;                                        (:eval (my-flycheck-mode-line-status-text))
+  ;;                                        (:eval (my-mode-line-region-info))))
+
+
+
+
+
+
 
 (leaf window-customize
   :preface
