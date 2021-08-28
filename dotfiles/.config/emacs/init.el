@@ -189,11 +189,13 @@
   (leaf smart-mode-line
     :ensure t
     :custom ((rm-whitelist . '("lsp")))
+    :defun (sml/setup)
     :config
     (sml/setup))
-  (leaf nyan-mode
+  (leaf poke-line
     :ensure t
-    :global-minor-mode t))
+    :custom ((poke-line-pokemon . "squirtle"))
+    :global-minor-mode poke-line-global-mode))
 
   ;; ;; https://github.com/tomoya/.emacs.d/blob/master/init.el
   ;; (defun my-flycheck-mode-line-status-text (&optional status)
@@ -474,6 +476,15 @@
   :config
   (all-the-icons-ivy-rich-mode 1)
   (ivy-rich-mode 1))
+
+(leaf goto-chg
+  :ensure t
+  :bind (("M-[" . hydra-goto-chg/goto-last-change)
+         ("M-[" . hydra-goto-chg/goto-last-change-reverse))
+  :config
+  (defhydra hydra-goto-chg ()
+    ("[" goto-last-change)
+    ("]" goto-last-change-reverse)))
 
 (leaf wgrep
   :ensure t)
