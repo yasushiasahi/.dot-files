@@ -535,7 +535,7 @@
   :init
   (yas-global-mode)
   :hook ((lsp-mode-hook . lsp-enable-which-key-integration)
-         ((rust-mode-hook typescript-mode-hook) . lsp))
+         ((rust-mode-hook typescript-mode-hook typescript-tsx-mode-hook) . lsp))
   :custom ((gc-cons-threshold . 104857600)
            (read-process-output-max . 1048576)
 	         (lsp-idle-delay . 0.5)
@@ -557,9 +557,13 @@
 (leaf lsp-ui
   :ensure t)
 
+(leaf emmet-mode
+  :ensure t
+  :hook typescript-tsx-mode-hook)
+
 (leaf add-node-modules-path
   :ensure t
-  :hook ((typescript-mode web-mode scss-mode css-mode) . add-node-modules-path))
+  :hook ((typescript-mode-hook typescript-tsx-mode-hook web-mode-hook scss-mode-hook css-mode-hook) . add-node-modules-path))
 
 (leaf prettier
   :ensure t
@@ -576,7 +580,7 @@
   :defvar tree-sitter-major-mode-language-alist
   :config
   (tree-sitter-require 'tsx)
-  (add-to-list 'tree-sitter-major-mode-language-alist '(react-tsx-mode . tsx)))
+  (add-to-list 'tree-sitter-major-mode-language-alist '(typescript-tsx-mode . tsx)))
 
 (leaf rustic :ensure t
   :custom ((rustic-format-trigger . 'on-save)))
@@ -584,9 +588,9 @@
 (leaf typescript-mode
   :ensure t
   :preface
-  (define-derived-mode react-tsx-mode typescript-mode "React")
+  (define-derived-mode typescript-tsx-mode typescript-mode "React")
   :mode ("\\.ts\\'"
-         ("\\.tsx\\'" . react-tsx-mode))
+         ("\\.tsx\\'" . typescript-tsx-mode))
   :custom ((typescript-indent-level . 2)))
 
 (leaf web-mode
@@ -612,7 +616,11 @@
   :ensure t
   :custom ((css-indent-offset . 2)))
 
+(leaf json-mode
+  :ensure t)
 
+(leaf dockerfile-mode
+  :ensure t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
