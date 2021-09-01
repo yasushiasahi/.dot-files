@@ -511,6 +511,7 @@
 
 (leaf company
   :ensure t
+  :defvar (company-backends)
   :bind ((company-active-map
           ("C-s" . company-filter-candidates)
           ("C-n" . company-select-next)
@@ -520,20 +521,58 @@
          (company-search-map
           ("C-n" . company-select-next)
           ("C-p" . company-complete-common-or-cycle)))
-  :custom ((company-idle-delay . 0)
+  :custom ((company-idle-delay . 0.3)
            (company-echo-delay . 0)
-           (company-minimum-prefix-length . 1))
+           (company-minimum-prefix-length . 2))
   :global-minor-mode global-company-mode)
 
 (leaf company-prescient
-  :disabled t
   :ensure t
   :global-minor-mode t)
 
+(leaf company-box
+  :ensure t
+  :custom ((company-box-max-candidates . 50)
+           (company-box-icons-alist . 'company-box-icons-all-the-icons))
+  :hook (company-mode-hook)
+  :defvar (company-box-icons-alist company-box-icons-all-the-icons)
+  :config
+  (setq company-box-icons-alist 'company-box-icons-all-the-icons)
+  (declare-function all-the-icons-faicon 'all-the-icons)
+  (declare-function all-the-icons-fileicon 'all-the-icons)
+  (declare-function all-the-icons-material 'all-the-icons)
+  (declare-function all-the-icons-octicon 'all-the-icons)
+  (setq company-box-icons-all-the-icons
+        `((Unknown . ,(all-the-icons-material "find_in_page" :height 0.7 :v-adjust -0.15))
+          (Text . ,(all-the-icons-faicon "book" :height 0.68 :v-adjust -0.15))
+          (Method . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
+          (Function . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
+          (Constructor . ,(all-the-icons-faicon "cube" :height 0.7 :v-adjust -0.05 :face 'font-lock-constant-face))
+          (Field . ,(all-the-icons-faicon "tags" :height 0.65 :v-adjust -0.15 :face 'font-lock-warning-face))
+          (Variable . ,(all-the-icons-faicon "tag" :height 0.7 :v-adjust -0.05 :face 'font-lock-warning-face))
+          (Class . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01 :face 'font-lock-constant-face))
+          (Interface . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01))
+          (Module . ,(all-the-icons-octicon "package" :height 0.7 :v-adjust -0.15))
+          (Property . ,(all-the-icons-octicon "package" :height 0.7 :v-adjust -0.05 :face 'font-lock-warning-face)) ;; Golang module
+          (Unit . ,(all-the-icons-material "settings_system_daydream" :height 0.7 :v-adjust -0.15))
+          (Value . ,(all-the-icons-material "format_align_right" :height 0.7 :v-adjust -0.15 :face 'font-lock-constant-face))
+          (Enum . ,(all-the-icons-material "storage" :height 0.7 :v-adjust -0.15 :face 'all-the-icons-orange))
+          (Keyword . ,(all-the-icons-material "filter_center_focus" :height 0.7 :v-adjust -0.15))
+          (Snippet . ,(all-the-icons-faicon "code" :height 0.7 :v-adjust 0.02 :face 'font-lock-variable-name-face))
+          (Color . ,(all-the-icons-material "palette" :height 0.7 :v-adjust -0.15))
+          (File . ,(all-the-icons-faicon "file-o" :height 0.7 :v-adjust -0.05))
+          (Reference . ,(all-the-icons-material "collections_bookmark" :height 0.7 :v-adjust -0.15))
+          (Folder . ,(all-the-icons-octicon "file-directory" :height 0.7 :v-adjust -0.05))
+          (EnumMember . ,(all-the-icons-material "format_align_right" :height 0.7 :v-adjust -0.15 :face 'all-the-icons-blueb))
+          (Constant . ,(all-the-icons-faicon "tag" :height 0.7 :v-adjust -0.05))
+          (Struct . ,(all-the-icons-faicon "clone" :height 0.65 :v-adjust 0.01 :face 'font-lock-constant-face))
+          (Event . ,(all-the-icons-faicon "bolt" :height 0.7 :v-adjust -0.05 :face 'all-the-icons-orange))
+          (Operator . ,(all-the-icons-fileicon "typedoc" :height 0.65 :v-adjust 0.05))
+          (TypeParameter . ,(all-the-icons-faicon "hashtag" :height 0.65 :v-adjust 0.07 :face 'font-lock-const-face))
+          (Template . ,(all-the-icons-faicon "code" :height 0.7 :v-adjust 0.02 :face 'font-lock-variable-name-face)))))
+
 (leaf lsp-mode
   :ensure t
-  :init
-  (yas-global-mode)
   :hook ((lsp-mode-hook . lsp-enable-which-key-integration)
          ((rust-mode-hook typescript-mode-hook typescript-tsx-mode-hook) . lsp))
   :custom ((gc-cons-threshold . 104857600)
@@ -544,6 +583,7 @@
 	         (lsp-prefer-capf . t)
            (lsp-keymap-prefix . "C-c l")
            (lsp-enable-indentation . nil)
+           (lsp-headerline-breadcrumb-enable . nil)
            ;; rust
            (lsp-rust-analyzer-cargo-watch-command . "clippy")
            (lsp-rust-analyzer-proc-macro-enable . t)
