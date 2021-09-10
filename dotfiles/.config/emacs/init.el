@@ -599,7 +599,7 @@
 
 (leaf emmet-mode
   :ensure t
-  :hook typescript-tsx-mode-hook)
+  :hook typescript-tsx-mode-hook web-mode-hook)
 
 (leaf add-node-modules-path
   :ensure t
@@ -622,8 +622,9 @@
   (tree-sitter-require 'tsx)
   (add-to-list 'tree-sitter-major-mode-language-alist '(typescript-tsx-mode . tsx)))
 
-(leaf rustic :ensure t
-  :custom ((rustic-format-trigger . 'on-save)))
+(leaf rustic
+  :ensure t
+  :custom ((rustic-format-on-save . t)))
 
 (leaf typescript-mode
   :ensure t
@@ -637,19 +638,19 @@
   :ensure t
   :mode ("\\.html\\'" "\\.php\\'" "\\.vue\\'" "\\.xml\\'")
   :custom ((web-mode-attr-indent-offset . nil)
-	         (web-mode-markup-indent-offset . 4)
+	         (web-mode-markup-indent-offset . 2)
 	         (web-mode-css-indent-offset . 2)
-	         (web-mode-code-indent-offset . 4)
+	         (web-mode-code-indent-offset . 2)
 	         (web-mode-sql-indent-offset . 2)
 	         (indent-tabs-mode . nil)
 	         (tab-width . 2)
-	         (web-mode-script-padding . 4)
-	         (web-mode-style-padding . 0)
-	         (web-mode-block-padding . 0)
+	         (web-mode-script-padding . 2)
+	         (web-mode-style-padding . 2)
+	         (web-mode-block-padding . 2)
 	         (web-mode-enable-current-element-highlight . t)
 	         (web-mode-enable-current-column-highlight . t)
-	         (web-mode-enable-auto-closing . t)
-	         (web-mode-enable-auto-expanding . t)
+	         ;; (web-mode-enable-auto-closing . t)
+	         ;; (web-mode-enable-auto-expanding . t)
 	         (web-mode-comment-style . 2)))
 
 (leaf scss-mode
