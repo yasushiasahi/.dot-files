@@ -660,6 +660,9 @@
 (leaf json-mode
   :ensure t)
 
+(leaf yaml-mode
+  :ensure t)
+
 (leaf dockerfile-mode
   :ensure t)
 
