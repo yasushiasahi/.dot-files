@@ -605,9 +605,13 @@
   :ensure t
   :hook ((typescript-mode-hook typescript-tsx-mode-hook web-mode-hook scss-mode-hook css-mode-hook) . add-node-modules-path))
 
-(leaf prettier
+;; (leaf prettier
+;;   :ensure t
+;;   :global-minor-mode global-prettier-mode)
+
+(leaf prettier-js
   :ensure t
-  :global-minor-mode global-prettier-mode)
+  :hook typescript-tsx-mode-hook typescript-mode-hook css-mode-hook scss-mode-hook)
 
 (leaf tree-sitter
   :ensure t
