@@ -142,6 +142,8 @@
   (leaf recentf
     :custom ((recentf-max-saved-items . 1000)      ; max save limit
              (recentf-exclude . '(".recentf"))     ; exclude file list
+             (recentf-auto-cleanup . 10)
+             (recentf-exclude . '("\\.recentf", "emacs/elpa/*"))
              (recentf-auto-save-timer . '(run-with-idle-timer 30 t 'recentf-save-list))) ; after 30 second when no 作業 save .recentf file
     :global-minor-mode recentf-mode)
 
@@ -603,7 +605,7 @@
 
 (leaf add-node-modules-path
   :ensure t
-  :hook ((typescript-mode-hook typescript-tsx-mode-hook web-mode-hook scss-mode-hook css-mode-hook) . add-node-modules-path))
+  :hook ((typescript-mode-hook typescript-tsx-mode-hook web-mode-hook scss-mode-hook css-mode-hook js-mode-hook) . add-node-modules-path))
 
 ;; (leaf prettier
 ;;   :ensure t
@@ -611,7 +613,7 @@
 
 (leaf prettier-js
   :ensure t
-  :hook typescript-tsx-mode-hook typescript-mode-hook css-mode-hook scss-mode-hook)
+  :hook typescript-tsx-mode-hook typescript-mode-hook js-mode-hook css-mode-hook scss-mode-hook web-mode)
 
 (leaf tree-sitter
   :ensure t
@@ -669,6 +671,15 @@
 
 (leaf dockerfile-mode
   :ensure t)
+
+(leaf sql
+  :ensure t
+  :custom ((sql-indent-offset . 2)
+           (indent-tabs-mode . nil)))
+
+(leaf sql-indent
+  :ensure t)
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
