@@ -56,6 +56,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; start writing settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar lsp-use-plists)
+(setq lsp-use-plists t)
+
 (leaf cus-edit
   :custom `((custom-file . ,(locate-user-emacs-file "custom.el"))))
 
@@ -141,9 +144,8 @@
 
   (leaf recentf
     :custom ((recentf-max-saved-items . 1000)      ; max save limit
-             (recentf-exclude . '(".recentf"))     ; exclude file list
+             (recentf-exclude . '("/recentf" "/emacs/elpa/"))     ; exclude file list
              (recentf-auto-cleanup . 10)
-             (recentf-exclude . '("\\.recentf", "emacs/elpa/*"))
              (recentf-auto-save-timer . '(run-with-idle-timer 30 t 'recentf-save-list))) ; after 30 second when no 作業 save .recentf file
     :global-minor-mode recentf-mode)
 
@@ -186,103 +188,14 @@
 
 (leaf mini-modeline
   :ensure t
-  :global-minor-mode t
-  :config
-  (leaf smart-mode-line
+  :global-minor-mode t)
+
+(leaf smart-mode-line
     :ensure t
     :custom ((rm-whitelist . '("lsp")))
     :defun (sml/setup)
     :config
     (sml/setup))
-  (leaf poke-line
-    :ensure t
-    :custom ((poke-line-pokemon . "squirtle"))
-    :global-minor-mode poke-line-global-mode))
-
-  ;; ;; https://github.com/tomoya/.emacs.d/blob/master/init.el
-  ;; (defun my-flycheck-mode-line-status-text (&optional status)
-  ;;   (let ((text (pcase (or status flycheck-last-status-change)
-  ;;                 (`not-checked "😴")
-  ;;                 (`no-checker "😎")
-  ;;                 (`running "🤔")
-  ;;                 (`errored "😭")
-  ;;                 (`finished
-  ;;                  (let-alist (flycheck-count-errors flycheck-current-errors)
-  ;;                    (if (or .error .warning)
-  ;;                        (concat
-  ;;                         "😰"
-  ;;                         (propertize (format "%s" (or .error 0)) 'face '(:foreground "#ec5aaa"))
-  ;;                         "😥"
-  ;;                         (propertize (format "%s" (or .warning 0)) 'face '(:foreground "#fad900"))
-  ;;                         )
-  ;;                      "🤩")))
-  ;;                 (`interrupted "🤯")
-  ;;                 (`suspicious "🙃"))))
-  ;;     text))
-  ;; (setq flycheck-mode-line '(:eval (my-flycheck-mode-line-status-text)))
-
-  ;; ;; https://github.com/tomoya/.emacs.d/blob/master/init.el
-  ;; (defun my-mode-line-region-info ()
-  ;;   (when mark-active
-  ;;     (let* ((beg (region-beginning))
-  ;;            (end (region-end))
-  ;;            (lines (count-lines beg end))
-  ;;            (words (count-words beg end))
-  ;;            (chars (abs (- beg end))))
-  ;;       (propertize
-  ;;        (format " %s行/%s語/%s字" lines words chars)
-  ;;        'face '(:foreground "#9090fa" :height 1)))))
-
-  ;; ;; https://github.com/tomoya/.emacs.d/blob/master/init.el
-  ;; (defun my-mode-line-vc ()
-  ;;   (let ((file (buffer-file-name)))
-  ;;     (if (or (null file) (null vc-mode)) nil
-  ;;       (let* ((branch
-  ;;               (let ((backend (vc-backend file)))
-  ;;                 (substring vc-mode (+ (if (eq backend 'Hg) 2 3) 2))))
-  ;;              (diff-count (vc-git--run-command-string file "diff" "--numstat" "--"))
-  ;;              (diff-count-text
-  ;;               (if (and diff-count
-  ;;                        (string-match "^\\([0-9]+\\)\t\\([0-9]+\\)\t" diff-count))
-  ;;                   (concat
-  ;;                    (propertize (format "+%s" (match-string 1 diff-count)) 'face '(:foreground "#58e06f"))
-  ;;                    (propertize (format "-%s" (match-string 2 diff-count)) 'face '(:foreground "#f56bb7")))
-  ;;                 "")))
-  ;;         (format "%s %s %s"
-  ;;                 (all-the-icons-octicon "git-branch" :v-adjust 0.1)
-  ;;                 (truncate-string-to-width branch 21 nil nil "…")
-  ;;                 diff-count-text)))))
-
-  ;; (setq-default mini-modeline-r-format '(""
-  ;;                                        mode-line-mule-info
-  ;;                                        mode-line-modified
-  ;;                                        " %b %m "
-  ;;                                        (:eval (my-mode-line-vc))
-  ;;                                        " "
-  ;;                                        flycheck-mode-line
-  ;;                                        (:eval (my-mode-line-region-info))))
-
-
-  ;; (setq-default mini-modeline-r-format '("%b %m %I"
-  ;;                                        " "
-  ;;                                        mode-line-modified
-  ;;                                        " "
-  ;;                                        mode-line-mule-info
-  ;;                                        "<"
-  ;;                                        mode-line-position
-  ;;                                        ">"
-  ;;                                        (:eval (my-mode-line-region-info))
-  ;;                                        " "
-  ;;                                        (:eval (my-mode-line-vc))
-  ;;                                        "|"
-  ;;                                        (:eval (my-flycheck-mode-line-status-text))
-  ;;                                        (:eval (my-mode-line-region-info))))
-
-
-
-
-
-
 
 (leaf window-customize
   :preface
@@ -367,12 +280,6 @@
 (leaf which-key
   :ensure t
   :global-minor-mode t)
-
-(leaf vterm
-  :ensure t
-  :custom ((vterm-buffer-name-string . "vt %s"))
-  :bind ((:vterm-mode-map
-          ("C-t" . hydra-window/body))))
 
 (leaf open-junk-file
   :ensure t
@@ -488,6 +395,9 @@
     ("[" goto-last-change)
     ("]" goto-last-change-reverse)))
 
+(leaf magit
+  :ensure t)
+
 (leaf wgrep
   :ensure t)
 
@@ -523,9 +433,9 @@
          (company-search-map
           ("C-n" . company-select-next)
           ("C-p" . company-complete-common-or-cycle)))
-  :custom ((company-idle-delay . 0.3)
+  :custom ((company-idle-delay . 0)
            (company-echo-delay . 0)
-           (company-minimum-prefix-length . 2))
+           (company-minimum-prefix-length . 1))
   :global-minor-mode global-company-mode)
 
 (leaf company-prescient
@@ -576,20 +486,20 @@
 (leaf lsp-mode
   :ensure t
   :hook ((lsp-mode-hook . lsp-enable-which-key-integration)
-         ((rust-mode-hook typescript-mode-hook typescript-tsx-mode-hook) . lsp))
-  :custom ((gc-cons-threshold . 104857600)
+         ((rust-mode-hook typescript-mode-hook typescript-tsx-mode-hook php-mode-hook) . lsp))
+  :custom ((gc-cons-threshold . 100000000)
            (read-process-output-max . 1048576)
 	         (lsp-idle-delay . 0.5)
-	         (lsp-response-timeout . 5)
-	         (lsp-completion-provider . :capf)
-	         (lsp-prefer-capf . t)
            (lsp-keymap-prefix . "C-c l")
            (lsp-enable-indentation . nil)
            (lsp-headerline-breadcrumb-enable . nil)
            ;; rust
            (lsp-rust-analyzer-cargo-watch-command . "clippy")
            (lsp-rust-analyzer-proc-macro-enable . t)
-           (lsp-rust-analyzer-server-display-inlay-hints . t)))
+           (lsp-rust-analyzer-server-display-inlay-hints . t))
+  :defvar lsp-file-watch-ignored-directories
+  :config
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.next\\'"))
 
 (leaf lsp-tailwindcss
   :ensure t
@@ -606,10 +516,6 @@
 (leaf add-node-modules-path
   :ensure t
   :hook ((typescript-mode-hook typescript-tsx-mode-hook web-mode-hook scss-mode-hook css-mode-hook js-mode-hook) . add-node-modules-path))
-
-;; (leaf prettier
-;;   :ensure t
-;;   :global-minor-mode global-prettier-mode)
 
 (leaf prettier-js
   :ensure t
@@ -642,7 +548,7 @@
 
 (leaf web-mode
   :ensure t
-  :mode ("\\.html\\'" "\\.php\\'" "\\.vue\\'" "\\.xml\\'")
+  :mode ("\\.html\\'" "\\.vue\\'" "\\.xml\\'")
   :custom ((web-mode-attr-indent-offset . nil)
 	         (web-mode-markup-indent-offset . 2)
 	         (web-mode-css-indent-offset . 2)
@@ -663,6 +569,10 @@
   :ensure t
   :custom ((css-indent-offset . 2)))
 
+(leaf php-mode
+  :ensure t
+  :mode ("\\.php\\'"))
+
 (leaf json-mode
   :ensure t)
 
@@ -680,6 +590,15 @@
 (leaf sql-indent
   :ensure t)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; vtermは最後にしといたほうが良い
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(leaf vterm
+  :ensure t
+  :custom ((vterm-buffer-name-string . "vt %s"))
+  :bind ((:vterm-mode-map
+          ("C-t" . hydra-window/body))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

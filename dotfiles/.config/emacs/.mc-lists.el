@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-electric-delete-forward
         counsel-yank-pop
         crux-kill-whole-line
         crux-move-beginning-of-line
@@ -21,6 +22,8 @@
         web-mode-element-rename
         web-mode-element-vanish
         web-mode-element-wrap
+        yaml-electric-backspace
+        yaml-electric-dash-and-dot
         ))
 
 (setq mc/cmds-to-run-once
