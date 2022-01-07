@@ -63,18 +63,6 @@ if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
-#id_rsa置きかけ
-function asahi-git() {
-    rm ~/.ssh/id_rsa
-    cp ~/.ssh/id_rsa-asahi ~/.ssh/id_rsa
-    echo "u r asaji"
-}
-function ajike-git() {
-    rm ~/.ssh/id_rsa
-    cp ~/.ssh/id_rsa_ajike ~/.ssh/id_rsa
-    echo "u r ajike"
-}
-
 
 # alias >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 scripts_path=$HOME/ghq/github.com/yasushiasahi/.dot-files/scripts

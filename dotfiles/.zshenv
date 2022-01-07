@@ -7,4 +7,3 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 
 # zshの設定ファイル郡の場所を指示
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-. "$HOME/.cargo/env"
