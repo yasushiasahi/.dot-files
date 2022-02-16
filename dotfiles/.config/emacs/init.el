@@ -112,11 +112,12 @@
            (auto-save-timeout . 15)
            (auto-save-interval . 60)
            (version-control . t)
-           (delete-old-versions . t)
-           )
+           (create-lockfiles . nil) ; donot make .#xxx file when editing
+           (delete-old-versions . t))
   :hook ((before-save-hook . delete-trailing-whitespace)) ; delete trailing whitespace when save
   :preface
   (defalias 'yes-or-no-p 'y-or-n-p)     ; reduce typing, yas -> y, no -> n
+
   (when (eq window-system 'ns)
     (tool-bar-mode 0)                   ; no tool bar
     (scroll-bar-mode 0))                ; no scroll bar
@@ -178,7 +179,8 @@
   :custom ((x-underline-at-descent-line . t)
            (solarized-emphasize-indicators . nil))
   :config
-  (load-theme 'solarized-dark-high-contrast t))
+  (load-theme 'solarized-dark-high-contrast t)
+  (set-cursor-color "#03e635"))
 
 (leaf fira-code-mode
     :ensure t
@@ -496,6 +498,7 @@
            ;; rust
            (lsp-rust-analyzer-cargo-watch-command . "clippy")
            (lsp-rust-analyzer-proc-macro-enable . t)
+           (lsp-rust-analyzer-experimental-proc-attr-macros . t)
            (lsp-rust-analyzer-server-display-inlay-hints . t))
   :defvar lsp-file-watch-ignored-directories
   :config
@@ -504,14 +507,18 @@
 (leaf lsp-tailwindcss
   :ensure t
   :require t
-  :custom ((lsp-tailwindcss-add-on-mode . t)))
+  :defvar (lsp-language-id-configuration lsp-tailwindcss-major-modes)
+  :custom ((lsp-tailwindcss-add-on-mode . t))
+  :config
+  (add-to-list 'lsp-tailwindcss-major-modes 'rust-mode)
+  (add-to-list 'lsp-language-id-configuration '(".*\\.rs$" . "typescriptreact")))
 
 (leaf lsp-ui
   :ensure t)
 
 (leaf emmet-mode
   :ensure t
-  :hook typescript-tsx-mode-hook web-mode-hook)
+  :hook (typescript-tsx-mode-hook web-mode-hook rustic-mode))
 
 (leaf add-node-modules-path
   :ensure t
@@ -536,7 +543,8 @@
 
 (leaf rustic
   :ensure t
-  :custom ((rustic-format-on-save . t)))
+  :custom ((rustic-format-on-save . nil)
+           (rustic-format-on-save . t)))
 
 (leaf typescript-mode
   :ensure t

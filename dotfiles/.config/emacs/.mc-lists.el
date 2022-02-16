@@ -13,9 +13,11 @@
         hydra-multiple-cursors/body
         hydra-window/body
         ignore
+        indent-for-tab-command
         ivy-occur-revert-buffer
         kill-region
         mark-sexp
+        mouse-buffer-menu
         sp-backward-delete-char
         sp-delete-char
         sp-kill-hybrid-sexp
