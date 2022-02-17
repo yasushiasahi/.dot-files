@@ -182,6 +182,11 @@
   (load-theme 'solarized-dark-high-contrast t)
   (set-cursor-color "#03e635"))
 
+(leaf ns-auto-titlebar
+  :ensure t
+  :config
+  (when (eq system-type 'darwin) (ns-auto-titlebar-mode)))
+
 (leaf fira-code-mode
     :ensure t
     :preface
@@ -597,6 +602,22 @@
 
 (leaf sql-indent
   :ensure t)
+
+(leaf my-functions
+  :doc "self made function listed here"
+  :config
+  (leaf deegle
+    :config
+    (exec-path-from-shell-copy-envs '("DEEGLE_DEEPL_API_KEY" "DEEGLE_GOOGLE_API_KEY"))
+    (defun my-deegle-translate ()
+      "translate region or read string with deegle"
+      (interactive)
+      (let ((input (if (use-region-p)
+                       (buffer-substring (region-beginning) (region-end))
+                     (read-string "deegle: "))))
+        (async-shell-command (format "deegle \"%s\"" input) "*Deegle Translation*" "*Deegle Error*")))
+    (global-set-key (kbd "C-c C-d") 'my-deegle-translate))
+  )
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

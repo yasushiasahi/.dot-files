@@ -115,6 +115,7 @@ zplug load --verbose
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< zplug
 
 
+
 # theme pure の設定
 autoload -U promptinit; promptinit
 prompt pure
