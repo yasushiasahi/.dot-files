@@ -493,7 +493,7 @@
 (leaf lsp-mode
   :ensure t
   :hook ((lsp-mode-hook . lsp-enable-which-key-integration)
-         ((rust-mode-hook typescript-mode-hook typescript-tsx-mode-hook php-mode-hook) . lsp))
+         ((rust-mode-hook typescript-mode-hook typescript-tsx-mode-hook) . lsp)) ; php-mode-hooke
   :custom ((gc-cons-threshold . 100000000)
            (read-process-output-max . 1048576)
 	         (lsp-idle-delay . 0.5)
@@ -561,7 +561,7 @@
 
 (leaf web-mode
   :ensure t
-  :mode ("\\.html\\'" "\\.vue\\'" "\\.xml\\'")
+  :mode ("\\.html\\'" "\\.vue\\'" "\\.php\\'" "\\.xml\\'")
   :custom ((web-mode-attr-indent-offset . nil)
 	         (web-mode-markup-indent-offset . 2)
 	         (web-mode-css-indent-offset . 2)
@@ -582,9 +582,9 @@
   :ensure t
   :custom ((css-indent-offset . 2)))
 
-(leaf php-mode
-  :ensure t
-  :mode ("\\.php\\'"))
+;; (leaf php-mode
+;;   :ensure t
+;;   :mode ("\\.php\\'"))
 
 (leaf json-mode
   :ensure t)
